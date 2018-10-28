@@ -1,0 +1,212 @@
+[SOUND]
+This lecture is about the discriminative
+classifiers for text categorization. In this lecture we're going to
+continue talking about how to do text categorization and
+cover discriminative approaches. This is a slide that you have seen from
+the discussion of Naive Bayes Classifier, where we have shown that although
+Naive Bayes Classifier tries to model the generation of text data, from each
+categories, we can actually use Bayes' rule to eventually rewrite the scoring
+function as you see on this slide. And this scoring function is basically
+a weighted combination of a lot of word features, where the feature values
+are word counts, and the feature weights are the log of probability ratios of
+the word given by two distributions here. Now this kind of scoring function
+can be actually a general scoring function where we can in general
+present text data as a feature vector. Of course the features don't
+have to be all the words. Their features can be other
+signals that we want to use. And we mentioned that this is precisely
+similar to logistic regression. So, in this lecture we're going to
+introduce some discriminative classifiers. They try to model
+the conditional distribution of labels given the data directly
+rather than using Bayes' rule to compute that interactively
+as we have seen in naive Bayes. So the general idea of logistic
+regression is to model the dependency of a binary
+response variable Y on some predictors that are denoted as X. So here we have also changed the notation to X for future values. You may recall in the previous
+slides we have used FI to represent the future values. And here we use the notation of X factor, which is more common when we introduce such discriminative algorithms. So, X is our input. It's a vector with n features and
+each feature has a value x sub i here. And I will go with a model that dependency
+of this binary response variable of these features. So in our categorization problem when
+I have two categories theta 1 and theta 2, and we can use the Y value to
+denote the two categories when Y is 1, it means the category of the document,
+the first class, is theta 1. Now, the goal here is the model, the
+conditional property of Y given X directly as opposed to model of the generation of
+X and Y as in the case of Naive Bayes. And another advantage of this
+kind of approach is that it would allow many other features
+than words to be used in this vector since we're not modeling
+the generation of this vector. And we can plug in any
+signals that we want. So this is potentially advantageous for
+doing text categorization. So more specifically,
+in logistic regression, assume the functional form of Y
+depending on X is the following. And this is very closely
+related to the log odds that I introduced in the Naive Bayes
+or log of probability ratio of the two categories that you
+have seen on the previous slide. So this is what I meant. So in the case of Naive Bayes,
+we compute this by using those words and eventually we have reached
+a formula that looks like this. But here we actually
+would assume explicitly that we with the model our probability of Y given X directly as a function of these features. So, most specifically we assume that the
+ratio of the probability of Y equals 1 and the probability of Y equals
+0 is a function of X. All right, so it's a function of x and it's a linear combination of these feature
+values controlled by theta values. And it seems we know that
+the probability of Y equals zero is one minus probability
+of Y equals one and this can be also written in this way. So this is a log out ratio here. And so in logistic regression, we're basically assuming that
+the probability of Y equals 1. Okay my X is dependent on this linear
+combination of all these features. So it's just one of the many possible
+ways, assuming that the dependency. But this particular form
+has been quite useful and it also has some nice properties. So if we rewrite this equation to actually
+express the probability of Y given X. In terms of X by getting rid of
+the logarithm we get this functional form, and this is called a logistical function. It's a transformation of X into Y,
+as you see on the right side here, so
+that the X's will be map into a range of values from 0 to 1.0,
+you can see. And that's precisely what we want
+since we have a probability here. And the function form looks like this. So this is the basic idea
+of logistic regression. And it's a very useful classifier that can be used to do a lot of classification
+tasks including text categorization. So as in all cases of model we would be
+interested in estimating the parameters. And in fact in all of the machine running
+programs, once you set up with the model, set up object and
+function to model the file, then the next step is to
+compute the parameter values. In general, we're going to adjust
+to these parameter values. Optimize the performance of
+classify on the training data. So in our case just assume we have
+the training data here, xi and yi, and each pair is basically a future vector
+of x and a known label for that x. Y is either 1 or 0. So in our case we are interested
+maximize this conditional likelihood. The conditional likelihood here is basically to model why
+given observe the x, so it's not like a moderate x, but rather we're going to model this. Note that this is a conditional
+probability of Y given X and this is also precisely what we wanted For
+classification. Now so the likelihood function would be
+just a product of all the training cases. And in each case, this is the model of the probability of
+observing this particular training case. So given a particular Xi, how likely
+we are to observe the corresponding Yi? Of course, Yi could be 1 or
+0, and in fact, the function found here would vary
+depending on whether Yi is 1 or 0. If it's a 1, we'll be taking this form. And that's basically the logistic
+regression function. But what about this, if it's 0? Well, if it's 0, then we have to use
+a different form, and that's this one. Now, how do we get this one? Well, that's just a 1 minus
+the probability of Y=1, right? And you can easily see this. Now the key point in here is that the
+function form here depends on the observer Yi, if it's a 1,
+it has a different form than when it's 0. And if you think about when we
+want to maximize this probability, we're basically going to want this
+probability to be as high as possible. When the label is 1, that means
+the document is in probability 1. But if the document is not,
+we're going to maximize this value, and what's going to happen is
+actually to make this value as small as possible because this sum's 1. When I maximize this one,
+it's equivalent to minimize this one. So you can see basically, if we maximize
+the conditional likelihood, we're going to basically try to make the prediction on
+the training data as accurate as possible. So as another occasion, when you
+compute the maximum likelihood data, basically you'll find a beta value, a set of beta values that would
+maximize this conditional likelihood. And this, again, then gives us
+a standard optimization problem. In this case,
+it can be also solved in many ways. Newton's method is a popular
+way to solve this problem, there are other methods as well. But in the end,
+we will look at a set of data values. Once we have the beta values,
+then we have a way to find the scoring function to help us classify a document. So what's the function? Well, it's this one. See, if we have all the beta values,
+are they known? All we need is to compute the Xi for that
+document and then plug in those values. That will give us an estimated probability
+that the document is in category one. Okay so, so much for
+logistical regression. Let's also introduce another
+discriminative classifier called K-Nearest Neighbors. Now in general, I should say there
+are many such approaches, and a thorough introduction to all of them is
+clearly beyond the scope of this course. And you should take
+a machine learning course or read more about machine
+learning to know about them. Here, I just want to include the basic
+introduction to some of the most commonly used classifiers, since you might
+use them often for text calculation. So the second classifier is
+called K-Nearest Neighbors. In this approach,
+we're going to also estimate the conditional probability of label
+given data, but in a very different way. So the idea is to keep all
+the training examples and then once we see a text object that we
+want to classify, we're going to find the K examples in the training set and
+that are most similar to this text object. Basically, this is to find
+the neighbors of this text objector in the training data set. So once we found the neighborhood and we found the object that are close to the
+object we are interested in classifying, and let's say we have found
+the K-Nearest Neighbors. That's why this method is
+called K-Nearest Neighbors. Then we're going to assign the category
+that's most common in these neighbors. Basically we're going to allow
+these neighbors to vote for the category of the objective that
+we're interested in classifying. Now that means if most of them have
+a particular category and it's a category one, they're going to say this
+current object will have category one. This approach can also be improved by
+considering the distance of a neighbor and of a current object. Basically, we can assume a closed
+neighbor would have more say about the category of the subject. So, we can give such a neighbor
+more influence on the vote. And we can take away some of
+the votes based on the distances. But the general idea is look
+at the neighborhood, and then try to assess the category based
+on the categories of the neighbors. Intuitively, this makes a lot of sense. But mathematically, this can also be
+regarded as a way to directly estimate there's a conditional probability of
+label given data, that is p of Y given X. Now I'm going to explain this intuition in
+a moment, but before we proceed, let me emphasize that we do need a similarity
+function here in order for this to work. Note that in naive base class five,
+we did not need a similarity function. And in logistical regression, we did not
+talk about those similarity function either, but here we explicitly
+require a similarity function. Now this similarity function
+actually is a good opportunity for us to inject any of our
+insights about the features. Basically effective features
+are those that would make the objects that are on the same
+category look more similar, but distinguishing objects
+in different categories. So the design of this similarity function
+is closely tied it to the design of the features in logistical
+regression and other classifiers. So let's illustrate how K-NN works. Now suppose we have a lot
+of training instances here. And I've colored them differently and
+to show just different categories. Now suppose we have a new object in
+the center that we want to classify. So according to this approach,
+you work on finding the neighbors. Now, let's first think of a special
+case of finding just one neighbor, the closest neighbor. Now in this case, let's assume the closest
+neighbor is the box filled with diamonds. And so then we're going to say,
+well, since this is in this object that is in category of diamonds,
+let's say. Then we're going to say, well, we're going to assign the same
+category to our text object. But let's also look at another possibility
+of finding a larger neighborhood, so let's think about the four neighbors. In this case, we're going to include a lot
+of other solid field boxes in red or pink, right? So in this case now, we're going to
+notice that among the four neighbors, there are three neighbors
+in a different category. So if we take a vote, then we'll conclude the object is
+actually of a different category. So this both illustrates how
+can nearest neighbor works and also it illustrates some potential
+problems of this classifier. Basically, the results might
+depend on the K and indeed, k's an important parameter to optimize. Now, you can intuitively imagine
+if we have a lot of neighbors around this object, and
+then we'd be okay because we have a lot of neighbors who will
+help us decide the categories. But if we have only a few,
+then the decision may not be reliable. So on the one hand,
+we want to find more neighbor, right? And then we have more votes. But on the other hand, as we try to find
+more neighbors we actually could risk on getting neighbors that are not
+really similar to this instance. They might actually be far away
+as you try to get more neighbors. So although you get more neighbors but
+those neighbors aren't necessarily so helpful because they are not
+very similar to the object. So the parameter still has
+to be set empirically. And typically, you can optimize such
+a parameter by using cross validation. Basically, you're going to separate
+your training data into two parts and then you're going to use one
+part to actually help you choose the parameter k here or some other
+parameters in other class files. And then you're going to assume
+this number that works well on your training that will be actually be
+the best for your future data. So as I mentioned, K-NN can be actually regarded as estimate
+of conditional problem within y given x an that's why we put this in the category
+of discriminative approaches. So the key assumption that we made in
+this approach is that the distribution of the label given the document
+probability a category given for example probability of theta i
+given document d is locally smooth. And that just means we're going to assume
+that this probability is the same for all the documents in these region R here. And suppose we draw a neighborhood and
+we're going to assume in this neighborhood since the data instances are very
+similar we're going to assume that the conditional distribution of the label
+given the data will be roughly the same. If these are very different
+then we're going to assume that the probability of c doc given
+d would be also similar. So that's a very key assumption. And that's actually important assumption that would allow us to
+do a lot of machinery. But in reality, whether this is true of course,
+would depend on how we define similarity. Because neighborhood is largely
+determined by our similarity function. If our similarity function captures
+objects that do follow similar distributions then these
+assumptions are okay but if our similarity function could
+not capture that, obviously these assumption would be a problem and
+then the classifier would not be accurate. Okay, let's proceed with these assumption. Then what we are saying is that, in order to estimate the probability
+of category given a document. We can try to estimate the probability of
+the category given that entire region. Now, this has a benefit, of course, of bringing additional data points to
+help us estimate this probability. And so this is precisely the idea of K-NN. Basically now we can use
+the known categories of all the documents in this region
+to estimate this probability. And I have even given a formula here where
+you can see we just count the topics in this region and then normalize that by the
+total number of documents in the region. So the numerator that you see here,
+c of theta i and r, is a counter of the documents in
+region R was category theta i. Since these are training document and
+we know they are categories. We can simply count how many
+times it was since here. How many times we have the same signs,
+etc. And then the denominator is just
+the total number of training documents in this region. So this gives us a rough estimate of
+which categories most popular in this neighborhood. And we are going to assign
+the popular category to our data object since
+it falls into this region. [MUSIC]

@@ -1,0 +1,377 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Week 2 Overview
+ </h1>
+ <p>
+  During this week's lessons, you will learn how the vector space model works in detail, the major heuristics
+used in designing a retrieval function for ranking documents with respect to a
+query, and how to implement an information retrieval system (i.e., a search
+engine), including how to build an inverted index and how to score documents
+quickly for a query.
+ </p>
+ <h2 level="2">
+  Time
+ </h2>
+ <p>
+  This module should take
+  <strong>
+   approximately 3 hours
+  </strong>
+  of dedicated time to complete, with its videos and assignments.
+ </p>
+ <h2 level="2">
+  Activities
+ </h2>
+ <p>
+  The activities for this module are listed below (with assignments in bold):
+ </p>
+ <table columns="2" rows="3">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Activity
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Estimated Time Required
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 2 Video Lectures
+    </p>
+   </td>
+   <td>
+    <p>
+     2 hours
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Week 2
+     </strong>
+     <strong>
+      Graded
+     </strong>
+     <strong>
+      Quiz
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     1 hour
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h2 level="2">
+  Goals and Objectives
+ </h2>
+ <p>
+  After you actively engage in the learning experiences in this module, you should be able to:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Explain what TF-IDF weighting is and why TF transformation and document length normalization are necessary for the design of an effective ranking function.
+   </p>
+  </li>
+  <li>
+   <p>
+    Explain what an inverted index is and how to construct it for a large set of text documents that do not fit into the memory.
+   </p>
+  </li>
+  <li>
+   <p>
+    Explain how variable-length encoding can be used to compress integers and how unary coding and gamma-coding work.
+   </p>
+  </li>
+  <li>
+   <p>
+    Explain how scoring of documents in response to a query can be done quickly by using an inverted index.
+   </p>
+  </li>
+  <li>
+   <p>
+    Explain Zipf’s law.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Guiding Questions
+ </h2>
+ <p>
+  Develop your answers to the following guiding questions while completing the readings and working on assignments throughout the week.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    What are some different ways to place a document as a vector in the vector space?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is term frequency (TF)?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is TF transformation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is document frequency (DF)?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is inverse document frequency (IDF)?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is TF-IDF weighting?
+   </p>
+  </li>
+  <li>
+   <p>
+    Why do we need to penalize long documents in text retrieval?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is pivoted document length normalization?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are the main ideas behind the retrieval function BM25?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is the typical architecture of a text retrieval system?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is an inverted index?
+   </p>
+  </li>
+  <li>
+   <p>
+    Why is it desirable to compress an inverted index?
+   </p>
+  </li>
+  <li>
+   <p>
+    How can we create an inverted index when the collection of documents does not fit into the memory?
+   </p>
+  </li>
+  <li>
+   <p>
+    How can we leverage an inverted index to score documents quickly?
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Additional Readings and Resources
+ </h2>
+ <p>
+  The following readings are optional:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    C. Zhai and S. Massung.
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapter 6 - Section 6.3, and Chapter 8.
+    </strong>
+   </p>
+  </li>
+  <li>
+   <p>
+    Ian H. Witten, Alistair Moffat, and Timothy C. Bell.
+    <em>
+     Managing Gigabytes: Compressing and Indexing Documents and Images
+    </em>
+    , Second Edition. Morgan Kaufmann, 1999.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Key Phrases and Concepts
+ </h2>
+ <p>
+  Keep your eyes open for the following key terms or phrases as you complete the readings and interact with the lectures. These topics will help you better understand the content in this module.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Term frequency (TF)
+   </p>
+  </li>
+  <li>
+   <p>
+    Document frequency (DF) and inverse document frequency (IDF)
+   </p>
+  </li>
+  <li>
+   <p>
+    TF transformation
+   </p>
+  </li>
+  <li>
+   <p>
+    Pivoted length normalization
+   </p>
+  </li>
+  <li>
+   <p>
+    BM25
+   </p>
+  </li>
+  <li>
+   <p>
+    Inverted index and postings
+   </p>
+  </li>
+  <li>
+   <p>
+    Binary coding, unary coding, gamma-coding, and d-gap
+   </p>
+  </li>
+  <li>
+   <p>
+    Zipf’s law
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Tips for Success
+ </h2>
+ <p>
+  To do well this week, I recommend that you do the following:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Review the video lectures a number of times to gain a solid understanding of the key questions and concepts introduced this week.
+   </p>
+  </li>
+  <li>
+   <p>
+    When possible, provide tips and suggestions to your peers in this class. As a learning community, we can help each other learn and grow. One way of doing this is by helping to address the questions that your peers pose. By engaging with each other, we’ll all learn better.
+   </p>
+  </li>
+  <li>
+   <p>
+    It’s always a good idea to refer to the video lectures and chapter readings we've read during this week and reference them in your responses. When appropriate, critique the information presented.
+   </p>
+  </li>
+  <li>
+   <p>
+    Take notes while you read the materials and watch the lectures for this week. By taking notes, you are interacting with the material and will find that it is easier to remember and to understand. With your notes, you’ll also find that it’s easier to complete your assignments. So, go ahead, do yourself a favor; take some notes!
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Getting and Giving Help
+ </h2>
+ <p>
+  You can get/give help via the following means:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://courserahelp.zendesk.com/hc/en-us/">
+      Learner Help Center
+     </a>
+    </strong>
+    to find information regarding specific technical problems. For example, technical problems would include error messages, difficulty submitting assignments, or problems with video playback. If you cannot find an answer in the documentation, you can also report your problem to the Coursera staff by clicking on the
+    <strong>
+     Contact Us!
+    </strong>
+    link available on each topic's page within the Learner Help Center.
+   </p>
+  </li>
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://www.coursera.org/learn/text-retrieval/forum/VNWXSgylEeaZrBJIefqa4w/discussions?sort=lastActivityAtDesc&amp;page=1">
+      Content Issues
+     </a>
+    </strong>
+    forum to report errors in lecture video content, assignment questions and answers, assignment grading, text and links on course pages, or the content of other course materials. University of Illinois staff and community TAs will monitor this forum and respond to issues2
+   </p>
+  </li>
+ </ul>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

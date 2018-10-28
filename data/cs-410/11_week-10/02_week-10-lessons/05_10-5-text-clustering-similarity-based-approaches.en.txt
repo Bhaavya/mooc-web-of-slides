@@ -1,0 +1,192 @@
+[MUSIC] This lecture is about the similarity-based
+approaches to text clustering. In this lecture we're going to to continue
+the discussion of how to do a text clustering. In particular, we're going to to
+cover different kinds of approaches than generative models, and
+that is similarity-based approaches. So the general idea of similarity-based
+clustering is to explicitly specify a similarity function to measure
+the similarity between two text objects. Now this is in contrast with a generative model where we
+implicitly define the clustering bias by using a particular object to
+function like a [INAUDIBLE] function. The whole process is driven by
+optimizing the [INAUDIBLE,] but here we explicitly provide a view
+of what we think are similar. And this is often very useful
+because then it allows us to inject any particular view of similarity
+into the clustering program. So once we have a similarity function,
+we can then aim at optimally partitioning, to partitioning the data into clusters or
+into different groups. And try to maximize
+the inter-group similarity and minimize the inter-group similarity. That is to ensure the objects that are put
+into the same group to be similar, but the objects that are put into
+different groups to be not similar. And these are the general
+goals of clustering, and there is often a trade off
+between achieving both goals. Now there are many different methods for
+doing similarity based clustering, and in general I think we can distinguish
+the two strategies at high level. One is to progressively construct
+the hierarchy of clusters, and so this often leads to
+hierarchical clustering. And we can further distinguish it
+two ways, to construct a hierarchy depending on whether we started with
+the collection to divide the connection. Or started with individual objectives and
+gradually group them together, so one is bottom-up that can
+be called agglomerative. Well we gradually group a similar
+objects into larger and larger clusters. Until we group everything together,
+the other is top-down or divisive, in this case we gradually partition the whole data
+set into smaller and smaller clusters. The other general strategy is to start
+with the initial tentative clustering and then iteratively improve it. And this often leads for
+a flat clustering, one example is k-Means, so as I just said, there are many
+different clustering methods available. And a full coverage of all
+the clustering methods would be beyond the scope of this course. But here we are going to talk about the
+two representative methods, in some detail one is Hierarchical Agglomerative
+Clustering or HAC, the other is k-Means. So first of it we'll get the agglomerative
+hierarchical clustering, in this case, we're given a similarity function to
+measure similarity between two objects. And then we can gradually group similar
+objects together in a bottom-up fashion to form larger and larger groups. And they always form a hierarchy, and then we can stop when some
+stopping criterion is met. It could be either some number
+of clusters has been achieved or the threshold for
+similarity has been reached. There are different variations here, and they mainly differ in the ways
+to compute a group similarity. Based on the individual
+objects similarity, so let's illustrate how again induced
+a structure based on just similarity. So start with all the text objects and we can then measure
+the similarity between them. Of course based on the provided
+similarity function, and then we can see which pair
+has the highest similarity. And then just group them together, and then we're going to see which
+pair is the next one to group. Maybe these two now have
+the highest similarity, and then we're going to gradually
+group them together. And then every time we're going
+to pick the highest similarity, the similarity of pairs to group. This will give us a binary tree
+eventually to group everything together. Now, depending on our applications, we can use the whole hierarchy as
+a structure for browsing, for example. Or we can choose a cutoff,
+let's say cut here to get four clusters, or we can use a threshold to cut. Or we can cut at this high level
+to get just two clusters, so this is a general idea, now if you think
+about how to implement this algorithm. You'll realize that we have
+everything specified except for how to compute group similarity. We are only given the similarity
+function of two objects, but as we group groups together, we also need to
+assess the similarity between two groups. There are also different ways to do that
+and there are the three popular methods. Single-link, complete-link,
+and average-link, so given two groups and
+the single-link algorithm. Is going to define the group similarity
+as the similarity of the closest pair of the two groups. Complete-link defines
+the similarity of the two groups as the similarity of
+the farthest system pair. Average-link defines the similarity
+as average of similarity of all the pairs of the two groups. So it's much easier to understand
+the methods by illustrating them, so here are two groups, g1 and
+g2 with some objects in each group. And we know how to compute
+the similarity between two objects, but the question now is, how can we compute
+the similarity between the two groups? And then we can in general base this
+on the similarities of the objects in the two groups. So, in terms of single-link and we're just looking at the closest pair so
+in this case, these two paired objects will defined
+the similarities of the two groups. As long as they are very close,
+we're going to say the two groups are very close so
+it is an optimistic view of similarity. The complete link on the other hand
+were in some sense pessimistic, and by taking the similarity of the two farthest
+pair as the similarity for the two groups. So we are going to make sure that if the two groups are having
+a high similarity. Then every pair of the two groups, or the objects in the two groups will have,
+will be ensured to have high similarity. Now average link is in between, so
+it takes the average of all these pairs. Now these different ways of computing
+group similarities will lead to different clustering algorithms. And they would in general
+give different results, so it's useful to take a look at their
+differences and to make a comparison. First, single-link can be expected to generally the loose clusters, the reason
+is because as long as two objects are very similar in the two groups,
+it will bring the two groups together. If you think about this as similar
+to having parties with people, then it just means two groups of
+people would be partying together. As long as in each group
+there is a person that is well connected with the other group. So the two leaders of the two
+groups can have a good relationship with each other and then
+they will bring together the two groups. In this case, the cluster is loose,
+because there's no guarantee that other members of the two groups
+are actually very close to each other. Sometimes they may be very far away,
+now in this case it's also based on individual decisions, so
+it could be sensitive to outliers. The complete-link is in
+the opposite situation, where we can expect
+the clusters to be tight. And it's also based on individual decision
+so it can be sensitive to outliers. Again to continue the analogy
+to having a party of people, then complete-link would mean
+when two groups come together. They want to ensure that even the people that are unlikely to talk
+to each other would be comfortable. Always talking to each other, so
+ensure the whole class to be coherent. The average link of clusters in
+between and as group decision, so it's going to be insensitive to outliers,
+now in practice which one is the best. Well, this would depend on the application
+and sometimes you need a lose clusters. And aggressively cluster objects
+together that maybe single-link is good. But other times you might
+need a tight clusters and a complete-link might be better. But in general, you have to
+empirically evaluate these methods for your application to know
+which one is better. Now, next let's look at another example of
+a method for similarity-based clustering. In this case,
+which is called k-Means clustering, we will represent each text
+object as a term vector. And then assume a similarity function
+defined on two objects, now we're going to start with some tentative clustering
+results by just selecting k randomly. selected vectors as
+centroids of k clusters and treat them as centers as if they
+represent, they each represent a cluster. So this gives us the initial
+tentative cluster, then we're going to
+iteratively improve it. And the process goes like this, and
+once we have these centroids Decide. We're going to assign
+a vector to the cluster whose centroid is closest to the current vector. So basically we're going to measure
+the distance between this vector, and each of the centroids, and
+see which one is the closest to this one. And then just put this
+object into that cluster, this is to have tentative assignment
+of objects into clusters. And we're going to
+partition all the objects into k clusters based on our
+tentative clustering and centroids. Then we can do re-compute
+the centroid based on the locate the object in each cluster. And this is to adjust the centroid, and then we can repeat this process until
+the similarity-based objective function. In this case, it's within cluster
+sum of squares converges, and theoretically we can show that. This process actually is going to minimize
+the within cluster sum of squares where define object and function. Given k clusters, so it can be also shown, this process will converge
+to a local minimum. I think about this process for a moment,
+it might remind you the Algorithm for mixture model. Indeed this algorithm is very
+similar to the Algorithm for the mixture model for clustering. More specifically we also
+initialize these parameters in the Algorithm so
+the random initialization is similar. And then in the Algorithm,
+you may recall that, we're going to repeat E-step and M-step
+to improve our parameter estimation. In this case, we're going to
+improve the clustering result iteratively by also doing two steps. And in fact that the two steps are very
+similar to Algorithm, in that when we locate the vector into one of the clusters
+based on our tentative clustering. It's very similar to inferring
+the distribution that has been used to generate the document, the mixture model. So it is essentially similar to E-step, so what's the difference,
+well the difference is here. We don't make a probabilistic
+allocation as in the case of E-step, the brother will make a choice. We're going to make a call if this,
+there upon this closest to cluster two, then we're going to say
+you are in cluster two. So there's no choice, and we're not going to say, you assume
+the set is belonging to a cluster two. And so
+we're not going to have a probability, but we're just going to put one object
+into precisely one cluster. In the E-step however, we do a probability
+location, so we split in counts. And we're not going to say
+exactly which distribution has been used to generate a data point. Now next,
+we're going to adjust the centroid, and this is very similar to M-step where
+we re-estimate the parameters. That's when we'll have a better
+estimate of the parameter, so here we'll have a better clustering
+result by adjusting the centroid. And note that centroid is based on
+the average of the vectors in the cluster. So this is also similar to the M-step
+where we do counts,pull together counts and then normalize them. The difference of course is also because
+of the difference in the E-step, and we're not going to consider
+probabilities when we count the points. In this case, k-Means we're going to all make count of
+the objects as allocated to this cluster. And this is only a subset of data points,
+but in the Algorithm, we in principle consider all the data
+points based on probabilistic allocations. But in nature they are very similar and that's why it's also maximizing
+well defined object of functions. And it's guaranteed to
+convert local minimum, so to summarize our discussion
+of clustering methods. We first discussed model based approaches,
+mainly the mixture model. Here we use the implicit similarity
+function to define the clustering bias. There is no explicit define similarity
+function, the model defines clustering bias and the clustering structure
+is built into a generative model. That's why we can use
+potentially a different model to recover different structure. Complex generative models can be used to
+discover complex clustering structures. We do not talk about in full,
+but we can easily design, generate a model to generate
+a hierarchical clusters. We can also use prior to further
+customize the clustering algorithm to for example control the topic of one
+cluster or multiple clusters. However one disadvantage of this
+approach is that there is no easy way to directly control the similarity measure. Sometimes we want to that,
+but it's very hard to inject such a special definition
+of similarity into such a model. We also talked about
+similarity-based approaches, these approaches are more flexible to
+actually specify similarity functions. But one major disadvantage is that their objective function
+is not always very clear. The k-Means algorithm has clearly
+defined the objective function, but it's also very similar to
+a model based approach. The hierarchical clustering algorithm on the other hand is harder to
+specify the objective function. So it's not clear what
+exactly is being optimized, both approaches can
+generate term clusters. And document clusters, and
+term clusters can be in general, generated by representing each
+term with some text content. For example, take the context of each
+term as a representation of each term, as we have done in semantic
+relation learning. And then we can certainly cluster terms,
+based on actual text [INAUDIBLE]. Of course, term clusters can be generated
+by using generative models as well, as we've seen. [MUSIC]

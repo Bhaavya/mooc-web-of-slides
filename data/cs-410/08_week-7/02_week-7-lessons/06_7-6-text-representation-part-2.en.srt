@@ -1,0 +1,583 @@
+1
+00:00:00,532 --> 00:00:08,683
+[SOUND].
+
+2
+00:00:08,683 --> 00:00:11,442
+So, as we explained the different text
+
+3
+00:00:11,442 --> 00:00:15,299
+representation tends to
+enable different analysis.
+
+4
+00:00:16,560 --> 00:00:19,780
+In particular,
+we can gradually add more and
+
+5
+00:00:19,780 --> 00:00:24,720
+more deeper analysis results
+to represent text data.
+
+6
+00:00:24,720 --> 00:00:27,810
+And that would open up a more
+interesting representation
+
+7
+00:00:29,520 --> 00:00:33,780
+opportunities and
+also analysis capacities.
+
+8
+00:00:33,780 --> 00:00:37,470
+So, this table summarizes
+what we have just seen.
+
+9
+00:00:37,470 --> 00:00:39,800
+So the first column shows
+the text representation.
+
+10
+00:00:39,800 --> 00:00:44,820
+The second visualizes the generality
+of such a representation.
+
+11
+00:00:44,820 --> 00:00:48,430
+Meaning whether we can do this
+kind of representation accurately for
+
+12
+00:00:48,430 --> 00:00:51,880
+all the text data or only some of them.
+
+13
+00:00:51,880 --> 00:00:54,970
+And the third column shows
+the enabled analysis techniques.
+
+14
+00:00:56,040 --> 00:01:00,130
+And the final column shows some
+examples of application that
+
+15
+00:01:00,130 --> 00:01:04,670
+can be achieved through this
+level of representation.
+
+16
+00:01:04,670 --> 00:01:06,310
+So let's take a look at them.
+
+17
+00:01:06,310 --> 00:01:12,180
+So as a stream text can only be processed
+by stream processing algorithms.
+
+18
+00:01:12,180 --> 00:01:14,050
+It's very robust, it's general.
+
+19
+00:01:15,100 --> 00:01:17,690
+And there was still some interesting
+applications that can be down
+
+20
+00:01:17,690 --> 00:01:18,290
+at this level.
+
+21
+00:01:18,290 --> 00:01:20,380
+For example, compression of text.
+
+22
+00:01:20,380 --> 00:01:24,080
+Doesn't necessarily need to
+know the word boundaries.
+
+23
+00:01:24,080 --> 00:01:27,270
+Although knowing word boundaries
+might actually also help.
+
+24
+00:01:28,540 --> 00:01:32,470
+Word base repetition is a very
+important level of representation.
+
+25
+00:01:32,470 --> 00:01:34,630
+It's quite general and
+
+26
+00:01:34,630 --> 00:01:39,140
+relatively robust, indicating they
+were a lot of analysis techniques.
+
+27
+00:01:39,140 --> 00:01:44,480
+Such as word relation analysis,
+topic analysis and sentiment analysis.
+
+28
+00:01:44,480 --> 00:01:48,930
+And there are many applications that can
+be enabled by this kind of analysis.
+
+29
+00:01:48,930 --> 00:01:54,930
+For example, thesaurus discovery has
+to do with discovering related words.
+
+30
+00:01:54,930 --> 00:02:00,550
+And topic and
+opinion related applications are abounded.
+
+31
+00:02:00,550 --> 00:02:03,360
+And there are, for example, people
+
+32
+00:02:03,360 --> 00:02:08,190
+might be interesting in knowing the major
+topics covered in the collection of texts.
+
+33
+00:02:08,190 --> 00:02:12,730
+And this can be the case
+in research literature.
+
+34
+00:02:12,730 --> 00:02:18,500
+And scientists want to know what are the
+most important research topics today.
+
+35
+00:02:18,500 --> 00:02:22,950
+Or customer service people might want to
+know all our major complaints from their
+
+36
+00:02:22,950 --> 00:02:28,480
+customers by mining their e-mail messages.
+
+37
+00:02:28,480 --> 00:02:33,850
+And business intelligence
+people might be interested in
+
+38
+00:02:33,850 --> 00:02:38,090
+understanding consumers' opinions about
+their products and the competitors'
+
+39
+00:02:38,090 --> 00:02:42,060
+products to figure out what are the
+winning features of their products.
+
+40
+00:02:43,170 --> 00:02:47,140
+And, in general, there are many
+
+41
+00:02:47,140 --> 00:02:51,300
+applications that can be enabled by
+the representation at this level.
+
+42
+00:02:53,720 --> 00:02:58,550
+Now, moving down, we'll see we can
+gradually add additional representations.
+
+43
+00:02:58,550 --> 00:03:01,640
+By adding syntactical structures,
+we can enable, of course,
+
+44
+00:03:01,640 --> 00:03:03,890
+syntactical graph analysis.
+
+45
+00:03:03,890 --> 00:03:09,490
+We can use graph mining algorithms
+to analyze syntactic graphs.
+
+46
+00:03:09,490 --> 00:03:13,550
+And some applications are related
+to this kind of representation.
+
+47
+00:03:13,550 --> 00:03:14,090
+For example,
+
+48
+00:03:14,090 --> 00:03:18,440
+stylistic analysis generally requires
+syntactical structure representation.
+
+49
+00:03:22,000 --> 00:03:26,240
+We can also generate
+the structure based features.
+
+50
+00:03:26,240 --> 00:03:32,090
+And those are features that might help us
+classify the text objects into different
+
+51
+00:03:32,090 --> 00:03:37,320
+categories by looking at the structures
+sometimes in the classification.
+
+52
+00:03:37,320 --> 00:03:39,350
+It can be more accurate.
+
+53
+00:03:39,350 --> 00:03:43,360
+For example,
+if you want to classify articles into
+
+54
+00:03:45,120 --> 00:03:49,298
+different categories corresponding
+to different authors.
+
+55
+00:03:49,298 --> 00:03:56,320
+You want to figure out which of
+the k authors has actually written
+
+56
+00:03:56,320 --> 00:04:01,440
+this article, then you generally need
+to look at the syntactic structures.
+
+57
+00:04:03,340 --> 00:04:05,400
+When we add entities and relations,
+
+58
+00:04:05,400 --> 00:04:09,690
+then we can enable other techniques
+such as knowledge graph and
+
+59
+00:04:09,690 --> 00:04:13,920
+answers, or information network and
+answers in general.
+
+60
+00:04:13,920 --> 00:04:20,956
+And this analysis enable
+applications about entities.
+
+61
+00:04:22,285 --> 00:04:22,875
+For example,
+
+62
+00:04:22,875 --> 00:04:27,525
+discovery of all the knowledge and
+opinions about real world entities.
+
+63
+00:04:28,865 --> 00:04:31,825
+You can also use this level representation
+
+64
+00:04:31,825 --> 00:04:35,820
+to integrate everything about
+anything from scaled resources.
+
+65
+00:04:37,520 --> 00:04:40,280
+Finally, when we add logical predicates,
+
+66
+00:04:40,280 --> 00:04:44,330
+that would enable large inference,
+of course.
+
+67
+00:04:44,330 --> 00:04:46,190
+And this can be very useful for
+
+68
+00:04:46,190 --> 00:04:48,780
+integrating analysis of
+scattered knowledge.
+
+69
+00:04:50,190 --> 00:04:53,560
+For example,
+we can also add ontology on top of the,
+
+70
+00:04:54,920 --> 00:04:58,370
+extracted the information from text,
+to make inferences.
+
+71
+00:04:59,830 --> 00:05:04,470
+A good of example of application in this
+enabled by this level of representation,
+
+72
+00:05:04,470 --> 00:05:07,375
+is a knowledge assistant for biologists.
+
+73
+00:05:07,375 --> 00:05:14,535
+And this program that can help a biologist
+manage all the relevant knowledge from
+
+74
+00:05:14,535 --> 00:05:21,040
+literature about a research problem such
+as understanding functions of genes.
+
+75
+00:05:22,070 --> 00:05:27,143
+And the computer can make inferences
+
+76
+00:05:27,143 --> 00:05:32,490
+about some of the hypothesis that
+the biologist might be interesting.
+
+77
+00:05:32,490 --> 00:05:36,110
+For example,
+whether a gene has a certain function, and
+
+78
+00:05:36,110 --> 00:05:42,135
+then the intelligent program can read the
+literature to extract the relevant facts,
+
+79
+00:05:42,135 --> 00:05:45,250
+doing compiling and
+information extracting.
+
+80
+00:05:45,250 --> 00:05:50,891
+And then using a logic system to
+actually track that's the answers
+
+81
+00:05:50,891 --> 00:05:56,060
+to researchers questioning about what
+genes are related to what functions.
+
+82
+00:05:57,990 --> 00:06:01,240
+So in order to support
+this level of application
+
+83
+00:06:01,240 --> 00:06:04,910
+we need to go as far as
+logical representation.
+
+84
+00:06:04,910 --> 00:06:10,585
+Now, this course is covering techniques
+mainly based on word based representation.
+
+85
+00:06:12,090 --> 00:06:14,610
+And these techniques are general and
+
+86
+00:06:14,610 --> 00:06:19,460
+robust and that's more widely
+used in various applications.
+
+87
+00:06:21,120 --> 00:06:26,565
+In fact, in virtually all the text mining
+applications you need this level of
+
+88
+00:06:26,565 --> 00:06:32,368
+representation and then techniques that
+support analysis of text in this level.
+
+89
+00:06:35,909 --> 00:06:39,652
+But obviously all these other
+levels can be combined and
+
+90
+00:06:39,652 --> 00:06:45,440
+should be combined in order to support
+the sophisticated applications.
+
+91
+00:06:45,440 --> 00:06:48,790
+So to summarize,
+here are the major takeaway points.
+
+92
+00:06:48,790 --> 00:06:53,615
+Text representation determines what
+kind of mining algorithms can be applied.
+
+93
+00:06:53,615 --> 00:06:57,908
+And there are multiple ways to
+represent the text, strings, words,
+
+94
+00:06:57,908 --> 00:07:03,099
+syntactic structures, entity-relation
+graphs, knowledge predicates, etc.
+
+95
+00:07:03,099 --> 00:07:08,326
+And these different
+representations should in general
+
+96
+00:07:08,326 --> 00:07:13,540
+be combined in real applications
+to the extent we can.
+
+97
+00:07:13,540 --> 00:07:20,263
+For example, even if we cannot
+do accurate representations
+
+98
+00:07:20,263 --> 00:07:25,380
+of syntactic structures, we can state
+that partial structures strictly.
+
+99
+00:07:25,380 --> 00:07:29,610
+And if we can recognize some entities,
+that would be great.
+
+100
+00:07:29,610 --> 00:07:32,660
+So in general we want to
+do as much as we can.
+
+101
+00:07:34,570 --> 00:07:37,210
+And when different levels
+are combined together,
+
+102
+00:07:37,210 --> 00:07:41,520
+we can enable a richer analysis,
+more powerful analysis.
+
+103
+00:07:42,830 --> 00:07:46,610
+This course however focuses
+on word-based representation.
+
+104
+00:07:46,610 --> 00:07:52,170
+Such techniques have also several
+advantage, first of they are general and
+
+105
+00:07:52,170 --> 00:07:55,460
+robust, so they are applicable
+to any natural language.
+
+106
+00:07:55,460 --> 00:07:59,780
+That's a big advantage over
+other approaches that rely on
+
+107
+00:07:59,780 --> 00:08:03,510
+more fragile natural language
+processing techniques.
+
+108
+00:08:03,510 --> 00:08:07,680
+Secondly, it does not require
+much manual effort, or
+
+109
+00:08:07,680 --> 00:08:11,520
+sometimes, it does not
+require any manual effort.
+
+110
+00:08:11,520 --> 00:08:14,037
+So that's, again, an important benefit,
+
+111
+00:08:14,037 --> 00:08:17,962
+because that means that you can apply
+it directly to any application.
+
+112
+00:08:20,910 --> 00:08:25,373
+Third, these techniques are actually
+surprisingly powerful and
+
+113
+00:08:25,373 --> 00:08:27,690
+effective form in implications.
+
+114
+00:08:29,210 --> 00:08:32,180
+Although not all of course
+as I just explained.
+
+115
+00:08:34,340 --> 00:08:38,460
+Now they are very effective
+partly because the words
+
+116
+00:08:38,460 --> 00:08:44,610
+are invented by humans as basically
+units for communications.
+
+117
+00:08:45,610 --> 00:08:51,120
+So they are actually quite sufficient for
+representing all kinds of semantics.
+
+118
+00:08:53,680 --> 00:09:00,310
+So that makes this kind of word-based
+representation all so powerful.
+
+119
+00:09:00,310 --> 00:09:05,010
+And finally, such a word-based
+representation and the techniques enable
+
+120
+00:09:05,010 --> 00:09:11,690
+by such a representation can be combined
+with many other sophisticated approaches.
+
+121
+00:09:14,020 --> 00:09:15,191
+So they're not competing with each other.
+
+122
+00:09:15,191 --> 00:09:25,191
+[MUSIC]

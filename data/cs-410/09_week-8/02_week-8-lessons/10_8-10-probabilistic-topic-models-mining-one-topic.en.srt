@@ -1,0 +1,739 @@
+1
+00:00:00,025 --> 00:00:05,683
+[SOUND] This lecture is a continued
+
+2
+00:00:05,683 --> 00:00:13,370
+discussion of probabilistic topic models.
+
+3
+00:00:13,370 --> 00:00:19,990
+In this lecture, we're going to continue
+discussing probabilistic models.
+
+4
+00:00:19,990 --> 00:00:24,970
+We're going to talk about
+a very simple case where we
+
+5
+00:00:24,970 --> 00:00:28,300
+are interested in just mining
+one topic from one document.
+
+6
+00:00:30,880 --> 00:00:35,910
+So in this simple setup,
+we are interested in analyzing
+
+7
+00:00:35,910 --> 00:00:41,060
+one document and
+trying to discover just one topic.
+
+8
+00:00:41,060 --> 00:00:44,810
+So this is the simplest
+case of topic model.
+
+9
+00:00:44,810 --> 00:00:49,921
+The input now no longer has k,
+which is the number of topics because we
+
+10
+00:00:49,921 --> 00:00:55,670
+know there is only one topic and the
+collection has only one document, also.
+
+11
+00:00:55,670 --> 00:01:00,738
+In the output,
+we also no longer have coverage because
+
+12
+00:01:00,738 --> 00:01:06,150
+we assumed that the document
+covers this topic 100%.
+
+13
+00:01:06,150 --> 00:01:10,532
+So the main goal is just to discover
+the world of probabilities for
+
+14
+00:01:10,532 --> 00:01:12,930
+this single topic, as shown here.
+
+15
+00:01:14,770 --> 00:01:19,275
+As always, when we think about using a
+generating model to solve such a problem,
+
+16
+00:01:19,275 --> 00:01:24,280
+we start with thinking about what
+kind of data we are going to model or
+
+17
+00:01:24,280 --> 00:01:28,880
+from what perspective we're going to
+model the data or data representation.
+
+18
+00:01:28,880 --> 00:01:32,268
+And then we're going to
+design a specific model for
+
+19
+00:01:32,268 --> 00:01:36,520
+the generating of the data,
+from our perspective.
+
+20
+00:01:36,520 --> 00:01:41,310
+Where our perspective just means we want
+to take a particular angle of looking at
+
+21
+00:01:41,310 --> 00:01:45,700
+the data, so that the model will
+have the right parameters for
+
+22
+00:01:45,700 --> 00:01:48,770
+discovering the knowledge that we want.
+
+23
+00:01:48,770 --> 00:01:54,210
+And then we'll be thinking
+about the microfunction or
+
+24
+00:01:54,210 --> 00:02:00,480
+write down the microfunction to
+capture more formally how likely
+
+25
+00:02:00,480 --> 00:02:04,860
+a data point will be
+obtained from this model.
+
+26
+00:02:05,900 --> 00:02:10,370
+And the likelihood function will have
+some parameters in the function.
+
+27
+00:02:10,370 --> 00:02:15,780
+And then we argue our interest in
+estimating those parameters for example,
+
+28
+00:02:15,780 --> 00:02:21,680
+by maximizing the likelihood which will
+lead to maximum likelihood estimated.
+
+29
+00:02:21,680 --> 00:02:26,710
+These estimator parameters
+will then become the output
+
+30
+00:02:26,710 --> 00:02:31,640
+of the mining hours,
+which means we'll take the estimating
+
+31
+00:02:31,640 --> 00:02:35,320
+parameters as the knowledge
+that we discover from the text.
+
+32
+00:02:35,320 --> 00:02:39,690
+So let's look at these steps for
+this very simple case.
+
+33
+00:02:39,690 --> 00:02:45,970
+Later we'll look at this procedure for
+some more complicated cases.
+
+34
+00:02:45,970 --> 00:02:50,170
+So our data, in this case is, just
+a document which is a sequence of words.
+
+35
+00:02:50,170 --> 00:02:52,520
+Each word here is denoted by x sub i.
+
+36
+00:02:52,520 --> 00:02:56,800
+Our model is a Unigram language model.
+
+37
+00:02:56,800 --> 00:03:03,420
+A word distribution that we hope to
+denote a topic and that's our goal.
+
+38
+00:03:03,420 --> 00:03:08,950
+So we will have as many parameters as many
+words in our vocabulary, in this case M.
+
+39
+00:03:09,950 --> 00:03:14,580
+And for convenience we're
+going to use theta sub i to
+
+40
+00:03:14,580 --> 00:03:18,270
+denote the probability of word w sub i.
+
+41
+00:03:20,450 --> 00:03:23,384
+And obviously these theta
+sub i's will sum to 1.
+
+42
+00:03:24,480 --> 00:03:27,110
+Now what does a likelihood
+function look like?
+
+43
+00:03:27,110 --> 00:03:30,970
+Well, this is just the probability
+of generating this whole document,
+
+44
+00:03:30,970 --> 00:03:31,948
+that given such a model.
+
+45
+00:03:31,948 --> 00:03:36,920
+Because we assume the independence in
+generating each word so the probability of
+
+46
+00:03:36,920 --> 00:03:41,010
+the document will be just a product
+of the probability of each word.
+
+47
+00:03:42,790 --> 00:03:46,900
+And since some word might
+have repeated occurrences.
+
+48
+00:03:46,900 --> 00:03:51,070
+So we can also rewrite this
+product in a different form.
+
+49
+00:03:52,580 --> 00:03:58,550
+So in this line, we have rewritten
+the formula into a product
+
+50
+00:03:58,550 --> 00:04:05,360
+over all the unique words in
+the vocabulary, w sub 1 through w sub M.
+
+51
+00:04:05,360 --> 00:04:09,170
+Now this is different
+from the previous line.
+
+52
+00:04:09,170 --> 00:04:13,990
+Well, the product is over different
+positions of words in the document.
+
+53
+00:04:15,040 --> 00:04:19,694
+Now when we do this transformation,
+we then would need to
+
+54
+00:04:19,694 --> 00:04:24,120
+introduce a counter function here.
+
+55
+00:04:24,120 --> 00:04:29,395
+This denotes the count of
+word one in document and
+
+56
+00:04:29,395 --> 00:04:33,390
+similarly this is the count
+of words of n in the document
+
+57
+00:04:33,390 --> 00:04:37,890
+because these words might
+have repeated occurrences.
+
+58
+00:04:37,890 --> 00:04:40,459
+You can also see if a word did
+not occur in the document.
+
+59
+00:04:41,810 --> 00:04:46,790
+It will have a zero count, therefore
+that corresponding term will disappear.
+
+60
+00:04:46,790 --> 00:04:50,410
+So this is a very useful form of
+
+61
+00:04:50,410 --> 00:04:55,060
+writing down the likelihood function
+that we will often use later.
+
+62
+00:04:55,060 --> 00:05:01,230
+So I want you to pay attention to this,
+just get familiar with this notation.
+
+63
+00:05:01,230 --> 00:05:07,120
+It's just to change the product over all
+the different words in the vocabulary.
+
+64
+00:05:07,120 --> 00:05:12,013
+So in the end, of course, we'll use
+theta sub i to express this likelihood
+
+65
+00:05:12,013 --> 00:05:14,512
+function and it would look like this.
+
+66
+00:05:14,512 --> 00:05:19,468
+Next, we're going to find
+the theta values or probabilities
+
+67
+00:05:19,468 --> 00:05:24,530
+of these words that would maximize
+this likelihood function.
+
+68
+00:05:24,530 --> 00:05:30,539
+So now lets take a look at the maximum
+likelihood estimate problem more closely.
+
+69
+00:05:32,520 --> 00:05:35,870
+This line is copied from
+the previous slide.
+
+70
+00:05:35,870 --> 00:05:37,340
+It's just our likelihood function.
+
+71
+00:05:38,590 --> 00:05:43,950
+So our goal is to maximize
+this likelihood function.
+
+72
+00:05:43,950 --> 00:05:46,210
+We will find it often easy to
+
+73
+00:05:47,310 --> 00:05:51,110
+maximize the local likelihood
+instead of the original likelihood.
+
+74
+00:05:51,110 --> 00:05:56,531
+And this is purely for
+mathematical convenience because after
+
+75
+00:05:56,531 --> 00:06:03,698
+the logarithm transformation our function
+will becomes a sum instead of product.
+
+76
+00:06:03,698 --> 00:06:10,704
+And we also have constraints
+over these these probabilities.
+
+77
+00:06:10,704 --> 00:06:16,743
+The sum makes it easier to take
+derivative, which is often needed for
+
+78
+00:06:16,743 --> 00:06:21,022
+finding the optimal
+solution of this function.
+
+79
+00:06:21,022 --> 00:06:27,349
+So please take a look at this sum again,
+here.
+
+80
+00:06:27,349 --> 00:06:32,434
+And this is a form of
+a function that you will often
+
+81
+00:06:32,434 --> 00:06:38,430
+see later also,
+the more general topic models.
+
+82
+00:06:38,430 --> 00:06:42,340
+So it's a sum over all
+the words in the vocabulary.
+
+83
+00:06:42,340 --> 00:06:48,105
+And inside the sum there is
+a count of a word in the document.
+
+84
+00:06:48,105 --> 00:06:54,980
+And this is macroed by
+the logarithm of a probability.
+
+85
+00:06:55,990 --> 00:06:57,920
+So let's see how we can
+solve this problem.
+
+86
+00:06:58,920 --> 00:07:04,030
+Now at this point the problem is purely a
+mathematical problem because we are going
+
+87
+00:07:04,030 --> 00:07:11,360
+to just the find the optimal solution
+of a constrained maximization problem.
+
+88
+00:07:11,360 --> 00:07:14,694
+The objective function is
+the likelihood function and
+
+89
+00:07:14,694 --> 00:07:18,621
+the constraint is that all these
+probabilities must sum to one.
+
+90
+00:07:18,621 --> 00:07:23,234
+So, one way to solve the problem is
+to use Lagrange multiplier approace.
+
+91
+00:07:24,520 --> 00:07:29,040
+Now this command is beyond
+the scope of this course but
+
+92
+00:07:29,040 --> 00:07:33,670
+since Lagrange multiplier is a very
+useful approach, I also would like
+
+93
+00:07:33,670 --> 00:07:37,940
+to just give a brief introduction to this,
+for those of you who are interested.
+
+94
+00:07:39,720 --> 00:07:43,857
+So in this approach we will
+construct a Lagrange function, here.
+
+95
+00:07:43,857 --> 00:07:49,887
+And this function will combine
+our objective function
+
+96
+00:07:49,887 --> 00:07:55,392
+with another term that
+encodes our constraint and
+
+97
+00:07:55,392 --> 00:07:59,980
+we introduce Lagrange multiplier here,
+
+98
+00:07:59,980 --> 00:08:04,978
+lambda, so it's an additional parameter.
+
+99
+00:08:04,978 --> 00:08:10,432
+Now, the idea of this approach is just to
+turn the constraint optimization into,
+
+100
+00:08:10,432 --> 00:08:14,800
+in some sense,
+an unconstrained optimizing problem.
+
+101
+00:08:14,800 --> 00:08:18,318
+Now we are just interested in
+optimizing this Lagrange function.
+
+102
+00:08:19,460 --> 00:08:24,022
+As you may recall from calculus,
+an optimal point
+
+103
+00:08:24,022 --> 00:08:29,910
+would be achieved when
+the derivative is set to zero.
+
+104
+00:08:29,910 --> 00:08:31,673
+This is a necessary condition.
+
+105
+00:08:31,673 --> 00:08:33,182
+It's not sufficient, though.
+
+106
+00:08:33,182 --> 00:08:38,205
+So if we do that you will
+see the partial derivative,
+
+107
+00:08:38,205 --> 00:08:42,785
+with respect to theta i
+here ,is equal to this.
+
+108
+00:08:42,785 --> 00:08:50,815
+And this part comes from the derivative
+of the logarithm function and
+
+109
+00:08:50,815 --> 00:08:55,390
+this lambda is simply taken from here.
+
+110
+00:08:55,390 --> 00:09:00,178
+And when we set it to zero we can
+
+111
+00:09:00,178 --> 00:09:05,610
+easily see theta sub i is
+related to lambda in this way.
+
+112
+00:09:06,820 --> 00:09:09,900
+Since we know all the theta
+i's must a sum to one
+
+113
+00:09:09,900 --> 00:09:12,423
+we can plug this into this constraint,
+here.
+
+114
+00:09:12,423 --> 00:09:15,600
+And this will allow us to solve for
+lambda.
+
+115
+00:09:16,630 --> 00:09:20,840
+And this is just a net
+sum of all the counts.
+
+116
+00:09:20,840 --> 00:09:27,350
+And this further allows us to then
+solve the optimization problem,
+
+117
+00:09:27,350 --> 00:09:31,380
+eventually, to find the optimal
+setting for theta sub i.
+
+118
+00:09:31,380 --> 00:09:37,280
+And if you look at this formula it turns
+out that it's actually very intuitive
+
+119
+00:09:37,280 --> 00:09:43,089
+because this is just the normalized
+count of these words by the document ns,
+
+120
+00:09:43,089 --> 00:09:47,751
+which is also a sum of all
+the counts of words in the document.
+
+121
+00:09:47,751 --> 00:09:52,157
+So, after all this mess, after all,
+
+122
+00:09:52,157 --> 00:09:59,044
+we have just obtained something
+that's very intuitive and
+
+123
+00:09:59,044 --> 00:10:04,415
+this will be just our
+intuition where we want to
+
+124
+00:10:04,415 --> 00:10:10,338
+maximize the data by
+assigning as much probability
+
+125
+00:10:10,338 --> 00:10:16,419
+mass as possible to all
+the observed the words here.
+
+126
+00:10:16,419 --> 00:10:21,408
+And you might also notice that this is
+the general result of maximum likelihood
+
+127
+00:10:21,408 --> 00:10:23,450
+raised estimator.
+
+128
+00:10:23,450 --> 00:10:29,333
+In general, the estimator would be to
+normalize counts and it's just sometimes
+
+129
+00:10:29,333 --> 00:10:35,050
+the counts have to be done in a particular
+way, as you will also see later.
+
+130
+00:10:35,050 --> 00:10:41,730
+So this is basically an analytical
+solution to our optimization problem.
+
+131
+00:10:41,730 --> 00:10:46,303
+In general though, when the likelihood
+function is very complicated, we're not
+
+132
+00:10:46,303 --> 00:10:50,919
+going to be able to solve the optimization
+problem by having a closed form formula.
+
+133
+00:10:50,919 --> 00:10:55,134
+Instead we have to use some
+numerical algorithms and
+
+134
+00:10:55,134 --> 00:10:58,787
+we're going to see such cases later, also.
+
+135
+00:10:58,787 --> 00:11:02,385
+So if you imagine what would we
+get if we use such a maximum
+
+136
+00:11:02,385 --> 00:11:07,146
+likelihood estimator to estimate one
+topic for a single document d here?
+
+137
+00:11:07,146 --> 00:11:09,903
+Let's imagine this document
+is a text mining paper.
+
+138
+00:11:09,903 --> 00:11:16,277
+Now, what you might see is
+something that looks like this.
+
+139
+00:11:16,277 --> 00:11:20,555
+On the top, you will see the high
+probability words tend to be those very
+
+140
+00:11:20,555 --> 00:11:23,710
+common words,
+often functional words in English.
+
+141
+00:11:23,710 --> 00:11:27,742
+And this will be followed by
+some content words that really
+
+142
+00:11:27,742 --> 00:11:31,622
+characterize the topic well like text,
+mining, etc.
+
+143
+00:11:31,622 --> 00:11:36,275
+And then in the end,
+you also see there is more probability of
+
+144
+00:11:36,275 --> 00:11:40,017
+words that are not really
+related to the topic but
+
+145
+00:11:40,017 --> 00:11:44,320
+they might be extraneously
+mentioned in the document.
+
+146
+00:11:44,320 --> 00:11:49,590
+As a topic representation,
+you will see this is not ideal, right?
+
+147
+00:11:49,590 --> 00:11:52,452
+That because the high probability
+words are functional words,
+
+148
+00:11:52,452 --> 00:11:55,310
+they are not really
+characterizing the topic.
+
+149
+00:11:55,310 --> 00:11:58,280
+So my question is how can we
+get rid of such common words?
+
+150
+00:11:59,720 --> 00:12:02,680
+Now this is the topic of the next module.
+
+151
+00:12:02,680 --> 00:12:06,913
+We're going to talk about how to use
+probabilistic models to somehow get rid of
+
+152
+00:12:06,913 --> 00:12:08,077
+these common words.
+
+153
+00:12:08,077 --> 00:12:18,077
+[MUSIC]

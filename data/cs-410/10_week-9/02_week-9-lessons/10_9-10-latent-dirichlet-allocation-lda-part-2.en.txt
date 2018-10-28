@@ -1,0 +1,136 @@
+[SOUND] So
+now let's talk about the exchanging of PLSA to of LDA and to motivate that, we need to talk about some
+deficiencies of PLSA. First, it's not really a generative model
+because we can compute the probability of a new document. You can see why, and that's because the
+pis are needed to generate the document, but the pis are tied to the document
+that we have in the training data. So we can't compute the pis for
+future document. And there's some heuristic workaround,
+though. Secondly, it has many parameters, and I've
+asked you to compute how many parameters exactly there are in PLSA, and
+you will see there are many parameters. That means that model is very complex. And this also means that there
+are many local maxima and it's prone to overfitting. And that means it's very hard to
+also find a good local maximum. And that we are representing
+global maximum. And in terms of explaining future data,
+we might find that it will overfit the training data
+because of the complexity of the model. The model is so flexible to fit precisely
+what the training data looks like. And then it doesn't allow us to generalize
+the model for using other data. This however is not a necessary problem
+for text mining because here we're often only interested in hitting
+the training documents that we have. We are not always interested in modern
+future data, but in other cases, or if we would care about the generality,
+we would worry about this overfitting. So LDA is proposing to improve that,
+and basically to make PLSA a generative model by imposing
+a Dirichlet prior on the model parameters. Dirichlet is just a special distribution
+that we can use to specify product. So in this sense, LDA is just
+a Bayesian version of PLSA, and the parameters are now
+much more regularized. You will see there are many
+few parameters and you can achieve the same goal as PLSA for
+text mining. It means it can compute the top coverage
+and topic word distributions as in PLSA. However, there's no. Why are the parameters for
+PLSA here are much fewer, there are fewer parameters and
+in order to compute a topic coverage and word distributions,
+we again face a problem of influence of these variables because
+they are not parameters of the model. So the influence part again
+face the local maximum problem. So essentially they are doing something
+very similar, but theoretically, LDA is a more elegant way of looking
+at the top and bottom problem. So let's see how we can
+generalize the PLSA to LDA or a standard PLSA to have LDA. Now a full treatment of LDA is
+beyond the scope of this course and we just don't have time to go in
+depth on that talking about that. But here, I just want to give you
+a brief idea about what's extending and what it enables, all right. So this is the picture of LDA. Now, I remove the background
+of model just for simplicity. Now, in this model, all these
+parameters are free to change and we do not impose any prior. So these word distributions are now
+represented as theta vectors. So these are word distributions, so here. And the other set of parameters are pis. And we would present it as a vector also. And this is more convenient
+to introduce LDA. And we have one vector for each document. And in this case, in theta,
+we have one vector for each topic. Now, the difference between LDA and PLSA is that in LDA, we're not going
+to allow them to free the chain. Instead, we're going to force them to
+be drawn from another distribution. So more specifically, they will be drawn from two Dirichlet
+distributions respectively, but the Dirichlet distribution is
+a distribution over vectors. So it gives us a probability of
+four particular choice of a vector. Take, for example, pis, right. So this Dirichlet distribution tells
+us which vectors of pi is more likely. And this distribution in itself is
+controlled by another vector of parameters of alphas. Depending on the alphas, we can
+characterize the distribution in different ways but with full certain choices of
+pis to be more likely than others. For example, you might favor the choice of a relatively
+uniform distribution of all the topics. Or you might favor generating
+a skewed coverage of topics, and this is controlled by alpha. And similarly here, the topic or
+word distributions are drawn from another Dirichlet
+distribution with beta parameters. And note that here,
+alpha has k parameters, corresponding to our inference on
+the k values of pis for our document. Whereas here, beta has n values corresponding to
+controlling the m words in our vocabulary. Now once we impose this price, then
+the generation process will be different. And we start with joined pis from the Dirichlet distribution and
+this pi will tell us these probabilities. And then, we're going to use the pi
+to further choose which topic to use, and this is of course
+very similar to the PLSA model. And similar here, we're not going
+to have these distributions free. Instead, we're going to draw one
+from the Dirichlet distribution. And then from this,
+then we're going to further sample a word. And the rest is very similar to the. The likelihood function now
+is more complicated for LDA. But there's a close connection between the
+likelihood function of LDA and the PLSA. So I'm going to illustrate
+the difference here. So in the top, you see PLSA likelihood function
+that you have already seen before. It's copied from previous slide. Only that I dropped the background for
+simplicity. So in the LDA formulas you
+see very similar things. You see the first equation
+is essentially the same. And this is the probability of generating
+a word from multiple word distributions. And this formula is a sum of all
+the possibilities of generating a word. Inside a sum is a product of
+the probability of choosing a topic multiplied by the probability of
+observing the word from that topic. So this is a very important formula,
+as I've stressed multiple times. And this is actually the core
+assumption in all the topic models. And you might see other topic models
+that are extensions of LDA or PLSA. And they all rely on this. So it's very important to understand this. And this gives us a probability of
+getting a word from a mixture model. Now, next in the probability of
+a document, we see there is a PLSA component in the LDA formula, but the LDA
+formula will add a sum integral here. And that's to account for
+the fact that the pis are not fixed. So they are drawn from the original
+distribution, and that's shown here. That's why we have to take an integral,
+to consider all the possible pis that we could possibly draw from
+this Dirichlet distribution. And similarly in the likelihood for
+the whole collection, we also see further components added,
+another integral here. Right? So basically in the area we're just
+adding this integrals to account for the uncertainties and we added of course
+the Dirichlet distributions to cover the choice of this parameters,
+pis, and theta. So this is a likelihood function for LDA. Now, next to this, let's talk about the
+parameter as estimation and inferences. Now the parameters can be now estimated
+using exactly the same approach maximum likelihood estimate for LDA. Now you might think about how many
+parameters are there in LDA versus PLSA. You'll see there're a fewer parameters
+in LDA because in this case the only parameters are alphas and the betas. So we can use the maximum likelihood
+estimator to compute that. Of course, it's more complicated because
+the form of likelihood function is more complicated. But what's also important
+is notice that now these parameters that we are interested
+in name and topics, and the coverage are no
+longer parameters in LDA. In this case we have to
+use basic inference or posterior inference to compute them based
+on the parameters of alpha and the beta. Unfortunately, this
+computation is intractable. So we generally have to resort
+to approximate inference. And there are many methods available for
+that and I'm sure you will see them when you use different tool kits
+for LDA, or when you read papers about these different extensions of LDA. Now here we, of course, can't give
+in-depth instruction to that, but just know that they are computed based in inference by using
+the parameters alphas and betas. But our math [INAUDIBLE],
+actually, in the end, in some of our math list,
+it's very similar to PLSA. And, especially when we use
+algorithm called class assembly, then the algorithm looks very
+similar to the Algorithm. So in the end,
+they are doing something very similar. So to summarize our discussion
+of properties of topic models, these models provide
+a general principle or way of mining and analyzing topics
+in text with many applications. The best basic task setup is
+to take test data as input and we're going to output the k topics. Each topic is characterized
+by word distribution. And we're going to also output proportions
+of these topics covered in each document. And PLSA is the basic topic model, and
+in fact the most basic of the topic model. And this is often adequate for
+most applications. That's why we spend a lot of
+time to explain PLSA in detail. Now LDA improves over
+PLSA by imposing priors. This has led to theoretically
+more appealing models. However, in practice, LDA and
+PLSA tend to give similar performance, so in practice PLSA and LDA would work
+equally well for most of the tasks. Now here are some suggested readings if
+you want to know more about the topic. First is a nice review of
+probabilistic topic models. The second has a discussion about how
+to automatically label a topic model. Now I've shown you some distributions and
+they intuitively suggest a topic. But what exactly is a topic? Can we use phrases to label the topic? To make it the more easy to understand and this paper is about the techniques for
+doing that. The third one is empirical comparison
+of LDA and the PLSA for various tasks. The conclusion is that they
+tend to perform similarly. [MUSIC]

@@ -1,0 +1,107 @@
+[SOUND]
+This lecture is the first one
+about the text clustering. In this lecture, we are going to
+talk about the text clustering. This is a very important technique for
+doing topic mining and analysis. In particular, in this lecture we're going to start with
+some basic questions about the clustering. And that is, what is text clustering and
+why we are interested in text clustering. In the following lectures, we are going
+to talk about how to do text clustering. How to evaluate the clustering results? So what is text clustering? Well, clustering actually is
+a very general technique for data mining as you might have
+learned in some other courses. The idea is to discover natural
+structures in the data. In another words,
+we want to group similar objects together. In our case, these objects are of course,
+text objects. For example, they can be documents,
+terms, passages, sentences, or websites, and then I'll
+go group similar text objects together. So let's see an example, well, here
+you don't really see text objects, but I just used some shapes to denote
+objects that can be grouped together. Now if I ask you, what are some natural
+structures or natural groups where you, if you look at it and you might agree that
+we can group these objects based on chips, or their locations on this
+two dimensional space. So we got the three clusters in this case. And they may not be so
+much this agreement about these three clusters but it really depends
+on the perspective to look at the objects. Maybe some of you have also seen
+thing in a different way, so we might get different clusters. And you'll see another example
+about this ambiguity more clearly. But the main point of here is, the problem
+is actually not so well defined. And the problem lies in
+how to define similarity. And what do you mean by similar objects? Now this problem has to be clearly defined in order to have
+a well defined clustering problem. And the problem is in general that any two objects can be similar
+depending on how you look at them. So for example, this will kept
+the two words like car and horse. So are the two words similar? Well, it depends on how if
+we look at the physical properties of car and
+horse they are very different but if you look at them functionally,
+a car and a horse, can both be transportation tools. So in that sense, they may be similar. So as we can see, it really depends on
+our perspective, to look at the objects. And so it ought to make
+the clustering problem well defined. A user must define the perspective for
+assessing similarity. And we call this perspective
+the clustering bias. And when you define a clustering problem,
+it's important to specify your perspective for
+similarity or for defining the similarity that will be
+used to group similar objects. because otherwise,
+the similarity is not well defined and one can have different
+ways to group objects. So let's look at the example here. You are seeing some objects,
+or some shapes, that are very similar to what you
+have seen on the first slide, but if I ask you to group these objects,
+again, you might feel there is more than here
+than on the previous slide. For example, you might think, well, we can steer a group by ships, so that would
+give us cluster that looks like this. However, you might also feel that, well, maybe the objects can be
+grouped based on their sizes. So that would give us a different way
+to cluster the data if we look at the size and
+look at the similarity in size. So as you can see clearly here,
+depending on the perspective, we'll get different clustering result. So that also clearly tells us that in
+order to evaluate the clustering without, we must use perspective. Without perspective, it's very hard to
+define what is the best clustering result. So there are many examples
+of text clustering setup. And so for example, we can cluster
+documents in the whole text collection. So in this case,
+documents are the units to be clustered. We may be able to cluster terms. In this case, terms are objects. And a cluster of terms can be used to
+define concept, or theme, or a topic. In fact, there's a topic models that you
+have seen some previous lectures can give you cluster of terms in some
+sense if you take terms with high probabilities from word distribution. Another example is just to cluster any
+text segments, for example, passages, sentences, or any segments that you can
+extract the former larger text objects. For example, we might extract the order
+text segments about the topic, let's say, by using a topic model. Now once we've got those
+text objects then we can cluster the segments that we've got to discover interesting clusters that
+might also ripple in the subtopics. So this is a case of combining text
+clustering with some other techniques. And in general you will
+see a lot of text mining can be accurate combined in
+a flexible way to achieve the goal of doing more sophisticated
+mining and analysis of text data. We can also cluster fairly
+large text objects and by that, I just mean text objects may
+contain a lot of documents. So for example, we might cluster websites. Each website is actually
+compose of multiple documents. Similarly, we can also cluster articles
+written by the same author, for example. So we can trigger all the articles
+published by also as one unit for clustering. In this way, we might group authors
+together based on whether they're published papers or similar. For the more text clusters will be for
+the cluster to generate a hierarchy. That's because we can in general cluster
+any text object at different levels. So more generally why is
+text clustering interesting? Well, it's because it's a very
+useful technique for text mining, particularly exploratory text analysis. And so a typical scenario is that
+you were getting a lot of text data, let's say all the email messages
+from customers in some time period, all the literature articles, etc. And then you hope to get a sense
+about what are the overall content of the connection, so for example,
+you might be interested in getting a sense about major topics,
+or what are some typical or representative documents
+in the connection. And clustering to help
+us achieve this goal. We sometimes also want to link
+a similar text objects together. And these objects might be
+duplicated content, for example. And in that case, such a technique can help us remove
+redundancy and remove duplicate documents. Sometimes they are about
+the same topic and by linking them together we can have
+more complete coverage of a topic. We may also used text clustering to create
+a structure on the text data and sometimes we can create a hierarchy of structures
+and this is very useful for problems. We may also use text clustering to induce
+additional features to represent text data when we cluster documents together,
+we can treat each cluster as a feature. And then we can say when
+a document is in this cluster and then the feature value would be one. And if a document is not in this cluster,
+then the feature value is zero. And this helps provide additional
+discrimination that might be used for text classification as
+we will discuss later. So there are, in general,
+many applications of text clustering. And I just thought of
+two very specific ones. One is to cluster search results, for example, [INAUDIBLE] search engine
+can cluster such results so that the user can see overall structure
+of the results of return the fall query. And when the query's ambiguous this
+is particularly useful because the clusters likely represent
+different senses of ambiguous word. Another application is to understand the
+major complaints from customers based on their emails, right. So in this case,
+we can cluster email messages and then find in the major
+clusters from there, we can understand what are the major
+complaints about them. [MUSIC]

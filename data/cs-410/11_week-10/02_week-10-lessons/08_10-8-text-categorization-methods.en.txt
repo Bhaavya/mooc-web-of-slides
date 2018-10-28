@@ -1,0 +1,130 @@
+This lecture is about the methods for
+text categorization. So in this lecture we're going to discuss
+how to do text for categorization. First, there're many methods for
+text categorization. In such a method the idea is
+to determine the category based on some rules that
+we design carefully to reflect the domain knowledge about
+the category prediction problem. So for example, if you want to do topic
+categorization for news articles you can say well, if the news article mentions
+word like a game and sports three times. That we're going to say it's about sports
+things like that and this would allow us to deterministically decide which category
+a document that should be put into. Now such a strategy would work well
+if the following conditions hold. First the categories must be very well
+defined and this allows the person to clearly decide the category
+based on some clear rules. A certainly the categories as half to be easy to distinguished at
+the based on a surface features in text. So that means some official
+features like keywords or punctuations or whatever,
+you can easily identify in text to data. For example, if there is some
+special vocabulary that is known to only occur in a particular category. And that would be most effective because
+we can easily use such a vocabulary or padding of such a vocabulary
+to recognize this category. Now we also should have
+sufficient knowledge for designing these words, and so if that's
+the case then such a can be effective. And so it does have a in some domains and
+sometimes. However, in general, there are several
+problems with this approach. First off, because it's label intensive
+it requires a lot of manual work. Obviously, we can't do this for
+all kinds of categorization problems. We have to do it from scratch for
+a different problem. problem because given the rules,
+what they need. So it doesn't scale up well. Secondly, it cannot handle
+uncertainty in rules, often the rules Aren't 100% reliable. Take for example looking at
+occurrences of words in texts and trying to decide the topic. It's actually very hard to
+have 100% correct rule. So for example you can say well,
+if it has game, sports, basketball Then for
+sure it's about sports. But one can also imagine some types of
+articles that mention these cures, but may not be exactly about sports or
+only marginally touching sports. The main topic could be another topic,
+a different topic than sports. So that's one disadvantage
+of this approach. And then finally,
+the rules maybe inconsistent and this would lead to robustness. More specifically, and sometimes, the
+results of categorization may be different that depending on which
+rule to be applied. So as in that case that you
+are facing uncertainty. And you will also have to decide
+an order of applying the rules, or combination of results
+that are contradictory. So all these are problems
+with this approach. And it turns out that both
+problems can be solved or alleviated by using machine learning. So these machine learning
+methods are more automatic. But, I still put automatic
+in quotation marks because they are not really completely automatic
+cause it still require many work. More specifically we have to use
+a human experts to help in two ways. First the human experts must annotate
+data cells was category labels. And would tell the computer which
+documents should receive which categories. And this is called training data. And then secondly, the human experts also
+need to provide a set of features to represent each text object. That can potentially provide
+a clue about the category. So, we need to provide some basic
+features for the computers to look into. In the case of tax a natural
+choice would be the words. So, using each has a feature is
+a very common choice to start with, but of course there are other
+sophisticated features like phrases or even parts of ancients tags or
+even syntax to the structures. So once human experts can provide this
+then we can use machine running to learn soft rules for
+categorization from the training data. So, soft rules just means, we're going to get decided which category
+we should be assigned for a document, but it's not going to be use using
+a rule that is deterministic. So we might use something similar
+to saying that if it matches games, sports many times,
+it's likely to be sports. But, we're not going to say exactly for
+sure but instead, we're going to use probabilities or
+weights. So that we can combine
+much more evidences. So, the learning process,
+basically is going to figure out which features are most useful for
+separating different categories. And it's going to also figure out how to
+optimally combine features to minimize errors of the categorization
+of the training data. So the training data,
+as you can see here, is very important. It's the basis for learning. And then, the trained classifier can be
+applied to a new text object to predict the most likely category. And that's to simulate
+the prediction of what human Would assign to this text object. If the human were to make a judgement. So when we use machine learning for
+text categorization we can also talk about the problem in the general
+setting of supervisement. So the set up is to learn
+a classifier to map a value of X. Into a map of Y so
+here X is all the text objects and Y is all the categories,
+a set of categories. So the class phi will take
+any value in x as input and would generate a value in y as output. We hope that output y with
+this right category for x. And here correct, of course,
+is judged based on the training data. So that's a general goal in machine
+learning problems or supervised learning problems where you are given some examples
+of input and output for a function. And then the computer's
+going to figure out the, how the function behaves
+like based on this examples. And then try to be able
+to compute the values for future x's that when we have not seen. So in general all methods
+would rely on discriminative features of text objects to
+distinguish different categories. So that's why these features
+are very important and they have to be provided by humans. And they will also combine multiple
+features in a weight map with weights to be optimized to minimize
+errors on the training data. So after the learning processes
+optimization problem. An objective function is often tied
+into the errors on the training data. Different methods tend to vary in
+their ways of measuring the errors on the training data. They might optimize
+a different objective function, which is often also called a loss
+function or cost function. They also tend to vary in their
+ways of combining the features. So a linear combination for
+example is simple, is often used. But they are not as powerful
+as nonlinear combinations. But nonlinear models
+might be more complex for training, so there are tradeoffs as well. But that would lead to
+different variations of many variations of these learning methods. So in general we can distinguish two
+kinds of classifiers at a high level. One is called generative classifiers. The other is called
+discriminative classifiers. The generative classifiers try to learn
+what the data looks like in each category. So it attempts to model the joint
+distribution of the data and the label x and y and
+this can then be factored out to a product of why
+the distribution of labels. And the joint probability
+of sorry the conditional probability of X given Y, so it's Y. So we first model
+the distribution of labels and then we model how the data is
+generate a particular label here. And once we can estimate these models, then we can compute this conditional
+probability of label given data based on the probability
+of data given label. And the label distribution
+here by using the Bayes Rule. Now this is the most important thing,
+because this conditional probability of the label can then be used directly
+to decide which label is most likely. So in such approaches objective
+function is actually likelihood. And so,
+we model how the data are generated. So it only indirectly
+captures the training errors. But if we can model the data
+in each category accurately, then we can also classify accurately. One example is Naïve Bayes classifier,
+in this case. The other kind of approaches
+are called discriminative classifies, and these classifies try to learn
+what features separate categories. So they direct or attack the problem of
+categorization for separation of classes. So sorry for the problem. So, these discriminative
+classifiers attempt to model the conditional probability of the label
+given the data point directly. So, the objective function tends
+to directly measure the errors of categorization on the training data. Some examples include
+a logistical regression, support vector machines,
+and k-nearest neighbors. We will cover some of these classifiers
+in detail in the next few lectures. [MUSIC]

@@ -1,0 +1,1302 @@
+1
+00:00:00,012 --> 00:00:07,093
+[SOUND]
+This
+
+2
+00:00:07,093 --> 00:00:11,830
+lecture is about the discriminative
+classifiers for text categorization.
+
+3
+00:00:13,000 --> 00:00:15,840
+In this lecture we're going to
+continue talking about how to
+
+4
+00:00:15,840 --> 00:00:20,220
+do text categorization and
+cover discriminative approaches.
+
+5
+00:00:20,220 --> 00:00:24,760
+This is a slide that you have seen from
+the discussion of Naive Bayes Classifier,
+
+6
+00:00:24,760 --> 00:00:29,120
+where we have shown that although
+Naive Bayes Classifier tries to model
+
+7
+00:00:29,120 --> 00:00:34,090
+the generation of text data, from each
+categories, we can actually use Bayes'
+
+8
+00:00:34,090 --> 00:00:40,900
+rule to eventually rewrite the scoring
+function as you see on this slide.
+
+9
+00:00:40,900 --> 00:00:45,520
+And this scoring function is basically
+a weighted combination of a lot
+
+10
+00:00:45,520 --> 00:00:50,530
+of word features, where the feature values
+are word counts, and the feature weights
+
+11
+00:00:50,530 --> 00:00:55,720
+are the log of probability ratios of
+the word given by two distributions here.
+
+12
+00:00:57,280 --> 00:01:02,670
+Now this kind of scoring function
+can be actually a general scoring
+
+13
+00:01:02,670 --> 00:01:08,570
+function where we can in general
+present text data as a feature vector.
+
+14
+00:01:08,570 --> 00:01:12,340
+Of course the features don't
+have to be all the words.
+
+15
+00:01:12,340 --> 00:01:16,280
+Their features can be other
+signals that we want to use.
+
+16
+00:01:16,280 --> 00:01:22,880
+And we mentioned that this is precisely
+similar to logistic regression.
+
+17
+00:01:22,880 --> 00:01:27,570
+So, in this lecture we're going to
+introduce some discriminative classifiers.
+
+18
+00:01:27,570 --> 00:01:31,450
+They try to model
+the conditional distribution of
+
+19
+00:01:31,450 --> 00:01:36,990
+labels given the data directly
+rather than using Bayes' rule
+
+20
+00:01:36,990 --> 00:01:41,550
+to compute that interactively
+as we have seen in naive Bayes.
+
+21
+00:01:41,550 --> 00:01:47,150
+So the general idea of logistic
+regression is to model
+
+22
+00:01:47,150 --> 00:01:52,350
+the dependency of a binary
+response variable Y
+
+23
+00:01:52,350 --> 00:01:56,360
+on some predictors that are denoted as X.
+
+24
+00:01:56,360 --> 00:02:01,720
+So here we have also changed the notation
+
+25
+00:02:01,720 --> 00:02:06,120
+to X for future values.
+
+26
+00:02:07,140 --> 00:02:10,120
+You may recall in the previous
+slides we have used
+
+27
+00:02:10,120 --> 00:02:12,810
+FI to represent the future values.
+
+28
+00:02:13,910 --> 00:02:18,762
+And here we use the notation of X factor,
+
+29
+00:02:18,762 --> 00:02:23,331
+which is more common when we introduce
+
+30
+00:02:23,331 --> 00:02:27,640
+such discriminative algorithms.
+
+31
+00:02:27,640 --> 00:02:29,690
+So, X is our input.
+
+32
+00:02:29,690 --> 00:02:37,930
+It's a vector with n features and
+each feature has a value x sub i here.
+
+33
+00:02:37,930 --> 00:02:42,920
+And I will go with a model that dependency
+of this binary response variable of
+
+34
+00:02:42,920 --> 00:02:44,360
+these features.
+
+35
+00:02:44,360 --> 00:02:49,897
+So in our categorization problem when
+I have two categories theta 1 and
+
+36
+00:02:49,897 --> 00:02:55,183
+theta 2, and we can use the Y value to
+denote the two categories when Y is 1,
+
+37
+00:02:55,183 --> 00:03:00,080
+it means the category of the document,
+the first class, is theta 1.
+
+38
+00:03:00,080 --> 00:03:07,225
+Now, the goal here is the model, the
+conditional property of Y given X directly
+
+39
+00:03:07,225 --> 00:03:13,465
+as opposed to model of the generation of
+X and Y as in the case of Naive Bayes.
+
+40
+00:03:13,465 --> 00:03:15,985
+And another advantage of this
+kind of approach is that
+
+41
+00:03:15,985 --> 00:03:19,880
+it would allow many other features
+than words to be used in this vector
+
+42
+00:03:19,880 --> 00:03:23,490
+since we're not modeling
+the generation of this vector.
+
+43
+00:03:23,490 --> 00:03:25,830
+And we can plug in any
+signals that we want.
+
+44
+00:03:25,830 --> 00:03:31,410
+So this is potentially advantageous for
+doing text categorization.
+
+45
+00:03:31,410 --> 00:03:34,510
+So more specifically,
+in logistic regression,
+
+46
+00:03:34,510 --> 00:03:40,760
+assume the functional form of Y
+depending on X is the following.
+
+47
+00:03:40,760 --> 00:03:46,610
+And this is very closely
+related to the log
+
+48
+00:03:46,610 --> 00:03:51,290
+odds that I introduced in the Naive Bayes
+or log of probability ratio
+
+49
+00:03:51,290 --> 00:03:56,250
+of the two categories that you
+have seen on the previous slide.
+
+50
+00:03:57,900 --> 00:04:00,230
+So this is what I meant.
+
+51
+00:04:00,230 --> 00:04:05,430
+So in the case of Naive Bayes,
+we compute this by using those words and
+
+52
+00:04:05,430 --> 00:04:11,370
+eventually we have reached
+a formula that looks like this.
+
+53
+00:04:12,990 --> 00:04:18,290
+But here we actually
+would assume explicitly
+
+54
+00:04:18,290 --> 00:04:23,001
+that we with the model our
+
+55
+00:04:23,001 --> 00:04:27,400
+probability of Y given X
+
+56
+00:04:29,840 --> 00:04:36,430
+directly as a function of these features.
+
+57
+00:04:37,580 --> 00:04:46,260
+So, most specifically we assume that the
+ratio of the probability of Y equals 1 and
+
+58
+00:04:46,260 --> 00:04:52,790
+the probability of Y equals
+0 is a function of X.
+
+59
+00:04:54,460 --> 00:04:56,580
+All right, so it's a function of x and
+
+60
+00:04:56,580 --> 00:05:00,910
+it's a linear combination of these feature
+values controlled by theta values.
+
+61
+00:05:02,390 --> 00:05:06,790
+And it seems we know that
+the probability of Y equals zero
+
+62
+00:05:06,790 --> 00:05:11,100
+is one minus probability
+of Y equals one and
+
+63
+00:05:11,100 --> 00:05:16,030
+this can be also written in this way.
+
+64
+00:05:16,030 --> 00:05:20,020
+So this is a log out ratio here.
+
+65
+00:05:22,040 --> 00:05:23,250
+And so in logistic regression,
+
+66
+00:05:23,250 --> 00:05:27,490
+we're basically assuming that
+the probability of Y equals 1.
+
+67
+00:05:27,490 --> 00:05:34,570
+Okay my X is dependent on this linear
+combination of all these features.
+
+68
+00:05:34,570 --> 00:05:39,960
+So it's just one of the many possible
+ways, assuming that the dependency.
+
+69
+00:05:39,960 --> 00:05:42,880
+But this particular form
+has been quite useful and
+
+70
+00:05:42,880 --> 00:05:45,910
+it also has some nice properties.
+
+71
+00:05:47,760 --> 00:05:53,690
+So if we rewrite this equation to actually
+express the probability of Y given X.
+
+72
+00:05:53,690 --> 00:05:58,770
+In terms of X by getting rid of
+the logarithm we get this functional form,
+
+73
+00:05:58,770 --> 00:06:01,980
+and this is called a logistical function.
+
+74
+00:06:01,980 --> 00:06:07,030
+It's a transformation of X into Y,
+as you see
+
+75
+00:06:08,120 --> 00:06:14,090
+on the right side here, so
+that the X's will be map
+
+76
+00:06:14,090 --> 00:06:19,310
+into a range of values from 0 to 1.0,
+you can see.
+
+77
+00:06:19,310 --> 00:06:23,280
+And that's precisely what we want
+since we have a probability here.
+
+78
+00:06:24,350 --> 00:06:26,710
+And the function form looks like this.
+
+79
+00:06:28,170 --> 00:06:31,790
+So this is the basic idea
+of logistic regression.
+
+80
+00:06:31,790 --> 00:06:34,570
+And it's a very useful classifier that
+
+81
+00:06:34,570 --> 00:06:39,231
+can be used to do a lot of classification
+tasks including text categorization.
+
+82
+00:06:41,750 --> 00:06:47,100
+So as in all cases of model we would be
+interested in estimating the parameters.
+
+83
+00:06:47,100 --> 00:06:50,780
+And in fact in all of the machine running
+programs, once you set up with the model,
+
+84
+00:06:50,780 --> 00:06:54,980
+set up object and
+function to model the file,
+
+85
+00:06:54,980 --> 00:07:00,120
+then the next step is to
+compute the parameter values.
+
+86
+00:07:00,120 --> 00:07:02,680
+In general, we're going to adjust
+to these parameter values.
+
+87
+00:07:02,680 --> 00:07:06,641
+Optimize the performance of
+classify on the training data.
+
+88
+00:07:06,641 --> 00:07:13,410
+So in our case just assume we have
+the training data here, xi and yi, and
+
+89
+00:07:13,410 --> 00:07:20,810
+each pair is basically a future vector
+of x and a known label for that x.
+
+90
+00:07:20,810 --> 00:07:23,530
+Y is either 1 or 0.
+
+91
+00:07:23,530 --> 00:07:29,900
+So in our case we are interested
+maximize this conditional likelihood.
+
+92
+00:07:31,310 --> 00:07:36,020
+The conditional likelihood here is
+
+93
+00:07:36,020 --> 00:07:41,829
+basically to model why
+given observe the x,
+
+94
+00:07:41,829 --> 00:07:46,382
+so it's not like a moderate x, but
+
+95
+00:07:46,382 --> 00:07:50,787
+rather we're going to model this.
+
+96
+00:07:50,787 --> 00:07:55,589
+Note that this is a conditional
+probability of Y given X and
+
+97
+00:07:55,589 --> 00:08:00,494
+this is also precisely what we wanted For
+classification.
+
+98
+00:08:00,494 --> 00:08:06,266
+Now so the likelihood function would be
+just a product of all the training cases.
+
+99
+00:08:06,266 --> 00:08:07,383
+And in each case,
+
+100
+00:08:07,383 --> 00:08:12,990
+this is the model of the probability of
+observing this particular training case.
+
+101
+00:08:12,990 --> 00:08:19,960
+So given a particular Xi, how likely
+we are to observe the corresponding Yi?
+
+102
+00:08:19,960 --> 00:08:23,228
+Of course, Yi could be 1 or
+0, and in fact,
+
+103
+00:08:23,228 --> 00:08:28,310
+the function found here would vary
+depending on whether Yi is 1 or 0.
+
+104
+00:08:28,310 --> 00:08:33,374
+If it's a 1, we'll be taking this form.
+
+105
+00:08:33,374 --> 00:08:36,276
+And that's basically the logistic
+regression function.
+
+106
+00:08:36,276 --> 00:08:38,723
+But what about this, if it's 0?
+
+107
+00:08:38,723 --> 00:08:45,420
+Well, if it's 0, then we have to use
+a different form, and that's this one.
+
+108
+00:08:48,299 --> 00:08:50,310
+Now, how do we get this one?
+
+109
+00:08:50,310 --> 00:08:54,870
+Well, that's just a 1 minus
+the probability of Y=1, right?
+
+110
+00:08:55,990 --> 00:08:58,200
+And you can easily see this.
+
+111
+00:08:58,200 --> 00:09:04,220
+Now the key point in here is that the
+function form here depends on the observer
+
+112
+00:09:04,220 --> 00:09:09,340
+Yi, if it's a 1,
+it has a different form than when it's 0.
+
+113
+00:09:09,340 --> 00:09:13,852
+And if you think about when we
+want to maximize this probability,
+
+114
+00:09:13,852 --> 00:09:19,033
+we're basically going to want this
+probability to be as high as possible.
+
+115
+00:09:19,033 --> 00:09:26,519
+When the label is 1, that means
+the document is in probability 1.
+
+116
+00:09:26,519 --> 00:09:31,925
+But if the document is not,
+we're going to maximize this value,
+
+117
+00:09:31,925 --> 00:09:36,821
+and what's going to happen is
+actually to make this value as
+
+118
+00:09:36,821 --> 00:09:40,500
+small as possible because this sum's 1.
+
+119
+00:09:40,500 --> 00:09:45,670
+When I maximize this one,
+it's equivalent to minimize this one.
+
+120
+00:09:48,070 --> 00:09:53,275
+So you can see basically, if we maximize
+the conditional likelihood, we're going
+
+121
+00:09:53,275 --> 00:09:58,568
+to basically try to make the prediction on
+the training data as accurate as possible.
+
+122
+00:10:00,957 --> 00:10:04,970
+So as another occasion, when you
+compute the maximum likelihood data,
+
+123
+00:10:04,970 --> 00:10:07,075
+basically you'll find a beta value,
+
+124
+00:10:07,075 --> 00:10:11,050
+a set of beta values that would
+maximize this conditional likelihood.
+
+125
+00:10:12,190 --> 00:10:15,930
+And this, again, then gives us
+a standard optimization problem.
+
+126
+00:10:15,930 --> 00:10:20,130
+In this case,
+it can be also solved in many ways.
+
+127
+00:10:20,130 --> 00:10:22,870
+Newton's method is a popular
+way to solve this problem,
+
+128
+00:10:22,870 --> 00:10:25,050
+there are other methods as well.
+
+129
+00:10:25,050 --> 00:10:29,270
+But in the end,
+we will look at a set of data values.
+
+130
+00:10:29,270 --> 00:10:34,590
+Once we have the beta values,
+then we have a way to find the scoring
+
+131
+00:10:34,590 --> 00:10:38,600
+function to help us classify a document.
+
+132
+00:10:39,620 --> 00:10:40,580
+So what's the function?
+
+133
+00:10:40,580 --> 00:10:42,399
+Well, it's this one.
+
+134
+00:10:42,399 --> 00:10:47,330
+See, if we have all the beta values,
+are they known?
+
+135
+00:10:47,330 --> 00:10:52,810
+All we need is to compute the Xi for that
+document and then plug in those values.
+
+136
+00:10:52,810 --> 00:10:58,010
+That will give us an estimated probability
+that the document is in category one.
+
+137
+00:10:59,170 --> 00:11:02,930
+Okay so, so much for
+logistical regression.
+
+138
+00:11:02,930 --> 00:11:06,710
+Let's also introduce another
+discriminative classifier
+
+139
+00:11:06,710 --> 00:11:08,230
+called K-Nearest Neighbors.
+
+140
+00:11:08,230 --> 00:11:12,340
+Now in general, I should say there
+are many such approaches, and
+
+141
+00:11:12,340 --> 00:11:17,517
+a thorough introduction to all of them is
+clearly beyond the scope of this course.
+
+142
+00:11:17,517 --> 00:11:20,169
+And you should take
+a machine learning course or
+
+143
+00:11:20,169 --> 00:11:23,500
+read more about machine
+learning to know about them.
+
+144
+00:11:23,500 --> 00:11:27,950
+Here, I just want to include the basic
+introduction to some of the most commonly
+
+145
+00:11:27,950 --> 00:11:32,345
+used classifiers, since you might
+use them often for text calculation.
+
+146
+00:11:32,345 --> 00:11:36,610
+So the second classifier is
+called K-Nearest Neighbors.
+
+147
+00:11:36,610 --> 00:11:40,830
+In this approach,
+we're going to also estimate
+
+148
+00:11:40,830 --> 00:11:45,615
+the conditional probability of label
+given data, but in a very different way.
+
+149
+00:11:45,615 --> 00:11:49,360
+So the idea is to keep all
+the training examples and
+
+150
+00:11:49,360 --> 00:11:53,900
+then once we see a text object that we
+want to classify, we're going to find
+
+151
+00:11:53,900 --> 00:11:59,290
+the K examples in the training set and
+that are most similar to this text object.
+
+152
+00:11:59,290 --> 00:12:03,981
+Basically, this is to find
+the neighbors of this text objector in
+
+153
+00:12:03,981 --> 00:12:05,700
+the training data set.
+
+154
+00:12:05,700 --> 00:12:08,314
+So once we found the neighborhood and
+
+155
+00:12:08,314 --> 00:12:14,132
+we found the object that are close to the
+object we are interested in classifying,
+
+156
+00:12:14,132 --> 00:12:18,620
+and let's say we have found
+the K-Nearest Neighbors.
+
+157
+00:12:18,620 --> 00:12:21,460
+That's why this method is
+called K-Nearest Neighbors.
+
+158
+00:12:21,460 --> 00:12:26,230
+Then we're going to assign the category
+that's most common in these neighbors.
+
+159
+00:12:26,230 --> 00:12:28,870
+Basically we're going to allow
+these neighbors to vote for
+
+160
+00:12:28,870 --> 00:12:32,050
+the category of the objective that
+we're interested in classifying.
+
+161
+00:12:33,560 --> 00:12:38,240
+Now that means if most of them have
+a particular category and it's a category
+
+162
+00:12:38,240 --> 00:12:41,790
+one, they're going to say this
+current object will have category one.
+
+163
+00:12:43,100 --> 00:12:47,820
+This approach can also be improved by
+considering the distance of a neighbor and
+
+164
+00:12:47,820 --> 00:12:49,240
+of a current object.
+
+165
+00:12:49,240 --> 00:12:53,560
+Basically, we can assume a closed
+neighbor would have more say
+
+166
+00:12:53,560 --> 00:12:55,110
+about the category of the subject.
+
+167
+00:12:55,110 --> 00:13:00,626
+So, we can give such a neighbor
+more influence on the vote.
+
+168
+00:13:00,626 --> 00:13:04,650
+And we can take away some of
+the votes based on the distances.
+
+169
+00:13:06,120 --> 00:13:08,520
+But the general idea is look
+at the neighborhood, and
+
+170
+00:13:08,520 --> 00:13:13,270
+then try to assess the category based
+on the categories of the neighbors.
+
+171
+00:13:13,270 --> 00:13:15,745
+Intuitively, this makes a lot of sense.
+
+172
+00:13:15,745 --> 00:13:21,170
+But mathematically, this can also be
+regarded as a way to directly estimate
+
+173
+00:13:21,170 --> 00:13:26,870
+there's a conditional probability of
+label given data, that is p of Y given X.
+
+174
+00:13:28,190 --> 00:13:33,640
+Now I'm going to explain this intuition in
+a moment, but before we proceed, let me
+
+175
+00:13:33,640 --> 00:13:40,530
+emphasize that we do need a similarity
+function here in order for this to work.
+
+176
+00:13:40,530 --> 00:13:43,874
+Note that in naive base class five,
+we did not need a similarity function.
+
+177
+00:13:43,874 --> 00:13:48,160
+And in logistical regression, we did not
+talk about those similarity function
+
+178
+00:13:48,160 --> 00:13:52,570
+either, but here we explicitly
+require a similarity function.
+
+179
+00:13:52,570 --> 00:13:57,500
+Now this similarity function
+actually is a good opportunity for
+
+180
+00:13:57,500 --> 00:14:02,288
+us to inject any of our
+insights about the features.
+
+181
+00:14:02,288 --> 00:14:07,420
+Basically effective features
+are those that would
+
+182
+00:14:07,420 --> 00:14:12,770
+make the objects that are on the same
+category look more similar, but
+
+183
+00:14:12,770 --> 00:14:16,600
+distinguishing objects
+in different categories.
+
+184
+00:14:16,600 --> 00:14:21,100
+So the design of this similarity function
+is closely tied it to the design
+
+185
+00:14:21,100 --> 00:14:25,340
+of the features in logistical
+regression and other classifiers.
+
+186
+00:14:25,340 --> 00:14:28,350
+So let's illustrate how K-NN works.
+
+187
+00:14:28,350 --> 00:14:32,360
+Now suppose we have a lot
+of training instances here.
+
+188
+00:14:32,360 --> 00:14:38,612
+And I've colored them differently and
+to show just different categories.
+
+189
+00:14:38,612 --> 00:14:43,690
+Now suppose we have a new object in
+the center that we want to classify.
+
+190
+00:14:43,690 --> 00:14:46,530
+So according to this approach,
+you work on finding the neighbors.
+
+191
+00:14:46,530 --> 00:14:50,730
+Now, let's first think of a special
+case of finding just one neighbor,
+
+192
+00:14:50,730 --> 00:14:51,620
+the closest neighbor.
+
+193
+00:14:53,100 --> 00:14:59,264
+Now in this case, let's assume the closest
+neighbor is the box filled with diamonds.
+
+194
+00:14:59,264 --> 00:15:04,191
+And so then we're going to say,
+well, since this is in this
+
+195
+00:15:04,191 --> 00:15:09,250
+object that is in category of diamonds,
+let's say.
+
+196
+00:15:09,250 --> 00:15:11,945
+Then we're going to say, well,
+
+197
+00:15:11,945 --> 00:15:17,250
+we're going to assign the same
+category to our text object.
+
+198
+00:15:17,250 --> 00:15:22,346
+But let's also look at another possibility
+of finding a larger neighborhood,
+
+199
+00:15:22,346 --> 00:15:24,730
+so let's think about the four neighbors.
+
+200
+00:15:26,060 --> 00:15:31,090
+In this case, we're going to include a lot
+of other solid field boxes in red or
+
+201
+00:15:31,090 --> 00:15:32,970
+pink, right?
+
+202
+00:15:32,970 --> 00:15:38,182
+So in this case now, we're going to
+notice that among the four neighbors,
+
+203
+00:15:38,182 --> 00:15:41,590
+there are three neighbors
+in a different category.
+
+204
+00:15:41,590 --> 00:15:43,020
+So if we take a vote,
+
+205
+00:15:43,020 --> 00:15:48,001
+then we'll conclude the object is
+actually of a different category.
+
+206
+00:15:48,001 --> 00:15:52,252
+So this both illustrates how
+can nearest neighbor works and
+
+207
+00:15:52,252 --> 00:15:57,021
+also it illustrates some potential
+problems of this classifier.
+
+208
+00:15:57,021 --> 00:16:00,867
+Basically, the results might
+depend on the K and indeed,
+
+209
+00:16:00,867 --> 00:16:03,703
+k's an important parameter to optimize.
+
+210
+00:16:03,703 --> 00:16:07,871
+Now, you can intuitively imagine
+if we have a lot of neighbors
+
+211
+00:16:07,871 --> 00:16:11,800
+around this object, and
+then we'd be okay because we have
+
+212
+00:16:11,800 --> 00:16:16,360
+a lot of neighbors who will
+help us decide the categories.
+
+213
+00:16:16,360 --> 00:16:21,140
+But if we have only a few,
+then the decision may not be reliable.
+
+214
+00:16:21,140 --> 00:16:25,220
+So on the one hand,
+we want to find more neighbor, right?
+
+215
+00:16:25,220 --> 00:16:26,850
+And then we have more votes.
+
+216
+00:16:26,850 --> 00:16:31,770
+But on the other hand, as we try to find
+more neighbors we actually could risk
+
+217
+00:16:31,770 --> 00:16:36,990
+on getting neighbors that are not
+really similar to this instance.
+
+218
+00:16:36,990 --> 00:16:40,210
+They might actually be far away
+as you try to get more neighbors.
+
+219
+00:16:40,210 --> 00:16:44,520
+So although you get more neighbors but
+those neighbors aren't necessarily so
+
+220
+00:16:44,520 --> 00:16:47,650
+helpful because they are not
+very similar to the object.
+
+221
+00:16:47,650 --> 00:16:51,150
+So the parameter still has
+to be set empirically.
+
+222
+00:16:51,150 --> 00:16:55,996
+And typically, you can optimize such
+a parameter by using cross validation.
+
+223
+00:16:55,996 --> 00:17:01,378
+Basically, you're going to separate
+your training data into two parts and
+
+224
+00:17:01,378 --> 00:17:05,803
+then you're going to use one
+part to actually help you choose
+
+225
+00:17:05,803 --> 00:17:10,778
+the parameter k here or some other
+parameters in other class files.
+
+226
+00:17:10,778 --> 00:17:15,913
+And then you're going to assume
+this number that works well on your
+
+227
+00:17:15,913 --> 00:17:21,063
+training that will be actually be
+the best for your future data.
+
+228
+00:17:23,103 --> 00:17:24,257
+So as I mentioned,
+
+229
+00:17:24,257 --> 00:17:29,234
+K-NN can be actually regarded as estimate
+of conditional problem within y given x
+
+230
+00:17:29,234 --> 00:17:34,600
+an that's why we put this in the category
+of discriminative approaches.
+
+231
+00:17:34,600 --> 00:17:39,470
+So the key assumption that we made in
+this approach is that the distribution
+
+232
+00:17:39,470 --> 00:17:44,027
+of the label given the document
+probability a category given for
+
+233
+00:17:44,027 --> 00:17:51,620
+example probability of theta i
+given document d is locally smooth.
+
+234
+00:17:51,620 --> 00:17:56,890
+And that just means we're going to assume
+that this probability is the same for
+
+235
+00:17:56,890 --> 00:18:01,570
+all the documents in these region R here.
+
+236
+00:18:01,570 --> 00:18:05,260
+And suppose we draw a neighborhood and
+we're going to assume in this neighborhood
+
+237
+00:18:05,260 --> 00:18:10,320
+since the data instances are very
+similar we're going to assume that
+
+238
+00:18:10,320 --> 00:18:15,530
+the conditional distribution of the label
+given the data will be roughly the same.
+
+239
+00:18:15,530 --> 00:18:19,408
+If these are very different
+then we're going to assume that
+
+240
+00:18:19,408 --> 00:18:23,136
+the probability of c doc given
+d would be also similar.
+
+241
+00:18:23,136 --> 00:18:24,976
+So that's a very key assumption.
+
+242
+00:18:24,976 --> 00:18:29,481
+And that's actually important assumption
+
+243
+00:18:29,481 --> 00:18:34,820
+that would allow us to
+do a lot of machinery.
+
+244
+00:18:34,820 --> 00:18:35,730
+But in reality,
+
+245
+00:18:35,730 --> 00:18:39,560
+whether this is true of course,
+would depend on how we define similarity.
+
+246
+00:18:39,560 --> 00:18:43,610
+Because neighborhood is largely
+determined by our similarity function.
+
+247
+00:18:43,610 --> 00:18:48,180
+If our similarity function captures
+objects that do follow similar
+
+248
+00:18:48,180 --> 00:18:51,290
+distributions then these
+assumptions are okay but
+
+249
+00:18:51,290 --> 00:18:55,240
+if our similarity function could
+not capture that, obviously these
+
+250
+00:18:55,240 --> 00:18:58,110
+assumption would be a problem and
+then the classifier would not be accurate.
+
+251
+00:18:59,320 --> 00:19:01,680
+Okay, let's proceed with these assumption.
+
+252
+00:19:01,680 --> 00:19:03,310
+Then what we are saying is that,
+
+253
+00:19:03,310 --> 00:19:07,570
+in order to estimate the probability
+of category given a document.
+
+254
+00:19:07,570 --> 00:19:14,230
+We can try to estimate the probability of
+the category given that entire region.
+
+255
+00:19:14,230 --> 00:19:16,730
+Now, this has a benefit, of course,
+
+256
+00:19:16,730 --> 00:19:20,340
+of bringing additional data points to
+help us estimate this probability.
+
+257
+00:19:22,660 --> 00:19:25,410
+And so this is precisely the idea of K-NN.
+
+258
+00:19:25,410 --> 00:19:29,910
+Basically now we can use
+the known categories of
+
+259
+00:19:29,910 --> 00:19:33,870
+all the documents in this region
+to estimate this probability.
+
+260
+00:19:33,870 --> 00:19:40,340
+And I have even given a formula here where
+you can see we just count the topics in
+
+261
+00:19:40,340 --> 00:19:44,910
+this region and then normalize that by the
+total number of documents in the region.
+
+262
+00:19:44,910 --> 00:19:49,510
+So the numerator that you see here,
+c of theta i and r,
+
+263
+00:19:49,510 --> 00:19:55,025
+is a counter of the documents in
+region R was category theta i.
+
+264
+00:19:55,025 --> 00:19:57,910
+Since these are training document and
+we know they are categories.
+
+265
+00:19:57,910 --> 00:20:01,394
+We can simply count how many
+times it was since here.
+
+266
+00:20:01,394 --> 00:20:03,491
+How many times we have the same signs,
+etc.
+
+267
+00:20:03,491 --> 00:20:07,269
+And then the denominator is just
+the total number of training
+
+268
+00:20:07,269 --> 00:20:08,981
+documents in this region.
+
+269
+00:20:08,981 --> 00:20:12,781
+So this gives us a rough estimate of
+which categories most popular in this
+
+270
+00:20:12,781 --> 00:20:13,661
+neighborhood.
+
+271
+00:20:13,661 --> 00:20:17,539
+And we are going to assign
+the popular category
+
+272
+00:20:17,539 --> 00:20:21,821
+to our data object since
+it falls into this region.
+
+273
+00:20:21,821 --> 00:20:31,821
+[MUSIC]

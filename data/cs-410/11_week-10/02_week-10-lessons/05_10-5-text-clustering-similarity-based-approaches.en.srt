@@ -1,0 +1,1150 @@
+1
+00:00:00,231 --> 00:00:07,027
+[MUSIC]
+
+2
+00:00:07,027 --> 00:00:11,320
+This lecture is about the similarity-based
+approaches to text clustering.
+
+3
+00:00:13,290 --> 00:00:16,860
+In this lecture we're going to to continue
+the discussion of how to do a text
+
+4
+00:00:16,860 --> 00:00:17,570
+clustering.
+
+5
+00:00:18,770 --> 00:00:22,840
+In particular, we're going to to
+cover different kinds of approaches
+
+6
+00:00:22,840 --> 00:00:28,340
+than generative models, and
+that is similarity-based approaches.
+
+7
+00:00:28,340 --> 00:00:33,990
+So the general idea of similarity-based
+clustering is to explicitly
+
+8
+00:00:33,990 --> 00:00:40,310
+specify a similarity function to measure
+the similarity between two text objects.
+
+9
+00:00:40,310 --> 00:00:42,980
+Now this is in contrast with
+
+10
+00:00:42,980 --> 00:00:48,010
+a generative model where we
+implicitly define the clustering bias
+
+11
+00:00:48,010 --> 00:00:51,468
+by using a particular object to
+function like a [INAUDIBLE] function.
+
+12
+00:00:52,675 --> 00:00:56,055
+The whole process is driven by
+optimizing the [INAUDIBLE,] but
+
+13
+00:00:56,055 --> 00:01:02,055
+here we explicitly provide a view
+of what we think are similar.
+
+14
+00:01:02,055 --> 00:01:07,392
+And this is often very useful
+because then it allows us to inject
+
+15
+00:01:07,392 --> 00:01:12,272
+any particular view of similarity
+into the clustering program.
+
+16
+00:01:12,272 --> 00:01:18,229
+So once we have a similarity function,
+we can then aim at optimally partitioning,
+
+17
+00:01:18,229 --> 00:01:23,960
+to partitioning the data into clusters or
+into different groups.
+
+18
+00:01:23,960 --> 00:01:29,190
+And try to maximize
+the inter-group similarity and
+
+19
+00:01:29,190 --> 00:01:31,580
+minimize the inter-group similarity.
+
+20
+00:01:31,580 --> 00:01:36,700
+That is to ensure the objects that are put
+into the same group to be similar, but
+
+21
+00:01:36,700 --> 00:01:41,590
+the objects that are put into
+different groups to be not similar.
+
+22
+00:01:41,590 --> 00:01:45,155
+And these are the general
+goals of clustering,
+
+23
+00:01:45,155 --> 00:01:49,714
+and there is often a trade off
+between achieving both goals.
+
+24
+00:01:49,714 --> 00:01:54,664
+Now there are many different methods for
+doing similarity based clustering,
+
+25
+00:01:54,664 --> 00:01:59,405
+and in general I think we can distinguish
+the two strategies at high level.
+
+26
+00:01:59,405 --> 00:02:04,810
+One is to progressively construct
+the hierarchy of clusters, and
+
+27
+00:02:04,810 --> 00:02:07,520
+so this often leads to
+hierarchical clustering.
+
+28
+00:02:07,520 --> 00:02:12,990
+And we can further distinguish it
+two ways, to construct a hierarchy
+
+29
+00:02:12,990 --> 00:02:18,360
+depending on whether we started with
+the collection to divide the connection.
+
+30
+00:02:18,360 --> 00:02:23,020
+Or started with individual objectives and
+gradually group them together, so
+
+31
+00:02:23,020 --> 00:02:26,690
+one is bottom-up that can
+be called agglomerative.
+
+32
+00:02:26,690 --> 00:02:31,440
+Well we gradually group a similar
+objects into larger and larger clusters.
+
+33
+00:02:31,440 --> 00:02:36,351
+Until we group everything together,
+the other is top-down or divisive, in this
+
+34
+00:02:36,351 --> 00:02:41,670
+case we gradually partition the whole data
+set into smaller and smaller clusters.
+
+35
+00:02:41,670 --> 00:02:46,500
+The other general strategy is to start
+with the initial tentative clustering and
+
+36
+00:02:46,500 --> 00:02:48,660
+then iteratively improve it.
+
+37
+00:02:48,660 --> 00:02:54,670
+And this often leads for
+a flat clustering, one example is k-Means,
+
+38
+00:02:54,670 --> 00:02:58,520
+so as I just said, there are many
+different clustering methods available.
+
+39
+00:02:58,520 --> 00:03:04,180
+And a full coverage of all
+the clustering methods would be
+
+40
+00:03:04,180 --> 00:03:06,800
+beyond the scope of this course.
+
+41
+00:03:06,800 --> 00:03:13,210
+But here we are going to talk about the
+two representative methods, in some detail
+
+42
+00:03:14,340 --> 00:03:20,350
+one is Hierarchical Agglomerative
+Clustering or HAC, the other is k-Means.
+
+43
+00:03:20,350 --> 00:03:26,280
+So first of it we'll get the agglomerative
+hierarchical clustering, in this case,
+
+44
+00:03:26,280 --> 00:03:30,850
+we're given a similarity function to
+measure similarity between two objects.
+
+45
+00:03:30,850 --> 00:03:36,110
+And then we can gradually group similar
+objects together in a bottom-up fashion to
+
+46
+00:03:36,110 --> 00:03:38,250
+form larger and larger groups.
+
+47
+00:03:38,250 --> 00:03:40,550
+And they always form a hierarchy, and
+
+48
+00:03:40,550 --> 00:03:44,190
+then we can stop when some
+stopping criterion is met.
+
+49
+00:03:44,190 --> 00:03:48,780
+It could be either some number
+of clusters has been achieved or
+
+50
+00:03:48,780 --> 00:03:51,060
+the threshold for
+similarity has been reached.
+
+51
+00:03:52,240 --> 00:03:54,470
+There are different variations here, and
+
+52
+00:03:54,470 --> 00:03:58,610
+they mainly differ in the ways
+to compute a group similarity.
+
+53
+00:03:58,610 --> 00:04:01,470
+Based on the individual
+objects similarity, so
+
+54
+00:04:01,470 --> 00:04:07,410
+let's illustrate how again induced
+a structure based on just similarity.
+
+55
+00:04:07,410 --> 00:04:10,910
+So start with all the text objects and
+
+56
+00:04:10,910 --> 00:04:14,070
+we can then measure
+the similarity between them.
+
+57
+00:04:14,070 --> 00:04:17,384
+Of course based on the provided
+similarity function, and
+
+58
+00:04:17,384 --> 00:04:20,503
+then we can see which pair
+has the highest similarity.
+
+59
+00:04:20,503 --> 00:04:24,238
+And then just group them together, and
+
+60
+00:04:24,238 --> 00:04:29,680
+then we're going to see which
+pair is the next one to group.
+
+61
+00:04:30,730 --> 00:04:34,810
+Maybe these two now have
+the highest similarity, and
+
+62
+00:04:34,810 --> 00:04:36,852
+then we're going to gradually
+group them together.
+
+63
+00:04:36,852 --> 00:04:42,330
+And then every time we're going
+to pick the highest similarity,
+
+64
+00:04:42,330 --> 00:04:43,970
+the similarity of pairs to group.
+
+65
+00:04:45,250 --> 00:04:49,050
+This will give us a binary tree
+eventually to group everything together.
+
+66
+00:04:50,360 --> 00:04:52,980
+Now, depending on our applications,
+
+67
+00:04:52,980 --> 00:04:57,640
+we can use the whole hierarchy as
+a structure for browsing, for example.
+
+68
+00:04:57,640 --> 00:05:03,401
+Or we can choose a cutoff,
+let's say cut here to get four clusters,
+
+69
+00:05:03,401 --> 00:05:06,150
+or we can use a threshold to cut.
+
+70
+00:05:06,150 --> 00:05:11,240
+Or we can cut at this high level
+to get just two clusters, so
+
+71
+00:05:11,240 --> 00:05:15,860
+this is a general idea, now if you think
+about how to implement this algorithm.
+
+72
+00:05:15,860 --> 00:05:20,930
+You'll realize that we have
+everything specified except for
+
+73
+00:05:20,930 --> 00:05:23,170
+how to compute group similarity.
+
+74
+00:05:24,300 --> 00:05:28,410
+We are only given the similarity
+function of two objects, but as
+
+75
+00:05:28,410 --> 00:05:33,780
+we group groups together, we also need to
+assess the similarity between two groups.
+
+76
+00:05:33,780 --> 00:05:38,215
+There are also different ways to do that
+and there are the three popular methods.
+
+77
+00:05:38,215 --> 00:05:43,004
+Single-link, complete-link,
+and average-link, so
+
+78
+00:05:43,004 --> 00:05:47,460
+given two groups and
+the single-link algorithm.
+
+79
+00:05:47,460 --> 00:05:51,960
+Is going to define the group similarity
+as the similarity of the closest pair of
+
+80
+00:05:51,960 --> 00:05:53,005
+the two groups.
+
+81
+00:05:53,005 --> 00:05:56,010
+Complete-link defines
+the similarity of the two groups
+
+82
+00:05:56,010 --> 00:05:59,755
+as the similarity of
+the farthest system pair.
+
+83
+00:05:59,755 --> 00:06:03,800
+Average-link defines the similarity
+as average of similarity of
+
+84
+00:06:03,800 --> 00:06:06,490
+all the pairs of the two groups.
+
+85
+00:06:06,490 --> 00:06:12,220
+So it's much easier to understand
+the methods by illustrating them,
+
+86
+00:06:12,220 --> 00:06:17,780
+so here are two groups, g1 and
+g2 with some objects in each group.
+
+87
+00:06:17,780 --> 00:06:23,340
+And we know how to compute
+the similarity between two objects, but
+
+88
+00:06:23,340 --> 00:06:27,330
+the question now is, how can we compute
+the similarity between the two groups?
+
+89
+00:06:29,240 --> 00:06:32,970
+And then we can in general base this
+on the similarities of the objects
+
+90
+00:06:32,970 --> 00:06:33,900
+in the two groups.
+
+91
+00:06:35,100 --> 00:06:38,120
+So, in terms of single-link and
+
+92
+00:06:38,120 --> 00:06:40,975
+we're just looking at the closest pair so
+in this case,
+
+93
+00:06:40,975 --> 00:06:45,640
+these two paired objects will defined
+the similarities of the two groups.
+
+94
+00:06:47,270 --> 00:06:50,240
+As long as they are very close,
+we're going to say the two groups are very
+
+95
+00:06:51,710 --> 00:06:56,090
+close so
+it is an optimistic view of similarity.
+
+96
+00:06:57,900 --> 00:07:04,400
+The complete link on the other hand
+were in some sense pessimistic, and by
+
+97
+00:07:04,400 --> 00:07:10,956
+taking the similarity of the two farthest
+pair as the similarity for the two groups.
+
+98
+00:07:10,956 --> 00:07:16,000
+So we are going to make sure that
+
+99
+00:07:16,000 --> 00:07:20,060
+if the two groups are having
+a high similarity.
+
+100
+00:07:20,060 --> 00:07:23,710
+Then every pair of the two groups, or
+
+101
+00:07:23,710 --> 00:07:28,240
+the objects in the two groups will have,
+will be ensured to have high similarity.
+
+102
+00:07:29,360 --> 00:07:34,750
+Now average link is in between, so
+it takes the average of all these pairs.
+
+103
+00:07:34,750 --> 00:07:39,300
+Now these different ways of computing
+group similarities will lead
+
+104
+00:07:39,300 --> 00:07:40,900
+to different clustering algorithms.
+
+105
+00:07:40,900 --> 00:07:46,640
+And they would in general
+give different results, so
+
+106
+00:07:46,640 --> 00:07:51,110
+it's useful to take a look at their
+differences and to make a comparison.
+
+107
+00:07:53,812 --> 00:07:58,710
+First, single-link can be expected to
+
+108
+00:07:58,710 --> 00:08:03,990
+generally the loose clusters, the reason
+is because as long as two objects
+
+109
+00:08:03,990 --> 00:08:08,140
+are very similar in the two groups,
+it will bring the two groups together.
+
+110
+00:08:09,240 --> 00:08:15,170
+If you think about this as similar
+to having parties with people,
+
+111
+00:08:15,170 --> 00:08:22,010
+then it just means two groups of
+people would be partying together.
+
+112
+00:08:22,010 --> 00:08:26,010
+As long as in each group
+there is a person that
+
+113
+00:08:27,150 --> 00:08:29,780
+is well connected with the other group.
+
+114
+00:08:29,780 --> 00:08:35,100
+So the two leaders of the two
+groups can have a good
+
+115
+00:08:35,100 --> 00:08:39,620
+relationship with each other and then
+they will bring together the two groups.
+
+116
+00:08:39,620 --> 00:08:43,220
+In this case, the cluster is loose,
+because there's no guarantee that
+
+117
+00:08:43,220 --> 00:08:47,050
+other members of the two groups
+are actually very close to each other.
+
+118
+00:08:47,050 --> 00:08:51,780
+Sometimes they may be very far away,
+now in this case it's also
+
+119
+00:08:51,780 --> 00:08:55,086
+based on individual decisions, so
+it could be sensitive to outliers.
+
+120
+00:08:55,086 --> 00:08:59,930
+The complete-link is in
+the opposite situation,
+
+121
+00:08:59,930 --> 00:09:03,370
+where we can expect
+the clusters to be tight.
+
+122
+00:09:03,370 --> 00:09:08,770
+And it's also based on individual decision
+so it can be sensitive to outliers.
+
+123
+00:09:08,770 --> 00:09:11,890
+Again to continue the analogy
+to having a party of people,
+
+124
+00:09:11,890 --> 00:09:17,500
+then complete-link would mean
+when two groups come together.
+
+125
+00:09:17,500 --> 00:09:19,100
+They want to ensure that even
+
+126
+00:09:21,590 --> 00:09:27,020
+the people that are unlikely to talk
+to each other would be comfortable.
+
+127
+00:09:27,020 --> 00:09:31,900
+Always talking to each other, so
+ensure the whole class to be coherent.
+
+128
+00:09:31,900 --> 00:09:36,500
+The average link of clusters in
+between and as group decision, so it's
+
+129
+00:09:37,510 --> 00:09:42,920
+going to be insensitive to outliers,
+now in practice which one is the best.
+
+130
+00:09:42,920 --> 00:09:48,270
+Well, this would depend on the application
+and sometimes you need a lose clusters.
+
+131
+00:09:48,270 --> 00:09:53,050
+And aggressively cluster objects
+together that maybe single-link is good.
+
+132
+00:09:53,050 --> 00:09:56,148
+But other times you might
+need a tight clusters and
+
+133
+00:09:56,148 --> 00:09:58,980
+a complete-link might be better.
+
+134
+00:09:58,980 --> 00:10:02,120
+But in general, you have to
+empirically evaluate these methods for
+
+135
+00:10:02,120 --> 00:10:04,360
+your application to know
+which one is better.
+
+136
+00:10:07,120 --> 00:10:11,453
+Now, next let's look at another example of
+a method for similarity-based clustering.
+
+137
+00:10:11,453 --> 00:10:15,820
+In this case,
+which is called k-Means clustering,
+
+138
+00:10:15,820 --> 00:10:20,810
+we will represent each text
+object as a term vector.
+
+139
+00:10:20,810 --> 00:10:26,390
+And then assume a similarity function
+defined on two objects, now we're going to
+
+140
+00:10:26,390 --> 00:10:31,828
+start with some tentative clustering
+results by just selecting k randomly.
+
+141
+00:10:31,828 --> 00:10:37,170
+selected vectors as
+centroids of k clusters and
+
+142
+00:10:37,170 --> 00:10:43,380
+treat them as centers as if they
+represent, they each represent a cluster.
+
+143
+00:10:43,380 --> 00:10:47,160
+So this gives us the initial
+tentative cluster,
+
+144
+00:10:47,160 --> 00:10:49,470
+then we're going to
+iteratively improve it.
+
+145
+00:10:49,470 --> 00:10:53,770
+And the process goes like this, and
+once we have these centroids Decide.
+
+146
+00:10:53,770 --> 00:10:58,895
+We're going to assign
+a vector to the cluster whose
+
+147
+00:10:58,895 --> 00:11:03,530
+centroid is closest to the current vector.
+
+148
+00:11:03,530 --> 00:11:07,712
+So basically we're going to measure
+the distance between this vector, and
+
+149
+00:11:07,712 --> 00:11:11,568
+each of the centroids, and
+see which one is the closest to this one.
+
+150
+00:11:11,568 --> 00:11:15,516
+And then just put this
+object into that cluster,
+
+151
+00:11:15,516 --> 00:11:20,840
+this is to have tentative assignment
+of objects into clusters.
+
+152
+00:11:20,840 --> 00:11:23,810
+And we're going to
+partition all the objects
+
+153
+00:11:23,810 --> 00:11:27,360
+into k clusters based on our
+tentative clustering and centroids.
+
+154
+00:11:28,740 --> 00:11:32,570
+Then we can do re-compute
+the centroid based on
+
+155
+00:11:32,570 --> 00:11:35,560
+the locate the object in each cluster.
+
+156
+00:11:35,560 --> 00:11:39,840
+And this is to adjust the centroid, and
+
+157
+00:11:39,840 --> 00:11:44,400
+then we can repeat this process until
+the similarity-based objective function.
+
+158
+00:11:44,400 --> 00:11:49,197
+In this case, it's within cluster
+sum of squares converges, and
+
+159
+00:11:49,197 --> 00:11:51,604
+theoretically we can show that.
+
+160
+00:11:51,604 --> 00:11:56,570
+This process actually is going to minimize
+the within cluster sum of squares
+
+161
+00:11:56,570 --> 00:11:59,900
+where define object and function.
+
+162
+00:11:59,900 --> 00:12:03,363
+Given k clusters, so it can be also shown,
+
+163
+00:12:03,363 --> 00:12:07,225
+this process will converge
+to a local minimum.
+
+164
+00:12:07,225 --> 00:12:11,781
+I think about this process for a moment,
+it might remind you the Algorithm for
+
+165
+00:12:11,781 --> 00:12:12,739
+mixture model.
+
+166
+00:12:13,900 --> 00:12:18,590
+Indeed this algorithm is very
+similar to the Algorithm for
+
+167
+00:12:18,590 --> 00:12:20,740
+the mixture model for clustering.
+
+168
+00:12:20,740 --> 00:12:26,510
+More specifically we also
+initialize these parameters
+
+169
+00:12:26,510 --> 00:12:32,240
+in the Algorithm so
+the random initialization is similar.
+
+170
+00:12:34,210 --> 00:12:37,619
+And then in the Algorithm,
+you may recall that,
+
+171
+00:12:37,619 --> 00:12:43,170
+we're going to repeat E-step and M-step
+to improve our parameter estimation.
+
+172
+00:12:43,170 --> 00:12:47,340
+In this case, we're going to
+improve the clustering result
+
+173
+00:12:47,340 --> 00:12:50,760
+iteratively by also doing two steps.
+
+174
+00:12:50,760 --> 00:12:57,810
+And in fact that the two steps are very
+similar to Algorithm, in that when we
+
+175
+00:12:57,810 --> 00:13:03,020
+locate the vector into one of the clusters
+based on our tentative clustering.
+
+176
+00:13:03,020 --> 00:13:07,000
+It's very similar to inferring
+the distribution that has been used to
+
+177
+00:13:07,000 --> 00:13:09,020
+generate the document, the mixture model.
+
+178
+00:13:09,020 --> 00:13:12,100
+So it is essentially similar to E-step, so
+
+179
+00:13:12,100 --> 00:13:16,130
+what's the difference,
+well the difference is here.
+
+180
+00:13:16,130 --> 00:13:20,170
+We don't make a probabilistic
+allocation as in the case of E-step,
+
+181
+00:13:20,170 --> 00:13:22,515
+the brother will make a choice.
+
+182
+00:13:22,515 --> 00:13:28,365
+We're going to make a call if this,
+there upon this closest to cluster two,
+
+183
+00:13:28,365 --> 00:13:31,105
+then we're going to say
+you are in cluster two.
+
+184
+00:13:31,105 --> 00:13:32,355
+So there's no choice, and
+
+185
+00:13:32,355 --> 00:13:37,300
+we're not going to say, you assume
+the set is belonging to a cluster two.
+
+186
+00:13:37,300 --> 00:13:40,425
+And so
+we're not going to have a probability, but
+
+187
+00:13:40,425 --> 00:13:44,508
+we're just going to put one object
+into precisely one cluster.
+
+188
+00:13:44,508 --> 00:13:51,090
+In the E-step however, we do a probability
+location, so we split in counts.
+
+189
+00:13:51,090 --> 00:13:56,009
+And we're not going to say
+exactly which distribution has
+
+190
+00:13:56,009 --> 00:13:59,153
+been used to generate a data point.
+
+191
+00:13:59,153 --> 00:14:01,926
+Now next,
+we're going to adjust the centroid, and
+
+192
+00:14:01,926 --> 00:14:05,900
+this is very similar to M-step where
+we re-estimate the parameters.
+
+193
+00:14:05,900 --> 00:14:10,540
+That's when we'll have a better
+estimate of the parameter, so
+
+194
+00:14:10,540 --> 00:14:15,560
+here we'll have a better clustering
+result by adjusting the centroid.
+
+195
+00:14:15,560 --> 00:14:23,170
+And note that centroid is based on
+the average of the vectors in the cluster.
+
+196
+00:14:23,170 --> 00:14:27,731
+So this is also similar to the M-step
+where we do counts,pull together counts
+
+197
+00:14:27,731 --> 00:14:29,840
+and then normalize them.
+
+198
+00:14:29,840 --> 00:14:34,247
+The difference of course is also because
+of the difference in the E-step, and
+
+199
+00:14:34,247 --> 00:14:38,940
+we're not going to consider
+probabilities when we count the points.
+
+200
+00:14:38,940 --> 00:14:39,918
+In this case,
+
+201
+00:14:39,918 --> 00:14:45,595
+k-Means we're going to all make count of
+the objects as allocated to this cluster.
+
+202
+00:14:45,595 --> 00:14:50,760
+And this is only a subset of data points,
+but in the Algorithm,
+
+203
+00:14:50,760 --> 00:14:55,375
+we in principle consider all the data
+points based on probabilistic allocations.
+
+204
+00:14:56,710 --> 00:14:58,860
+But in nature they are very similar and
+
+205
+00:14:58,860 --> 00:15:03,510
+that's why it's also maximizing
+well defined object of functions.
+
+206
+00:15:03,510 --> 00:15:06,657
+And it's guaranteed to
+convert local minimum, so
+
+207
+00:15:06,657 --> 00:15:10,700
+to summarize our discussion
+of clustering methods.
+
+208
+00:15:10,700 --> 00:15:14,640
+We first discussed model based approaches,
+mainly the mixture model.
+
+209
+00:15:14,640 --> 00:15:22,830
+Here we use the implicit similarity
+function to define the clustering bias.
+
+210
+00:15:22,830 --> 00:15:27,440
+There is no explicit define similarity
+function, the model defines clustering
+
+211
+00:15:27,440 --> 00:15:33,080
+bias and the clustering structure
+is built into a generative model.
+
+212
+00:15:33,080 --> 00:15:37,160
+That's why we can use
+potentially a different model to
+
+213
+00:15:37,160 --> 00:15:38,340
+recover different structure.
+
+214
+00:15:40,070 --> 00:15:47,200
+Complex generative models can be used to
+discover complex clustering structures.
+
+215
+00:15:47,200 --> 00:15:50,600
+We do not talk about in full,
+but we can easily design,
+
+216
+00:15:50,600 --> 00:15:54,820
+generate a model to generate
+a hierarchical clusters.
+
+217
+00:15:54,820 --> 00:15:59,760
+We can also use prior to further
+customize the clustering algorithm to for
+
+218
+00:15:59,760 --> 00:16:04,970
+example control the topic of one
+cluster or multiple clusters.
+
+219
+00:16:04,970 --> 00:16:08,525
+However one disadvantage of this
+approach is that there is no easy way to
+
+220
+00:16:08,525 --> 00:16:10,630
+directly control the similarity measure.
+
+221
+00:16:11,730 --> 00:16:14,650
+Sometimes we want to that,
+but it's very hard to
+
+222
+00:16:14,650 --> 00:16:19,020
+inject such a special definition
+of similarity into such a model.
+
+223
+00:16:20,210 --> 00:16:22,910
+We also talked about
+similarity-based approaches,
+
+224
+00:16:22,910 --> 00:16:27,630
+these approaches are more flexible to
+actually specify similarity functions.
+
+225
+00:16:29,110 --> 00:16:32,410
+But one major disadvantage is that
+
+226
+00:16:32,410 --> 00:16:34,487
+their objective function
+is not always very clear.
+
+227
+00:16:35,534 --> 00:16:39,730
+The k-Means algorithm has clearly
+defined the objective function, but
+
+228
+00:16:39,730 --> 00:16:42,066
+it's also very similar to
+a model based approach.
+
+229
+00:16:42,066 --> 00:16:47,556
+The hierarchical clustering algorithm on
+
+230
+00:16:47,556 --> 00:16:55,750
+the other hand is harder to
+specify the objective function.
+
+231
+00:16:55,750 --> 00:16:59,360
+So it's not clear what
+exactly is being optimized,
+
+232
+00:17:00,800 --> 00:17:03,890
+both approaches can
+generate term clusters.
+
+233
+00:17:03,890 --> 00:17:08,520
+And document clusters, and
+term clusters can be in general,
+
+234
+00:17:08,520 --> 00:17:13,040
+generated by representing each
+term with some text content.
+
+235
+00:17:13,040 --> 00:17:18,540
+For example, take the context of each
+term as a representation of each term,
+
+236
+00:17:18,540 --> 00:17:22,610
+as we have done in semantic
+relation learning.
+
+237
+00:17:22,610 --> 00:17:29,110
+And then we can certainly cluster terms,
+based on actual text [INAUDIBLE].
+
+238
+00:17:29,110 --> 00:17:34,682
+Of course, term clusters can be generated
+by using generative models as well,
+
+239
+00:17:34,682 --> 00:17:35,855
+as we've seen.
+
+240
+00:17:35,855 --> 00:17:45,855
+[MUSIC]

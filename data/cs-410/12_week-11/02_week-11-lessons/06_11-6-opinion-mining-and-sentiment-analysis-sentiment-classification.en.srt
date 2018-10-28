@@ -1,0 +1,773 @@
+1
+00:00:00,012 --> 00:00:07,163
+[NOISE]
+This
+
+2
+00:00:07,163 --> 00:00:09,920
+lecture is about
+the sentiment classification.
+
+3
+00:00:11,080 --> 00:00:12,150
+If we assume that
+
+4
+00:00:13,330 --> 00:00:17,840
+most of the elements in the opinion
+representation are all ready known,
+
+5
+00:00:17,840 --> 00:00:23,250
+then our only task may be just a sentiment
+classification, as shown in this case.
+
+6
+00:00:23,250 --> 00:00:28,920
+So suppose we know who's the opinion
+holder and what's the opinion target,
+
+7
+00:00:28,920 --> 00:00:33,440
+and also know the content and the context
+of the opinion, then we mainly need to
+
+8
+00:00:33,440 --> 00:00:38,750
+decide the opinion
+sentiment of the review.
+
+9
+00:00:38,750 --> 00:00:45,540
+So this is a case of just using sentiment
+classification for understanding opinion.
+
+10
+00:00:46,570 --> 00:00:51,470
+Sentiment classification can be
+defined more specifically as follows.
+
+11
+00:00:51,470 --> 00:00:57,664
+The input is opinionated text object,
+the output is typically a sentiment label,
+
+12
+00:00:57,664 --> 00:01:02,590
+or a sentiment tag, and
+that can be designed in two ways.
+
+13
+00:01:02,590 --> 00:01:07,000
+One is polarity analysis, where we have
+categories such as positive, negative,
+
+14
+00:01:07,000 --> 00:01:07,500
+or neutral.
+
+15
+00:01:08,990 --> 00:01:14,336
+The other is emotion
+analysis that can go beyond
+
+16
+00:01:14,336 --> 00:01:20,550
+a polarity to characterize
+the feeling of the opinion holder.
+
+17
+00:01:21,610 --> 00:01:24,610
+In the case of polarity analysis,
+we sometimes
+
+18
+00:01:24,610 --> 00:01:29,450
+also have numerical ratings as you
+often see in some reviews on the web.
+
+19
+00:01:30,540 --> 00:01:37,510
+Five might denote the most positive, and
+one maybe the most negative, for example.
+
+20
+00:01:37,510 --> 00:01:42,360
+In general, you have just disk holder
+categories to characterize the sentiment.
+
+21
+00:01:43,710 --> 00:01:46,820
+In emotion analysis, of course,
+there are also different ways for
+
+22
+00:01:46,820 --> 00:01:48,030
+design the categories.
+
+23
+00:01:49,120 --> 00:01:52,620
+The six most frequently
+used categories are happy,
+
+24
+00:01:52,620 --> 00:01:57,150
+sad, fearful, angry,
+surprised, and disgusted.
+
+25
+00:01:59,280 --> 00:02:04,066
+So as you can see, the task is essentially
+a classification task, or categorization
+
+26
+00:02:04,066 --> 00:02:08,660
+task, as we've seen before, so it's
+a special case of text categorization.
+
+27
+00:02:08,660 --> 00:02:13,034
+This also means any textual categorization
+method can be used to do sentiment
+
+28
+00:02:13,034 --> 00:02:14,120
+classification.
+
+29
+00:02:15,320 --> 00:02:18,970
+Now of course if you just do that,
+the accuracy may not be good
+
+30
+00:02:18,970 --> 00:02:24,040
+because sentiment classification
+does requires some improvement over
+
+31
+00:02:24,040 --> 00:02:29,740
+regular text categorization technique,
+or simple text categorization technique.
+
+32
+00:02:29,740 --> 00:02:33,220
+In particular,
+it needs two kind of improvements.
+
+33
+00:02:33,220 --> 00:02:37,324
+One is to use more sophisticated features
+that may be more appropriate for
+
+34
+00:02:37,324 --> 00:02:40,050
+sentiment tagging as I
+will discuss in a moment.
+
+35
+00:02:41,420 --> 00:02:45,878
+The other is to consider
+the order of these categories, and
+
+36
+00:02:45,878 --> 00:02:51,677
+especially in polarity analysis,
+it's very clear there's an order here,
+
+37
+00:02:51,677 --> 00:02:56,115
+and so these categories
+are not all that independent.
+
+38
+00:02:56,115 --> 00:03:00,840
+There's order among them, and so
+it's useful to consider the order.
+
+39
+00:03:00,840 --> 00:03:03,720
+For example, we could use
+ordinal regression to do that,
+
+40
+00:03:03,720 --> 00:03:06,760
+and that's something that
+we'll talk more about later.
+
+41
+00:03:06,760 --> 00:03:11,080
+So now, let's talk about some features
+that are often very useful for
+
+42
+00:03:11,080 --> 00:03:14,048
+text categorization and
+text mining in general, but
+
+43
+00:03:14,048 --> 00:03:17,449
+some of them are especially also
+needed for sentiment analysis.
+
+44
+00:03:18,660 --> 00:03:23,480
+So let's start from the simplest one,
+which is character n-grams.
+
+45
+00:03:23,480 --> 00:03:26,490
+You can just have a sequence
+of characters as a unit,
+
+46
+00:03:26,490 --> 00:03:32,210
+and they can be mixed with different n's,
+different lengths.
+
+47
+00:03:32,210 --> 00:03:35,260
+All right, and
+this is a very general way and
+
+48
+00:03:35,260 --> 00:03:38,680
+very robust way to
+represent the text data.
+
+49
+00:03:38,680 --> 00:03:41,180
+And you could do that for
+any language, pretty much.
+
+50
+00:03:42,260 --> 00:03:46,430
+And this is also robust to spelling
+errors or recognition errors, right?
+
+51
+00:03:46,430 --> 00:03:50,680
+So if you misspell a word by one character
+and this representation actually would
+
+52
+00:03:50,680 --> 00:03:55,620
+allow you to match this word when
+it occurs in the text correctly.
+
+53
+00:03:55,620 --> 00:04:00,700
+Right, so misspell the word and
+the correct form can be matched because
+
+54
+00:04:00,700 --> 00:04:04,670
+they contain some common
+n-grams of characters.
+
+55
+00:04:04,670 --> 00:04:08,901
+But of course such a recommendation
+would not be as discriminating as words.
+
+56
+00:04:10,080 --> 00:04:14,030
+So next, we have word n-grams,
+a sequence of words and again,
+
+57
+00:04:14,030 --> 00:04:17,920
+we can mix them with different n's.
+
+58
+00:04:17,920 --> 00:04:23,331
+Unigram's are actually often very
+effective for a lot of text processing
+
+59
+00:04:23,331 --> 00:04:29,177
+tasks, and it's mostly because words
+are word designed features by humans for
+
+60
+00:04:29,177 --> 00:04:34,097
+communication, and so
+they are often good enough for many tasks.
+
+61
+00:04:34,097 --> 00:04:38,710
+But it's not good, or not sufficient for
+sentiment analysis clearly.
+
+62
+00:04:38,710 --> 00:04:42,250
+For example, we might see a sentence like,
+
+63
+00:04:42,250 --> 00:04:47,420
+it's not good or
+it's not as good as something else, right?
+
+64
+00:04:47,420 --> 00:04:49,810
+So in such a case if you
+just take a good and
+
+65
+00:04:49,810 --> 00:04:54,240
+that would suggest positive that's not
+good, all right so it's not accurate.
+
+66
+00:04:54,240 --> 00:04:59,586
+But if you take a bigram, not good
+together, and then it's more accurate.
+
+67
+00:04:59,586 --> 00:05:03,930
+So longer n-grams are generally more
+discriminative, and they're more specific.
+
+68
+00:05:03,930 --> 00:05:07,860
+If you match it, and it says a lot, and
+
+69
+00:05:07,860 --> 00:05:11,250
+it's accurate it's unlikely,
+very ambiguous.
+
+70
+00:05:11,250 --> 00:05:16,770
+But it may cause overfitting because with
+such very unique features that machine
+
+71
+00:05:16,770 --> 00:05:21,884
+oriented program can easily pick up
+such features from the training set and
+
+72
+00:05:21,884 --> 00:05:26,284
+to rely on such unique features
+to distinguish the categories.
+
+73
+00:05:26,284 --> 00:05:30,970
+And obviously, that kind of classify, one
+would generalize word to future there when
+
+74
+00:05:30,970 --> 00:05:34,850
+such discriminative features
+will not necessarily occur.
+
+75
+00:05:34,850 --> 00:05:39,090
+So that's a problem of
+overfitting that's not desirable.
+
+76
+00:05:39,090 --> 00:05:43,990
+We can also consider part of speech tag,
+n-grams if we can do part of
+
+77
+00:05:43,990 --> 00:05:49,310
+speech tagging an, for example,
+adjective noun could form a pair.
+
+78
+00:05:49,310 --> 00:05:55,040
+We can also mix n-grams of words and
+n-grams of part of speech tags.
+
+79
+00:05:55,040 --> 00:05:59,790
+For example, the word great might be
+followed by a noun, and this could become
+
+80
+00:05:59,790 --> 00:06:05,140
+a feature, a hybrid feature, that could
+be useful for sentiment analysis.
+
+81
+00:06:06,820 --> 00:06:09,960
+So next we can also have word classes.
+
+82
+00:06:09,960 --> 00:06:15,420
+So these classes can be syntactic like a
+part of speech tags, or could be semantic,
+
+83
+00:06:15,420 --> 00:06:20,731
+and they might represent concepts in
+the thesaurus or ontology, like WordNet.
+
+84
+00:06:20,731 --> 00:06:25,360
+Or they can be recognized the name
+entities, like people or place, and
+
+85
+00:06:25,360 --> 00:06:31,240
+these categories can be used to enrich
+the presentation as additional features.
+
+86
+00:06:31,240 --> 00:06:35,884
+We can also learn word clusters and
+parodically, for example,
+
+87
+00:06:35,884 --> 00:06:40,260
+we've talked about the mining
+associations of words.
+
+88
+00:06:40,260 --> 00:06:43,325
+And so we can have cluster of
+paradigmatically related words or
+
+89
+00:06:43,325 --> 00:06:45,090
+syntaxmatically related words, and
+
+90
+00:06:45,090 --> 00:06:50,910
+these clusters can be features to
+supplement the word base representation.
+
+91
+00:06:50,910 --> 00:06:54,100
+Furthermore, we can also have
+frequent pattern syntax, and
+
+92
+00:06:54,100 --> 00:06:57,030
+these could be frequent word set,
+the words that
+
+93
+00:06:57,030 --> 00:07:01,940
+form the pattern do not necessarily
+occur together or next to each other.
+
+94
+00:07:01,940 --> 00:07:04,410
+But we'll also have locations where
+
+95
+00:07:04,410 --> 00:07:09,340
+the words my occur more closely together,
+and such
+
+96
+00:07:09,340 --> 00:07:13,500
+patterns provide a more discriminative
+features than words obviously.
+
+97
+00:07:14,695 --> 00:07:18,092
+And they may also generalize better
+than just regular n-grams because they
+
+98
+00:07:18,092 --> 00:07:18,815
+are frequent.
+
+99
+00:07:18,815 --> 00:07:22,337
+So you expected them to
+occur also in tested data.
+
+100
+00:07:22,337 --> 00:07:27,244
+So they have a lot of advantages, but
+they might still face the problem
+
+101
+00:07:27,244 --> 00:07:31,000
+of overfeeding as the features
+become more complex.
+
+102
+00:07:31,000 --> 00:07:37,500
+This is a problem in general, and the same
+is true for parse tree-based features,
+
+103
+00:07:37,500 --> 00:07:42,610
+when you can use a parse tree to derive
+features such as frequent subtrees, or
+
+104
+00:07:42,610 --> 00:07:46,405
+paths, and
+those are even more discriminating, but
+
+105
+00:07:46,405 --> 00:07:51,160
+they're also are more likely
+to cause over fitting.
+
+106
+00:07:51,160 --> 00:07:55,510
+And in general, pattern discovery
+algorithm's are very useful for
+
+107
+00:07:55,510 --> 00:07:59,330
+feature construction because they allow
+us to search in a large space of possible
+
+108
+00:07:59,330 --> 00:08:04,350
+features that are more complex than
+words that are sometimes useful.
+
+109
+00:08:04,350 --> 00:08:08,900
+So in general, natural language
+processing is very important that
+
+110
+00:08:08,900 --> 00:08:14,030
+they derive complex features, and
+they can enrich text representation.
+
+111
+00:08:14,030 --> 00:08:14,760
+So for example,
+
+112
+00:08:14,760 --> 00:08:21,160
+this is a simple sentence that I showed
+you a long time ago in another lecture.
+
+113
+00:08:21,160 --> 00:08:26,570
+So from these words we can only
+derive simple word n-grams,
+
+114
+00:08:26,570 --> 00:08:29,210
+representations or character n-grams.
+
+115
+00:08:29,210 --> 00:08:32,230
+But with NLP,
+we can enrich the representation
+
+116
+00:08:32,230 --> 00:08:37,196
+with a lot of other information such
+as part of speech tags, parse trees or
+
+117
+00:08:37,196 --> 00:08:40,340
+entities, or even speech act.
+
+118
+00:08:40,340 --> 00:08:45,392
+Now with such enriching information
+of course, then we can generate a lot
+
+119
+00:08:45,392 --> 00:08:50,361
+of other features, more complex features
+like a mixed grams of a word and
+
+120
+00:08:50,361 --> 00:08:54,130
+the part of speech tags, or
+even a part of a parse tree.
+
+121
+00:08:55,870 --> 00:09:00,890
+So in general, feature design actually
+affects categorization accuracy
+
+122
+00:09:00,890 --> 00:09:05,780
+significantly, and it's a very important
+part of any machine learning application.
+
+123
+00:09:05,780 --> 00:09:10,750
+In general, I think it would be
+most effective if you can combine
+
+124
+00:09:10,750 --> 00:09:15,750
+machine learning, error analysis, and
+domain knowledge in design features.
+
+125
+00:09:15,750 --> 00:09:18,160
+So first you want to
+use the main knowledge,
+
+126
+00:09:18,160 --> 00:09:22,820
+your understanding of the problem,
+the design seed features, and
+
+127
+00:09:22,820 --> 00:09:27,920
+you can also define a basic feature space
+with a lot of possible features for
+
+128
+00:09:27,920 --> 00:09:32,110
+the machine learning program to work on,
+and machine can be applied to select
+
+129
+00:09:32,110 --> 00:09:35,410
+the most effective features or
+construct the new features.
+
+130
+00:09:35,410 --> 00:09:37,570
+That's feature learning, and
+
+131
+00:09:37,570 --> 00:09:43,630
+these features can then be further
+analyzed by humans through error analysis.
+
+132
+00:09:43,630 --> 00:09:46,386
+And you can look at
+the categorization errors, and
+
+133
+00:09:46,386 --> 00:09:50,488
+then further analyze what features can
+help you recover from those errors,
+
+134
+00:09:50,488 --> 00:09:54,460
+or what features cause overfitting and
+cause those errors.
+
+135
+00:09:54,460 --> 00:09:58,177
+And so this can lead into
+feature validation that will
+
+136
+00:09:58,177 --> 00:10:01,823
+revised the feature set,
+and then you can iterate.
+
+137
+00:10:01,823 --> 00:10:05,140
+And we might consider using
+a different features space.
+
+138
+00:10:07,520 --> 00:10:11,260
+So NLP enriches text
+recognition as I just said, and
+
+139
+00:10:11,260 --> 00:10:14,150
+because it enriches the feature space,
+
+140
+00:10:14,150 --> 00:10:19,165
+it allows much larger such a space
+of features and there are also many,
+
+141
+00:10:19,165 --> 00:10:23,514
+many more features that can be
+very useful for a lot of tasks.
+
+142
+00:10:23,514 --> 00:10:28,871
+But be careful not to use a lot
+of category features because
+
+143
+00:10:28,871 --> 00:10:33,464
+it can cause overfitting,
+or otherwise you would
+
+144
+00:10:33,464 --> 00:10:38,401
+have to training careful
+not to let overflow happen.
+
+145
+00:10:38,401 --> 00:10:41,375
+So a main challenge in design features,
+
+146
+00:10:41,375 --> 00:10:46,534
+a common challenge is to optimize
+a trade off between exhaustivity and
+
+147
+00:10:46,534 --> 00:10:51,616
+the specificity, and this trade off
+turns out to be very difficult.
+
+148
+00:10:51,616 --> 00:10:56,485
+Now exhaustivity means we want
+the features to actually have
+
+149
+00:10:56,485 --> 00:10:59,449
+high coverage of a lot of documents.
+
+150
+00:10:59,449 --> 00:11:04,263
+And so in that sense,
+you want the features to be frequent.
+
+151
+00:11:04,263 --> 00:11:08,086
+Specifity requires the feature
+to be discriminative, so
+
+152
+00:11:08,086 --> 00:11:13,090
+naturally infrequent the features
+tend to be more discriminative.
+
+153
+00:11:13,090 --> 00:11:17,652
+So this really cause a trade off between
+
+154
+00:11:17,652 --> 00:11:22,360
+frequent versus infrequent features.
+
+155
+00:11:22,360 --> 00:11:22,896
+And that's why a featured
+design is usually odd.
+
+156
+00:11:22,896 --> 00:11:27,693
+And that's probably the most important
+part in machine learning any
+
+157
+00:11:27,693 --> 00:11:32,076
+problem in particularly in our case,
+for text categoration or
+
+158
+00:11:32,076 --> 00:11:35,723
+more specifically
+the senitment classification.
+
+159
+00:11:35,723 --> 00:11:45,723
+[MUSIC]

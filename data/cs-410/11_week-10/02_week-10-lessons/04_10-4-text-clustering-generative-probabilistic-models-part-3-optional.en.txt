@@ -1,0 +1,157 @@
+[SOUND]
+This lecture is a continuing discussion of generative
+probabilistic models for tax classroom. In this lecture, we're going to
+do a finishing discussion of generative probabilistic models for
+text crossing. So this is a slide that you have seen
+before and here, we show how we define the mixture model for text crossing and
+what the likelihood function looks like. And we can also compute
+the maximum likelihood estimate, to estimate the parameters. In this lecture, we're going to do talk
+more about how exactly we're going to compute the maximum likelihood estimate. As in most cases the Algorithm can be used
+to solve this problem for mixture models. So here's the detail of this Algorithm for
+document clustering. Now, if you have understood
+how Algorithm works for topic models like TRSA, and
+I think here it would be very similar. And we just need to adapt a little
+bit to this new mixture model. So as you may recall Algorithm starts with
+initialization of all the parameters. So this is the same as what
+happened before for topic models. And then we're going to repeat
+until the likelihood converges and in each step we'll do E step and M step. In M step, we're going to infer which distribution
+has been used to generate each document. So I have to introduce
+a hidden variable Zd for each document and this variable could take
+a value from the range of 1 through k, representing k different distributions. More specifically basically, we're going
+to apply base rules to infer which distribution is more likely to
+have generated this document, or computing the posterior probability of
+the distribution given the document. And we know it's proportional
+to the probability of selecting this
+distribution p of Z the i. And the probability of generating this
+whole document from the distribution which is the product of the probabilities of
+world for this document as you see here. Now, as you all clear this use for
+kind of remember, the normalizer or
+the constraint on this probability. So in this case, we know
+the constraint on this probability in E-Step is that all the probabilities
+of Z equals i must sum to 1. Because the documented must have been
+generated from precisely one of these k topics. So the probability of being generated
+from each of them should sum to 1. And if you know this constraint, then
+you can easily compute this distribution as long as you know what
+it is proportional to. So once you compute this product that
+you see here, then you simply normalize these probabilities,
+to make them sum to 1 over all the topics. So that's E-Step, after E-Step we
+want to know which distribution is more likely to have generated this
+document d, and which is unlikely. And then in M-Step we're going to
+re-estimate all the parameters based on the in further z values or in further
+knowledge about which distribution has been used to generate which document. So the re-estimation involves two kinds
+of parameters 1 is p of theta and this is the probability of selecting
+a particular distribution. Before we observe anything, we don't have any knowledge about
+which cluster is more likely. But after we have observed
+that these documents, then we can crack the evidence to
+infer which cluster is more likely. And so this is proportional to the sum of the probability of Z
+sub d j is equal to i. And so this gives us all
+the evidence about using topic i, theta i to generate a document. Pull them together and again,
+we normalize them into probabilities. So this is for key of theta sub i. Now the other kind of parameters
+are the probabilities of words in each distribution, in each cluster. And this is very similar
+to the case piz and here we just report the kinds
+of words that are in documents that are inferred
+to have been generated from a particular topic of theta i here. This would allows to then
+estimate how many words have actually been generated from theta i. And then we'll normalize again these
+accounts in the probabilities so that the probabilities on all
+the words would sum to up. Note that it's very important to
+understand these constraints as they are precisely the normalizing
+in all these formulas. And it's also important to know
+that the distribution is over what? For example, the probability of
+theta is over all the k topics, that's why these k
+probabilities will sum to 1. Whereas the probability of a word given
+theta is a probability distribution over all the words. So there are many probabilities and
+they have to sum to 1. So now, let's take a look at
+a simple example of two clusters. I've two clusters,
+I've assumed some initialized values for the two distributions. And let's assume we randomly
+initialize two probability of selecting each cluster as 0.5,
+so equally likely. And then let's consider one
+document that you have seen here. There are two occurrences of text and
+two occurrences of mining. So there are four words together and
+medical and health did not occur in this document. So let's think about the hidden variable. Now for each document then we
+much use a hidden variable. And before in piz,
+we used one hidden variable for each work because that's
+the output from one mixture model. So in our case the output
+from the mixture model or the observation from mixture
+model is a document, not a word. So now we have one hidden variable
+attached to the document. Now that hidden variable must tell us
+which distribution has been used to generate the document. So it's going to take two values,
+one and two to indicate the two topics. So now how do we infer which
+distribution has been used generally d? Well it's been used base rule,
+so it looks like this. In order for the first topic
+theta 1 to generate a document, two things must happen. First, theta sub 1 must
+have been selected. So it's given by p of theta 1. Second, it must have also be generating
+the four words in the document. Namely, two occurrences of text and
+two occurrences of sub mining. And that's why you see the numerator
+has the product of the probability of selecting theta 1 and the probability of
+generating the document from theta 1. So the denominator is just the sum of
+two possibilities of generality in this document. And you can plug in the numerical
+values to verify indeed in this case, the document is more likely
+to be generated from theta 1, much more likely than from theta 2. So once we have this probability, we can easily compute the probability
+of Z equals 2, given this document. How? Well, we can use the constraint. That's going to be 1 minus 100 over 101. So now it's important that you note
+that in such a computation there is a potential problem of underflow. And that is because if you look at the
+original numerator and the denominator, it involves the competition of
+a product of many small probabilities. Imagine if a document has many words and it's going to be a very small value here
+that can cause the problem of underflow. So to solve the problem,
+we can use a normalize. So here you see that we take
+a average of all these two math solutions to compute average at
+the screen called a theta bar. And this average distribution
+would be comparable to each of these distributions in terms
+of the quantities or the magnitude. So we can then divide the numerator and the denominator both by this normalizer. So basically this normalizes
+the probability of generating this document by using this
+average word distribution. So you can see the normalizer is here. And since we have used exactly the same
+normalizer for the numerator and the denominator. The whole value of this expression is not
+changed but by doing this normalization you can see we can make the numerators and
+the denominators more manageable in that the overall value is not
+going to be very small for each. And thus we can avoid
+the underflow problem. In some other times we sometimes
+also use logarithm of the product to convert this into a sum
+of log of probabilities. This can help preserve precision as well,
+but in this case we cannot use
+algorithm to solve the problem. Because there is a sum in the denominator,
+but this kind of normalizes can be
+effective for solving this problem. So it's a technique that's sometimes
+useful in other situations in other situations as well. Now let's look at the M-Step. So from the E-Step we can see our estimate
+of which distribution is more likely to have generated a document at d. And you can see d1's more like
+got it from the first topic, where is d2 is more like
+from second topic, etc. Now, let's think about what we
+need to compute in M-step well basically we need to
+re-estimate all the parameters. First, look at p of theta 1 and
+p of theta 2. How do we estimate that? Intuitively you can just pool together
+these z, the probabilities from E-step. So if all of these documents say,
+well they're more likely from theta 1, then we intuitively would give
+a higher probability to theta 1. In this case,
+we can just take an average of these probabilities that you see here and
+we've obtain a 0.6 for theta 1. So 01 is more likely and then theta 2. So you can see probability of
+02 would be natural in 0.4. What about these word of probabilities? Well we do the same, and
+intuition is the same. So we're going to see, in order to estimate the probabilities
+of words in theta 1, we're going to look at which documents
+have been generated from theta 1. And we're going to pull together the words
+in those documents and normalize them. So this is basically what I just said. More specifically, we're going to do for
+example, use all the kinds of text in these documents for estimating
+the probability of text given theta 1. But we're not going to use their
+raw count or total accounts. Instead, we can do that discount them
+by the probabilities that each document is likely been generated from theta 1. So these gives us some
+fractional accounts. And then these accounts
+would be then normalized in order to get the probability. Now, how do we normalize them? Well these probability of
+these words must assign to 1. So to summarize our discussion of
+generative models for clustering. Well we show that a slight variation
+of topic model can be used for clustering documents. And this also shows the power
+of generating models in general. By changing the generation assumption and
+changing the model slightly we can achieve different goals, and we can capture
+different patterns and types of data. So in this case, each cluster is
+represented by unigram language model word distribution and
+that is similar to topic model. So here you can see the word distribution
+actually generates a term cluster as a by-product. A document that is generated by first
+choosing a unigram language model. And then generating all the words
+in the document are using just a single language model. And this is very different from again
+copy model where we can generate the words in the document by using
+multiple unigram language models. And then the estimated model parameters
+are given both topic characterization of each cluster and the probabilistic assignment of
+each document into a cluster. And this probabilistic assignment
+sometimes is useful for some applications. But if we want to achieve
+harder clusters mainly to partition documents into
+disjointed clusters. Then we can just force a document into
+the cluster corresponding to the words distribution that's most likely
+to have generated the document. We've also shown that the Algorithm can
+be used to compute the maximum likelihood estimate. And in this case, we need to use a special number addition technique
+to avoid underflow. [MUSIC]

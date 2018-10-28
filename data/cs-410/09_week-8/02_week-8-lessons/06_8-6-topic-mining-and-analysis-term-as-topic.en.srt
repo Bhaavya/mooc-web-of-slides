@@ -1,0 +1,780 @@
+1
+00:00:00,000 --> 00:00:02,974
+[MUSIC]
+
+2
+00:00:07,749 --> 00:00:11,320
+This lecture is about topic mining and
+analysis.
+
+3
+00:00:12,760 --> 00:00:17,130
+We're going to talk about
+using a term as topic.
+
+4
+00:00:17,130 --> 00:00:20,700
+This is a slide that you have
+seen in a earlier lecture
+
+5
+00:00:20,700 --> 00:00:25,120
+where we define the task of
+topic mining and analysis.
+
+6
+00:00:25,120 --> 00:00:30,700
+We also raised the question, how do
+we exactly define the topic of theta?
+
+7
+00:00:31,780 --> 00:00:36,020
+So in this lecture, we're going to
+offer one way to define it, and
+
+8
+00:00:36,020 --> 00:00:37,780
+that's our initial idea.
+
+9
+00:00:37,780 --> 00:00:40,980
+Our idea here is defining
+a topic simply as a term.
+
+10
+00:00:42,020 --> 00:00:44,200
+A term can be a word or a phrase.
+
+11
+00:00:45,240 --> 00:00:49,500
+And in general,
+we can use these terms to describe topics.
+
+12
+00:00:49,500 --> 00:00:54,200
+So our first thought is just
+to define a topic as one term.
+
+13
+00:00:54,200 --> 00:00:58,820
+For example, we might have terms
+like sports, travel, or science,
+
+14
+00:00:58,820 --> 00:00:59,440
+as you see here.
+
+15
+00:00:59,440 --> 00:01:02,603
+Now if we define a topic in this way,
+
+16
+00:01:02,603 --> 00:01:09,200
+we can then analyze the coverage
+of such topics in each document.
+
+17
+00:01:09,200 --> 00:01:10,510
+Here for example,
+
+18
+00:01:10,510 --> 00:01:15,560
+we might want to discover to what
+extent document one covers sports.
+
+19
+00:01:15,560 --> 00:01:21,260
+And we found that 30% of the content
+of document one is about sports.
+
+20
+00:01:21,260 --> 00:01:23,730
+And 12% is about the travel, etc.
+
+21
+00:01:23,730 --> 00:01:28,880
+We might also discover document
+two does not cover sports at all.
+
+22
+00:01:28,880 --> 00:01:31,240
+So the coverage is zero, etc.
+
+23
+00:01:32,630 --> 00:01:39,040
+So now, of course,
+as we discussed in the task definition for
+
+24
+00:01:39,040 --> 00:01:42,900
+topic mining and analysis,
+we have two tasks.
+
+25
+00:01:42,900 --> 00:01:44,960
+One is to discover the topics.
+
+26
+00:01:44,960 --> 00:01:48,110
+And the second is to analyze coverage.
+
+27
+00:01:48,110 --> 00:01:51,550
+So let's first think
+about how we can discover
+
+28
+00:01:51,550 --> 00:01:55,080
+topics if we represent
+each topic by a term.
+
+29
+00:01:55,080 --> 00:01:59,390
+So that means we need to mine k
+topical terms from a collection.
+
+30
+00:02:01,050 --> 00:02:04,080
+Now there are, of course,
+many different ways of doing that.
+
+31
+00:02:05,670 --> 00:02:08,617
+And we're going to talk about
+a natural way of doing that,
+
+32
+00:02:08,617 --> 00:02:10,750
+which is also likely effective.
+
+33
+00:02:10,750 --> 00:02:11,641
+So first of all,
+
+34
+00:02:11,641 --> 00:02:16,655
+we're going to parse the text data in
+the collection to obtain candidate terms.
+
+35
+00:02:16,655 --> 00:02:20,665
+Here candidate terms can be words or
+phrases.
+
+36
+00:02:20,665 --> 00:02:25,475
+Let's say the simplest solution is
+to just take each word as a term.
+
+37
+00:02:25,475 --> 00:02:29,145
+These words then become candidate topics.
+
+38
+00:02:29,145 --> 00:02:32,790
+Then we're going to design a scoring
+function to match how good each term
+
+39
+00:02:32,790 --> 00:02:33,650
+is as a topic.
+
+40
+00:02:35,460 --> 00:02:37,150
+So how can we design such a function?
+
+41
+00:02:37,150 --> 00:02:40,140
+Well there are many things
+that we can consider.
+
+42
+00:02:40,140 --> 00:02:44,180
+For example, we can use pure statistics
+to design such a scoring function.
+
+43
+00:02:45,550 --> 00:02:48,820
+Intuitively, we would like to
+favor representative terms,
+
+44
+00:02:48,820 --> 00:02:53,950
+meaning terms that can represent
+a lot of content in the collection.
+
+45
+00:02:53,950 --> 00:02:58,610
+So that would mean we want
+to favor a frequent term.
+
+46
+00:02:58,610 --> 00:03:03,990
+However, if we simply use the frequency
+to design the scoring function,
+
+47
+00:03:03,990 --> 00:03:07,982
+then the highest scored terms
+would be general terms or
+
+48
+00:03:07,982 --> 00:03:10,876
+functional terms like the, etc.
+
+49
+00:03:10,876 --> 00:03:13,510
+Those terms occur very frequently English.
+
+50
+00:03:14,650 --> 00:03:19,340
+So we also want to avoid having
+such words on the top so
+
+51
+00:03:19,340 --> 00:03:22,150
+we want to penalize such words.
+
+52
+00:03:22,150 --> 00:03:26,480
+But in general, we would like to favor
+terms that are fairly frequent but
+
+53
+00:03:26,480 --> 00:03:28,020
+not so frequent.
+
+54
+00:03:28,020 --> 00:03:34,030
+So a particular approach could be based
+on TF-IDF weighting from retrieval.
+
+55
+00:03:35,140 --> 00:03:37,230
+And TF stands for term frequency.
+
+56
+00:03:37,230 --> 00:03:40,420
+IDF stands for inverse document frequency.
+
+57
+00:03:40,420 --> 00:03:43,310
+We talked about some of these
+
+58
+00:03:43,310 --> 00:03:48,090
+ideas in the lectures about
+the discovery of word associations.
+
+59
+00:03:48,090 --> 00:03:50,766
+So these are statistical methods,
+
+60
+00:03:50,766 --> 00:03:56,280
+meaning that the function is
+defined mostly based on statistics.
+
+61
+00:03:56,280 --> 00:03:59,080
+So the scoring function
+would be very general.
+
+62
+00:03:59,080 --> 00:04:02,890
+It can be applied to any language,
+any text.
+
+63
+00:04:02,890 --> 00:04:06,650
+But when we apply such a approach
+to a particular problem,
+
+64
+00:04:06,650 --> 00:04:12,020
+we might also be able to leverage
+some domain-specific heuristics.
+
+65
+00:04:12,020 --> 00:04:16,815
+For example, in news we might favor
+title words actually general.
+
+66
+00:04:16,815 --> 00:04:21,340
+We might want to favor title
+words because the authors tend to
+
+67
+00:04:21,340 --> 00:04:26,100
+use the title to describe
+the topic of an article.
+
+68
+00:04:27,750 --> 00:04:32,480
+If we're dealing with tweets,
+we could also favor hashtags,
+
+69
+00:04:32,480 --> 00:04:37,430
+which are invented to denote topics.
+
+70
+00:04:37,430 --> 00:04:43,630
+So naturally, hashtags can be good
+candidates for representing topics.
+
+71
+00:04:44,780 --> 00:04:50,430
+Anyway, after we have this design
+scoring function, then we can discover
+
+72
+00:04:50,430 --> 00:04:55,960
+the k topical terms by simply picking
+k terms with the highest scores.
+
+73
+00:04:55,960 --> 00:04:57,240
+Now, of course,
+
+74
+00:04:57,240 --> 00:05:02,040
+we might encounter situation where the
+highest scored terms are all very similar.
+
+75
+00:05:02,040 --> 00:05:06,910
+They're semantically similar, or
+closely related, or even synonyms.
+
+76
+00:05:06,910 --> 00:05:08,860
+So that's not desirable.
+
+77
+00:05:08,860 --> 00:05:12,280
+So we also want to have coverage over
+all the content in the collection.
+
+78
+00:05:12,280 --> 00:05:15,080
+So we would like to remove redundancy.
+
+79
+00:05:15,080 --> 00:05:19,600
+And one way to do that is
+to do a greedy algorithm,
+
+80
+00:05:19,600 --> 00:05:24,450
+which is sometimes called a maximal
+marginal relevance ranking.
+
+81
+00:05:24,450 --> 00:05:29,330
+Basically, the idea is to go down
+the list based on our scoring
+
+82
+00:05:29,330 --> 00:05:34,380
+function and gradually take terms
+to collect the k topical terms.
+
+83
+00:05:34,380 --> 00:05:36,840
+The first term, of course, will be picked.
+
+84
+00:05:36,840 --> 00:05:40,500
+When we pick the next term, we're
+going to look at what terms have already
+
+85
+00:05:40,500 --> 00:05:45,120
+been picked and try to avoid
+picking a term that's too similar.
+
+86
+00:05:45,120 --> 00:05:50,610
+So while we are considering
+the ranking of a term in the list,
+
+87
+00:05:50,610 --> 00:05:54,260
+we are also considering
+the redundancy of the candidate term
+
+88
+00:05:54,260 --> 00:05:56,970
+with respect to the terms
+that we already picked.
+
+89
+00:05:58,090 --> 00:06:02,933
+And with some thresholding,
+then we can get a balance of
+
+90
+00:06:02,933 --> 00:06:08,330
+the redundancy removal and
+also high score of a term.
+
+91
+00:06:08,330 --> 00:06:11,990
+Okay, so
+after this that will get k topical terms.
+
+92
+00:06:11,990 --> 00:06:17,550
+And those can be regarded as the topics
+that we discovered from the connection.
+
+93
+00:06:17,550 --> 00:06:21,980
+Next, let's think about how we're going
+to compute the topic coverage pi sub ij.
+
+94
+00:06:23,430 --> 00:06:26,971
+So looking at this picture,
+we have sports, travel and science and
+
+95
+00:06:26,971 --> 00:06:28,130
+these topics.
+
+96
+00:06:28,130 --> 00:06:31,190
+And now suppose you are give a document.
+
+97
+00:06:31,190 --> 00:06:35,040
+How should we pick out coverage
+of each topic in the document?
+
+98
+00:06:36,660 --> 00:06:42,690
+Well, one approach can be to simply
+count occurrences of these terms.
+
+99
+00:06:42,690 --> 00:06:46,770
+So for example, sports might have occurred
+four times in this this document and
+
+100
+00:06:46,770 --> 00:06:49,570
+travel occurred twice, etc.
+
+101
+00:06:49,570 --> 00:06:54,420
+And then we can just normalize these
+counts as our estimate of the coverage
+
+102
+00:06:54,420 --> 00:06:56,570
+probability for each topic.
+
+103
+00:06:56,570 --> 00:07:01,780
+So in general, the formula would
+be to collect the counts of
+
+104
+00:07:01,780 --> 00:07:05,240
+all the terms that represent the topics.
+
+105
+00:07:05,240 --> 00:07:10,220
+And then simply normalize them so
+that the coverage of each
+
+106
+00:07:10,220 --> 00:07:13,480
+topic in the document would add to one.
+
+107
+00:07:15,120 --> 00:07:21,200
+This forms a distribution of the topics
+for the document to characterize coverage
+
+108
+00:07:21,200 --> 00:07:26,560
+of different topics in the document.
+
+109
+00:07:26,560 --> 00:07:30,100
+Now, as always,
+when we think about idea for
+
+110
+00:07:30,100 --> 00:07:34,940
+solving problem, we have to ask
+the question, how good is this one?
+
+111
+00:07:34,940 --> 00:07:37,180
+Or is this the best way
+of solving problem?
+
+112
+00:07:38,690 --> 00:07:41,110
+So now let's examine this approach.
+
+113
+00:07:41,110 --> 00:07:44,940
+In general,
+we have to do some empirical evaluation
+
+114
+00:07:46,010 --> 00:07:50,280
+by using actual data sets and
+to see how well it works.
+
+115
+00:07:52,360 --> 00:07:57,340
+Well, in this case let's take
+a look at a simple example here.
+
+116
+00:07:57,340 --> 00:08:03,260
+And we have a text document that's
+about a NBA basketball game.
+
+117
+00:08:04,800 --> 00:08:07,700
+So in terms of the content,
+it's about sports.
+
+118
+00:08:08,950 --> 00:08:14,600
+But if we simply count these
+words that represent our topics,
+
+119
+00:08:14,600 --> 00:08:19,070
+we will find that the word sports
+actually did not occur in the article,
+
+120
+00:08:19,070 --> 00:08:21,420
+even though the content
+is about the sports.
+
+121
+00:08:22,520 --> 00:08:25,750
+So the count of sports is zero.
+
+122
+00:08:25,750 --> 00:08:31,939
+That means the coverage of sports
+would be estimated as zero.
+
+123
+00:08:31,939 --> 00:08:36,723
+Now of course,
+the term science also did not occur in
+
+124
+00:08:36,723 --> 00:08:40,980
+the document and
+it's estimate is also zero.
+
+125
+00:08:40,980 --> 00:08:42,230
+And that's okay.
+
+126
+00:08:42,230 --> 00:08:47,257
+But sports certainly is not okay because
+we know the content is about sports.
+
+127
+00:08:47,257 --> 00:08:49,150
+So this estimate has problem.
+
+128
+00:08:50,880 --> 00:08:56,050
+What's worse, the term travel
+actually occurred in the document.
+
+129
+00:08:56,050 --> 00:08:59,940
+So when we estimate the coverage
+of the topic travel,
+
+130
+00:08:59,940 --> 00:09:02,140
+we have got a non-zero count.
+
+131
+00:09:02,140 --> 00:09:05,000
+So its estimated coverage
+will be non-zero.
+
+132
+00:09:05,000 --> 00:09:07,770
+So this obviously is also not desirable.
+
+133
+00:09:08,800 --> 00:09:13,910
+So this simple example illustrates
+some problems of this approach.
+
+134
+00:09:13,910 --> 00:09:17,704
+First, when we count what
+words belong to to the topic,
+
+135
+00:09:17,704 --> 00:09:20,460
+we also need to consider related words.
+
+136
+00:09:20,460 --> 00:09:24,285
+We can't simply just count
+the topic word sports.
+
+137
+00:09:24,285 --> 00:09:26,440
+In this case, it did not occur at all.
+
+138
+00:09:26,440 --> 00:09:31,340
+But there are many related words
+like basketball, game, etc.
+
+139
+00:09:31,340 --> 00:09:33,860
+So we need to count
+the related words also.
+
+140
+00:09:33,860 --> 00:09:38,910
+The second problem is that a word
+like star can be actually ambiguous.
+
+141
+00:09:38,910 --> 00:09:42,900
+So here it probably means
+a basketball star, but
+
+142
+00:09:42,900 --> 00:09:47,600
+we can imagine it might also
+mean a star on the sky.
+
+143
+00:09:47,600 --> 00:09:53,120
+So in that case, the star might actually
+suggest, perhaps, a topic of science.
+
+144
+00:09:54,210 --> 00:09:56,360
+So we need to deal with that as well.
+
+145
+00:09:56,360 --> 00:10:02,325
+Finally, a main restriction of this
+approach is that we have only one
+
+146
+00:10:02,325 --> 00:10:08,520
+term to describe the topic, so it cannot
+really describe complicated topics.
+
+147
+00:10:08,520 --> 00:10:12,040
+For example, a very specialized
+topic in sports would be harder to
+
+148
+00:10:12,040 --> 00:10:15,210
+describe by using just a word or
+one phrase.
+
+149
+00:10:15,210 --> 00:10:17,150
+We need to use more words.
+
+150
+00:10:17,150 --> 00:10:20,760
+So this example illustrates
+some general problems with
+
+151
+00:10:20,760 --> 00:10:23,310
+this approach of treating a term as topic.
+
+152
+00:10:23,310 --> 00:10:26,725
+First, it lacks expressive power.
+
+153
+00:10:26,725 --> 00:10:30,729
+Meaning that it can only represent
+the simple general topics, but
+
+154
+00:10:30,729 --> 00:10:36,035
+it cannot represent the complicated topics
+that might require more words to describe.
+
+155
+00:10:37,055 --> 00:10:40,660
+Second, it's incomplete
+in vocabulary coverage,
+
+156
+00:10:40,660 --> 00:10:44,930
+meaning that the topic itself
+is only represented as one term.
+
+157
+00:10:44,930 --> 00:10:48,820
+It does not suggest what other
+terms are related to the topic.
+
+158
+00:10:48,820 --> 00:10:52,370
+Even if we're talking about sports,
+there are many terms that are related.
+
+159
+00:10:52,370 --> 00:10:57,060
+So it does not allow us to easily
+count related terms to order,
+
+160
+00:10:57,060 --> 00:10:59,200
+conversion to coverage of this topic.
+
+161
+00:10:59,200 --> 00:11:02,410
+Finally, there is this problem
+of word sense disintegration.
+
+162
+00:11:02,410 --> 00:11:05,862
+A topical term or
+related term can be ambiguous.
+
+163
+00:11:05,862 --> 00:11:08,540
+For example,
+basketball star versus star in the sky.
+
+164
+00:11:10,570 --> 00:11:14,125
+So in the next lecture,
+we're going to talk
+
+165
+00:11:14,125 --> 00:11:18,806
+about how to solve
+the problem with of a topic.
+
+166
+00:11:18,806 --> 00:11:28,806
+[MUSIC]

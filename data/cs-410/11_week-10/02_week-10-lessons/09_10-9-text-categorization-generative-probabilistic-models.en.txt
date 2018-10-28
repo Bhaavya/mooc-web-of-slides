@@ -1,0 +1,344 @@
+[SOUND]
+This lecture is about how to use generative probabilistic
+models for text categorization. There are in general about two kinds
+of approaches to text categorization by using machine learning. One is by generating probabilistic models. The other is discriminative approaches. In this lecture, we're going to
+talk about the generative models. In the next lecture, we're going to
+talk about discriminative approaches. So the problem of text categorization is actually a very similar
+to document clustering. In that, we'll assume that each document
+it belongs to one category or one cluster. The main difference is that in
+clustering we don't really know what are the predefined categories are,
+what are the clusters. In fact,
+that's the goal of text clustering. We want to find such clusters in the data. But in the case of categorization,
+we are given the categories. So we kind of have
+pre-defined categories and then based on these categories and
+training data, we would like to allocate a document to one of these categories or
+sometimes multiple categories. But because of the similarity
+of the two problems, we can actually get the document
+clustering models for text categorization. And we understand how we can
+use generated models to do text categorization from
+the perspective of clustering. And so, this is a slide that we've talked
+about before, about text clustering, where we assume there are multiple topics
+represented by word distributions. Each topic is one cluster. So once we estimated such a model, we faced a problem of deciding which
+cluster document d should belong to. And this question boils down to decide
+which theta i has been used to generate d. Now, suppose d has L words
+represented as xi here. Now, how can you compute
+the probability that a particular topic word distribution zeta i has
+been used to generate this document? Well, in general, we use base
+wall to make this influence and you can see this prior information here
+that we need to consider if a topic or cluster has a higher prior
+then it's more likely that the document has
+been from this cluster. And so, we should favor such a cluster. The other is a likelihood part,
+it's this part. And this has to do with whether
+the topic word of distribution can explain the content
+of this document well. And we want to pick a topic
+that's high by both values. So more specifically,
+we just multiply them together and then choose which topic
+has the highest product. So more rigorously,
+this is what we'd be doing. So we're going to choose
+the topic that would maximize. This posterior probability at the top
+of a given document gets posterior because this one,
+p of the i, is the prior. That's our belief about
+which topic is more likely, before we observe any document. But this conditional probability here is the posterior probability of the topic
+after we have observed the document of d. And base wall allows us to update this
+probability based on the prior and I have shown the details,
+below here you can see how the prior here is related to
+the posterior, on the left-hand side. And this is related to how
+well this word distribution explains the document here, and
+the two are related in this way. So to find the topic that has the higher posterior probability here it's
+equivalent to maximize this product as we have seen also,
+multiple times in this course. And we can then change the probability
+of document in your product of the probability of each word, and
+that's just because we've made an assumption about independence
+in generating each word. So this is just something that you
+have seen in document clustering. And we now can see clearly how we
+can assign a document to a category based on the information
+about word distributions for these categories and
+the prior on these categories. So this idea can be directly
+adapted to do categorization. And this is precisely what
+a Naive Bayes Classifier is doing. So here it's most really
+the same information except that we're looking at
+the categorization problem now. So we assume that if theta i represents category i accurately,
+that means the word distribution characterizes the content of
+documents in category i accurately. Then, what we can do is precisely
+like what we did for text clustering. Namely we're going to assign
+document d to the category that has the highest probability
+of generating this document. In other words, we're going to maximize
+this posterior probability as well. And this is related to the prior and the [INAUDIBLE] as you have
+seen on the previous slide. And so, naturally we can decompose this [INAUDIBLE] into
+a product as you see here. Now, here, I change the notation so
+that we will write down the product as product of all the words
+in the vocabulary, and even though the document
+doesn't contain all the words. And the product is still accurately
+representing the product of all the words in the document
+because of this count here. When a word,
+it doesn't occur in the document. The count would be 0, so
+this time will just disappear. So if actively we'll just have the product
+over other words in the document. So basically, with Naive Bayes Classifier, we're going to score each category for
+the document by this function. Now, you may notice that here it involves
+a product of a lot of small probabilities. And this can cause and the four problem. So one way to solve the problem is
+thru take logarithm of this function, which it doesn't changes all
+the often these categories. But will helps us preserve precision. And so, this is often the function
+that we actually use to score each category and
+then we're going to choose the category that has the highest
+score by this function. So this is called an Naive Bayes
+Classifier, now the keyword base is understandable because we are applying
+a base rule here when we go from the posterior probability of the topic to
+a product of the likelihood and the prior. Now, it's also called a naive because
+we've made an assumption that every word in the document is generated
+independently, and this is indeed a naive assumption because in reality they're
+not generating independently. Once you see some word,
+then other words will more likely occur. For example,
+if you have seen a word like a text. Than that mixed category, they see more clustering more likely to
+appear than if you have not the same text. But this assumption allows
+us to simplify the problem. And it's actually quite effective for
+many text categorization tasks. But you should know that
+this kind of model doesn't have to make this assumption. We could for example, assume that
+words may be dependent on each other. So that would make it a bigram analogy
+model or a trigram analogy model. And of course you can even use a mixture
+model to model what the document looks like in each category. So in nature, they will be all using
+base rule to do classification. But the actual generating model for
+documents in each category can vary. And here, we just talk about very
+simple case perhaps, the simplest case. So now the question is,
+how can we make sure theta i actually represents category i accurately? Now in clustering,
+we learned that this category i or what are the distributions for
+category i from the data. But in our case,
+what can we do to make sure this theta i represents indeed category i. Well if you think about the question, and you likely come up with the idea
+of using the training data. Indeed in the textbook, we typically assume that there
+is training data available and those are the documents that unknown
+to have generator from which category. In other words, these are the documents
+with known categories assigned and of course human experts must do that. In here, you see that T1
+represents the set of documents that are known to have
+the generator from category 1. And T2 represents the documents
+that are known to have been generated from category 2, etc. Now if you look at this picture,
+you'll see that the model here is really a simplified
+unigram language model. It's no longer mixed modal, why? Because we already know which distribution
+has been used to generate which documents. There's no uncertainty here, there's
+no mixing of different categories here. So the estimation problem of
+course would be simplified. But in general,
+you can imagine what we want to do is estimate these probabilities
+that I marked here. And what other probability is that we have
+to estimate it in order to do relation. Well there are two kinds. So one is the prior,
+the probability of theta i and this indicates how popular
+each category is or how likely will it have observed
+the document in that category. The other kind is
+the water distributions and we want to know what words have high
+probabilities for each category. So the idea then is to just
+use observe the training data to estimate these two probabilities. And in general, we can do this
+separately for the different categories. That's just because these documents
+are known to be generated from a specific category. So once we know that, it's in some sense irrelevant of what
+other categories we are also dealing with. So now this is a statistical
+estimation problem. We have observed some
+data from some model and we want to guess
+the parameters of this model. We want to take our best
+guess of the parameters. And this is a problem that we have seen
+also several times in this course. Now, if you haven't thought
+about this problem, haven't seen life based classifier. It would be very useful for
+you to pause the video for a moment and to think about how to solve this problem. So let me state the problem again. So let's just think about with category 1, we know there is one word of distribution
+that has been used to generate documents. And we generate each word in the document
+independently, and we know that we have observed a set of n sub 1
+documents in the set of Q1. These documents have been all
+generated from category 1. Namely have been all generated
+using this same word distribution. Now the question is,
+what would be your guess or estimate of the probability of
+each word in this distribution? And what would be your guess of
+the entire probability of this category? Of course,
+this singular probability depends on how likely are you to see
+documents in other categories? So think for a moment, how do you
+use all this training data including all these documents that are known
+to be in these k categories, to estimate all these parameters? Now, if you spend some time
+to think about this and it would help you understand
+the following few slides. So do spend some time to make sure that
+you can try to solve this problem, or do you best to solve the problem yourself. Now if you have thought about and
+then you will realize the following to it. First, what's the bases for estimating the
+prior or the probability of each category. Well this has to do with whether you
+have observed a lot of documents form that category. Intuitively, you have seen a lot
+of documents in sports and very few in medical science. Then you guess is that the probability
+of the sports category is larger or your prior on the category
+would be larger. And what about the basis for estimating
+the probability of where each category? Well the same, and you'll be just
+assuming that words that are observed frequently in the documents that are known
+to be generated from a category will likely have a higher probability. And that's just a maximum
+Naive Bayes made of. Indeed, that's what we can do, so this
+made the probability of which category and to answer the question,
+which category is most popular? Then we can simply normalize,
+the count of documents in each category. So here you see N sub i denotes
+the number of documents in each category. And we simply just normalize these
+counts to make this a probability. In other words, we make this
+probability proportional to the size of training intercept in each category
+that's a size of the set t sub i. Now what about the word distribution? Well, we do the same. Again this time we can do this for
+each category. So let's say,
+we're considering category i or theta i. So which word has a higher probability? Well, we simply count the word occurrences in the documents that are known
+to be generated from theta i. And then we put together all
+the counts of the same word in the set. And then we just normalize these
+counts to make this distribution of all the words make all
+the probabilities off these words to 1. So in this case, you're going to see this
+is a proportional through the count of the word in the collection of
+training documents T sub i and that's denoted by c of w and T sub i. Now, you may notice that we
+often write down probable estimate in the form of being
+proportional for certain numbers. And this is often sufficient, because we have some constraints
+on these distributions. So the normalizer is
+dictated by the constraint. So in this case, it will be useful for
+you to think about what are the constraints on these
+two kinds of probabilities? So once you figure out
+the answer to this question, and you will know how to
+normalize these accounts. And so this is a good exercise to
+work on if it's not obvious to you. There is another issue in
+Naive Bayes which is a smoothing. In fact the smoothing is a general problem
+in older estimate of language morals. And this has to do with, what would happen if you have
+observed a small amount of data? So smoothing is an important technique
+to address that outsmarts this. In our case, the training data can be
+small and when the data set is small when we use maximum likely estimator we often
+face the problem of zero probability. That means if an event is not observed then the estimated
+probability would be zero. In this case, if we have not seen
+a word in the training documents for let's say, category i. Then our estimator would be zero for the
+probability of this one in this category, and this is generally not accurate. So we have to do smoothing to make
+sure it's not zero probability. The other reason for smoothing is that
+this is a way to bring prior knowledge, and this is also generally true for
+a lot of situations of smoothing. When the data set is small, we tend to rely on some prior
+knowledge to solve the problem. So in this case our [INAUDIBLE] says that
+no word should have zero probability. So smoothing allows us to inject
+these to prior initial that no order has a real zero probability. There is also a third reason which
+us sometimes not very obvious, but we explain that in a moment. And that is to help achieve
+discriminative weighting of terms. And this is also called IDF weighting, inverse document frequency weighting that
+you have seen in mining word relations. So how do we do smoothing? Well in general we add pseudo
+counts to these events, we'll make sure that no event has 0 count. So one possible way of smoothing
+the probability of the category is to simply add a small non active
+constant delta to the count. Let's pretend that every category
+has actually some extra number of documents represented by delta. And in the denominator we also add
+a k multiplied by delta because we want the probability to some to 1. So in total we've added delta k times
+because we have a k categories. Therefore in this sum,
+we have to also add k multiply by delta as a total pseudocount
+that we add up to the estimate. Now, it's interesting to think
+about the influence of that data, obvious data is a smoothing
+parameter here. Meaning that the larger data is and
+the more we will do smoothing and that means we'll more
+rely on pseudocounts. And we might indeed ignore the actual
+counts if they are delta is set to infinity. Imagine what would happen if there
+are approaches positively to infinity? Well, we are going to say every category
+has an infinite amount of documents. And then there's no distinction to them so
+it become just a uniform. What if delta is 0? Well, we just go back to the original
+estimate based on the observed training data to estimate to estimate
+the probability of each category. Now we can do the same for
+the word distribution. But in this case,
+sometimes we find it useful to use a nonuniform seudocount for
+the word. So here you'll see we'll add
+a pseudocounts to each word and that's mule multiplied
+by the probability of the word given by a background
+language model, theta sub b. Now that background model in
+general can be estimated by using a logic collection of tests. Or in this case we will use the whole
+set of all the training data to estimate this background language model. But we don't have to use this one, we can use larger test data that
+are available from somewhere else. Now if we use such a background
+language model that has pseudocounts, we'll find that some words will
+receive more pseudocounts. So what are those words? Well those are the common words
+because they get a high probability by the background average model. So the pseudocounts added for
+such words will be higher. Real words on the other hand
+will have smaller pseudocounts. Now this addition of background
+model would cause a nonuniform smoothing of these word distributions. We're going to bring the probability of
+those common words to a higher level, because of the background model. Now this helps make the difference
+of the probability of such words smaller across categories. Because every category has some help
+from the background four words, and I get the, a,
+which have high probabilities. Therefore, it's not always so
+important that each category has documents that contain a lot
+of occurrences of such words or the estimate is more influenced
+by the background model. And the consequence is that
+when we do categorization, such words tend not to influence
+the decision that much as words that have small probabilities
+from the background language model. Those words don't get some help
+from the background language model. So the difference would be primary because
+of the differences of the occurrences in the training documents
+in different categories. We also see another smoothing parameter
+mu here, which controls the amount of smoothing and just like a delta does for
+the other probability. And you can easily understand why we
+add mu to the denominator, because that represents the sum of all the pseudocounts
+that we add for all the words. So view is also a non
+negative constant and it's [INAUDIBLE] set to control smoothing. Now there are some interesting
+special cases to think about as well. First, let's think about when mu
+approaches infinity what would happen? Well in this case
+the estimate would approach to the background language model we'll
+attempt to the background language model. So we will bring every word distribution
+to the same background language model and that essentially remove the difference
+between these categories. Obviously, we don't want to do that. The other special case is the thing
+about the background model and suppose, we actually set
+the two uniform distribution. And let's say,
+1 over the size of the vocabulary. So each one has the same probability,
+then this smoothing formula is going to be very similar to the one
+on the top when we add delta. It's because we're going to add
+a constant pseudocounts to every word. So in general, in Naive Bayes categorization we
+have to do such a small thing. And then once we have these probabilities, then we can compute the score for
+each category. For a document and then choose the category where it was
+the highest score as we discussed earlier. Now, it's useful to
+further understand whether the Naive Bayes scoring
+function actually makes sense. So to understand that, and also to
+understand why adding a background model will actually achieve the effect of IDF
+weighting and to penalize common words. So suppose we have just two categories and we're going to score based on
+their ratio of probability, right? So this is the. Lets say this is our scoring function for two categories, right? So, this is a score of a document for
+these two categories. And we're going to score based
+on this probability ratio. So if the ratio is larger, then it means it's more
+likely to be in category one. So the larger the score is the more likely the document is in category one. So by using Bayes' rule, we can write down this ratio as follows,
+and you have seen this before. Now, we generally take logarithm of this
+ratio, and to avoid small probabilities. And this would then give us this
+formula in the second line. And here we see something
+really interesting, because this is our scoring function for
+deciding between the two categories. And if you look at this function,
+we'll see it has several parts. The first part here is actually
+log of probability ratio. And so this is a category bias. It doesn't really depend on the document. It just says which category is more
+likely and then we would then favor this category slightly, right? So, the second part has a sum
+of all the words, right? So, these are the words that
+are observed in the document but in general we can consider all
+the words in the vocabulary. So here we're going to
+collect the evidence about which category is more likely,
+right? So inside of the sum you can see
+there is product of two things. The first, is a count of the word. And this count of the word serves as
+a feature to represent the document. And this is what we can
+collect from document. The second part is
+the weight of this feature, here it's the weight on which word, right? This weight tells us to
+what extent observing this word helps contribute in our decision to put this document in category one. Now remember,
+the higher the scoring function is, the more likely it's in category one. Now if you look at this ratio, basically,
+sorry this weight it's basically based on the ratio of the probability of the
+word from each of the two distributions. Essentially we're comparing
+the probability of the word from the two distributions. And if it's a higher according to theta 1, then according to theta 2,
+then this weight would be positive. And therefore it means when
+we observe such a word, we will say that it's more
+likely to be from category one. And the more we observe such a word, the more likely the document
+will be classified as theta 1. If, on the other hand,
+the probability of the word from theta 1 is smaller than the probability
+of the word from theta 2, then you can see that
+this word is negative. Therefore, this is negative evidence for
+supporting category one. That means the more we
+observe such a word, the more likely the document
+is actually from theta 2. So this formula now makes a little sense,
+right? So we're going to aggregate all
+the evidence from the document, we take a sum of all the words. We can call this the features that we collected from the document
+that would help us make the decision. And then each feature has
+a weight that tells us how does this feature support category one or
+just support category two. And this is estimated as the log of
+probability ratio here in naïve Bayes. And then finally we have
+this constant of bias here. So that formula actually
+is a formula that can be generalized to accommodate
+more features and that's why I have introduce
+some other symbols here. To introduce beta 0 to denote the Bayes
+and fi to denote the each feature and beta sub i to denote
+the weight on each feature. Now we do this generalisation,
+what we see is that in general we can represent
+the document by feature vector fi, here of course in this case
+fi is the count of a word. But in general, we can put any features
+that we think are relevant for categorization. For example, document length or font size or
+count of other patterns in the document. And then our scoring function can be
+defined as a sum of a constant beta 0 and the sum of the feature
+weights of all the features. So if each f sub i is a feature
+value then we multiply the value by the corresponding weight,
+beta sub i, and we just take the sum. And this is the aggregate of all evidence
+that we can collect from all these features. And of course there are parameters here. So what are the parameters? Well, these are the betas. These betas are weights. And with a proper setting of the weights,
+then we can expect such a scoring function to work well to classify documents,
+just like in the case of naive Bayes. We can clearly see naive Bayes
+classifier as a special case of this general classifier. Actually, this general form is very close
+to a classifier called a logistical regression, and this is actually one
+of those conditional approaches or discriminative approaches
+to classification. And we're going to talk more
+about such approaches later, but here I want you to note that
+there is a strong connection, a close connection between
+the two kinds of approaches. And this slide shows how naive Bayes
+classifier can be connected to a logistic regression. And you can also see that in
+discriminative classifiers that tend to use more
+general form on the bottom, we can accommodate more
+features to solve the problem. [MUSIC]

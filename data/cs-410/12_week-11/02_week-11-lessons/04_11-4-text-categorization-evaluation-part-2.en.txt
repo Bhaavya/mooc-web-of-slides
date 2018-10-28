@@ -1,0 +1,121 @@
+[SOUND] This lecture is
+a continued discussion of evaluation of text categorization. Earlier we have introduced measures that
+can be used with computer provision and recall. For each category and each document
+now in this lecture we're going to further examine how to combine the
+performance of the different categories of different documents how to aggregate them,
+how do we take average? You see on the title here I indicated
+it's called a macro average and this is in contrast to micro average
+that we'll talk more about later. So, again, for each category we're going
+to compute the precision require an f1 so for example category c1 we have
+precision p1, recall r1 and F value f1. And similarly we can do that for category
+2 and and all the other categories. Now once we compute that and
+we can aggregate them, so for example we can aggregate
+all the precision values. For all the categories, for
+computing overall precision. And this is often very useful to summarize
+what we have seen in the whole data set. And aggregation can be
+done many different ways. Again as I said, in a case when you
+need to aggregate different values, it's always good to think about what's
+the best way of doing the aggregation. For example, we can consider arithmetic
+mean, which is very commonly used, or you can use geometric mean,
+which would have different behavior. Depending on the way you aggregate,
+you might have got different conclusions. in terms of which method works better,
+so it's important to consider these differences and choosing the right one or
+a more suitable one for your task. So the difference fore example
+between arithmetically and geometrically is that the arithmetically
+would be dominated by high values whereas geometrically would
+be more affected by low values. Base and so whether you are want
+to emphasis low values or high values would be a question
+relate with all you And similar we can do that for
+recal and F score. So that's how we can generate the overall
+precision, recall and F score. Now we can do the same for aggregation
+of other all the document All right. So it's exactly the same situation for
+each document on our computer. Precision, recall, and F. And then after we have completed
+the computation for all these documents, we're going to aggregate them to generate
+the overall precision, overall recall, and overall F score. These are, again, examining
+the results from different angles. Which one's more useful will
+depend on your application. In general, it's beneficial to look at
+the results from all these perspectives. And especially if you compare different
+methods in different dimensions, it might reveal which method
+Is better in which measure or in what situations and
+this provides insightful. Understanding the strands of a method or
+a weakness and this provides further insight for
+improving them. So as I mentioned,
+there is also micro-average in contrast to the macro average
+that we talked about earlier. In this case, what we do is you
+pool together all the decisions, and then compute the precision and recall. So we can compute the overall
+precision and recall by just counting how many cases are in true positive,
+how many cases in false positive, etc, it's computing the values
+in the contingency table, and then we can compute the precision and
+recall just once. In contrast, in macro-averaging, we're
+going to do that for each category first. And then aggregate over these categories
+or we do that for each document and then aggregate all the documents but
+here we pooled them together. Now this would be very similar to
+the classification accuracy that we used earlier, and one problem here of course to treat all
+the instances, all the decisions equally. And this may not be desirable. But it may be a property for
+some applications, especially if we associate the, for
+example, the cost for each combination. Then we can actually compute for example,
+weighted classification accuracy. Where you associate the different cost or
+utility for each specific decision, so there could be variations of these
+methods that would be more useful. But in general macro average tends to
+be more information than micro average, just because it might reflect the need for
+understanding performance on each category or performance on each
+document which are needed in applications. But macro averaging and micro averaging,
+they are both very common, and you might see both reported in
+research papers on Categorization. Also sometimes categorization
+results might actually be evaluated from ranking prospective. And this is because categorization
+results are sometimes or often indeed passed it to a human for
+various purposes. For example, it might be passed
+to humans for further editing. For example, news articles can be tempted
+to be categorized by using a system and then human editors would
+then correct them. And all the email messages might be
+throughout to the right person for handling in the help desk. And in such a case the categorizations
+will help prioritizing the task for
+particular customer service person. So, in this case the results
+have to be prioritized and if the system can't give a score
+to the categorization decision for confidence then we can use the scores
+to rank these decisions and then evaluate the results as a rank list,
+just as in a search engine. Evaluation where you rank
+the documents in responsible query. So for example a discovery of
+spam emails can be evaluated based on ranking emails for
+the spam category. And this is useful if you want people
+to to verify whether this is really spam, right? The person would then take
+the rank To check one by one and then verify whether this is indeed a spam. So to reflect the utility for
+humans in such a task, it's better to evaluate Ranking Chris and this
+is basically similar to a search again. And in such a case often
+the problem can be better formulated as a ranking problem
+instead of a categorization problem. So for example, ranking documents in
+a search engine can also be framed as a binary categorization problem,
+distinguish the relevant documents that are useful to users from those that
+are not useful, but typically we frame this as a ranking problem,
+and we evaluate it as a rank list. That's because people tend
+to examine the results so ranking evaluation more reflects
+utility from user's perspective. So to summarize categorization evaluation, first evaluation is always very
+important for all these tasks. So get it right. If you don't get it right,
+you might get misleading results. And you might be misled to believe
+one method is better than the other, which is in fact not true. So it's very important to get it right. Measures must also reflect
+the intended use of the results for a particular application. For example, in spam filtering and news categorization the results
+are used in maybe different ways. So then we would need to
+consider the difference and design measures appropriately. We generally need to consider how will the
+results be further processed by the user and think from a user's perspective. What quality is important? What aspect of quality is important? Sometimes there are trade offs between
+multiple aspects like precision and recall and so we need to know for this
+application is high recall more important, or high precision is more important. Ideally we associate the different cost
+with each different decision arrow. And this of course has to be designed
+in an application specific way. Some commonly used measures for relative
+comparison methods are the following. Classification accuracy, it's very
+commonly used for especially balance. [INAUDIBLE] preceding [INAUDIBLE]
+Scores are common and report characterizing performances,
+given angles and give us some [INAUDIBLE] like a [INAUDIBLE] Per
+document basis [INAUDIBLE] And then take a average of all of them, different
+ways micro versus macro [INAUDIBLE]. In general, you want to look at the
+results from multiple perspectives and for particular applications some perspectives
+would be more important than others but diagnoses and
+analysis of categorization methods. It's generally useful to look at
+as many perspectives as possible to see subtle differences between methods
+or tow see where a method might be weak from which you can obtain sight for
+improving a method. Finally sometimes ranking
+may be more appropriate so be careful sometimes categorization has
+got may be better frame as a ranking tasks and there're machine running methods for
+optimizing ranking measures as well. So here are two suggested readings. One is some chapters of this book where
+you can find more discussion about evaluation measures. The second is a paper about
+comparison of different approaches to text categorization and it also has an excellent discussion of
+how to evaluate textual categorization. [MUSIC]

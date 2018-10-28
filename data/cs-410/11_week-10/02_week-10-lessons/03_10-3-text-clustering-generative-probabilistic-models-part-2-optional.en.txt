@@ -1,0 +1,88 @@
+[SOUND]
+This lecture is a continuing discussion of Generative
+Probabilistic Models for text clustering. In this lecture, we are going to continue
+talking about the text clustering, particularly, the Generative
+Probabilistic Models. So this is a slide that you have seen
+earlier where we have written down the likelihood function for
+a document with two distributions, being a two component
+mixed model for document clustering. Now in this lecture, we're going to
+generalize this to include the k clusters. Now if you look at the formula and think
+about the question, how to generalize it, you'll realize that all we need is to add
+more terms, like what you have seen here. So you can just add more thetas and
+the probabilities of thetas and the probabilities of
+generating d from those thetas. So this is precisely what we
+are going to use and this is the general presentation of the mixture
+model for document clustering. So as more cases would follow these
+steps in using a generating model first, think about our data. And so in this case our data
+is a collection of documents, end documents denoted by d sub i, and then we talk about the other models,
+think of other modelling. In this case, we design a mixture
+of k unigram language models. It's a little bit different from the topic
+model, but we have similar parameters. We have a set of theta i's that
+denote that our distributions corresponding to the k
+unigram language models. We have p of each theta i as
+a probability of selecting each of the k distributions
+we generate the document. Now note that although our goal
+is to find the clusters and we actually have used a more general
+notion of a probability of each cluster and this as you will see later, will allow us to assign
+a document to the cluster that has the highest probability of
+being able to generate the document. So as a result,
+we can also recover some other interesting properties, as you will see later. So the model basically would make
+the following assumption about the generation of a document. We first choose a theta i according
+to probability of theta i, and then generate all the words in
+the document using this distribution. Note that it's important that we use this distribution all
+the words in the document. This is very different from topic model. So the likelihood function would
+be like what you are seeing here. So you can take a look
+at the formula here, we have used the different notation here in the second line of this equation. You are going to see now
+the notation has been changed to use unique word in the vocabulary,
+in the product instead of particular
+position in the document. So from X subject to W,
+is a change of notation and this change allows us to show
+the estimation formulas more easily. And you have seen this change also
+in the topic model presentation, but it's basically still just a product of
+the probabilities of all the words. And so with the likelihood function, now we can
+talk about how to do parameter estimation. Here we can simply use
+the maximum likelihood estimator. So that's just a standard
+way of doing things. So all should be familiar to you now. It's just a different model. So after we have estimated parameters, how can we then allocate
+clusters to the documents? Well, let's take a look at
+the this situation more closely. So we just repeated the parameters
+here for this mixture model. Now if you think about what we can
+get by estimating such a model, we can actually get more information than
+what we need for doing clustering, right? So theta i for example,
+represents the content of cluster i, this is actually a by-product, it can help
+us summarize what the cluster is about. If you look at the top
+terms in this cluster or in this word distribution and they will
+tell us what the cluster is about. p of theta i can be interpreted as
+indicating the size of cluster because it tells us how likely the cluster would
+be used to generate the document. The more likely a cluster is
+used to generate a document, we can assume the larger
+the cluster size is. Note that unlike in PLSA and this probability of theta
+i is not dependent on d. Now you may recall that the topic
+you chose at each document actually depends on d. That means each document can have
+a potentially different choice of topics, but here we have a generic choice
+probability for all the documents. But of course, even a particular document
+that we still have to infer which topic is more likely to
+generate the document. So in that sense, we can still have a document
+dependent probability of clusters. So now let's look at the key problem
+of assigning documents to clusters or assigning clusters to documents. So that's the computer c sub d here and
+this will take one of the values in the range of one through k to indicate
+which cluster should be assigned to d. Now first you might think about
+a way to use likelihood on it and that is to assign d to the cluster
+corresponding to the topic of theta i, that most likely has
+been used to generate d. So that means we're going to choose
+one of those distributions that gives d the highest probability. In other words, we see which distribution has the content
+that matches our d at the [INAUDIBLE]. Intuitively that makes sense,
+however, this approach does not consider the size of clusters,
+which is also a available to us and so a better way is to use
+the likelihood together with the prior, in this case the prior is p of theta i. And together, that is, we're going to
+use the base formula to compute the posterior probability of theta,
+given d. And if we choose theta .based
+on this posterior probability, we would have the following formula that
+you see here on the bottom of this slide. And in this case, we're going to choose
+the theta that has a large P of theta i, that means a large cluster and
+also a high probability of generating d. So we're going to favor
+a cluster that's large and also consistent with the document. And that intuitively makes
+sense because the chance of a document being a large cluster is
+generally higher than in a small cluster. So this means once we can estimate
+the parameters of the model, then we can easily solve
+the problem of document clustering. So next, we'll have to discuss how to actually compute
+the estimate of the model. [MUSIC]

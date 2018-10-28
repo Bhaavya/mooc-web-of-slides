@@ -1,0 +1,156 @@
+[SOUND] This lecture is about text categorization. In this lecture, we're going to
+talk about text categorization. This is a very important technique for
+text data mining and analytics. It is relevant to discovery
+of various different kinds of knowledge as shown here. First, it's related to topic mining and
+analysis. And, that's because it has to do with analyzing text to data based
+on some predefined topics. Secondly, it's also related to
+opinion mining and sentiment analysis, which has to do with discovery knowledge
+about the observer, the human sensor. Because we can categorize the authors,
+for example, based on the content of the articles
+that they have written, right? We can, in general,
+categorize the observer based on the content that they produce. Finally, it's also related
+to text-based prediction. Because, we can often use text
+categorization techniques to predict some variables in the real world that
+are only remotely related to text data. And so, this is a very important
+technique for text to data mining. This is the overall plan for
+covering the topic. First, we're going to talk about
+what is text categorization and why we're interested in
+doing that in this lecture? And now, we're going to talk about
+how to do text categorization for how to evaluate
+the categorization results. So, the problem of text
+categorization is defined as follows. We're given a set of predefined categories
+possibly forming a hierarchy or so. And often,
+also a set of training examples or training set of labeled text
+objects which means the text objects have already been
+enabled with known categories. And then, the task is to classify
+any text object into one or more of these predefined categories. So, the picture on this
+slide shows what happens. When we do text categorization, we have a lot of text objects to be
+processed by a categorization system and the system will, in general,
+assign categories through these documents. As shown on the right and
+the categorization results, and we often assume the availability
+of training examples and these are the documents that
+are tag with known categories. And these examples are very important for helping the system to learn
+patterns in different categories. And, this would further help
+the system then know how to recognize the categories of new text
+objects that it has not seen. So, here are some specific
+examples of text categorization. And in fact, there are many examples,
+here are just a few. So first, text objects can vary,
+so we can categorize a document, or a passage, or a sentence,
+or collections of text. As in the case of clustering, the units
+to be analyzed can vary a lot, so this creates a lot of possibilities. Secondly, categories can also vary. Allocate in general,
+there's two major kinds of categories. One is internal categories. These are categories that
+categorize content of text object. For example, topic categories or
+sentiment categories and they generally have to do with
+the content of the text objects throughout the categorization
+of the content. The other kind is external categories
+that can characterize an entity associated with the text object. For example, authors are entities associated
+with the content that they produce. And so, we can use their content in
+determining which author has written, which part, for example, and
+that's called author attribution. Or, we can have any
+other mininal categories associate with text data
+as long as there is minimal connection between the entity and
+text data. For example, we might collect a lot
+of reviews about a restaurant or a lot of reviews about a product,
+and then, this text data can help us infer
+properties of a product or a restaurant. In that case, we can treat this
+as a categorization problem. We can categorize restaurants or categorize products based on
+their corresponding reviews. So, this is an example for
+external category. Here are some specific
+examples of the applications. News categorization is very
+common as being started a lot. News agencies would like
+to assign predefined categories to categorize
+news generated everyday. And, these virtual article
+categorizations are not important aspect. For example, in the biomedical domain,
+there's MeSH annotations. MeSH stands for Medical Subject Heading,
+and this is ontology of terms, characterize content of
+literature articles in detail. Another example of application is spam
+email detection or filtering, right? So, we often have a spam filter to help us distinguish spams
+from legitimate emails and this is clearly a binary
+classification problem. Sentiment categorization of
+product reviews or tweets is yet another kind of applications where we
+can categorize, comparing to positive or negative or positive and
+negative or neutral. So, you can have send them to categories,
+assign the two text content. Another application is automatic
+email routing or sorting, so, you might want to automatically sort your
+emails into different folders and that's one application of text categorization
+where each folder is a category. The results are another important kind
+of applications of routing emails to the right person to handle,
+so, in helpdesk, email messaging is generally routed
+to a particular person to handle. Different people tend to handle
+different kinds of requests. And in many cases, a person would manually
+assign the messages to the right people. But, if you can imagine,
+you can't be able to automatically text categorization system
+to help routing request. And, this is a class file, the incoming
+request in the one of the categories where each category actually corresponds
+to a person to handle the request. And finally, author attribution, as I just
+mentioned, is yet another application, and it's another example of using text
+to actually infer properties of some other entities. And, there are also many variants
+of the problem formulation. And so, first, we have the simplest case,
+which is a binary categorization, where there are only two categories. And, there are many examples like that,
+information retrieval or search engine. Applications with one distinguishing
+relevant documents from non-relevant documents for a particular query. Spam filtering just distinguishing spams
+from non-spams, so, also two categories. Sometimes, classifications of
+opinions can be in two categories, positive and a negative. A more general case would be K-category
+categorization and there are also many applications like that,
+there could be more than two categories. So, topic categorization is often
+such an example where you can have multiple topics. Email routing would be another example
+when you may have multiple folders or if you route the email to
+the right person to handle it, then there are multiple
+people to classify. So, in all these cases, there are more
+than two kinds of categories. Another variation is to have
+hierarchical categorization where categories form a hierarchy. Again, topical hierarchy is very common. Yet another variation is
+joint categorization. That's when you have multiple
+categorization tasks that are related and then you hope to kind of
+join the categorization. Further leverage the dependency of
+these tasks to improve accuracy for each individual task. Among all these binary categorizations
+is most fundamental and part of it also is because it's simple and
+probably it's because it can actually be used to perform
+all the other categorization tasks. For example, a K-category
+categorization task can be actually performed by using binary categorization. Basically, we can look at
+each category separately and then the binary categorization problem
+is whether object is in this category or not, meaning in other categories. And, the hierarchical categorization
+can also be done by progressively doing flat categorization at each level. So, we have, first, we categorize
+all the objects into, let's say, a small number of high-level categories, and inside each category, we have further
+categorized to sub-categories, etc. So, why is text categorization important? Well, I already showed that you,
+several applications but, in general, there are several reasons. One is text categorization helps enrich
+text representation and that's to achieve more understanding of text data that's
+all it was useful for text analysis. So, now with categorization text can
+be represented in multiple levels. The keyword conditions that's often
+used for a lot text processing tasks. But we can now also add categories and
+they provide two levels of transition. Semantic categories assigned can also
+be directly or indirectly useful for application. So, for example, semantic categories
+could be already very useful or other attribution might
+be directly useful. Another example is when semantic
+categories can facilitate aggregation of text content and this is another case
+of applications of text categorization. For example, if we want to know
+the overall opinions about a product, we could first categorize the opinions
+in each individual view as positive or negative and then, that
+would allow us to easy to aggregate all the sentiment, and it would tell us about the 70% of the views are positive and
+30% are negative, etc. So, without doing categorization, it will be much harder to aggregate
+such opinions to provide a concise way of coding text in some sense
+based on all of the vocabulary. And, sometimes you may see in some
+applications, text with categorizations called a text coded,
+encoded with some control of vocabulary. The second kind of reasons is to use text categorization to infer
+properties of entities, and text categories allows
+us to infer the properties of such entities that
+are associate with text data. So, this means we can
+use text categorization to discover knowledge about the world. In general, as long as we can associate
+the entity with text of data, we can always the text of data to help
+categorize the corresponding entities. So, it's used for single information network that will
+connect the other entities with text data. The obvious entities that can be
+directly connected are authors. But, you can also imagine the author's
+affiliations or the author's age and other things can be actually
+connected to text data indirectly. Once we have made the connection, then we
+can make a prediction about those values. So, this is a general way to allow
+us to use text mining through, so the text categorization to discover
+knowledge about the world. Very useful, especially in big text
+data analytics where we are often just using text data as extra sets
+of data extracted from humans to infer certain decision factors
+often together with non-textual data. Specifically with text, for example, we can also think of examples of
+inferring properties of entities. For example, discovery of
+non-native speakers of a language. And, this can be done by categorizing
+the content of speakers. Another example is to predict the party
+affiliation of a politician based on the political speech. And, this is again an example
+of using text data to infer some knowledge about the real world. In nature,
+the problems are all the same, and that's as we defined and
+it's a text categorization problem. [MUSIC]

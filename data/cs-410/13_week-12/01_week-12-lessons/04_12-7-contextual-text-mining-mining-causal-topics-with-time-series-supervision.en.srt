@@ -1,0 +1,1355 @@
+1
+00:00:00,012 --> 00:00:04,920
+[SOUND]
+
+2
+00:00:07,211 --> 00:00:10,243
+This lecture is about using a time series
+
+3
+00:00:10,243 --> 00:00:14,870
+as context to potentially
+discover causal topics in text.
+
+4
+00:00:14,870 --> 00:00:18,500
+In this lecture, we're going to continue
+discussing Contextual Text Mining.
+
+5
+00:00:18,500 --> 00:00:23,390
+In particular, we're going to look
+at the time series as a context for
+
+6
+00:00:23,390 --> 00:00:27,600
+analyzing text,
+to potentially discover causal topics.
+
+7
+00:00:27,600 --> 00:00:29,570
+As usual, it started with the motivation.
+
+8
+00:00:29,570 --> 00:00:34,450
+In this case, we hope to use text
+mining to understand a time series.
+
+9
+00:00:34,450 --> 00:00:39,430
+Here, what you are seeing is Dow Jones
+Industrial Average stock price curves.
+
+10
+00:00:39,430 --> 00:00:41,775
+And you'll see a sudden drop here.
+
+11
+00:00:41,775 --> 00:00:42,600
+Right.
+
+12
+00:00:42,600 --> 00:00:45,750
+So one would be interested knowing
+what might have caused the stock
+
+13
+00:00:45,750 --> 00:00:46,530
+market to crash.
+
+14
+00:00:48,870 --> 00:00:51,760
+Well, if you know the background, and
+you might be able to figure it out if you
+
+15
+00:00:51,760 --> 00:00:56,180
+look at the time stamp, or there are other
+data that can help us think about.
+
+16
+00:00:56,180 --> 00:01:00,390
+But the question here is can
+we get some clues about this
+
+17
+00:01:00,390 --> 00:01:02,760
+from the companion news stream?
+
+18
+00:01:02,760 --> 00:01:06,270
+And we have a lot of news data
+that generated during that period.
+
+19
+00:01:08,190 --> 00:01:12,120
+So if you do that we might
+actually discover the crash.
+
+20
+00:01:12,120 --> 00:01:16,480
+After it happened,
+at the time of the September 11 attack.
+
+21
+00:01:16,480 --> 00:01:21,270
+And that's the time when there
+is a sudden rise of the topic
+
+22
+00:01:21,270 --> 00:01:23,840
+about September 11
+happened in news articles.
+
+23
+00:01:26,100 --> 00:01:32,020
+Here's another scenario where we want
+to analyze the Presidential Election.
+
+24
+00:01:32,020 --> 00:01:36,792
+And this is the time series that are from
+the Presidential Prediction Market.
+
+25
+00:01:36,792 --> 00:01:44,980
+For example, I write a trunk of market
+would have stocks for each candidate.
+
+26
+00:01:44,980 --> 00:01:49,660
+And if you believe one candidate that will
+win then you tend to buy the stock for
+
+27
+00:01:49,660 --> 00:01:53,970
+that candidate, causing the price
+of that candidate to increase.
+
+28
+00:01:53,970 --> 00:01:58,170
+So, that's a nice way to actual do
+survey of people's opinions about
+
+29
+00:01:58,170 --> 00:01:59,000
+these candidates.
+
+30
+00:02:00,440 --> 00:02:05,280
+Now, suppose you see something
+drop of price for one candidate.
+
+31
+00:02:05,280 --> 00:02:08,880
+And you might also want to know what
+might have caused the sudden drop.
+
+32
+00:02:10,290 --> 00:02:16,140
+Or in a social science study, you might
+be interested in knowing what method
+
+33
+00:02:16,140 --> 00:02:20,930
+in this election,
+what issues really matter to people.
+
+34
+00:02:20,930 --> 00:02:21,850
+Now again in this case,
+
+35
+00:02:21,850 --> 00:02:25,370
+we can look at the companion news
+stream and ask for the question.
+
+36
+00:02:25,370 --> 00:02:30,010
+Are there any clues in the news stream
+that might provide insight about this?
+
+37
+00:02:30,010 --> 00:02:32,960
+So for example,
+we might discover the mention of tax cut
+
+38
+00:02:35,750 --> 00:02:38,360
+has been increasing since that point.
+
+39
+00:02:38,360 --> 00:02:42,208
+So maybe,
+that's related to the drop of the price.
+
+40
+00:02:42,208 --> 00:02:47,036
+So all these cases are special
+cases of a general problem of joint
+
+41
+00:02:47,036 --> 00:02:52,170
+analysis of text and a time series
+data to discover causal topics.
+
+42
+00:02:52,170 --> 00:02:56,020
+The input in this case is time series plus
+
+43
+00:02:56,020 --> 00:03:00,580
+text data that are produced in the same
+time period, the companion text stream.
+
+44
+00:03:02,400 --> 00:03:06,500
+And this is different from
+the standard topic models,
+
+45
+00:03:06,500 --> 00:03:08,740
+where we have just to text collection.
+
+46
+00:03:08,740 --> 00:03:11,960
+That's why we see time series here,
+it serves as context.
+
+47
+00:03:13,090 --> 00:03:16,302
+Now, the output that we
+want to generate is the topics
+
+48
+00:03:16,302 --> 00:03:21,270
+whose coverage in the text stream has
+strong correlations with the time series.
+
+49
+00:03:22,420 --> 00:03:26,410
+For example, whenever the topic is
+managing the price tends to go down, etc.
+
+50
+00:03:28,650 --> 00:03:30,890
+Now we call these topics Causal Topics.
+
+51
+00:03:30,890 --> 00:03:35,730
+Of course, they're not,
+strictly speaking, causal topics.
+
+52
+00:03:35,730 --> 00:03:41,120
+We are never going to be able to
+verify whether they are causal, or
+
+53
+00:03:41,120 --> 00:03:43,090
+there's a true causal relationship here.
+
+54
+00:03:43,090 --> 00:03:47,960
+That's why we put causal
+in quotation marks.
+
+55
+00:03:47,960 --> 00:03:51,600
+But at least they are correlating
+topics that might potentially
+
+56
+00:03:51,600 --> 00:03:53,230
+explain the cause and
+
+57
+00:03:53,230 --> 00:03:58,090
+humans can certainly further analyze such
+topics to understand the issue better.
+
+58
+00:03:59,420 --> 00:04:04,640
+And the output would contain topics
+just like in topic modeling.
+
+59
+00:04:04,640 --> 00:04:08,740
+But we hope that these topics are not
+just the regular topics with.
+
+60
+00:04:08,740 --> 00:04:13,450
+These topics certainly don't have to
+explain the data of the best in text, but
+
+61
+00:04:13,450 --> 00:04:17,270
+rather they have to explain
+the data in the text.
+
+62
+00:04:17,270 --> 00:04:21,477
+Meaning that they have to reprehend
+the meaningful topics in text.
+
+63
+00:04:21,477 --> 00:04:23,870
+Cement but also more importantly,
+
+64
+00:04:23,870 --> 00:04:29,760
+they should be correlated with external
+hand series that's given as a context.
+
+65
+00:04:29,760 --> 00:04:33,580
+So to understand how we solve this
+problem, let's first adjust to
+
+66
+00:04:33,580 --> 00:04:36,930
+solve the problem with reactive
+topic model, for example PRSA.
+
+67
+00:04:36,930 --> 00:04:40,330
+And we can apply this to text stream and
+
+68
+00:04:40,330 --> 00:04:44,260
+with some extension like a CPRSA or
+Contextual PRSA.
+
+69
+00:04:44,260 --> 00:04:49,330
+Then we can discover these
+topics in the correlation and
+
+70
+00:04:49,330 --> 00:04:51,440
+also discover their coverage over time.
+
+71
+00:04:53,260 --> 00:04:59,300
+So, one simple solution is,
+to choose the topics from
+
+72
+00:04:59,300 --> 00:05:04,000
+this set that have the strongest
+correlation with the external time series.
+
+73
+00:05:05,230 --> 00:05:08,090
+But this approach is not
+going to be very good.
+
+74
+00:05:08,090 --> 00:05:09,050
+Why?
+Because
+
+75
+00:05:09,050 --> 00:05:13,150
+awareness pictured to the topics is
+that they will discover by PRSA or LDA.
+
+76
+00:05:13,150 --> 00:05:17,640
+And that means the choice of
+topics will be very limited.
+
+77
+00:05:17,640 --> 00:05:20,905
+And we know these models try to maximize
+the likelihood of the text data.
+
+78
+00:05:20,905 --> 00:05:24,685
+So those topics tend to be the major
+topics that explain the text data well.
+
+79
+00:05:24,685 --> 00:05:28,710
+aAnd they are not necessarily
+correlated with time series.
+
+80
+00:05:28,710 --> 00:05:33,660
+Even if we get the best one, the most
+correlated topics might still not be so
+
+81
+00:05:34,800 --> 00:05:36,170
+interesting from causal perspective.
+
+82
+00:05:37,840 --> 00:05:42,740
+So here in this work site here,
+a better approach was proposed.
+
+83
+00:05:42,740 --> 00:05:46,320
+And this approach is called
+Iterative Causal Topic Modeling.
+
+84
+00:05:46,320 --> 00:05:50,815
+The idea is to do an iterative
+adjustment of topic,
+
+85
+00:05:50,815 --> 00:05:56,100
+discovered by topic models using
+time series to induce a product.
+
+86
+00:05:57,260 --> 00:06:00,590
+So here's an illustration on
+how this work, how this works.
+
+87
+00:06:00,590 --> 00:06:02,630
+Take the text stream as input and
+
+88
+00:06:02,630 --> 00:06:06,140
+then apply regular topic modeling
+to generate a number of topics.
+
+89
+00:06:06,140 --> 00:06:07,300
+Let's say four topics.
+
+90
+00:06:07,300 --> 00:06:07,810
+Shown here.
+
+91
+00:06:09,040 --> 00:06:14,540
+And then we're going to use
+external time series to assess
+
+92
+00:06:14,540 --> 00:06:19,140
+which topic is more causally related or
+correlated with the external time series.
+
+93
+00:06:19,140 --> 00:06:21,800
+So we have something that rank them.
+
+94
+00:06:21,800 --> 00:06:24,972
+And we might think that topic one and
+topic four are more correlated and
+
+95
+00:06:24,972 --> 00:06:26,830
+topic two and topic three are not.
+
+96
+00:06:26,830 --> 00:06:29,660
+Now we could have stopped here and
+
+97
+00:06:29,660 --> 00:06:33,530
+that would be just like what the simple
+approached that I talked about earlier
+
+98
+00:06:33,530 --> 00:06:38,150
+then we can get to these topics and
+call them causal topics.
+
+99
+00:06:38,150 --> 00:06:41,680
+But as I also explained that these
+topics are unlikely very good
+
+100
+00:06:41,680 --> 00:06:45,850
+because they are general topics that
+explain the whole text connection.
+
+101
+00:06:45,850 --> 00:06:46,700
+They are not necessary.
+
+102
+00:06:46,700 --> 00:06:50,180
+The best topics are correlated
+with our time series.
+
+103
+00:06:51,430 --> 00:06:57,460
+So what we can do in this approach
+is to first zoom into word level and
+
+104
+00:06:57,460 --> 00:07:02,830
+we can look into each word and
+the top ranked word listed for each topic.
+
+105
+00:07:02,830 --> 00:07:07,810
+Let's say we take Topic 1
+as the target examined.
+
+106
+00:07:07,810 --> 00:07:13,030
+We know Topic 1 is correlated
+with the time series.
+
+107
+00:07:13,030 --> 00:07:17,390
+Or is at least the best that we could
+get from this set of topics so far.
+
+108
+00:07:18,490 --> 00:07:22,590
+And we're going to look at the words
+in this topic, the top words.
+
+109
+00:07:23,810 --> 00:07:26,120
+And if the topic is correlated
+with the Time Series,
+
+110
+00:07:26,120 --> 00:07:30,740
+there must be some words that are highly
+correlated with the Time Series.
+
+111
+00:07:30,740 --> 00:07:35,480
+So here, for example,
+we might discover W1 and W3 are positively
+
+112
+00:07:35,480 --> 00:07:40,630
+correlated with Time Series, but
+W2 and W4 are negatively correlated.
+
+113
+00:07:41,640 --> 00:07:47,180
+So, as a topic, and it's not good to mix
+these words with different correlations.
+
+114
+00:07:47,180 --> 00:07:50,300
+So we can then for
+the separate of these words.
+
+115
+00:07:50,300 --> 00:07:54,980
+We are going to get all the red words
+that indicate positive correlations.
+
+116
+00:07:54,980 --> 00:07:55,850
+W1 and W3.
+And
+
+117
+00:07:55,850 --> 00:07:58,590
+we're going to also get another sub topic.
+
+118
+00:08:00,890 --> 00:08:02,020
+If you want.
+
+119
+00:08:02,020 --> 00:08:06,930
+That represents a negatively
+correlated words, W2 and W4.
+
+120
+00:08:07,980 --> 00:08:14,040
+Now, these subtopics, or these variations
+of topics, based on the correlation
+
+121
+00:08:14,040 --> 00:08:20,100
+analysis, are topics that are still quite
+related to the original topic, Topic 1.
+
+122
+00:08:20,100 --> 00:08:21,950
+But they are already deviating,
+
+123
+00:08:21,950 --> 00:08:28,260
+because of the use of time series
+information for bias selection of words.
+
+124
+00:08:28,260 --> 00:08:33,310
+So then in some sense,
+well we should expect so, some sense
+
+125
+00:08:33,310 --> 00:08:37,860
+more correlated with the time
+series than the original Topic 1.
+
+126
+00:08:37,860 --> 00:08:41,560
+Because the Topic 1 has mixed words,
+here we separate them.
+
+127
+00:08:42,650 --> 00:08:45,210
+So each of these two subtopics
+
+128
+00:08:46,210 --> 00:08:49,690
+can be expected to be better
+coherent in this time series.
+
+129
+00:08:49,690 --> 00:08:52,930
+However, they may not be so
+coherent as it mention.
+
+130
+00:08:52,930 --> 00:08:57,760
+So the idea here is to go back
+to topic model by using these
+
+131
+00:08:57,760 --> 00:09:02,370
+each as a prior to further
+guide the topic modeling.
+
+132
+00:09:02,370 --> 00:09:06,140
+And that's to say we ask our topic
+models now discover topics that
+
+133
+00:09:06,140 --> 00:09:10,080
+are very similar to each
+of these two subtopics.
+
+134
+00:09:10,080 --> 00:09:17,110
+And this will cause a bias toward more
+correlate to the topics was a time series.
+
+135
+00:09:17,110 --> 00:09:21,660
+Of course then we can apply topic models
+to get another generation of topics.
+
+136
+00:09:21,660 --> 00:09:25,772
+And that can be further ran to the base of
+the time series to set after the highly
+
+137
+00:09:25,772 --> 00:09:27,227
+correlated topics.
+
+138
+00:09:27,227 --> 00:09:32,180
+And then we can further analyze
+the components at work in the topic and
+
+139
+00:09:32,180 --> 00:09:35,380
+then try to analyze.word
+level correlation.
+
+140
+00:09:35,380 --> 00:09:39,840
+And then get the even more
+correlated subtopics that can be
+
+141
+00:09:39,840 --> 00:09:44,420
+further fed into the process as prior
+to drive the topic of model discovery.
+
+142
+00:09:46,000 --> 00:09:50,460
+So this whole process is just a heuristic
+way of optimizing causality and
+
+143
+00:09:50,460 --> 00:09:52,840
+coherence, and that's our ultimate goal.
+
+144
+00:09:52,840 --> 00:09:53,880
+Right?
+
+145
+00:09:53,880 --> 00:09:58,550
+So here you see the pure topic
+models will be very good at
+
+146
+00:09:58,550 --> 00:10:01,980
+maximizing topic coherence,
+the topics will be all meaningful.
+
+147
+00:10:02,990 --> 00:10:07,125
+If we only use causality test,
+or correlation measure,
+
+148
+00:10:07,125 --> 00:10:12,150
+then we might get a set words that
+are strongly correlate with time series,
+
+149
+00:10:12,150 --> 00:10:14,770
+but they may not
+necessarily mean anything.
+
+150
+00:10:14,770 --> 00:10:17,820
+It might not be cementric connected.
+
+151
+00:10:17,820 --> 00:10:20,330
+So, that would be at the other extreme,
+on the top.
+
+152
+00:10:21,490 --> 00:10:25,430
+Now, the ideal is to get the causal
+topic that's scored high,
+
+153
+00:10:25,430 --> 00:10:29,470
+both in topic coherence and
+also causal relation.
+
+154
+00:10:29,470 --> 00:10:30,180
+In this approach,
+
+155
+00:10:30,180 --> 00:10:35,690
+it can be regarded as an alternate
+way to maximize both sine engines.
+
+156
+00:10:35,690 --> 00:10:40,210
+So when we apply the topic models
+we're maximizing the coherence.
+
+157
+00:10:40,210 --> 00:10:44,200
+But when we decompose the topic
+model words into sets
+
+158
+00:10:44,200 --> 00:10:47,760
+of words that are very strong
+correlated with the time series.
+
+159
+00:10:47,760 --> 00:10:51,230
+We select the most strongly correlated
+words with the time series.
+
+160
+00:10:51,230 --> 00:10:54,830
+We are pushing the model
+back to the causal
+
+161
+00:10:54,830 --> 00:10:58,820
+dimension to make it
+better in causal scoring.
+
+162
+00:10:58,820 --> 00:11:04,020
+And then, when we apply
+the selected words as a prior
+
+163
+00:11:04,020 --> 00:11:08,690
+to guide a topic modeling, we again
+go back to optimize the coherence.
+
+164
+00:11:08,690 --> 00:11:13,199
+Because topic models, we ensure the next
+generation of topics to be coherent and
+
+165
+00:11:13,199 --> 00:11:17,461
+we can iterate when they're optimized
+in this way as shown on this picture.
+
+166
+00:11:20,520 --> 00:11:25,445
+So the only I think a component that you
+haven't seen such a framework is how
+
+167
+00:11:25,445 --> 00:11:27,380
+to measure the causality.
+
+168
+00:11:27,380 --> 00:11:30,660
+Because the rest is just talking more on.
+
+169
+00:11:30,660 --> 00:11:33,050
+So let's have a little bit
+of discussion of that.
+
+170
+00:11:33,050 --> 00:11:34,050
+So here we show that.
+
+171
+00:11:34,050 --> 00:11:36,640
+And let's say we have a topic
+about government response here.
+
+172
+00:11:36,640 --> 00:11:40,780
+And then we just talking more of we can
+get coverage of the topic over time.
+
+173
+00:11:40,780 --> 00:11:42,240
+So, we have a time series, X sub t.
+
+174
+00:11:43,380 --> 00:11:48,270
+Now, we also have, are give a time series
+that represents external information.
+
+175
+00:11:48,270 --> 00:11:50,735
+It's a non text time series, Y sub t.
+
+176
+00:11:50,735 --> 00:11:52,783
+It's the stock prices.
+
+177
+00:11:52,783 --> 00:11:57,560
+Now the the question
+here is does Xt cause Yt?
+
+178
+00:11:58,680 --> 00:12:03,560
+Well in other words, we want to match
+the causality relation between the two.
+
+179
+00:12:03,560 --> 00:12:07,210
+Or maybe just measure
+the correlation of the two.
+
+180
+00:12:08,360 --> 00:12:11,840
+There are many measures that
+we can use in this framework.
+
+181
+00:12:11,840 --> 00:12:14,480
+For example, pairs in correlation
+is a common use measure.
+
+182
+00:12:14,480 --> 00:12:17,340
+And we got to consider time lag here so
+
+183
+00:12:17,340 --> 00:12:19,800
+that we can try to
+capture causal relation.
+
+184
+00:12:19,800 --> 00:12:25,410
+Using somewhat past data and
+using the data in the past
+
+185
+00:12:26,790 --> 00:12:30,990
+to try to correlate with the data on
+
+186
+00:12:30,990 --> 00:12:36,010
+points of y that represents the future,
+for example.
+
+187
+00:12:36,010 --> 00:12:41,240
+And by introducing such lag, we can
+hopefully capture some causal relation by
+
+188
+00:12:41,240 --> 00:12:44,030
+even using correlation measures
+like person correlation.
+
+189
+00:12:45,060 --> 00:12:50,850
+But a common use, the measure for
+causality here is Granger Causality Test.
+
+190
+00:12:52,500 --> 00:12:55,040
+And the idea of this test
+is actually quite simple.
+
+191
+00:12:55,040 --> 00:12:58,710
+Basically you're going to have
+all the regressive model to
+
+192
+00:12:58,710 --> 00:13:03,000
+use the history information
+of Y to predict itself.
+
+193
+00:13:03,000 --> 00:13:06,200
+And this is the best we could
+without any other information.
+
+194
+00:13:06,200 --> 00:13:08,470
+So we're going to build such a model.
+
+195
+00:13:08,470 --> 00:13:12,830
+And then we're going to add some history
+information of X into such model.
+
+196
+00:13:12,830 --> 00:13:16,340
+To see if we can improve
+the prediction of Y.
+
+197
+00:13:16,340 --> 00:13:21,170
+If we can do that with a statistically
+significant difference.
+
+198
+00:13:21,170 --> 00:13:25,700
+Then we just say X has some
+causal inference on Y,
+
+199
+00:13:25,700 --> 00:13:30,570
+or otherwise it wouldn't have causal
+improvement of prediction of Y.
+
+200
+00:13:32,080 --> 00:13:35,670
+If, on the other hand,
+the difference is insignificant and
+
+201
+00:13:35,670 --> 00:13:39,150
+that would mean X does not really
+have a cause or relation why.
+
+202
+00:13:39,150 --> 00:13:40,910
+So that's the basic idea.
+
+203
+00:13:40,910 --> 00:13:45,310
+Now, we don't have time to explain
+this in detail so you could read, but
+
+204
+00:13:45,310 --> 00:13:49,370
+you would read at this cited reference
+here to know more about this measure.
+
+205
+00:13:49,370 --> 00:13:52,460
+It's a very convenient used measure.
+
+206
+00:13:52,460 --> 00:13:53,850
+Has many applications.
+
+207
+00:13:55,790 --> 00:14:00,440
+So next, let's look at some simple
+results generated by this approach.
+
+208
+00:14:00,440 --> 00:14:02,420
+And here the data is
+the New York Times and
+
+209
+00:14:02,420 --> 00:14:06,110
+in the time period of June
+2000 through December of 2011.
+
+210
+00:14:06,110 --> 00:14:12,960
+And here the time series we used
+is stock prices of two companies.
+
+211
+00:14:12,960 --> 00:14:15,040
+American Airlines and Apple and
+
+212
+00:14:15,040 --> 00:14:21,230
+the goal is to see if we inject
+the sum time series contest,
+
+213
+00:14:21,230 --> 00:14:26,580
+whether we can actually get topics
+that are wise for the time series.
+
+214
+00:14:26,580 --> 00:14:29,890
+Imagine if we don't use any input,
+we don't use any context.
+
+215
+00:14:29,890 --> 00:14:35,330
+Then the topics from New York
+times discovered by PRSA would be
+
+216
+00:14:35,330 --> 00:14:38,250
+just general topics that
+people talk about in news.
+
+217
+00:14:38,250 --> 00:14:40,560
+All right.
+Those major topics in the news event.
+
+218
+00:14:41,820 --> 00:14:47,860
+But here you see these topics are indeed
+biased toward each time series.
+
+219
+00:14:47,860 --> 00:14:51,030
+And particularly if you look
+at the underlined words here
+
+220
+00:14:51,030 --> 00:14:54,280
+in the American Airlines result,
+and you see airlines,
+
+221
+00:14:54,280 --> 00:14:59,090
+airport, air, united trade,
+or terrorism, etc.
+
+222
+00:14:59,090 --> 00:15:05,580
+So it clearly has topics that are more
+correlated with the external time series.
+
+223
+00:15:05,580 --> 00:15:06,370
+On the right side,
+
+224
+00:15:06,370 --> 00:15:11,540
+you see that some of the topics
+are clearly related to Apple, right.
+
+225
+00:15:11,540 --> 00:15:17,110
+So you can see computer, technology,
+software, internet, com, web, etc.
+
+226
+00:15:17,110 --> 00:15:19,880
+So that just means the time series
+
+227
+00:15:19,880 --> 00:15:24,410
+has effectively served as a context
+to bias the discovery of topics.
+
+228
+00:15:24,410 --> 00:15:25,890
+From another perspective,
+
+229
+00:15:25,890 --> 00:15:30,782
+these results help us on what people
+have talked about in each case.
+
+230
+00:15:30,782 --> 00:15:36,200
+So not just the people,
+what people have talked about,
+
+231
+00:15:36,200 --> 00:15:41,130
+but what are some topics that might be
+correlated with their stock prices.
+
+232
+00:15:41,130 --> 00:15:43,690
+And so these topics can serve
+as a starting point for
+
+233
+00:15:43,690 --> 00:15:48,320
+people to further look into issues and
+you'll find the true causal relations.
+
+234
+00:15:48,320 --> 00:15:54,136
+Here are some other results from analyzing
+
+235
+00:15:54,136 --> 00:15:58,980
+Presidential Election time series.
+
+236
+00:15:58,980 --> 00:16:02,760
+The time series data here is
+from Iowa Electronic market.
+
+237
+00:16:02,760 --> 00:16:04,770
+And that's a prediction market.
+
+238
+00:16:04,770 --> 00:16:06,000
+And the data is the same.
+
+239
+00:16:06,000 --> 00:16:09,540
+New York Times from May
+2000 to October 2000.
+
+240
+00:16:09,540 --> 00:16:13,108
+That's for
+2000 presidential campaign election.
+
+241
+00:16:13,108 --> 00:16:16,730
+Now, what you see here
+
+242
+00:16:16,730 --> 00:16:20,389
+are the top three words in significant
+topics from New York Times.
+
+243
+00:16:21,680 --> 00:16:26,520
+And if you look at these topics, and they
+are indeed quite related to the campaign.
+
+244
+00:16:26,520 --> 00:16:30,920
+Actually the issues
+are very much related to
+
+245
+00:16:30,920 --> 00:16:35,710
+the important issues of
+this presidential election.
+
+246
+00:16:35,710 --> 00:16:40,260
+Now here I should mention that the text
+data has been filtered by using
+
+247
+00:16:40,260 --> 00:16:43,070
+only the articles that mention
+these candidate names.
+
+248
+00:16:45,760 --> 00:16:50,110
+It's a subset of these news articles.
+
+249
+00:16:50,110 --> 00:16:51,890
+Very different from
+the previous experiment.
+
+250
+00:16:53,110 --> 00:16:58,230
+But the results here clearly show
+that the approach can uncover some
+
+251
+00:16:58,230 --> 00:17:02,200
+important issues in that
+presidential election.
+
+252
+00:17:02,200 --> 00:17:07,650
+So tax cut, oil energy, abortion and
+gun control are all known
+
+253
+00:17:07,650 --> 00:17:11,730
+to be important issues in
+that presidential election.
+
+254
+00:17:11,730 --> 00:17:16,230
+And that was supported by some
+literature in political science.
+
+255
+00:17:17,250 --> 00:17:21,960
+And also I was discussing Wikipedia,
+right.
+
+256
+00:17:21,960 --> 00:17:26,750
+So basically the results show
+that the approach can effectively
+
+257
+00:17:26,750 --> 00:17:31,545
+discover possibly causal topics
+based on the time series data.
+
+258
+00:17:35,330 --> 00:17:37,720
+So there are two suggested readings here.
+
+259
+00:17:37,720 --> 00:17:44,810
+One is the paper about this iterative
+topic modeling with time series feedback.
+
+260
+00:17:44,810 --> 00:17:48,380
+Where you can find more details
+about how this approach works.
+
+261
+00:17:48,380 --> 00:17:52,965
+And the second one is reading
+about Granger Casuality text.
+
+262
+00:17:55,730 --> 00:18:02,553
+So in the end, let's summarize
+the discussion of Text-based Prediction.
+
+263
+00:18:02,553 --> 00:18:06,420
+Now, Text-based prediction
+is generally very useful for
+
+264
+00:18:06,420 --> 00:18:09,070
+big data applications that involve text.
+
+265
+00:18:09,070 --> 00:18:13,340
+Because they can help us inform
+new knowledge about the world.
+
+266
+00:18:13,340 --> 00:18:16,250
+And the knowledge can go beyond
+what's discussed in the text.
+
+267
+00:18:17,520 --> 00:18:23,950
+As a result can also support
+optimizing of our decision making.
+
+268
+00:18:23,950 --> 00:18:25,609
+And this has a wider spread application.
+
+269
+00:18:28,090 --> 00:18:31,670
+Text data is often combined with
+non-text data for prediction.
+
+270
+00:18:31,670 --> 00:18:34,190
+because, for this purpose,
+the prediction purpose,
+
+271
+00:18:34,190 --> 00:18:37,940
+we generally would like to combine
+non-text data and text data together,
+
+272
+00:18:37,940 --> 00:18:41,740
+as much cruel as possible for prediction.
+
+273
+00:18:41,740 --> 00:18:44,525
+And so as a result during
+the analysis of text and
+
+274
+00:18:44,525 --> 00:18:49,550
+non-text is very necessary and
+it's also very useful.
+
+275
+00:18:49,550 --> 00:18:53,150
+Now when we analyze text data
+together with non-text data,
+
+276
+00:18:53,150 --> 00:18:56,218
+we can see they can help each other.
+
+277
+00:18:56,218 --> 00:19:00,650
+So non-text data, provide a context for
+mining text data, and
+
+278
+00:19:00,650 --> 00:19:04,410
+we discussed a number of techniques for
+contextual text mining.
+
+279
+00:19:04,410 --> 00:19:08,080
+And on the other hand,
+a text data can also help interpret
+
+280
+00:19:08,080 --> 00:19:12,500
+patterns discovered from non-text data,
+and this is called a pattern annotation.
+
+281
+00:19:14,680 --> 00:19:17,660
+In general,
+this is a very active research topic, and
+
+282
+00:19:17,660 --> 00:19:20,100
+there are new papers being published.
+
+283
+00:19:20,100 --> 00:19:25,211
+And there are also many open
+challenges that have to be solved.
+
+284
+00:19:25,211 --> 00:19:35,211
+[MUSIC]

@@ -1,0 +1,734 @@
+1
+00:00:00,025 --> 00:00:05,819
+[SOUND] This lecture is
+about the syntagmatic
+
+2
+00:00:05,819 --> 00:00:12,090
+relation discovery and
+conditional entropy.
+
+3
+00:00:12,090 --> 00:00:12,963
+In this lecture,
+
+4
+00:00:12,963 --> 00:00:16,939
+we're going to continue the discussion
+of word association mining and analysis.
+
+5
+00:00:18,060 --> 00:00:22,930
+We're going to talk about the conditional
+entropy, which is useful for
+
+6
+00:00:22,930 --> 00:00:25,700
+discovering syntagmatic relations.
+
+7
+00:00:25,700 --> 00:00:29,400
+Earlier, we talked about
+using entropy to capture
+
+8
+00:00:29,400 --> 00:00:33,030
+how easy it is to predict the presence or
+absence of a word.
+
+9
+00:00:34,180 --> 00:00:37,700
+Now, we'll address
+a different scenario where
+
+10
+00:00:37,700 --> 00:00:41,320
+we assume that we know something
+about the text segment.
+
+11
+00:00:41,320 --> 00:00:48,830
+So now the question is, suppose we know
+that eats occurred in the segment.
+
+12
+00:00:48,830 --> 00:00:51,150
+How would that help us
+predict the presence or
+
+13
+00:00:51,150 --> 00:00:53,990
+absence of water, like in meat?
+
+14
+00:00:53,990 --> 00:00:58,060
+And in particular, we want to
+know whether the presence of eats
+
+15
+00:00:58,060 --> 00:01:00,959
+has helped us predict
+the presence of meat.
+
+16
+00:01:02,020 --> 00:01:05,040
+And if we frame this using entrophy,
+
+17
+00:01:05,040 --> 00:01:10,700
+that would mean we are interested
+in knowing whether knowing
+
+18
+00:01:10,700 --> 00:01:15,100
+the presence of eats could reduce
+uncertainty about the meats.
+
+19
+00:01:15,100 --> 00:01:18,800
+Or, reduce the entrophy
+of the random variable
+
+20
+00:01:18,800 --> 00:01:23,430
+corresponding to the presence or
+absence of meat.
+
+21
+00:01:23,430 --> 00:01:27,950
+We can also ask as a question,
+what if we know of the absents of eats?
+
+22
+00:01:28,950 --> 00:01:33,010
+Would that also help us predict
+the presence or absence of meat?
+
+23
+00:01:34,720 --> 00:01:39,415
+These questions can be
+addressed by using another
+
+24
+00:01:39,415 --> 00:01:43,120
+concept called a conditioning entropy.
+
+25
+00:01:43,120 --> 00:01:48,460
+So to explain this concept, let's first
+look at the scenario we had before,
+
+26
+00:01:48,460 --> 00:01:51,218
+when we know nothing about the segment.
+
+27
+00:01:51,218 --> 00:01:56,522
+So we have these probabilities indicating
+whether a word like meat occurs,
+
+28
+00:01:56,522 --> 00:01:58,830
+or it doesn't occur in the segment.
+
+29
+00:01:58,830 --> 00:02:02,650
+And we have an entropy function that
+looks like what you see on the slide.
+
+30
+00:02:03,810 --> 00:02:07,410
+Now suppose we know eats is present, so
+
+31
+00:02:07,410 --> 00:02:11,330
+now we know the value of another
+random variable that denotes eats.
+
+32
+00:02:12,730 --> 00:02:15,270
+Now, that would change all
+these probabilities to
+
+33
+00:02:15,270 --> 00:02:17,550
+conditional probabilities.
+
+34
+00:02:17,550 --> 00:02:20,580
+Where we look at the presence or
+absence of meat,
+
+35
+00:02:21,800 --> 00:02:25,570
+given that we know eats
+occurred in the context.
+
+36
+00:02:25,570 --> 00:02:27,480
+So as a result,
+
+37
+00:02:27,480 --> 00:02:31,820
+if we replace these probabilities
+with their corresponding conditional
+
+38
+00:02:31,820 --> 00:02:36,320
+probabilities in the entropy function,
+we'll get the conditional entropy.
+
+39
+00:02:37,650 --> 00:02:42,522
+So this equation now here would be
+
+40
+00:02:42,522 --> 00:02:46,900
+the conditional entropy.
+
+41
+00:02:46,900 --> 00:02:49,150
+Conditional on the presence of eats.
+
+42
+00:02:52,180 --> 00:02:57,070
+So, you can see this is essentially
+the same entropy function as you have
+
+43
+00:02:57,070 --> 00:03:01,900
+seen before, except that all
+the probabilities now have a condition.
+
+44
+00:03:04,420 --> 00:03:09,550
+And this then tells us
+the entropy of meat,
+
+45
+00:03:09,550 --> 00:03:13,020
+after we have known eats
+occurring in the segment.
+
+46
+00:03:14,380 --> 00:03:17,770
+And of course, we can also define
+this conditional entropy for
+
+47
+00:03:17,770 --> 00:03:20,540
+the scenario where we don't see eats.
+
+48
+00:03:20,540 --> 00:03:25,150
+So if we know it did not occur in
+the segment, then this entry condition of
+
+49
+00:03:25,150 --> 00:03:30,710
+entropy would capture the instances
+of meat in that condition.
+
+50
+00:03:30,710 --> 00:03:34,110
+So now,
+putting different scenarios together,
+
+51
+00:03:34,110 --> 00:03:37,609
+we have the completed definition
+of conditional entropy as follows.
+
+52
+00:03:39,250 --> 00:03:48,520
+Basically, we're going to consider both
+scenarios of the value of eats zero, one,
+
+53
+00:03:48,520 --> 00:03:54,280
+and this gives us a probability
+that eats is equal to zero or one.
+
+54
+00:03:54,280 --> 00:03:58,040
+Basically, whether eats is present or
+absent.
+
+55
+00:03:58,040 --> 00:03:59,150
+And this of course,
+
+56
+00:03:59,150 --> 00:04:04,310
+is the conditional entropy of
+meat in that particular scenario.
+
+57
+00:04:05,510 --> 00:04:10,110
+So if you expanded this entropy,
+
+58
+00:04:10,110 --> 00:04:14,330
+then you have the following equation.
+
+59
+00:04:15,760 --> 00:04:19,429
+Where you see the involvement of
+those conditional probabilities.
+
+60
+00:04:21,530 --> 00:04:26,330
+Now in general, for any discrete
+random variables x and y, we have
+
+61
+00:04:27,940 --> 00:04:35,240
+the conditional entropy is no larger
+than the entropy of the variable x.
+
+62
+00:04:35,240 --> 00:04:41,950
+So basically, this is upper bound for
+the conditional entropy.
+
+63
+00:04:41,950 --> 00:04:46,380
+That means by knowing more
+information about the segment,
+
+64
+00:04:46,380 --> 00:04:49,630
+we want to be able to
+increase uncertainty.
+
+65
+00:04:49,630 --> 00:04:51,570
+We can only reduce uncertainty.
+
+66
+00:04:51,570 --> 00:04:56,180
+And that intuitively makes sense
+because as we know more information,
+
+67
+00:04:56,180 --> 00:05:00,180
+it should always help
+us make the prediction.
+
+68
+00:05:00,180 --> 00:05:04,000
+And cannot hurt
+the prediction in any case.
+
+69
+00:05:05,420 --> 00:05:08,880
+Now, what's interesting here is also to
+think about what's the minimum possible
+
+70
+00:05:08,880 --> 00:05:11,770
+value of this conditional entropy?
+
+71
+00:05:11,770 --> 00:05:16,270
+Now, we know that the maximum
+value is the entropy of X.
+
+72
+00:05:17,940 --> 00:05:20,313
+But what about the minimum,
+so what do you think?
+
+73
+00:05:22,883 --> 00:05:28,552
+I hope you can reach the conclusion that
+the minimum possible value, would be zero.
+
+74
+00:05:28,552 --> 00:05:33,090
+And it will be interesting to think about
+under what situation will achieve this.
+
+75
+00:05:34,120 --> 00:05:37,860
+So, let's see how we can use conditional
+entropy to capture syntagmatic relation.
+
+76
+00:05:39,420 --> 00:05:44,250
+Now of course,
+this conditional entropy gives us directly
+
+77
+00:05:44,250 --> 00:05:48,300
+one way to measure
+the association of two words.
+
+78
+00:05:48,300 --> 00:05:53,750
+Because it tells us to what extent,
+we can predict the one
+
+79
+00:05:53,750 --> 00:05:58,995
+word given that we know the presence or
+absence of another word.
+
+80
+00:05:58,995 --> 00:06:03,900
+Now before we look at the intuition
+of conditional entropy in capturing
+
+81
+00:06:03,900 --> 00:06:09,090
+syntagmatic relations, it's useful to
+think of a very special case, listed here.
+
+82
+00:06:09,090 --> 00:06:17,910
+That is, the conditional entropy
+of the word given itself.
+
+83
+00:06:19,000 --> 00:06:22,980
+So here,
+
+84
+00:06:22,980 --> 00:06:28,420
+we listed this conditional
+entropy in the middle.
+
+85
+00:06:28,420 --> 00:06:31,280
+So, it's here.
+
+86
+00:06:33,550 --> 00:06:35,100
+So, what is the value of this?
+
+87
+00:06:36,380 --> 00:06:43,370
+Now, this means we know where
+the meat occurs in the sentence.
+
+88
+00:06:43,370 --> 00:06:47,717
+And we hope to predict whether
+the meat occurs in the sentence.
+
+89
+00:06:47,717 --> 00:06:52,518
+And of course, this is 0 because
+there's no incident anymore.
+
+90
+00:06:52,518 --> 00:06:55,862
+Once we know whether the word
+occurs in the segment,
+
+91
+00:06:55,862 --> 00:06:59,132
+we'll already know the answer
+of the prediction.
+
+92
+00:06:59,132 --> 00:07:00,410
+So this is zero.
+
+93
+00:07:00,410 --> 00:07:03,390
+And that's also when this conditional
+entropy reaches the minimum.
+
+94
+00:07:06,280 --> 00:07:08,280
+So now, let's look at some other cases.
+
+95
+00:07:09,530 --> 00:07:15,840
+So this is a case of knowing the and
+trying to predict the meat.
+
+96
+00:07:15,840 --> 00:07:20,840
+And this is a case of knowing eats and
+trying to predict the meat.
+
+97
+00:07:20,840 --> 00:07:22,870
+Which one do you think is smaller?
+
+98
+00:07:22,870 --> 00:07:27,763
+No doubt smaller entropy means easier for
+prediction.
+
+99
+00:07:31,511 --> 00:07:33,260
+Which one do you think is higher?
+
+100
+00:07:33,260 --> 00:07:34,820
+Which one is not smaller?
+
+101
+00:07:36,800 --> 00:07:41,732
+Well, if you at the uncertainty,
+then in the first case,
+
+102
+00:07:41,732 --> 00:07:45,730
+the doesn't really tell
+us much about the meat.
+
+103
+00:07:45,730 --> 00:07:51,520
+So knowing the occurrence of the doesn't
+really help us reduce entropy that much.
+
+104
+00:07:51,520 --> 00:07:56,465
+So it stays fairly close to
+the original entropy of meat.
+
+105
+00:07:56,465 --> 00:08:01,120
+Whereas in the case of eats,
+eats is related to meat.
+
+106
+00:08:01,120 --> 00:08:04,420
+So knowing presence of eats or
+absence of eats,
+
+107
+00:08:04,420 --> 00:08:07,780
+would help us predict whether meat occurs.
+
+108
+00:08:07,780 --> 00:08:14,290
+So it can help us reduce entropy of meat.
+
+109
+00:08:14,290 --> 00:08:20,470
+So we should expect the sigma term, namely
+this one, to have a smaller entropy.
+
+110
+00:08:21,630 --> 00:08:25,870
+And that means there is a stronger
+association between meat and eats.
+
+111
+00:08:29,070 --> 00:08:36,360
+So we now also know when
+this w is the same as this
+
+112
+00:08:36,360 --> 00:08:41,400
+meat, then the conditional entropy
+would reach its minimum, which is 0.
+
+113
+00:08:41,400 --> 00:08:45,300
+And for what kind of words
+would either reach its maximum?
+
+114
+00:08:45,300 --> 00:08:49,885
+Well, that's when this stuff
+is not really related to meat.
+
+115
+00:08:49,885 --> 00:08:55,339
+And like the for example,
+it would be very close to the maximum,
+
+116
+00:08:55,339 --> 00:08:58,480
+which is the entropy of meat itself.
+
+117
+00:08:59,970 --> 00:09:03,050
+So this suggests that when you
+use conditional entropy for
+
+118
+00:09:03,050 --> 00:09:07,710
+mining syntagmatic relations,
+the hours would look as follows.
+
+119
+00:09:10,140 --> 00:09:14,780
+For each word W1, we're going to
+enumerate the overall other words W2.
+
+120
+00:09:14,780 --> 00:09:21,020
+And then, we can compute
+the conditional entropy of W1 given W2.
+
+121
+00:09:22,170 --> 00:09:26,630
+We thought all the candidate was in
+ascending order of the conditional entropy
+
+122
+00:09:26,630 --> 00:09:30,090
+because we're out of favor,
+a world that has a small entropy.
+
+123
+00:09:30,090 --> 00:09:34,637
+Meaning that it helps us predict
+the time of the word W1.
+
+124
+00:09:34,637 --> 00:09:38,378
+And then, we're going to take the top ring
+of the candidate words as words that have
+
+125
+00:09:38,378 --> 00:09:40,480
+potential syntagmatic relations with W1.
+
+126
+00:09:41,910 --> 00:09:47,700
+Note that we need to use
+a threshold to find these words.
+
+127
+00:09:47,700 --> 00:09:51,474
+The stresser can be the number
+of top candidates take, or
+
+128
+00:09:51,474 --> 00:09:54,550
+absolute value for
+the conditional entropy.
+
+129
+00:09:55,900 --> 00:10:00,110
+Now, this would allow us to mine the most
+
+130
+00:10:00,110 --> 00:10:03,700
+strongly correlated words with
+a particular word, W1 here.
+
+131
+00:10:06,380 --> 00:10:10,560
+But, this algorithm does not
+help us mine the strongest
+
+132
+00:10:10,560 --> 00:10:14,800
+that K syntagmatical relations
+from an entire collection.
+
+133
+00:10:14,800 --> 00:10:19,370
+Because in order to do that, we have to
+ensure that these conditional entropies
+
+134
+00:10:19,370 --> 00:10:24,010
+are comparable across different words.
+
+135
+00:10:24,010 --> 00:10:28,470
+In this case of discovering
+the mathematical relations for
+
+136
+00:10:28,470 --> 00:10:33,520
+a targeted word like W1, we only need
+to compare the conditional entropies
+
+137
+00:10:34,980 --> 00:10:38,600
+for W1, given different words.
+
+138
+00:10:38,600 --> 00:10:40,780
+And in this case, they are comparable.
+
+139
+00:10:41,860 --> 00:10:43,690
+All right.
+
+140
+00:10:43,690 --> 00:10:48,040
+So, the conditional entropy of W1, given
+W2, and the conditional entropy of W1,
+
+141
+00:10:48,040 --> 00:10:49,770
+given W3 are comparable.
+
+142
+00:10:51,100 --> 00:10:55,490
+They all measure how hard
+it is to predict the W1.
+
+143
+00:10:55,490 --> 00:11:00,070
+But, if we think about the two pairs,
+
+144
+00:11:00,070 --> 00:11:06,370
+where we share W2 in the same condition,
+and we try to predict the W1 and W3.
+
+145
+00:11:06,370 --> 00:11:11,296
+Then, the conditional entropies
+are actually not comparable.
+
+146
+00:11:11,296 --> 00:11:15,925
+You can think of about this question.
+
+147
+00:11:15,925 --> 00:11:17,022
+Why?
+
+148
+00:11:17,022 --> 00:11:19,870
+So why are they not comfortable?
+
+149
+00:11:19,870 --> 00:11:23,210
+Well, that was because they
+have a different outer bounds.
+
+150
+00:11:23,210 --> 00:11:25,690
+Right?
+So those outer bounds are precisely
+
+151
+00:11:25,690 --> 00:11:29,230
+the entropy of W1 and the entropy of W3.
+
+152
+00:11:29,230 --> 00:11:31,150
+And they have different upper bounds.
+
+153
+00:11:31,150 --> 00:11:35,000
+So we cannot really
+compare them in this way.
+
+154
+00:11:35,000 --> 00:11:36,420
+So how do we address this problem?
+
+155
+00:11:38,000 --> 00:11:45,219
+Well later, we'll discuss, we can use
+mutual information to solve this problem.
+
+156
+00:11:45,219 --> 00:11:55,219
+[MUSIC]

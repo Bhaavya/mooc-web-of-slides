@@ -1,0 +1,346 @@
+[SOUND] This lecture is
+a continued discussion of Discriminative Classifiers for
+Text Categorization. So, in this lecture,
+we're going to introduce, yet another Discriminative Classifier called
+the Support Vector Machine or SVM. Which is a very popular
+classification method and it has been also shown to be effective for
+text categorization. So to introduce this classifier, let's also think about the simple
+case of two categories. We have two topic categories,
+01 and 02 here. And we want to classify documents
+into these two categories and we're going to represent again
+a document by a feature factor x here. Now, the idea of this classifier is
+to design also a linear separator here that you'll see and it's very similar to what you have
+seen not just for regression, right? And we're going to do also say
+that if the sign of this function value is positive then we're going to
+say the objective is in category one. Otherwise, we're going to
+say it's in category 2. So that makes 0 that is the decision
+boundary between the few categories. So, in generally hiding
+marginal space such as, 0. corresponds to a hyper plain. Now I've shown you a simple case of two
+dimensional space it was just X1 and X2 and this case this corresponds
+to a line that you can see here. So, this is a line defined by just three parameters here,
+beta zero, beta one, and beta two. Now, this line is heading
+in this direction so it shows that as we increase X1,
+X2 will also increase. So we know that beta one and beta two have
+different assigns, one is negative and the other is positive. So let's just assume that beta one is
+negative and beta two Is positive. Now, it's interesting to examine, then, the data instances on
+the two sides of the slide. So, here, the data instance are visualized
+as circles for one class and diamonds for the other class. Now, one question is to take a point
+like this one and to ask the question what's the value of this expression, or
+this classifier, for this data point? So what do you think? Basically, we're going to evaluate
+its value by using this function. And as we said, if this value's positive
+we're going to say this is in category one, and if it's negative,
+it's going to be in category two. Intuitively, this line separates these two
+categories, so we expect the points on one side would be positive and the points
+on the other side would be negative. Our question is under the assumption
+that I just mentioned, let's examine a particular
+point like this one. So what do you think is
+the sine of this expression? Well, to examine the sine we can
+simply look at this expression here. And we can compare this with let's say, value on the line, let's see,
+compare this with this point. While they have identical X1, but
+then one has a higher value for X2. Now, let's look at the sin
+of the coefficient for X2. Well, we know this is a positive. So, what that means is
+that the f value for this point should be higher
+than the f value for this point on the line that means
+this will be positive, right? So we know in general of
+all points on this side, the function's value will be positive and you can also verify all the points
+on this side will be negative. And so this is how this kind
+of linear classifier or linear separator can then separate
+the points in the two categories. So, now the natural question is,
+which linear separator is the best? Now, I've get you one line here
+that can separate the two classes. And this line, of course, is determined
+by the vector beta, the coefficients. Different coefficients will
+give us different lines. So, we could imagine there are other
+lines that can do the same job. Gamma, for example, could give us another line that counts
+a separator to these instances. Of course, there are also lines that won't
+separate to them and those are bad lines. But, the question is,
+when we have multiple lines that can separate both clauses,
+which align the best? In fact, you can imagine, there are many
+different ways of choosing the line. So, the logistical regression classifier
+that you have seen earlier actually uses some criteria to determine where this line
+should be and so linear separate as well. And uses a conditional likelihood
+on the training that it determines which line is the best. But in SVM we're going to
+look at another criteria for determining which line is the best. And this time, the criteria is more tied to
+the classification arrow as you will see. So, the basic idea is to choose
+the separator to maximize the margin. So what is a margin? So, I choose some dotted
+lines here to indicate the boundaries of those
+data points in each class. And the margin is simply
+the distance between the line, the separator, and
+the closest point from each class. So you can see the margin of this
+side is as I've shown here and you can also define
+the margin on the other side. In order for
+the separator to maximize the margin, it has to be kind of in the middle
+of the two boundaries and you don't want this separator to
+be very close to one side, and that in intuition makes a lot of sense. So this is basic idea of SVM. We're going to choose a linear
+separator to maximize the margin. Now on this slide,
+I've also changed the notation so that I'm not going to use beta
+to denote the parameters. But instead, I'm going to use w although
+w was used to denote the words before so don't be confused here. W here is actually a width,
+a certain width. So I'm also using lowercase b to
+denote the beta 0, a biased constant. And there are instances do
+represent that as x and I also use the vector form
+of multiplication here. So we see a transpose of w vector
+multiply by the future vector. So b is a bias constant and w is a set of
+weights with one way for each feature. We have m features and
+so we have m weights and that will represent as a vector. And similarly, the data instance here,
+the text object, is represented by also a feature
+vector of the same number of elements. Xi is a feature value. For example, word count and
+you can verify, when we. Multiply these two vectors together,
+take the dot product, we get the same form of the linear
+separator as you have seen before. It's just a different way
+of representing this. Now I use this way so that it's
+more consistent with what notations people usually use when
+they talk about SVM. This way you can better connect the slides
+with some other readings you might do. Okay, so when we maximize
+the margins of a separator, it just means the boundary of
+the separator is only determined by a few data points, and these are the data
+points that we call support vectors. So here illustrated are two support
+vectors for one class and two for the other class. And these quotas define
+the margin basically, and you can imagine once we know which
+are supportive vectors then this center separator line will
+be determined by them. So the other data points actually
+don't really matter that much. And you can see if you change the other
+data points it won't really affect the margin, so
+the separator will stay the same. Mainly affected by
+the the support vector machines. Sorry, it's mainly affected
+by the support vectors and that's why it's called
+a support vector machine. Okay, so now the next question is,
+of course, how can we set it up to optimize the line? How can we actually find the line or
+the separator? Now this is equivalent to
+finding values for w and b, because they will determine
+where exactly the separator is. So in the simplest case, the linear SVM
+is just a simple optimization problem. So again, let's recall that our classifier
+is such a linear separator, where we have weights for all the features, and the
+main goal is remove these weights w and b. And the classifier will say X is in
+category theta 1 if it's positive. Otherwise, it's going to say
+it's in the other category. So this is our assumption, our setup. So in the linear SVM,
+we are going to then seek these parameter values to optimize the margins and
+then the training error. The training data would be basically
+like in other classifiers. We have a set of training points
+where we know the x vector, and then we also know the corresponding label,
+y i. And here we define y i as two values, but these values are not 0, 1 as you
+have seen before, but rather -1 and positive 1, and they're corresponding to
+these two categories, as I've shown here. Now you might wonder why we
+don't define them as 0 and 1 instead of having -1, 1. And this is purely for mathematical
+convenience, as you will see in a moment. So the goal of optimization first is to make sure the labeling of
+training data is all correct. So that just means if y i,
+the norm label for instance x i, is 1, we would like this
+classified value to be large. And here we just choose
+a threshold of 1 here. But if you use another threshold,
+you can easily fit that constant into the parameter values b and
+w to make the right-hand side just 1. Now if, on the other hand, y i is -1,
+that means it's in a different class, then we want this classifier
+to give us a very small value, in fact a negative value, and we want this
+value to be less than or equal to -1. Now these are the two different instances,
+different kinds of cases. How can we combine them together? Now this is where it's convenient
+when we have chosen y i as -1 for the other category, because it turns out that we can either
+combine the two into one constraint. y i multiplied by the classifier value
+must be larger than or equal to 1. And obviously when y i is just 1, you see this is the same as
+the constraint on the left-hand side. But when y i is -1, you also see that this
+is equivalent to the other inequality. So this one actually captures both
+constraints in a unified way, and that's a convenient way of
+capturing these constraints. What's our second goal? Well, that's to maximize margin, so we want to ensure that separator
+can do well on the training data. But then, among all the cases
+where we can separate the data, we also would like to choose the separator
+that has the largest margin. Now the margin can be assumed to be
+related to the magnitude of the weight. And so
+w transform multiplied by w would give us basically the sum of
+squares of all those weights. So to have a small value for
+this expression, it means all the w i's must be small. So we've just assumed that
+we have a constraint for getting the data on the training
+set to be classified correctly. Now we also have the objective that's
+tied into a maximization of margin, and this is simply to minimize
+w transpose multiplied by w, and we often denote this by phi of w. So now you can see this is
+basically a optimization problem. We have some variables to optimize,
+and these are the weights and b and we have some constraints. These are linear constraints and the objective function is
+a quadratic function of the weights. So this a quadratic program
+with linear constraints, and there are standard algorithm that
+are variable for solving this problem. And once we solve the problem
+we obtain the weights w and b. And then this would give us
+a well-defined classifier. So we can then use this classifier
+to classify any new text objects. Now the previous formulation did not
+allow any error in the classification, but sometimes the data may not
+be linear to the separator. That means that they may not
+look as nice as you have seen on the previous slide where a line
+can separate all of them. And what would happen if
+we allowed some errors? Well, the principle can stay. We want to minimize the training error but
+try to also maximize the margin. But in this case we have a soft margin, because the data points may
+not be completely separable. So it turns out that we can easily
+modify SVM to accommodate this. So what you see here is very similar
+to what you have seen before, but we have introduced
+the extra variable xi i. And we in fact will have one for
+each data instance, and this is going to model the error
+that we allow for each instance. But the optimization problem
+would be very similar. So specifically, you will see we have added something
+to the optimization problem. First we have added some
+error to the constraint so that now we allow a Allow the classifier to make some mistakes here. So, this Xi i is allowed an error. If we set Xi i to 0, then we go
+back to the original constraint. We want every instance to
+be classified accurately. But, if we allow this to be non-zero,
+then we allow some errors here. In fact, if the length of the Xi i is very
+large, the error can be very, very large. So naturally,
+we don't want this to happen. So we want to then also
+minimize this Xi i. So, because Xi i needs to be minimized
+in order to control the error. And so, as a result,
+in the objective function, we also add more to the original one,
+which is only W, by basically ensuring that we not
+only minimize the weights, but also minimize the errors, as you see here. Here we simply take a sum
+over all the instances. Each one has a Xi i to model
+the error allowed for that instance. And when we combine them together, we basically want to minimize
+the errors on all of them. Now you see there's a parameter C here,
+and that's a constant to control the trade-off between minimizing
+the errors and maximizing the margin. If C is set to zero, you can see, we go back to the original object function
+where we only maximize the margin. We don't really optimize
+the training errors and then Xi i can be set to a very large value
+to make the constraints easy to satisfy. That's not very good of course, so C should be set to a non-zero value,
+a positive value. But when C is set to a very,
+very large value, we'll see the object of the function will
+be dominated mostly by the training errors and so the optimization of margin
+will then play a secondary role. So if that happens, what would happen is then we will try to do our best to
+minimize the training errors, but then we're not going to
+take care of the margin and that affects the generalization factors
+of the classify for future data. So it's also not good. So in particular, this parameter C
+has to be actually set carefully. And this is just like in the case of
+k-nearest neighbor where you need to optimize a number of neighbors. Here you need to optimize the C. And this is, in general,
+also achievable by doing cross-validation. Basically, you look at
+the empirical data and see what value C should be set to in
+order to optimize the performance. Now with this modification, the problem is still quadratic programming
+with linear constraints so the optimizing algorithm can be actually applied to solve
+this different version of the program. Again, once we have obtained
+the weights and the bias, then we can have classifier that's
+ready for classifying new objects. So that's the basic idea of SVM. So to summarize the text
+categorization methods, where we introduce the many methods,
+and some are generative models. Some are discriminative methods. And these tend to perform
+similarly when optimized. So there's still no clear winner,
+although each one has its pros and cons. And the performance might also
+vary on different data sets for different problems. And one reason is also because the feature
+representation is very critical and these methods all require
+effective feature representation. And to design an effective feature set, we need domain knowledge and humans
+definitely play an important role here, although there are new
+machine learning methods and algorithm representation learning
+that can help with learning features. And another common thing
+is that they might be performing similarly on the data set, but with different mistakes. And so,
+their performance might be similar, but then the mistakes they
+make might be different. So that means it's useful to
+compare different methods for a particular problem and
+then maybe combine multiple methods because this can improve the robustness
+and they won't make the same mistakes. So assemble approaches that
+would combine different methods tend to be more robust and
+can be useful in practice. Most techniques that we introduce
+use the supervised machine learning, which is a very general method. So that means that these methods can
+be actually applied to any text or categorization problem. As long as we have humans to help
+annotate some training data sets and design features, then supervising machine
+learning and all these classifiers can be easily applied to those problems
+to solve the categorization problem to allow us to characterize content
+of text concisely with categories. Or to predict the sum
+properties of real world variables that are associated
+with text data. The computers, of course, here are trying
+to optimize the combinations of the features provided by human. And as I said, there are many
+different ways of combining them and they also optimize different object or
+functions. But in order to achieve good performance,
+they all require effective features and also plenty of training data. So as a general rule, and if you can
+improve the feature representation, and then provide more training data,
+then you can generally do better. Performance is often much more
+affected by the effectiveness of features than by the choice
+of specific classifiers. So feature design tends to be more
+important than the choice of specific classifier. So, how do we design effective features? Well, unfortunately,
+this is very application-specific. So there's no really much
+general thing to say here. But we can do some analysis of
+the categorization problem and try to understand what kind of features
+might help us distinguish categories. And in general, we can use a lot of domain
+knowledge to help us design features. And another way to figure out
+the effective features is to do error analysis on
+the categorization results. You could, for example, look at which category tends to be
+confused with which other categories. And you can use a confusion matrix
+to examine the errors systematically across categories. And then,
+you can look into specific instances to see why the mistake has been made and
+what features can prevent the mistake. And this can allow you to obtain
+insights for design new features. So error analysis is very
+important in general, and that's where you can get the insights
+about your specific problem. And finally, we can leverage this
+on machine learning techniques. So, for example, feature selection is
+a technique that we haven't really talked about, but is very important. And it has to do with trying to select the
+most useful features before you actually train a full classifier. Sometimes training a classifier will also
+help you identify which features have high values. There are also other ways
+to ensure this sparsity. Of the model,
+meaning to recognize the widths. For example, the SVM actually tries
+to minimize the weights on features. But you can further force some features, force to use only a small
+number of features. There are also techniques for
+dimension reduction. And that's to reduce a high dimensional
+feature space into a low dimensional space typically by clustering
+of features in various ways. So metrics factorization
+has been used to do such a job, and this is some of the
+techniques are actually very similar to the talking models that we'll discuss. So talking morals like psa or lda can actually help us reduce
+the dimension of features. Like imagine the words
+our original feature. But the can be matched to the topic
+space .Let's say we have k topics. So a document can now be represented as a vector of just k values
+corresponding to the topics. So we can let each topic define one
+dimension, so we have a k dimensional space instead of the original high
+dimensional space corresponding to words. And this is often another way
+to learn effective features. Especially, we could also use the
+categories to supervise the learning of such low dimensional structures. And so, the original worth features
+can be also combined with such amazing dimension features or
+lower dimensional space features to provide a multi resolution
+which is often very useful. Deep learning is a new technique that
+has been developed the machine learning. It's particularly useful for
+learning representations. So deep learning refers to deep neural
+network, it's another kind of classifier, where you can have intermediate
+features embedded in the models. That it's highly non-linear transpire, and some recent events that's allowed us to
+train such a complex network effectively. And the technique has been shown to be
+quite effective for speech recognition, computer reasoning, and
+recently has been applied to text as well. It has shown some promise. And one important advantage
+of this approach in relationship with the featured design,
+is that they can learn intermediate replantations or
+compound the features automatically. And this is very valuable for
+learning effective replantation, for text recalibration. Although in text domain, because words are
+exemplary representation of text content, because these are human's imaging for
+communication. And they are generally sufficient for
+For representing content for many tasks. If there's a need for
+some new representation, people would have invented a new word. So because of this we think
+of value of deep learning for text processing tends to be lower than for
+[INAUDIBLE]. And the speech revenue where
+they are anchored corresponding where the design that worked as features. But people only still very promising for
+learning effective features especially for complicated tasks. Like a analysis it has
+been shown to be effective because it can provide that
+goes beyond that of words. Now regarding the training examples. It's generally hard to get a lot of
+training examples because it involves human labor. But there are also some
+ways to help with this. So one is to assume in some low quality
+training examples can also be used. So, those can be called
+pseudo training examples. For example, if you take reviews from the
+internet, they might have overall ratings. So, to train a of categorizer,
+meaning we want to positive or negative. And categorize these reviews
+into these two categories. Then we could assume five star reviews
+are all positive training samples. One star are negative. But of course, sometimes even five star reviews will also
+mention negative opinions so the training sample is not all of that high quality,
+but they can still be useful. Another idea is to exploit
+the unlabeled data and there are techniques called
+the semi-supervised machine learning techniques that can allow you to
+combine labeled data with unlabeled data. So, in other case it's easy to see
+the next model can be used For both text plus read and
+the categorization. So you can imagine, if you have a lot of
+unlabeled text data for categorization, then you can actually do clustering
+on these text data, learn categories. And then try to somehow
+align these categories. With the categories defined
+by the training data, where we already know which
+documents are in which category. So you can in fact use the Algorithm
+to actually combine both. That would allow you essentially also
+pick up useful words and label the data. You can think of this in another way. Basically, we can use let's say a to classify all of the unlabeled text
+documents, and then we're going to assume the high confidence Classification
+results are actually liable. Then you suddenly have more training
+data because from the enabler that we now know some are labeled as category one,
+some are labeled as category two. All though the label is not
+completely reliable But then they can still be useful. So let's assume they are actually training
+label examples, and then we combine them with true training examples through
+improved categorization method. And so this idea is very powerful. When the enabled data and
+the training data are very different, and we might need to use other advanced
+machine learning techniques called domain adaptation or
+transfer learning. This is when we can Borrow some training examples from
+a related problem that may be different. Or, from a categorization password that follow very different distribution
+from what we are working on. But basically,
+when the two domains are very different, then we need to be careful and
+not overfit the training domain. But yet, we can still want to use some
+signals from the related training data. So for example,
+training categorization on news might not give you Effective plus y for
+class vine topics and tweets. But you can still learn something from
+news to help look at writing tweets. So there are mission learning techniques
+that can help you do that effectively. Here's a suggested reading where you
+can find more details about some more of the methods is
+that we have covered. [MUSIC]

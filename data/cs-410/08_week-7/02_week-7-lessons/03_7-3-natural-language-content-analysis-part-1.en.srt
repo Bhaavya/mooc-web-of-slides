@@ -1,0 +1,788 @@
+1
+00:00:00,300 --> 00:00:03,380
+[SOUND]
+
+2
+00:00:09,170 --> 00:00:13,893
+This lecture is about natural language
+
+3
+00:00:13,893 --> 00:00:16,330
+content analysis.
+
+4
+00:00:16,330 --> 00:00:21,510
+Natural language content analysis
+is the foundation of text mining.
+
+5
+00:00:21,510 --> 00:00:23,780
+So we're going to first talk about this.
+
+6
+00:00:24,980 --> 00:00:26,330
+And in particular,
+
+7
+00:00:26,330 --> 00:00:31,540
+natural language processing with
+a factor how we can present text data.
+
+8
+00:00:33,210 --> 00:00:38,230
+And this determines what algorithms can
+be used to analyze and mine text data.
+
+9
+00:00:40,820 --> 00:00:44,991
+We're going to take a look at the basic
+concepts in natural language first.
+
+10
+00:00:46,330 --> 00:00:48,970
+And I'm going to explain these concepts
+
+11
+00:00:48,970 --> 00:00:52,600
+using a similar example
+that you've all seen here.
+
+12
+00:00:52,600 --> 00:00:55,650
+A dog is chasing a boy on the playground.
+
+13
+00:00:55,650 --> 00:00:58,310
+Now this is a very simple sentence.
+
+14
+00:00:58,310 --> 00:01:01,160
+When we read such a sentence
+we don't have to think
+
+15
+00:01:01,160 --> 00:01:05,200
+about it to get the meaning of it.
+
+16
+00:01:05,200 --> 00:01:09,460
+But when a computer has to
+understand the sentence,
+
+17
+00:01:09,460 --> 00:01:12,340
+the computer has to go
+through several steps.
+
+18
+00:01:13,430 --> 00:01:16,532
+First, the computer needs
+to know what are the words,
+
+19
+00:01:16,532 --> 00:01:18,630
+how to segment the words in English.
+
+20
+00:01:18,630 --> 00:01:22,010
+And this is very easy,
+we can just look at the space.
+
+21
+00:01:22,010 --> 00:01:26,136
+And then the computer will need
+the know the categories of these words,
+
+22
+00:01:26,136 --> 00:01:27,870
+syntactical categories.
+
+23
+00:01:27,870 --> 00:01:34,510
+So for example, dog is a noun,
+chasing's a verb, boy is another noun etc.
+
+24
+00:01:34,510 --> 00:01:37,350
+And this is called a Lexical analysis.
+
+25
+00:01:37,350 --> 00:01:41,590
+In particular, tagging these words
+with these syntactic categories
+
+26
+00:01:41,590 --> 00:01:43,270
+is called a part-of-speech tagging.
+
+27
+00:01:45,030 --> 00:01:48,383
+After that the computer also needs to
+figure out the relationship between
+
+28
+00:01:48,383 --> 00:01:49,040
+these words.
+
+29
+00:01:49,040 --> 00:01:53,300
+So a and dog would form a noun phrase.
+
+30
+00:01:53,300 --> 00:01:57,590
+On the playground would be
+a prepositional phrase, etc.
+
+31
+00:01:57,590 --> 00:02:01,378
+And there is certain way for
+them to be connected together in order for
+
+32
+00:02:01,378 --> 00:02:03,620
+them to create meaning.
+
+33
+00:02:03,620 --> 00:02:06,469
+Some other combinations
+may not make sense.
+
+34
+00:02:07,720 --> 00:02:12,620
+And this is called syntactical parsing, or
+
+35
+00:02:12,620 --> 00:02:17,090
+syntactical analysis,
+parsing of a natural language sentence.
+
+36
+00:02:17,090 --> 00:02:21,180
+The outcome is a parse tree
+that you are seeing here.
+
+37
+00:02:21,180 --> 00:02:24,050
+That tells us the structure
+of the sentence, so
+
+38
+00:02:24,050 --> 00:02:27,430
+that we know how we can
+interpret this sentence.
+
+39
+00:02:27,430 --> 00:02:29,740
+But this is not semantics yet.
+
+40
+00:02:29,740 --> 00:02:34,530
+So in order to get the meaning we
+would have to map these phrases and
+
+41
+00:02:34,530 --> 00:02:39,860
+these structures into some real world
+antithesis that we have in our mind.
+
+42
+00:02:39,860 --> 00:02:45,500
+So dog is a concept that we know,
+and boy is a concept that we know.
+
+43
+00:02:45,500 --> 00:02:50,870
+So connecting these phrases
+that we know is understanding.
+
+44
+00:02:52,160 --> 00:02:58,788
+Now for a computer, would have to formally
+represent these entities by using symbols.
+
+45
+00:02:58,788 --> 00:03:03,630
+So dog, d1 means d1 is a dog.
+
+46
+00:03:04,690 --> 00:03:09,420
+Boy, b1 means b1 refers to a boy etc.
+
+47
+00:03:09,420 --> 00:03:13,430
+And also represents the chasing
+action as a predicate.
+
+48
+00:03:13,430 --> 00:03:18,334
+So, chasing is a predicate here with
+
+49
+00:03:18,334 --> 00:03:23,720
+three arguments, d1, b1, and p1.
+
+50
+00:03:23,720 --> 00:03:25,920
+Which is playground.
+
+51
+00:03:25,920 --> 00:03:31,320
+So this formal rendition of
+the semantics of this sentence.
+
+52
+00:03:31,320 --> 00:03:35,950
+Once we reach that level of understanding,
+we might also make inferences.
+
+53
+00:03:35,950 --> 00:03:42,050
+For example, if we assume there's a rule
+that says if someone's being chased then
+
+54
+00:03:42,050 --> 00:03:48,420
+the person can get scared, then we
+can infer this boy might be scared.
+
+55
+00:03:48,420 --> 00:03:52,800
+This is the inferred meaning,
+based on additional knowledge.
+
+56
+00:03:52,800 --> 00:03:58,485
+And finally, we might even further infer
+
+57
+00:03:58,485 --> 00:04:06,170
+what this sentence is requesting,
+
+58
+00:04:06,170 --> 00:04:12,920
+or why the person who say it in
+a sentence, is saying the sentence.
+
+59
+00:04:12,920 --> 00:04:18,310
+And so, this has to do with
+purpose of saying the sentence.
+
+60
+00:04:18,310 --> 00:04:24,550
+This is called speech act analysis or
+pragmatic analysis.
+
+61
+00:04:24,550 --> 00:04:27,920
+Which first to the use of language.
+
+62
+00:04:27,920 --> 00:04:32,704
+So, in this case a person saying this
+may be reminding another person to
+
+63
+00:04:32,704 --> 00:04:34,070
+bring back the dog.
+
+64
+00:04:35,240 --> 00:04:42,320
+So this means when saying a sentence,
+the person actually takes an action.
+
+65
+00:04:42,320 --> 00:04:44,769
+So the action here is to make a request.
+
+66
+00:04:46,770 --> 00:04:51,408
+Now, this slide clearly shows that
+in order to really understand
+
+67
+00:04:51,408 --> 00:04:55,720
+a sentence there are a lot of
+things that a computer has to do.
+
+68
+00:04:55,720 --> 00:05:00,337
+Now, in general it's very hard for
+a computer will do everything,
+
+69
+00:05:00,337 --> 00:05:04,910
+especially if you would want
+it to do everything correctly.
+
+70
+00:05:04,910 --> 00:05:06,450
+This is very difficult.
+
+71
+00:05:08,190 --> 00:05:11,094
+Now, the main reason why natural
+language processing is very difficult,
+
+72
+00:05:11,094 --> 00:05:14,820
+it's because it's designed it will
+make human communications efficient.
+
+73
+00:05:15,990 --> 00:05:20,040
+As a result, for example,
+with only a lot of common sense knowledge.
+
+74
+00:05:21,250 --> 00:05:25,150
+Because we assume all of
+us have this knowledge,
+
+75
+00:05:25,150 --> 00:05:28,170
+there's no need to encode this knowledge.
+
+76
+00:05:29,780 --> 00:05:31,360
+That makes communication efficient.
+
+77
+00:05:32,480 --> 00:05:37,460
+We also keep a lot of ambiguities,
+like, ambiguities of words.
+
+78
+00:05:39,090 --> 00:05:45,130
+And this is again, because we assume we
+have the ability to disambiguate the word.
+
+79
+00:05:45,130 --> 00:05:48,800
+So, there's no problem with
+having the same word to mean
+
+80
+00:05:48,800 --> 00:05:50,869
+possibly different things
+in different context.
+
+81
+00:05:52,610 --> 00:05:55,880
+Yet for
+a computer this would be very difficult
+
+82
+00:05:55,880 --> 00:06:00,250
+because a computer does not have
+the common sense knowledge that we do.
+
+83
+00:06:00,250 --> 00:06:03,620
+So the computer will be confused indeed.
+
+84
+00:06:03,620 --> 00:06:06,980
+And this makes it hard for
+natural language processing.
+
+85
+00:06:06,980 --> 00:06:09,440
+Indeed, it makes it very hard for
+
+86
+00:06:09,440 --> 00:06:15,140
+every step in the slide
+that I showed you earlier.
+
+87
+00:06:16,550 --> 00:06:19,380
+Ambiguity is a main killer.
+
+88
+00:06:19,380 --> 00:06:22,820
+Meaning that in every step
+there are multiple choices,
+
+89
+00:06:22,820 --> 00:06:26,790
+and the computer would have to
+decide whats the right choice and
+
+90
+00:06:26,790 --> 00:06:30,550
+that decision can be very difficult
+as you will see also in a moment.
+
+91
+00:06:31,690 --> 00:06:32,300
+And in general,
+
+92
+00:06:32,300 --> 00:06:37,530
+we need common sense reasoning in order
+to fully understand the natural language.
+
+93
+00:06:37,530 --> 00:06:40,595
+And computers today don't yet have that.
+
+94
+00:06:40,595 --> 00:06:42,820
+That's why it's very hard for
+
+95
+00:06:42,820 --> 00:06:47,310
+computers to precisely understand
+the natural language at this point.
+
+96
+00:06:48,310 --> 00:06:51,280
+So here are some specific
+examples of challenges.
+
+97
+00:06:51,280 --> 00:06:53,390
+Think about the world-level ambiguity.
+
+98
+00:06:53,390 --> 00:06:56,940
+A word like design can be a noun or
+a verb, so
+
+99
+00:06:56,940 --> 00:06:59,200
+we've got ambiguous part of speech tag.
+
+100
+00:07:00,980 --> 00:07:06,190
+Root also has multiple meanings,
+it can be of mathematical sense,
+
+101
+00:07:06,190 --> 00:07:10,670
+like in the square of, or
+can be root of a plant.
+
+102
+00:07:12,310 --> 00:07:17,310
+Syntactic ambiguity refers
+to different interpretations
+
+103
+00:07:19,440 --> 00:07:21,670
+of a sentence in terms structures.
+
+104
+00:07:21,670 --> 00:07:23,010
+So for example,
+
+105
+00:07:23,010 --> 00:07:26,219
+natural language processing can
+actually be interpreted in two ways.
+
+106
+00:07:28,240 --> 00:07:33,410
+So one is the ordinary meaning that we
+
+107
+00:07:33,410 --> 00:07:38,690
+will be getting as we're
+talking about this topic.
+
+108
+00:07:38,690 --> 00:07:41,670
+So, it's processing of natural language.
+
+109
+00:07:41,670 --> 00:07:44,600
+But there's is also another
+possible interpretation
+
+110
+00:07:44,600 --> 00:07:47,190
+which is to say language
+processing is natural.
+
+111
+00:07:48,950 --> 00:07:53,500
+Now we don't generally have this problem,
+but imagine for the computer to determine
+
+112
+00:07:53,500 --> 00:07:56,960
+the structure, the computer would have
+to make a choice between the two.
+
+113
+00:07:59,040 --> 00:08:03,530
+Another classic example is a man
+saw a boy with a telescope.
+
+114
+00:08:03,530 --> 00:08:10,230
+And this ambiguity lies in
+the question who had the telescope?
+
+115
+00:08:10,230 --> 00:08:13,630
+This is called a prepositional
+phrase attachment ambiguity.
+
+116
+00:08:14,960 --> 00:08:20,440
+Meaning where to attach this
+prepositional phrase with the telescope.
+
+117
+00:08:20,440 --> 00:08:22,670
+Should it modify the boy?
+
+118
+00:08:22,670 --> 00:08:28,330
+Or should it be modifying, saw, the verb.
+
+119
+00:08:28,330 --> 00:08:31,330
+Another problem is anaphora resolution.
+
+120
+00:08:31,330 --> 00:08:35,740
+In John persuaded Bill to buy a TV for
+himself.
+
+121
+00:08:35,740 --> 00:08:37,960
+Does himself refer to John or Bill?
+
+122
+00:08:39,380 --> 00:08:41,790
+Presupposition is another difficulty.
+
+123
+00:08:41,790 --> 00:08:45,459
+He has quit smoking implies
+that he smoked before, and
+
+124
+00:08:45,459 --> 00:08:50,180
+we need to have such a knowledge in
+order to understand the languages.
+
+125
+00:08:52,630 --> 00:08:57,614
+Because of these problems, the state
+of the art natural language processing
+
+126
+00:08:57,614 --> 00:09:01,410
+techniques can not do anything perfectly.
+
+127
+00:09:01,410 --> 00:09:04,560
+Even for
+the simplest part of speech tagging,
+
+128
+00:09:04,560 --> 00:09:07,700
+we still can not solve the whole problem.
+
+129
+00:09:07,700 --> 00:09:12,930
+The accuracy that are listed here,
+which is about 97%,
+
+130
+00:09:12,930 --> 00:09:16,100
+was just taken from some studies earlier.
+
+131
+00:09:17,330 --> 00:09:22,840
+And these studies obviously have to
+be using particular data sets so
+
+132
+00:09:22,840 --> 00:09:27,640
+the numbers here are not
+really meaningful if you
+
+133
+00:09:27,640 --> 00:09:33,210
+take it out of the context of the data
+set that are used for evaluation.
+
+134
+00:09:33,210 --> 00:09:39,350
+But I show these numbers mainly to give
+you some sense about the accuracy,
+
+135
+00:09:39,350 --> 00:09:42,080
+or how well we can do things like this.
+
+136
+00:09:42,080 --> 00:09:47,670
+It doesn't mean any data set
+accuracy would be precisely 97%.
+
+137
+00:09:47,670 --> 00:09:52,780
+But, in general, we can do parsing speech
+tagging fairly well although not perfect.
+
+138
+00:09:53,980 --> 00:09:59,030
+Parsing would be more difficult, but for
+partial parsing, meaning to get some
+
+139
+00:09:59,030 --> 00:10:04,870
+phrases correct, we can probably
+achieve 90% or better accuracy.
+
+140
+00:10:06,920 --> 00:10:12,330
+But to get the complete parse tree
+correctly is still very, very difficult.
+
+141
+00:10:13,610 --> 00:10:18,210
+For semantic analysis, we can also do
+some aspects of semantic analysis,
+
+142
+00:10:18,210 --> 00:10:22,570
+particularly, extraction of entities and
+relations.
+
+143
+00:10:22,570 --> 00:10:27,910
+For example, recognizing this is
+the person, that's a location, and
+
+144
+00:10:27,910 --> 00:10:33,380
+this person and
+that person met in some place etc.
+
+145
+00:10:33,380 --> 00:10:36,470
+We can also do word sense to some extent.
+
+146
+00:10:38,000 --> 00:10:45,360
+The occurrence of root in this sentence
+refers to the mathematical sense etc.
+
+147
+00:10:45,360 --> 00:10:49,330
+Sentiment analysis is another aspect
+of semantic analysis that we can do.
+
+148
+00:10:50,480 --> 00:10:55,840
+That means we can tag the senses
+as generally positive when
+
+149
+00:10:55,840 --> 00:11:00,670
+it's talking about the product or
+talking about the person.
+
+150
+00:11:02,790 --> 00:11:08,600
+Inference, however, is very hard,
+and we generally cannot do that for
+
+151
+00:11:08,600 --> 00:11:14,040
+any big domain and if it's only
+feasible for a very limited domain.
+
+152
+00:11:14,040 --> 00:11:18,800
+And that's a generally difficult
+problem in artificial intelligence.
+
+153
+00:11:18,800 --> 00:11:21,961
+Speech act analysis is
+also very difficult and
+
+154
+00:11:21,961 --> 00:11:26,480
+we can only do this probably for
+very specialized cases.
+
+155
+00:11:26,480 --> 00:11:32,090
+And with a lot of help from humans
+to annotate enough data for
+
+156
+00:11:32,090 --> 00:11:34,180
+the computers to learn from.
+
+157
+00:11:36,380 --> 00:11:38,890
+So the slide also shows that
+
+158
+00:11:38,890 --> 00:11:44,300
+computers are far from being able to
+understand natural language precisely.
+
+159
+00:11:44,300 --> 00:11:50,320
+And that also explains why the text
+mining problem is difficult.
+
+160
+00:11:50,320 --> 00:11:54,390
+Because we cannot rely on
+mechanical approaches or
+
+161
+00:11:54,390 --> 00:11:58,940
+computational methods to
+understand the language precisely.
+
+162
+00:11:58,940 --> 00:12:04,770
+Therefore, we have to use
+whatever we have today.
+
+163
+00:12:04,770 --> 00:12:10,090
+A particular statistical machine learning
+method of statistical analysis methods
+
+164
+00:12:10,090 --> 00:12:16,092
+to try to get as much meaning
+out from the text as possible.
+
+165
+00:12:16,092 --> 00:12:19,320
+And, later you will see
+that there are actually
+
+166
+00:12:20,360 --> 00:12:25,450
+many such algorithms
+that can indeed extract
+
+167
+00:12:25,450 --> 00:12:30,790
+interesting model from text even though
+we cannot really fully understand it.
+
+168
+00:12:30,790 --> 00:12:36,010
+Meaning of all the natural
+language sentences precisely.
+
+169
+00:12:36,010 --> 00:12:46,010
+[MUSIC]
