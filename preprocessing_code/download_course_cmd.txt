@@ -1,0 +1,1 @@
+coursera-dl -u <username> -p <pass> <course_name> --video-resolution 1080p
