@@ -10,7 +10,6 @@ def build_corpi(courses_json_path,slide_names_file,concat_fields=None,concat_fil
 	lens = []
 	concat = []
 	file_names = [concat_file,titles_file,text_file,subtitles_file]
-
 	for course,lessons in json_data.items():
 		for lesson,slides in lessons.items():
 			for slide,slide_val in slides.items():
