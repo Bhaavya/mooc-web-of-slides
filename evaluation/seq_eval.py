@@ -13,17 +13,9 @@ def is_seq(slide1_name,slide2_name,k=2):
 		return False
 
 def get_seq_slides_single(slide_name,all_slide_names,k=2):
-	slide_name = slide_name.strip('\n')
-	name_comp = slide_name.split('##')
-	course_name = name_comp[0]
-	slide_number = int(name_comp[-1].split('slide')[1])
 	seq_slides = []
 	for i,cand in enumerate(all_slide_names):
-		cand = cand.strip('\n')
-		cand_name_comp = cand.split('##')
-		cand_course_name = cand_name_comp[0]
-		cand_slide_number = int(cand_name_comp[-1].split('slide')[1])
-		if name_comp[:-1]==cand_name_comp[:-1] and slide_number!=cand_slide_number and abs(cand_slide_number-slide_number)<=k:
+		if is_seq(slide_name,cand):
 			seq_slides.append(i)
 	return seq_slides
 
