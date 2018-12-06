@@ -1,0 +1,1 @@
+cat output_bert0{0..4}.jsonl >output_bert.jsonl

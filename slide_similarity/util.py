@@ -6,7 +6,7 @@ import numpy as np
 def write_utf_txt(corpus,corpus_file):
 	with codecs.open(corpus_file,'w',encoding='utf-8') as f:
 			for text in corpus:
-				f.write(text.replace('\n',' ')+'\n')
+				f.write(text.replace('\n','')+'\n')
 
 def read_utf_txt(corpus_file):
 	with codecs.open(corpus_file,'r',encoding='utf-8') as f:	
