@@ -5,10 +5,10 @@ def build_tfidf(corpus):
 	vec = tv()
 	tfidfs = vec.fit_transform(corpus)
 	print (tfidfs.shape)
-	return tfidfs
+	return (tfidfs,vec)
 
 def compute_tfidf_sim(corpus):
-	tfidfs = build_tfidf(corpus)
+	tfidfs,vec = build_tfidf(corpus)
 	return cosine_similarity(tfidfs)
 
 if __name__ == '__main__':
