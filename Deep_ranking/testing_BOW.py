@@ -19,7 +19,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Device configuration
 device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 print (device)
-savefile = 'RNN_model_100_15_100_ADAM_seq_labels'
+savefile = 'RNN_model_100_30_100_0.001_ADAM_seq_labels'
 
 slide_dictionary = np.load('preprocessed_data/slide_dictionary.npy')
 vocab_size = len(slide_dictionary)
@@ -60,7 +60,7 @@ for i in indices:
 
 X = X_new
 X_names = X_new_names
-print(len(X))
+print (len(X))
 
 batch_size = 100
 L_train = len(X_names)
@@ -70,18 +70,7 @@ q_embeddings = np.zeros((len(X_names), 100),dtype=np.float)
 for i in range(0, L_train, batch_size):
   x_input2 = [j for j in X[i:i+batch_size]]
   bs = len(x_input2)
-  sequence_length = 100
-  x_input = np.zeros((bs,sequence_length),dtype=np.int)
-  for j in range(bs):
-      x = np.asarray(x_input2[j])
-      sl = x.shape[0]
-      if(sl < sequence_length):
-          x_input[j,0:sl] = x
-      else:
-          start_index = np.random.randint(sl-sequence_length+1)
-          x_input[j,:] = x[start_index:(start_index+sequence_length)]
-  q = x_input
-  q = torch.LongTensor(q).to(device)
+  q = x_input2
   q_embeddings[i:i+bs,:] = model(q).detach().cpu().numpy()
   if (i+1)%1 == 0:
     print (i)

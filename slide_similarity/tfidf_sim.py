@@ -11,7 +11,6 @@ def compute_tfidf_sim(corpus):
 	tfidfs,vec = build_tfidf(corpus)
 	return cosine_similarity(tfidfs)
 
-if __name__ == '__main__':
-	corpus = ['Let\'s start with Topic Mining','Bayesian Probability is required for understanding TOpic Mining']
-	compute_tfidf_sim(corpus)
-
+#if __name__ == '__main__':
+	#corpus = ['Let\'s start with Topic Mining','Bayesian Probability is required for understanding TOpic Mining']
+	#compute_tfidf_sim(corpus)

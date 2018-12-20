@@ -40,6 +40,7 @@ for line in lines:
     line = line.strip()
     X_names.append(line)
 
+
 X_new_names = []
 with io.open('../data/slide_names_for_training.txt','r',encoding='utf-8') as f:
   lines = f.readlines()
@@ -57,7 +58,7 @@ for i in indices:
 
 X = X_new
 X_names = X_new_names
-print(len(X))
+print (len(X))
 
 #five-fold division
 fivefold_test = [range(i,(i+int(len(X)/5))) for i in range(0, len(X), int(len(X)/5))] 
@@ -102,11 +103,12 @@ num_hidden_units1 = 500 if args.num_hidden_units1 is None else args.num_hidden_u
 num_hidden_units2 = 500 if args.num_hidden_units2 is None else args.num_hidden_units2
 alphas = [0.5, 0.5, 1.0] #weights of different similarities
 seq_length = 100 if args.seq_length is None else args.seq_length
-savefile = '_'.join(['RNN_model', str(batch_size), str(num_epochs), str(seq_length), str(lr),optimi, 'seq_labels'])
+savefile = '_'.join(['BOW_model', str(batch_size), str(num_epochs), str(seq_length), str(embedding_size),str(lr),optimi, 'seq_labels'])
 print (savefile)
 
 
-model = RNN_model(vocab_size, num_hidden_units1, embedding_size)
+model = BOW_model(vocab_size, num_hidden_units1,embedding_size)
+#model = torch.load("model/BOW_model_100_30_100_100_0.001_ADAM_seq_labels.model")
 model = model.to(device)
 model.train()
 
@@ -138,44 +140,14 @@ for epoch in range(num_epochs):
   for i in range(0, L_train, batch_size):
     print (epoch_counter)
     x_input2 = [train_dataset.__getitem__(j) for j in I_permutation[i:i+batch_size]]
-    sequence_length = seq_length
     bs = len(x_input2)
     zero = torch.zeros(bs).to(device)
-    x_input = np.zeros((bs,sequence_length),dtype=np.int)
-    #for j in range(bs):
-    #  print (x_input2[j][3],x_input2[j][4],x_input2[j][5])
-    for j in range(bs):
-        x = np.asarray(x_input2[j][0])
-        sl = x.shape[0]
-        if(sl < sequence_length):
-            x_input[j,0:sl] = x
-        else:
-            start_index = np.random.randint(sl-sequence_length+1)
-            x_input[j,:] = x[start_index:(start_index+sequence_length)]
-    q = x_input
-    x_input = np.zeros((bs,sequence_length),dtype=np.int)
-    for j in range(bs):
-        x = np.asarray(x_input2[j][1])
-        sl = x.shape[0]
-        if(sl < sequence_length):
-            x_input[j,0:sl] = x
-        else:
-            start_index = np.random.randint(sl-sequence_length+1)
-            x_input[j,:] = x[start_index:(start_index+sequence_length)]
-    p = x_input
-    x_input = np.zeros((bs,sequence_length),dtype=np.int)
-    for j in range(bs):
-        x = np.asarray(x_input2[j][2])
-        sl = x.shape[0]
-        if(sl < sequence_length):
-            x_input[j,0:sl] = x
-        else:
-            start_index = np.random.randint(sl-sequence_length+1)
-            x_input[j,:] = x[start_index:(start_index+sequence_length)]
-    n = x_input
-    q = torch.LongTensor(q).to(device)
-    p = torch.LongTensor(p).to(device)
-    n = torch.LongTensor(n).to(device)
+    q = [x_input2[j][0] for j in range(bs)]
+    p = [x_input2[j][1] for j in range(bs)]
+    n = [x_input2[j][2] for j in range(bs)]
+    #q = torch.LongTensor(q).to(device)
+    #p = torch.LongTensor(p).to(device)
+    #n = torch.LongTensor(n).to(device)
     q_output = model(q)
     p_output = model(p)
     n_output = model(n)
@@ -208,18 +180,7 @@ q_embeddings = np.zeros((len(x_test_names), 100),dtype=np.float)
 for i in range(0, L_test, batch_size):
   x_input2 = [j for j in x_test[i:i+batch_size]]
   bs = len(x_input2)
-  sequence_length = 100
-  x_input = np.zeros((bs,sequence_length),dtype=np.int)
-  for j in range(bs):
-      x = np.asarray(x_input2[j])
-      sl = x.shape[0]
-      if(sl < sequence_length):
-          x_input[j,0:sl] = x
-      else:
-          start_index = np.random.randint(sl-sequence_length+1)
-          x_input[j,:] = x[start_index:(start_index+sequence_length)]
-  q = x_input
-  q = torch.LongTensor(q).to(device)
+  q = x_input2
   q_embeddings[i:i+bs,:] = model(q).detach().cpu().numpy()
   if (i+1)%1 == 0:
     print (i)
@@ -233,18 +194,7 @@ q_embeddings2 = np.zeros((len(X_names), 100),dtype=np.float)
 for i in range(0, L_test, batch_size):
   x_input2 = [j for j in X[i:i+batch_size]]
   bs = len(x_input2)
-  sequence_length = 100
-  x_input = np.zeros((bs,sequence_length),dtype=np.int)
-  for j in range(bs):
-      x = np.asarray(x_input2[j])
-      sl = x.shape[0]
-      if(sl < sequence_length):
-          x_input[j,0:sl] = x
-      else:
-          start_index = np.random.randint(sl-sequence_length+1)
-          x_input[j,:] = x[start_index:(start_index+sequence_length)]
-  q = x_input
-  q = torch.LongTensor(q).to(device)
+  q = x_input2
   q_embeddings2[i:i+bs,:] = model(q).detach().cpu().numpy()
   if (i+1)%1 == 0:
     print (i)
@@ -257,3 +207,5 @@ with io.open('preprocessed_data/X_'+savefile+'_test_names.txt','w',encoding='utf
   for name in x_test_names:
     f.write(name)
     f.write(("\n").encode("utf-8").decode("utf-8"))
+
+

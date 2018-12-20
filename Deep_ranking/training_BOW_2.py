@@ -13,85 +13,94 @@ from models import *
 from Triplet_based_ranking import *
 import io
 import argparse
-from features import *
-import sys
-sys.path.insert(0, '/Users/sahiti/Documents/gitlab_repos/mooc-web-of-slides/evaluation/')
-import seq_eval
 
-device = torch.device('cuda:7' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 print (device)
 
-slide_dictionary = np.load('preprocessed_data/slide_dictionary.npy')
-vocab_size = len(slide_dictionary)
+glove_embeddings = np.load('preprocessed_data/glove_embeddings.npy')
+vocab_size = 100000
+vocab_size += 1
 print ("Vocab size: " , vocab_size)
 X = []
-with io.open('preprocessed_data/X.txt','r',encoding='utf-8') as f:
+with io.open('preprocessed_data/X_glove.txt','r',encoding='utf-8') as f:
   lines = f.readlines()
 for line in lines:
     line = line.strip()
-    line = line.split(' ')
-    line = np.asarray(line,dtype=np.int) 
-    X.append(line)
+    if (line != ''):
+      line = line.split(' ')
+      line = np.asarray(line,dtype=np.int) 
+      X.append(line)
+    else:
+      X.append(np.asarray([]))
+
 X_names = []
-with io.open('preprocessed_data/X_names.txt','r',encoding='utf-8') as f:
+with io.open('preprocessed_data/X_names_glove.txt','r',encoding='utf-8') as f:
   lines = f.readlines()
 for line in lines:
     line = line.strip()
     X_names.append(line)
-
 
 #five-fold division
 fivefold_test = [range(i,(i+int(len(X)/5))) for i in range(0, len(X), int(len(X)/5))] 
 s = range(len(X))
 fivefold_train = [list(set(s)-set(x)) for x in fivefold_test]
 I_permuatation = np.random.permutation(range(len(X)))
+#print (fivefold_train[0])
+#print (fivefold_test[0])
+#print (I_permuatation[904:])
 fivefold_train_ = [[X[I_permuatation[l]] for l in fivefold_train[0]]]
 fivefold_test_ = [[X[I_permuatation[l]] for l in fivefold_test[0]]]
-x_train = fivefold_train[0]
-x_test = fivefold_test[0] 
-x_val = x_test[:int(len(x_test)/2)]
-x_test = x_test[int(len(x_test)/2):]
+x_train = fivefold_train_[0]
+x_test = fivefold_test_[0] 
 fivefold_train_names = [[X_names[I_permuatation[l]] for l in fivefold_train[0]]]
 fivefold_test_names = [[X_names[I_permuatation[l]] for l in  fivefold_test[0]]]
 x_train_names = fivefold_train_names[0]
 x_test_names = fivefold_test_names[0]
-x_val_names = x_test_names[:int(len(x_test_names)/2)]
-x_test_names = x_test_names[int(len(x_test_names)/2):]
+
+#FOR NOE TRAIN ON ENTIRE DATASET LIKE AN UNSUPERVISED MODEL...
+x_train = x_train
+x_train_names = x_train_names
 ## Parser
 parser = argparse.ArgumentParser()
 parser.add_argument('-n','--batch_size', type=int)
 parser.add_argument('-t','--max_epoch', type=int)
 parser.add_argument('--lr', type=float)
 parser.add_argument('--SGD', action='store_true')
-#parser.add_argument('--embed_size', type=int)
-parser.add_argument('--num_hidden_units', type=int)
+parser.add_argument('--embed_size', type=int)
+parser.add_argument('--num_hidden_units1', type=int)
+parser.add_argument('--num_hidden_units2', type=int)
+parser.add_argument('--seq_length', type=int)
 args = parser.parse_args()
 
 lr_dict = {'SGD': 0.001, 'ADAM':0.01}
 batch_size = 100 if args.batch_size is None else args.batch_size
-num_epochs = 5 if args.max_epoch is None else args.max_epoch
+num_epochs = 15 if args.max_epoch is None else args.max_epoch
 optimi = 'SGD' if args.SGD else 'ADAM'
-lr = 0.5 if args.lr is None else args.lr
-#embedding_size = 500 if args.embed_size is None else args.embed_size
-num_hidden_units = 500 if args.num_hidden_units is None else args.num_hidden_units
-print lr
+lr = 0.01 if args.lr is None else args.lr
+print (lr)
+embedding_size = 100 if args.embed_size is None else args.embed_size
+num_hidden_units1 = 500 if args.num_hidden_units1 is None else args.num_hidden_units1
+num_hidden_units2 = 500 if args.num_hidden_units2 is None else args.num_hidden_units2
+alphas = [0.5, 0.5, 1.0] #weights of different similarities
+seq_length = 100 if args.seq_length is None else args.seq_length
+savefile = '_'.join(['BOW_model_glove', str(batch_size), str(num_epochs), str(seq_length), str(embedding_size),str(lr),optimi, 'seq_labels'])
+print (savefile)
 
-heuristic_features = Heuristic_features()
-num_features = heuristic_features.__num_features__()
-print num_features
 
-savefile = '_'.join(['Aggregator_model', str(batch_size), str(num_epochs), str(num_features),str(num_hidden_units)])
-
-model = aggregator_model(num_features, num_hidden_units)
+model = BOW_model_embeddings(vocab_size, num_hidden_units1,embedding_size)
 model = model.to(device)
 model.train()
 
 # Dataset and loader
-train_dataset = triplettrainDataset_aggregator(x_train, x_train_names)
+train_dataset = triplettrainDataset(x_train, x_train_names, alphas)
+#train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
+#                                           batch_size=batch_size, 
+#                                           shuffle=True)
+print ("dataset done..")
 
-
-criterion = nn.MarginRankingLoss(margin =1.0)
+criterion = Similarityloss()
 criterion = criterion.to(device)
+criterion2 = nn.TripletMarginLoss(margin = 1.0, p=2)
 if(optimi=='ADAM'):
     optimizer = optim.Adam(model.parameters(), lr=lr)
 elif(optimi=='SGD'):
@@ -111,28 +120,19 @@ for epoch in range(num_epochs):
     print (epoch_counter)
     x_input2 = [train_dataset.__getitem__(j) for j in I_permutation[i:i+batch_size]]
     bs = len(x_input2)
-    q = np.zeros((bs,num_features),dtype=np.float)
-    p = np.zeros((bs,num_features),dtype=np.float)
-    t = np.zeros((bs),dtype = np.float)
-    for j in range(bs):
-      q[j,:] = heuristic_features.get_features(x_input2[j][3],x_input2[j][4])
-      p[j,:] = heuristic_features.get_features(x_input2[j][3],x_input2[j][5])
-      y_q = int(seq_eval.is_seq(x_input2[j][3],x_input2[j][4]) == True) 
-      y_p = int(seq_eval.is_seq(x_input2[j][3],x_input2[j][5]) == True) 
-      if(y_q > y_p):
-        target = 1
-      elif(y_q<y_p):
-        target = -1
-      else: 
-        target = 0 
-      t[j] = target
-    #print (t)
-    t = torch.FloatTensor(t).to(device) 
+    zero = torch.zeros(bs).to(device)
+    q = [np.mean(glove_embeddings[x_input2[j][0]],axis=0) for j in range(bs)]
+    p = [np.mean(glove_embeddings[x_input2[j][1]],axis=0) for j in range(bs)]
+    n = [np.mean(glove_embeddings[x_input2[j][2]],axis=0) for j in range(bs)]
     q = torch.FloatTensor(q).to(device)
     p = torch.FloatTensor(p).to(device)
+    n = torch.FloatTensor(n).to(device)
     q_output = model(q)
     p_output = model(p)
-    loss = criterion(q_output,p_output, t)
+    n_output = model(n)
+    loss = criterion(zero, q_output, p_output,n_output)
+    #loss2 = criterion2(q_output, p_output, n_output)
+    # Backward and optimize
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
@@ -145,32 +145,11 @@ for epoch in range(num_epochs):
   print ('Epoch {}, Loss: {:.4f}'.format(epoch+1, running_loss/(epoch_counter/batch_size)))
   torch.save(model, 'model/'+savefile+'_temp.model')
   np.save('state/' + savefile + 'training_loss.npy', np.array(training_loss))
-
+  #for param_group in optimizer.param_groups:
+  #  param_group['lr'] = 0.001/(1+((15+epoch)*0.05))
+  #  print (param_group['lr'])
+      
+  #training_epoch_loss += [loss.item()]
 torch.save(model, 'model/'+savefile+'.model')
 np.save('state/' + savefile + 'training_loss.npy', np.array(training_loss))
 
-'''
-sim_mat = np.zeros((len(X_names),len(X_names)),dtype = np.float)
-batch_size = 1000
-L_train = len(X_names)
-model.eval()
-#q_embeddings = np.zeros((len(X_names), 100),dtype=np.float)
-for k in range(len(X_names)):
-  for i in range(0, L_train, batch_size):
-    x_input2 = X_names[i:i+batch_size]
-    bs = len(x_input2)
-    q = np.zeros((bs,num_features),dtype=np.float)
-    #t = np.zeros((bs),dtype = np.float)
-    print ("doing")
-    for j in range(bs):
-      q[j,:] = heuristic_features.get_features(X_names[k],x_input2[j])
-    print ("done")
-      #t[j] = int(seq_eval.is_seq(x_input2[j][3],x_input2[j][4]) == True) 
-    #t = torch.FloatTensor(t).to(device) 
-    q = torch.FloatTensor(q).to(device)
-    q_output = model(q)
-    sim_mat[k,i:i+bs] = q_output.detach().cpu().numpy().reshape((bs))
-  print k    
-
-np.save("../data/"+savefile+"_sim.npy",sim_mat)
-'''
