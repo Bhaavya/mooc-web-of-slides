@@ -99,9 +99,9 @@ optimi = 'SGD' if args.SGD else 'ADAM'
 lr = 0.01 if args.lr is None else args.lr
 print (lr)
 embedding_size = 100 if args.embed_size is None else args.embed_size
-num_hidden_units1 = 500 if args.num_hidden_units1 is None else args.num_hidden_units1
-num_hidden_units2 = 500 if args.num_hidden_units2 is None else args.num_hidden_units2
-alphas = [0.5, 0.5, 1.0] #weights of different similarities
+num_hidden_units1 = 100 if args.num_hidden_units1 is None else args.num_hidden_units1
+num_hidden_units2 = 100 if args.num_hidden_units2 is None else args.num_hidden_units2
+#alphas = [0.5, 0.5, 1.0] #weights of different similarities
 seq_length = 100 if args.seq_length is None else args.seq_length
 savefile = '_'.join(['BOW_model', str(batch_size), str(num_epochs), str(seq_length), str(embedding_size),str(lr),optimi, 'seq_labels'])
 print (savefile)
@@ -113,7 +113,7 @@ model = model.to(device)
 model.train()
 
 # Dataset and loader
-train_dataset = triplettrainDataset(x_train, x_train_names, alphas)
+train_dataset = triplettrainDataset2(x_train, x_training_pairs)
 #train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
 #                                           batch_size=batch_size, 
 #                                           shuffle=True)

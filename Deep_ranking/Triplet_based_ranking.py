@@ -81,6 +81,38 @@ class triplettrainDataset(Dataset):
       n = self.x_train[n_idx]
       return (q,p,n,slide_name,pos_slide_name,neg_slide_name)
 
+class triplettrainDataset2(Dataset):
+  class_names = []
+  def __init__(self, X, X_names, x_train_names, x_train_pairs, y_train):
+    index = 0
+    print (x_train_pairs[:3])
+    x_train_dict_pos_examples = {}
+    x_train_dict_neg_examples = {}
+    for name in x_train_names:
+      x_train_dict_pos_examples[name] = []
+      x_train_dict_neg_examples[name] = []
+    for (name1,name2) in x_train_pairs:
+      if y_train[index] == 1:
+        x_train_dict_pos_examples[name1] += [name2]
+      else:
+        x_train_dict_neg_examples[name1] += [name2]
+      index += 1
+    self.x_train_dict_pos_examples = x_train_dict_pos_examples
+    self.x_train_dict_neg_examples = x_train_dict_neg_examples
+    self.x_names = X_names
+    self.x_train = X
+    self.x_train_names = x_train_names
+  def __getitem__(self, idx):
+    slide_name = self.x_train_names[idx]
+    p_name = np.random.choice(self.x_train_dict_pos_examples[slide_name],1)
+    n_name = np.random.choice(self.x_train_dict_neg_examples[slide_name],1)
+    p_idx = self.x_names.index(p_name[0])
+    n_idx = self.x_names.index(n_name[0])
+    idx = self.x_names.index(slide_name)
+    q = self.x_train[idx]
+    p = self.x_train[p_idx]
+    n = self.x_train[n_idx]
+    return (q,p,n,slide_name,p_name[0],n_name[0])
 class testDataset(Dataset):
   def __init__(self, x_test, x_names, transform=None):
         """
@@ -99,6 +131,15 @@ class testDataset(Dataset):
       return (x_test[idx])
 
 class Similarityloss(_Loss):
+  def __init__(self, gap = 1.0, zero = 0.0):
+    super(Similarityloss, self).__init__()
+    self.pdist = nn.CosineSimilarity()
+    self.gap = gap
+  def forward(self, zero, query, positive, negative):
+    result = torch.max(zero, self.gap-(self.pdist(query, positive))+(self.pdist(query,negative)))
+    return result.mean()
+
+class Similarityloss2(_Loss):
   def __init__(self, gap = 1.0, zero = 0.0):
     super(Similarityloss, self).__init__()
     self.pdist = nn.CosineSimilarity()

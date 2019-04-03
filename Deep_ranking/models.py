@@ -247,19 +247,13 @@ class BOW_model_embeddings(nn.Module):
 
 
 class aggregator_model(nn.Module):
-    def __init__(self, in_features, no_of_hidden_units,num_layers=2):
+    def __init__(self, in_features, no_of_hidden_units,num_layers=1):
         super(aggregator_model, self).__init__()
         layers = []
         layers.append(nn.Sequential(nn.Linear(in_features, no_of_hidden_units),
                     nn.BatchNorm1d(no_of_hidden_units),
                     nn.ReLU(),
-                    nn.Dropout()
-                    ))
-        for i in range(num_layers-1):
-            layers.append(nn.Sequential(nn.Linear(no_of_hidden_units, no_of_hidden_units),
-                    nn.BatchNorm1d(no_of_hidden_units),
-                    nn.ReLU(),
-                    nn.Dropout()
+                    nn.Dropout(p=0.5)
                     ))
         self.layers = nn.Sequential(*layers)
 

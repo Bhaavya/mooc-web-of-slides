@@ -20,7 +20,9 @@ class Heuristic_features():
 		sim_mats += [np.load('../data/word2vec_similarities.npy')]		
 		sim_mats += [np.genfromtxt("../data/probabilistic_model_matrix.csv",delimiter=',')[:,:-1]]
 		sim_mats += [np.load('../data/title_similarity.npy')]
-		sim_mats += [np.load('../data/BOW_model_1__100_30_100_100_0.001_ADAM_seq_labels_sim.npy')]
+		#sim_mats += [np.load('../data/BOW_model_1__100_30_100_100_0.001_ADAM_seq_labels_sim.npy')]
+		sim_mats += [np.genfromtxt("../data/tfidf_embeddings/tfidf_word2vec_embeddings.csv",delimiter=',')[:,:-1]]
+		sim_mats += [np.genfromtxt("../data/tfidf_embeddings/tfidf_glove_embeddings.csv",delimiter=',')[:,:-1]]
 		sim_mats += [np.load('../data/KL_divergence_65_1_0.01_70_sim.npy')]
 		sim_mats += [np.load('../data/LDA_similarities_65_topics.npy')]		
 		num_embeddings = len(sim_mats)
@@ -45,8 +47,12 @@ class Heuristic_features():
 		self.sim_orders += [[s[0].replace('!!','##') for s in probabilistic_model]]
 		title_order = open('../data/slide_names2.txt','r').readlines()
 		self.sim_orders += [[b.strip() for b in title_order]]
-		bow_order = open('preprocessed_data/X_names.txt','r').readlines()
-		self.sim_orders += [[b.strip() for b in bow_order]]
+		#bow_order = open('preprocessed_data/X_names.txt','r').readlines()
+		#self.sim_orders += [[b.strip() for b in bow_order]]
+		tfidf_word2vec_model =  list(csv.reader(open("../data/tfidf_embeddings/tfidf_word2vec_embeddings_order.csv", "rb"), delimiter=","))
+		self.sim_orders += [[s[0].replace('!!','##') for s in tfidf_word2vec_model]]
+		tfidf_glove_model =  list(csv.reader(open("../data/tfidf_embeddings/tfidf_glove_embeddings_order.csv", "rb"), delimiter=","))
+		self.sim_orders += [[s[0].replace('!!','##') for s in tfidf_glove_model]]
 		KL_order = open('../data/slide_names3.txt','r').readlines()
 		self.sim_orders += [[b.strip() for b in KL_order]]
 		LDA_order = open('../data/slide_names3.txt','r').readlines()

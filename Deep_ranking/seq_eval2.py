@@ -74,8 +74,8 @@ def calc_recall_k(sim_mat,all_seq_slides,subtitles_lst,slide_rows_info_lst,slide
 
 	print ('\n','-'*20,'Actual Slides:',actual_slides,'-'*20)
 	print ('\n','-'*20,'Slides with subtitles',good_slides,'-'*20)
-	print ('\n','-'*20, 'Recall All Slides:',total_recall/(actual_slides),'-'*20)
-	print ('\n','-'*20, 'Recall Subtitles Slides:',good_slides_recall/(good_slides),'-'*20)
+	print ('\n','-'*20, 'Recall All Slides:','@'+str(k)+' ',total_recall/(actual_slides),'-'*20)
+	print ('\n','-'*20, 'Recall Subtitles Slides:','@'+str(k)+' ',good_slides_recall/(good_slides),'-'*20)
 	if analysis_file_prefix is not None:
 		analyze_results(k_most_sim_mat,sim_mat,all_seq_slides,analysis_file_prefix,slide_names_rows,slide_names_cols,slide_rows_info_lst,slide_cols_info_lst)
 
