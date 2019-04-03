@@ -1,0 +1,42 @@
+<!-- slide.html-->
+
+{% extends "base.html" %}
+{% block nav %}
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lectures <span class="caret"></span></a>
+         <ul class="dropdown-menu" style="height:auto; max-width: 905px;  max-height:  725px;overflow:scroll;opacity:0.97;background-color: #E8E8E8;">
+{% for i in lnos %}
+            <li><a href="/webofslides/slide/{{course_name}}/{{i}}">{{' '.join(lec_names[i].replace('.txt','').replace('_','-').split('-')).title()}}</a></li>
+             {% endfor %}
+          </ul>
+        </li>
+           
+{% endblock %}
+
+{% block body %}
+
+
+<div class="jumbotron" padding-bottom="15px">
+  <div class="container" >
+  <h2>{{' '.join(course_name.split('-')).title()}}</h2>
+  <p>{{slide_name.split('----')[-1][:-4].title()}}</p>
+    <div style="overflow:auto;-webkit-overflow-scrolling:touch">
+  <iframe style="width:100%;height:600px" src="{{ url_for('static',  filename='slides/'+course_name+'/'+lec_name+'/'+slide_name, _external=True) }}"  
+  ></iframe>
+</div>
+  <div class="container" style="margin-left:0px;padding-left:0px" >
+ 
+  <h2>Related slides</h2>
+   <ul>
+  {% for i in range(num_related_slides) %}
+  	<li><a href="/webofslides/related_slide/{{related_course_names[i]}}/{{rel_lnos[i]}}/{{related_slides[i]}}">{{disp_str[i]}}</a></li>
+  	{% endfor %}
+  </ul>
+</div>
+  </div>
+  <div class="container" style="padding-top:15px"></div>
+  <button type="button" class="btn btn-success pull-left" onclick="location.href='/webofslides/prev_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Prev Slide</button>
+  <button type="button" class="btn btn-success pull-right" onclick="location.href='/webofslides/next_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Next Slide</button>
+  </div>
+</div>
+
+{% endblock %}
