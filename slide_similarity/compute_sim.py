@@ -3,6 +3,7 @@ import tfidf_sim
 import util
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
+import pickle
 class SlideSimilarity():
 
 	def __init__(self,corpus_file,sim_mat_file=None):
@@ -43,7 +44,13 @@ if __name__ == '__main__':
 	only_titles = [s.split(" . ")[0] for s in ss.corpus]
 	print only_titles
 	title_tfidfs = vec.transform(only_titles)
-	sim_mat = cosine_similarity(title_tfidfs)
+	sim_mat = cosine_similarity(title_tfidfs)	
+	print title_tfidfs.shape
+	print tfidfs.shape
+	print sim_mat.shape
 	np.save("../data/title_similarity.npy",sim_mat)
+	np.save("tf_idf_outputs/tfidfs.npy",tfidfs.todense())
+	np.save("tf_idf_outputs/title_tfidfs.npy",title_tfidfs.todense())
+	pickle.dump(vec, open('tf_idf_outputs/vec.p', 'wb'))
 
 
