@@ -1,0 +1,21 @@
+<!-- slide.html-->
+
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<div class="jumbotron" padding-bottom="15px">
+  <div class="container" style="margin-left:0px;padding-left:0px" >
+ 
+  <h2>Results</h2>
+   <ul>
+  {% for i in range(num_results) %}
+  	<li><a href="/webofslides/related_slide/{{search_course_names[i]}}/{{lnos[i]}}/{{results[i]}}">{{disp_strs[i]}}</a></li>
+  	{% endfor %}
+  </ul>
+</div>
+  </div>
+</div>
+
+{% endblock %}

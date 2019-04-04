@@ -1,0 +1,18 @@
+dataset = "slides"
+prefix = "."
+corpus = "line.toml"
+query-judgements = "qrels.txt"
+index = "idx"
+[ranker]
+	method = "bm25"
+	k3 = 500
+	b = 0.750000
+	k1 = 1.20000
+[[analyzers]]
+	method = "ngram-word"
+	ngram = 1
+	[[analyzers.filter]]
+		suppress-tags = true
+		type = "icu-tokenizer"
+	[[analyzers.filter]]
+		type = "lowercase"
