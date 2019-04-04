@@ -97,7 +97,7 @@ def get_related_slides(slide_name):
         lnos.append(lectures.index('----'.join(comp[1:-1])))
     return len(related_slides),related_slides,disp_strs,course_names,lnos
 
-def load_search_results(search):
+def get_search_results(search):
     query = metapy.index.Document()
     query.content(search)
     top_docs = ranker.score(idx, query, num_results=10)
@@ -111,15 +111,9 @@ def load_search_results(search):
         course_names.append(comp[0])
         lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
         lnos.append(lectures.index('----'.join(comp[1:-1])))
+    for x in range(len(results)):
+    	results[x] = results[x].replace('##', '----') + '.pdf'
     return len(results),results,disp_strs,course_names,lnos
-
-def get_search_results(course_name,lno,curr_slide):
-    lectures = sort_slide_names(os.listdir(os.path.join(slides_path, course_name)))
-    lno = int(lno)
-    slides = sort_slide_names(os.listdir(os.path.join(slides_path,course_name,lectures[lno])))
-    idx = slides.index(curr_slide)
-    related_slides_info = get_search_results(search)
-    return curr_slide, lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
 
 
 if __name__ == '__main__':
