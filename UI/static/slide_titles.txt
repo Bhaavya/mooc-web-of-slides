@@ -1,0 +1,4526 @@
+think bayesian
+man run
+man run
+man run
+man run
+man run
+man run
+man run
+man run
+main principle
+review probability
+probability
+random variable
+discrete : probability mass function ( pmf )
+continuous : probability density function ( pdf )
+independence
+draw deck
+two coin
+conditional probability
+conditional probability
+chain rule
+chain rule
+chain rule
+sum rule
+baye theorem
+. .
+bayesian approach statistic
+different approach statistic
+uncertainty interpretation
+datum parameter
+datum parameter
+training
+training
+classification
+regularization
+regularization
+p ( θ )
+on-line learn
+on-line learn
+on-line learn
+on-line learn
+on-line learn
+. .
+define model
+bayesian *
+bayesian *
+probabilistic model bn
+probabilistic model bn
+probabilistic model bn
+probabilistic model bn
+probabilistic model bn
+probabilistic model bn
+naïve baye classifier
+naïve baye classifier
+. .
+example : thief & alarm
+model
+model
+model
+model
+model
+model
+model
+distribution
+технический слайд
+distribution
+distribution
+distribution
+distribution
+< < part marker board > > ( 8 mins )
+correct model
+. .
+example : linear regression
+univariate normal
+univariate normal
+univariate normal
+univariate normal
+univariate normal : mean
+univariate normal : variance
+multivariate normal
+multivariate normal
+multivariate normal
+multivariate normal
+multivariate normal
+linear regression
+linear regression
+linear regression
+least square problem
+least square problem
+model
+model
+model
+model
+training технический слайд ( на доске ) , 6
+training технический слайд ( на доске )
+training технический слайд ( на доске )
+training технический слайд ( на доске )
+training технический слайд ( на доске )
+training технический слайд ( на доске )
+training технический слайд ( на доске )
+. .
+n i=1
+let us also consider multidimensional case problem : xi d-dimensional
+. .
+analytical inference
+posterior distribution
+posterior distribution
+posterior distribution
+posterior distribution
+posterior distribution
+maximum posteriori
+maximum posteriori
+maximum posteriori
+maximum posteriori
+maximum posteriori
+maximum posteriori
+map : problem
+map : problem
+map : problem
+map : problem
+map : problem
+map : problem
+map : problem
+summary
+. .
+. conjugate distribution
+baye formula
+conjugate prior
+example
+two gaussian
+two gaussian
+solution
+example
+example
+example
+example
+. .
+distribution : gamma
+gamma distribution
+gamma distribution
+gamma distribution
+gamma distribution
+gamma distribution
+технический слайд
+statistic
+example
+технический слайд
+example
+example
+example
+example
+example : normal , precision
+precision
+precision
+precision
+functional form
+functional form
+functional form
+functional form
+functional form
+functional form
+functional form
+functional form
+functional form
+gamma prior
+gamma prior
+gamma prior
+gamma prior
+gamma prior
+. .
+distribution : beta
+beta distribution
+beta distribution
+beta distribution
+beta distribution
+beta distribution
+statistic
+example
+example технический слайд
+example
+example
+example
+example : bernoulli
+beta prior
+beta prior
+beta prior
+beta prior
+beta prior
+beta prior
+summary
+summary
+summary
+summary
+summary
+pro con
+pro con
+pro con
+pro con
+pro con
+. .
+expectation maximization
+week 2
+week 2
+latent ( hide ) variable variable
+.
+.
+?
+john
+john
+john
+john
+john
+john
+john
+john
+probabilistic model
+probabilistic model
+probabilistic model
+probabilistic model
+probabilistic model
+probabilistic model
+probabilistic model
+probabilistic model
+latent variable model
+latent variable model
+latent variable model
+latent variable model
+. .
+probabilistic cluster
+cluster
+hard cluster
+soft cluster
+hyperparameter tune
+hyperparameter tune
+generate new datum point
+summary
+. .
+probabilistic model datum
+probabilistic model datum
+gaussian mixture model ( gmm )
+gaussian mixture model ( gmm )
+gaussian mixture model ( gmm )
+gaussian mixture model ( gmm )
+gmm vs guassian
+training gmm
+training gmm
+training gmm
+training gmm
+training gmm
+training gmm
+training gmm
+summary
+. .
+gaussian mixture model ( gmm )
+introduce latent variable
+introduce latent variable
+introduce latent variable
+introduce latent variable
+introduce latent variable
+expectation maximization
+expectation maximization
+expectation maximization
+expectation maximization
+expectation maximization
+expectation maximization
+expectation maximization
+expectation maximization
+expectation maximization
+. .
+. .
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em example
+gmm em local maximum example
+gmm em local maximum example
+gmm em local maximum example
+gmm em local maximum example
+gmm em local maximum example
+gmm em local maximum example
+gmm em local maximum example
+gmm em local maximum example
+summary
+. .
+general form expectation maximization
+concave function
+concave function
+concave function
+jensen ’ inequality
+jensen ’ inequality
+jensen ’ inequality
+jensen ’ inequality
+jensen ’ inequality
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+kullback–leibler divergence
+. .
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+general form expectation maximization
+summary expectation maximization
+. .
+e-step detail
+e-step detail
+e-step detail
+e-step detail
+e-step summary
+e-step summary
+. .
+m-step detail
+m-step detail
+m-step detail
+m-step detail
+m-step detail
+m-step detail
+expectation maximization algorithm
+convergence guaranty
+convergence guaranty
+convergence guaranty
+convergence guaranty
+convergence guaranty
+convergence guaranty
+convergence guaranty
+. .
+summary expectation maximization
+summary expectation maximization
+summary expectation maximization
+summary expectation maximization
+summary expectation maximization
+summary expectation maximization
+summary expectation maximization
+summary expectation maximization
+. .
+application em
+gaussian mixture model revisit
+gaussain mixture model connection
+gaussain mixture model connection
+gaussain mixture model connection
+gaussain mixture model connection
+. .
+k-mean connection
+k-mean
+k-mean
+k-mean
+k-mean gmm perspective
+k-mean gmm perspective
+k-mean gmm perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+k-mean em perspective
+. .
+: ci c
+k-mean em perspective
+k-mean em perspective
+. .
+ice cream conspiracy
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+ice cream priсe , $
+principal component analysis
+ice cream price , $
+ice cream price , $
+ice cream price , $
+ice cream price , $
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+. .
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+principal component analysis
+summary
+. .
+approximate inference ?
+analytical inference
+analytical inference
+analytical inference
+analytical inference
+need exact posterior ?
+need exact posterior ?
+. .
+variational inference
+variational inference
+variational inference
+variational inference ( технический
+variational inference
+variational inference
+choice variational family
+choice variational family
+unnormalized distribution
+unnormalized distribution
+unnormalized distribution
+unnormalized distribution
+unnormalized distribution
+unnormalized distribution
+unnormalized distribution
+. .
+mean field
+mean field
+mean field
+mean field
+example
+example
+example
+example
+example
+optimization
+технический слайд ( < = 12.5 min )
+. .
+example : is model
+is model
+is model
+normalization constant
+mean field
+технический слайд ( 5 минут на доску )
+технический слайд
+технический слайд
+example
+example
+example
+optimization solution
+optimization solution
+optimization solution
+optimization solution
+optimization solution
+optimization solution
+optimization solution
+. .
+topic modele
+recommender system
+topic modele
+topic modele
+topic modele
+topic modele
+topic modele
+topic modele
+topic modele
+similarity
+distance
+goal
+. .
+dirichlet distribution
+dirichlet distribution
+dirichlet distribution
+dirichlet distribution
+dirichlet distribution
+dirichlet distribution
+statistic
+example
+example
+example
+example
+conjugate prior
+multinomial likelihood
+multinomial likelihood
+multinomial likelihood
+multinomial likelihood
+. .
+latent dirichlet allocation
+topic
+topic
+topic
+topic
+text generation
+text generation
+text generation
+model
+model
+model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+lda model
+технический слайд ( 15 мин на
+. .
+extension & summary
+sparsity document
+sparsity topic
+topic correlation
+dynamic topic model
+summary
+. .
+• mcmc — silver bullet probabilistic modele
+markov chain monte carlo ( mcmc )
+markov chain monte carlo ( mcmc )
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+monte carlo
+. .
+sampling 1d distribution
+1d sampling ( discrete )
+1d sampling ( discrete )
+1d sampling ( discrete )
+1d sampling ( discrete )
+1d sampling ( discrete )
+1d sampling ( discrete )
+1d sampling ( discrete )
+summary
+summary
+continuous sampling
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+1d sampling ( continuous )
+summary
+summary
+summary
+. .
+markov chain monte carlo ( mcmc )
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+markov chain
+used markov chain
+used markov chain
+used markov chain
+used markov chain
+used markov chain
+markov chain always converge ?
+markov chain always converge ?
+markov chain always converge ?
+markov chain
+markov chain
+markov chain
+. .
+gibbs sampling
+gibbs sampling
+gibbs sampling
+gibbs sampling
+gibbs sampling
+gibbs sampling
+gibbs sampling
+gibbs sampling
+. .
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+gibbs sampling demo
+summary
+summary
+summary
+summary
+summary
+. .
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+metropolis-hasting
+detailed balance
+detailed balance
+detailed balance
+detailed balance
+detailed balance
+detailed balance
+metropolis-hasting
+metropolis-hasting
+. .
+◆
+metropolis hasting
+choice q
+. .
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+demo
+metropolis hasting correction scheme
+metropolis hasting correction scheme
+metropolis hasting correction scheme
+metropolis hasting correction scheme
+metropolis hasting correction scheme
+metropolis hasting correction scheme
+summary
+summary
+summary
+summary
+summary
+. .
+monte carlo method approximate expect value
+week summary
+week summary
+monte carlo vs variational inference
+monte carlo vs variational inference
+monte carlo vs variational inference
+monte carlo vs variational inference
+method
+method
+method
+method
+method
+method
+summary markov chain monte carlo
+. .
+mcmc lda
+latent dirichlet allocation
+text generation
+model
+mean field lda ( week 3 )
+mean field lda ( week 3 )
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+mcmc lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+collapse gibbs lda
+. .
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+bayesian neural network
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+langevin monte carlo
+. .
+scalable variational inference
+scalable variational inference
+scalable variational inference
+scalable variational inference
+scalable variational inference
+scalable variational inference
+scalable variational inference
+scalable variational inference
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+unbiased estimate
+. .
+p ( x ) dataset
+scalable variational inference
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+model p ( x )
+. .
+p ( x | ) p ( ) dt
+continuous mixture gaussian
+continuous mixture gaussian
+continuous mixture gaussian
+continuous mixture gaussian
+continuous mixture gaussian
+continuous mixture gaussian
+continuous mixture gaussian
+continuous mixture gaussian
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+scaling expectation maximization
+. .
+w , q
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+scaling variational em
+objective interpretation
+objective interpretation
+objective interpretation
+objective interpretation
+objective interpretation
+detect outlier
+detect outlier
+generate new sample
+. .
+kl ( qi ( ti ) k p ( ti ) )
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+. .
+log p ( xi | ti , w )
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+. .
+log p ( xi | ti , w )
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+gradient
+variational autoencoder summary
+. .
+nonparametric method
+parametric method
+parametric method
+parametric method
+parametric method
+parametric method
+non-parametric method
+non-parametric method
+non-parametric method
+kernel
+parametric vs non-parametric
+gaussian process
+. .
+gaussian process
+random process
+random process ( технический слайд )
+gaussian process
+gaussian process ( технический слайд )
+gaussian process
+stationary process
+stationary process
+stationary process
+stationary process
+stationary process
+stationary process
+stationary process
+stationary process
+kernel
+kernel
+kernel
+kernel
+. .
+gp machine learn
+task
+task
+task
+prediction
+prediction
+prediction
+prediction
+prediction
+prediction
+prediction
+prediction
+технически слайд
+preprocess
+технический слайд
+. .
+nuance gp
+noisy observation
+noisy observation
+noisy observation
+noisy observation
+kernel parameter
+kernel parameter
+kernel parameter
+kernel parameter
+kernel parameter
+kernel parameter
+kernel parameter
+kernel parameter
+classification
+classification
+classification
+induce input
+induce input ( технический слайд )
+induce input
+induce input
+. .
+bayesian optimization
+black-box optimization
+black-box optimization
+black-box optimization
+black-box optimization
+black-box optimization
+surrogate model
+acquisition function
+maximum probability improvement ( mpi )
+upper confidence bound ( ucb )
+expect improvement ( ei )
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+example
+технический слайд
+random search vs gaussian process
+. .
+bayesian optimization
+hyperparameter tune
+discrete continuous variable
+drug discovery
+encoding-decode
+bayesian optimization
+. .
+1
+= 1 ,
+. .
+1
+. .
+1
+probability value
+2.1
+need observe success )
+3.3
+similar poisson distribution , parameter λ interpreted rate
+4.4
+denote
+distribution symmetric resemble normal distribution , thicker tail
+. √ n ( x̄ − µ ) ⇒ n ( 0 , 1 )
+. .
+ex = exp ( 5x=1 x ) = e15
+2
+. .
+= { xi < 2 } = { maxi xi < 2 }
+. .
+1
+2
+replace p , q , r distribution , depend want
+. let z ∼ n ( 0 , 1 )
+table 4 : excel function evaluate mass function several distribution
+. .
+1
+. .
+1
+next step “ complete square ” exponent :
+2
+4
+. .
+1
+. .
+1
+estimate β treat σ 2 know , posterior β ( multivariate )
+. .
+mining : course overview
+cluster analysis ?
+value cluster analysis
+broad application cluster analysis
+major reference reading course
+course structure
+course general information
+. .
+10 9 8 7 6 5 4 3 2 1
+author
+2
+40
+2.1 datum object attribute type
+42
+2.1 datum object attribute type
+44
+2.2 basic statistical description datum
+46
+2.2 basic statistical description datum
+48
+2.2 basic statistical description datum
+50
+2.2 basic statistical description datum
+52
+2.2 basic statistical description datum
+54
+2.2 basic statistical description datum
+56
+2.3 datum visualization
+58
+2.3 datum visualization
+60
+2.3 datum visualization
+62
+2.3 datum visualization
+64
+2.4 measure datum similarity dissimilarity
+66
+2.4 measure datum similarity dissimilarity
+68
+2.4 measure datum similarity dissimilarity
+70
+2.4 measure datum similarity dissimilarity
+72
+2.4 measure datum similarity dissimilarity
+74
+2.4 measure datum similarity dissimilarity
+76
+2.4 measure datum similarity dissimilarity
+78
+2.6 exercise
+80
+2.7 bibliographic note
+82
+10
+444
+10.1 cluster analysis
+446
+10.1 cluster analysis
+448
+10.1 cluster analysis
+450
+10.2 partition method
+452
+10.2 partition method
+454
+10.2 partition method
+456
+10.3 hierarchical method
+458
+10.3 hierarchical method
+chapter 10 cluster analysis : basic concept method
+10.3 hierarchical method
+462
+10.3 hierarchical method
+464
+10.3 hierarchical method
+466
+10.3 hierarchical method
+468
+10.3 hierarchical method
+470
+10.4 density-based method
+472
+10.4 density-based method
+474
+10.4 density-based method
+476
+10.4 density-based method
+478
+10.5 grid-based method
+480
+10.5 grid-based method
+482
+10.6 evaluation cluster
+484
+10.6 evaluation cluster
+486
+10.6 evaluation cluster
+488
+10.6 evaluation cluster
+490
+10.8 exercise
+492
+10.8 exercise
+494
+10.9 bibliographic note
+11
+498
+11.1 probabilistic model-based cluster
+500
+11.1 probabilistic model-based cluster
+502
+11.1 probabilistic model-based cluster
+504
+11.1 probabilistic model-based cluster
+506
+11.1 probabilistic model-based cluster
+508
+11.2 cluster high-dimensional datum
+510
+11.2 cluster high-dimensional datum
+512
+11.2 cluster high-dimensional datum
+514
+11.2 cluster high-dimensional datum
+516
+11.2 cluster high-dimensional datum
+518
+11.2 cluster high-dimensional datum
+520
+11.2 cluster high-dimensional datum
+522
+11.3 cluster graph network datum
+524
+11.3 cluster graph network datum
+526
+11.3 cluster graph network datum
+528
+11.3 cluster graph network datum
+530
+11.3 cluster graph network datum
+532
+11.4 cluster constraint
+534
+11.4 cluster constraint
+536
+11.4 cluster constraint
+538
+11.6 exercise
+540
+11.7 bibliographic note
+13
+586
+13.1 mining complex datum type
+chapter 13 datum mining trend research frontier
+13.1 mining complex datum type
+590
+13.1 mining complex datum type
+592
+13.1 mining complex datum type
+594
+13.1 mining complex datum type
+596
+13.1 mining complex datum type
+598
+13.2 methodology datum mining
+600
+13.2 methodology datum mining
+602
+13.2 methodology datum mining
+604
+13.2 methodology datum mining
+606
+13.3 datum mining application
+608
+13.3 datum mining application
+610
+13.3 datum mining application
+612
+13.3 datum mining application
+614
+13.3 datum mining application
+616
+13.3 datum mining application
+618
+13.4 datum mining society
+620
+13.4 datum mining society
+622
+13.5 datum mining trend
+624
+13.6 summary
+626
+13.7 exercise
+628
+13.8 bibliographic note
+630
+13.8 bibliographic note
+. .
+cluster
+user insight interaction cluster
+recommend reading
+. .
+two vector : cosine similarity
+cosine similarity two vector
+example : calculate cosine similarity
+. .
+10 9 8 7 6 5 4 3 2 1
+author
+2
+40
+2.1 datum object attribute type
+42
+2.1 datum object attribute type
+44
+2.2 basic statistical description datum
+46
+2.2 basic statistical description datum
+48
+2.2 basic statistical description datum
+50
+2.2 basic statistical description datum
+52
+2.2 basic statistical description datum
+54
+2.2 basic statistical description datum
+56
+2.3 datum visualization
+58
+2.3 datum visualization
+60
+2.3 datum visualization
+62
+2.3 datum visualization
+64
+2.4 measure datum similarity dissimilarity
+66
+2.4 measure datum similarity dissimilarity
+68
+2.4 measure datum similarity dissimilarity
+70
+2.4 measure datum similarity dissimilarity
+72
+2.4 measure datum similarity dissimilarity
+74
+2.4 measure datum similarity dissimilarity
+76
+2.4 measure datum similarity dissimilarity
+78
+2.6 exercise
+80
+2.7 bibliographic note
+82
+10
+444
+10.1 cluster analysis
+446
+10.1 cluster analysis
+448
+10.1 cluster analysis
+450
+10.2 partition method
+452
+10.2 partition method
+454
+10.2 partition method
+456
+10.3 hierarchical method
+458
+10.3 hierarchical method
+chapter 10 cluster analysis : basic concept method
+10.3 hierarchical method
+462
+10.3 hierarchical method
+464
+10.3 hierarchical method
+466
+10.3 hierarchical method
+468
+10.3 hierarchical method
+470
+10.4 density-based method
+472
+10.4 density-based method
+474
+10.4 density-based method
+476
+10.4 density-based method
+478
+10.5 grid-based method
+480
+10.5 grid-based method
+482
+10.6 evaluation cluster
+484
+10.6 evaluation cluster
+486
+10.6 evaluation cluster
+488
+10.6 evaluation cluster
+490
+10.8 exercise
+492
+10.8 exercise
+494
+10.9 bibliographic note
+11
+498
+11.1 probabilistic model-based cluster
+500
+11.1 probabilistic model-based cluster
+502
+11.1 probabilistic model-based cluster
+504
+11.1 probabilistic model-based cluster
+506
+11.1 probabilistic model-based cluster
+508
+11.2 cluster high-dimensional datum
+510
+11.2 cluster high-dimensional datum
+512
+11.2 cluster high-dimensional datum
+514
+11.2 cluster high-dimensional datum
+516
+11.2 cluster high-dimensional datum
+518
+11.2 cluster high-dimensional datum
+520
+11.2 cluster high-dimensional datum
+522
+11.3 cluster graph network datum
+524
+11.3 cluster graph network datum
+526
+11.3 cluster graph network datum
+528
+11.3 cluster graph network datum
+530
+11.3 cluster graph network datum
+532
+11.4 cluster constraint
+534
+11.4 cluster constraint
+536
+11.4 cluster constraint
+538
+11.6 exercise
+540
+11.7 bibliographic note
+13
+586
+13.1 mining complex datum type
+chapter 13 datum mining trend research frontier
+13.1 mining complex datum type
+590
+13.1 mining complex datum type
+592
+13.1 mining complex datum type
+594
+13.1 mining complex datum type
+596
+13.1 mining complex datum type
+598
+13.2 methodology datum mining
+600
+13.2 methodology datum mining
+602
+13.2 methodology datum mining
+604
+13.2 methodology datum mining
+606
+13.3 datum mining application
+608
+13.3 datum mining application
+610
+13.3 datum mining application
+612
+13.3 datum mining application
+614
+13.3 datum mining application
+616
+13.3 datum mining application
+618
+13.4 datum mining society
+620
+13.4 datum mining society
+622
+13.5 datum mining trend
+624
+13.6 summary
+626
+13.7 exercise
+628
+13.8 bibliographic note
+630
+13.8 bibliographic note
+. .
+partition algorithms
+partition algorithms : basic concept
+. .
+method
+k-mean cluster method
+example : k-mean cluster
+discussion k-mean method
+variation k-mean
+. .
+cluster
+initialization k-mean
+example : poor initialization may lead poor cluster
+. .
+method
+handle outlier : k-mean k-medoid
+pam : typical k-medoid algorithm
+discussion k-medoid cluster
+. .
+cluster method
+k-median : handle outlier compute median
+k-mode : cluster categorical datum
+. .
+kernel k-mean cluster
+kernel k-mean cluster
+kernel function kernel k-mean cluster
+example : kernel function kernel k-mean cluster
+example : kernel k-mean cluster
+recommend reading
+. .
+10 9 8 7 6 5 4 3 2 1
+author
+2
+40
+2.1 datum object attribute type
+42
+2.1 datum object attribute type
+44
+2.2 basic statistical description datum
+46
+2.2 basic statistical description datum
+48
+2.2 basic statistical description datum
+50
+2.2 basic statistical description datum
+52
+2.2 basic statistical description datum
+54
+2.2 basic statistical description datum
+56
+2.3 datum visualization
+58
+2.3 datum visualization
+60
+2.3 datum visualization
+62
+2.3 datum visualization
+64
+2.4 measure datum similarity dissimilarity
+66
+2.4 measure datum similarity dissimilarity
+68
+2.4 measure datum similarity dissimilarity
+70
+2.4 measure datum similarity dissimilarity
+72
+2.4 measure datum similarity dissimilarity
+74
+2.4 measure datum similarity dissimilarity
+76
+2.4 measure datum similarity dissimilarity
+78
+2.6 exercise
+80
+2.7 bibliographic note
+82
+10
+444
+10.1 cluster analysis
+446
+10.1 cluster analysis
+448
+10.1 cluster analysis
+450
+10.2 partition method
+452
+10.2 partition method
+454
+10.2 partition method
+456
+10.3 hierarchical method
+458
+10.3 hierarchical method
+chapter 10 cluster analysis : basic concept method
+10.3 hierarchical method
+462
+10.3 hierarchical method
+464
+10.3 hierarchical method
+466
+10.3 hierarchical method
+468
+10.3 hierarchical method
+470
+10.4 density-based method
+472
+10.4 density-based method
+474
+10.4 density-based method
+476
+10.4 density-based method
+478
+10.5 grid-based method
+480
+10.5 grid-based method
+482
+10.6 evaluation cluster
+484
+10.6 evaluation cluster
+486
+10.6 evaluation cluster
+488
+10.6 evaluation cluster
+490
+10.8 exercise
+492
+10.8 exercise
+494
+10.9 bibliographic note
+11
+498
+11.1 probabilistic model-based cluster
+500
+11.1 probabilistic model-based cluster
+502
+11.1 probabilistic model-based cluster
+504
+11.1 probabilistic model-based cluster
+506
+11.1 probabilistic model-based cluster
+508
+11.2 cluster high-dimensional datum
+510
+11.2 cluster high-dimensional datum
+512
+11.2 cluster high-dimensional datum
+514
+11.2 cluster high-dimensional datum
+516
+11.2 cluster high-dimensional datum
+518
+11.2 cluster high-dimensional datum
+520
+11.2 cluster high-dimensional datum
+522
+11.3 cluster graph network datum
+524
+11.3 cluster graph network datum
+526
+11.3 cluster graph network datum
+528
+11.3 cluster graph network datum
+530
+11.3 cluster graph network datum
+532
+11.4 cluster constraint
+534
+11.4 cluster constraint
+536
+11.4 cluster constraint
+538
+11.6 exercise
+540
+11.7 bibliographic note
+13
+586
+13.1 mining complex datum type
+chapter 13 datum mining trend research frontier
+13.1 mining complex datum type
+590
+13.1 mining complex datum type
+592
+13.1 mining complex datum type
+594
+13.1 mining complex datum type
+596
+13.1 mining complex datum type
+598
+13.2 methodology datum mining
+600
+13.2 methodology datum mining
+602
+13.2 methodology datum mining
+604
+13.2 methodology datum mining
+606
+13.3 datum mining application
+608
+13.3 datum mining application
+610
+13.3 datum mining application
+612
+13.3 datum mining application
+614
+13.3 datum mining application
+616
+13.3 datum mining application
+618
+13.4 datum mining society
+620
+13.4 datum mining society
+622
+13.5 datum mining trend
+624
+13.6 summary
+626
+13.7 exercise
+628
+13.8 bibliographic note
+630
+13.8 bibliographic note
+. .
+hierarchical algorithms
+hierarchical cluster : basic concept
+dendrogram : show cluster merged
+. .
+algorithms
+agglomerative cluster algorithm
+single link vs. complete link hierarchical cluster
+agglomerative cluster : average vs. centroid link
+. .
+algorithms
+divisive cluster
+algorithm design divisive cluster
+. .
+cluster
+extension hierarchical cluster
+. .
+birch : micro-clusteringbased approach
+birch ( balanced iterative reduce
+cluster feature vector birch
+measure cluster : centroid , radius diameter
+cf tree structure birch
+birch : scalable flexible cluster method
+. .
+10 9 8 7 6 5 4 3 2 1
+author
+2
+40
+2.1 datum object attribute type
+42
+2.1 datum object attribute type
+44
+2.2 basic statistical description datum
+46
+2.2 basic statistical description datum
+48
+2.2 basic statistical description datum
+50
+2.2 basic statistical description datum
+52
+2.2 basic statistical description datum
+54
+2.2 basic statistical description datum
+56
+2.3 datum visualization
+58
+2.3 datum visualization
+60
+2.3 datum visualization
+62
+2.3 datum visualization
+64
+2.4 measure datum similarity dissimilarity
+66
+2.4 measure datum similarity dissimilarity
+68
+2.4 measure datum similarity dissimilarity
+70
+2.4 measure datum similarity dissimilarity
+72
+2.4 measure datum similarity dissimilarity
+74
+2.4 measure datum similarity dissimilarity
+76
+2.4 measure datum similarity dissimilarity
+78
+2.6 exercise
+80
+2.7 bibliographic note
+82
+10
+444
+10.1 cluster analysis
+446
+10.1 cluster analysis
+448
+10.1 cluster analysis
+450
+10.2 partition method
+452
+10.2 partition method
+454
+10.2 partition method
+456
+10.3 hierarchical method
+458
+10.3 hierarchical method
+chapter 10 cluster analysis : basic concept method
+10.3 hierarchical method
+462
+10.3 hierarchical method
+464
+10.3 hierarchical method
+466
+10.3 hierarchical method
+468
+10.3 hierarchical method
+470
+10.4 density-based method
+472
+10.4 density-based method
+474
+10.4 density-based method
+476
+10.4 density-based method
+478
+10.5 grid-based method
+480
+10.5 grid-based method
+482
+10.6 evaluation cluster
+484
+10.6 evaluation cluster
+486
+10.6 evaluation cluster
+488
+10.6 evaluation cluster
+490
+10.8 exercise
+492
+10.8 exercise
+494
+10.9 bibliographic note
+11
+498
+11.1 probabilistic model-based cluster
+500
+11.1 probabilistic model-based cluster
+502
+11.1 probabilistic model-based cluster
+504
+11.1 probabilistic model-based cluster
+506
+11.1 probabilistic model-based cluster
+508
+11.2 cluster high-dimensional datum
+510
+11.2 cluster high-dimensional datum
+512
+11.2 cluster high-dimensional datum
+514
+11.2 cluster high-dimensional datum
+516
+11.2 cluster high-dimensional datum
+518
+11.2 cluster high-dimensional datum
+520
+11.2 cluster high-dimensional datum
+522
+11.3 cluster graph network datum
+524
+11.3 cluster graph network datum
+526
+11.3 cluster graph network datum
+528
+11.3 cluster graph network datum
+530
+11.3 cluster graph network datum
+532
+11.4 cluster constraint
+534
+11.4 cluster constraint
+536
+11.4 cluster constraint
+538
+11.6 exercise
+540
+11.7 bibliographic note
+13
+586
+13.1 mining complex datum type
+chapter 13 datum mining trend research frontier
+13.1 mining complex datum type
+590
+13.1 mining complex datum type
+592
+13.1 mining complex datum type
+594
+13.1 mining complex datum type
+596
+13.1 mining complex datum type
+598
+13.2 methodology datum mining
+600
+13.2 methodology datum mining
+602
+13.2 methodology datum mining
+604
+13.2 methodology datum mining
+606
+13.3 datum mining application
+608
+13.3 datum mining application
+610
+13.3 datum mining application
+612
+13.3 datum mining application
+614
+13.3 datum mining application
+616
+13.3 datum mining application
+618
+13.4 datum mining society
+620
+13.4 datum mining society
+622
+13.5 datum mining trend
+624
+13.6 summary
+626
+13.7 exercise
+628
+13.8 bibliographic note
+630
+13.8 bibliographic note
+. .
+cure : cluster used wellscatter representative
+cure : cluster used representative
+. .
+graph datum
+chameleon : hierarchical cluster used
+overall framework chameleon
+knn graph interconnectivity
+relative closeness & merge sub-cluster
+chameleon : cluster complex object
+. .
+cluster
+probabilistic hierarchical cluster
+generative model
+gaussian distribution
+probabilistic hierarchical cluster algorithm
+recommend reading
+. .
+10 9 8 7 6 5 4 3 2 1
+author
+2
+40
+2.1 datum object attribute type
+42
+2.1 datum object attribute type
+44
+2.2 basic statistical description datum
+46
+2.2 basic statistical description datum
+48
+2.2 basic statistical description datum
+50
+2.2 basic statistical description datum
+52
+2.2 basic statistical description datum
+54
+2.2 basic statistical description datum
+56
+2.3 datum visualization
+58
+2.3 datum visualization
+60
+2.3 datum visualization
+62
+2.3 datum visualization
+64
+2.4 measure datum similarity dissimilarity
+66
+2.4 measure datum similarity dissimilarity
+68
+2.4 measure datum similarity dissimilarity
+70
+2.4 measure datum similarity dissimilarity
+72
+2.4 measure datum similarity dissimilarity
+74
+2.4 measure datum similarity dissimilarity
+76
+2.4 measure datum similarity dissimilarity
+78
+2.6 exercise
+80
+2.7 bibliographic note
+82
+10
+444
+10.1 cluster analysis
+446
+10.1 cluster analysis
+448
+10.1 cluster analysis
+450
+10.2 partition method
+452
+10.2 partition method
+454
+10.2 partition method
+456
+10.3 hierarchical method
+458
+10.3 hierarchical method
+chapter 10 cluster analysis : basic concept method
+10.3 hierarchical method
+462
+10.3 hierarchical method
+464
+10.3 hierarchical method
+466
+10.3 hierarchical method
+468
+10.3 hierarchical method
+470
+10.4 density-based method
+472
+10.4 density-based method
+474
+10.4 density-based method
+476
+10.4 density-based method
+478
+10.5 grid-based method
+480
+10.5 grid-based method
+482
+10.6 evaluation cluster
+484
+10.6 evaluation cluster
+486
+10.6 evaluation cluster
+488
+10.6 evaluation cluster
+490
+10.8 exercise
+492
+10.8 exercise
+494
+10.9 bibliographic note
+11
+498
+11.1 probabilistic model-based cluster
+500
+11.1 probabilistic model-based cluster
+502
+11.1 probabilistic model-based cluster
+504
+11.1 probabilistic model-based cluster
+506
+11.1 probabilistic model-based cluster
+508
+11.2 cluster high-dimensional datum
+510
+11.2 cluster high-dimensional datum
+512
+11.2 cluster high-dimensional datum
+514
+11.2 cluster high-dimensional datum
+516
+11.2 cluster high-dimensional datum
+518
+11.2 cluster high-dimensional datum
+520
+11.2 cluster high-dimensional datum
+522
+11.3 cluster graph network datum
+524
+11.3 cluster graph network datum
+526
+11.3 cluster graph network datum
+528
+11.3 cluster graph network datum
+530
+11.3 cluster graph network datum
+532
+11.4 cluster constraint
+534
+11.4 cluster constraint
+536
+11.4 cluster constraint
+538
+11.6 exercise
+540
+11.7 bibliographic note
+13
+586
+13.1 mining complex datum type
+chapter 13 datum mining trend research frontier
+13.1 mining complex datum type
+590
+13.1 mining complex datum type
+592
+13.1 mining complex datum type
+594
+13.1 mining complex datum type
+596
+13.1 mining complex datum type
+598
+13.2 methodology datum mining
+600
+13.2 methodology datum mining
+602
+13.2 methodology datum mining
+604
+13.2 methodology datum mining
+606
+13.3 datum mining application
+608
+13.3 datum mining application
+610
+13.3 datum mining application
+612
+13.3 datum mining application
+614
+13.3 datum mining application
+616
+13.3 datum mining application
+618
+13.4 datum mining society
+620
+13.4 datum mining society
+622
+13.5 datum mining trend
+624
+13.6 summary
+626
+13.7 exercise
+628
+13.8 bibliographic note
+630
+13.8 bibliographic note
+. .
+basic concept densitybased cluster
+density-based cluster method
+. .
+cluster algorithm
+dbscan : density-based spatial cluster algorithm
+dbscan : density-reachable density-connect
+dbscan : algorithm
+dbscan sensitive set parameter
+. .
+identify cluster structure
+optic : order point identify cluster structure
+optic : extension dbscan
+optic : find hierarchically nest cluster structure
+. .
+method
+grid-based cluster method
+. .
+information grid approach
+sting : statistical information grid approach
+query process sting analysis
+. .
+subspace cluster
+clique : grid-based subspace cluster
+clique : subspace cluster aprori prune
+major step clique algorithm
+additional comment clique
+recommend reading
+. .
+10 9 8 7 6 5 4 3 2 1
+author
+2
+40
+2.1 datum object attribute type
+42
+2.1 datum object attribute type
+44
+2.2 basic statistical description datum
+46
+2.2 basic statistical description datum
+48
+2.2 basic statistical description datum
+50
+2.2 basic statistical description datum
+52
+2.2 basic statistical description datum
+54
+2.2 basic statistical description datum
+56
+2.3 datum visualization
+58
+2.3 datum visualization
+60
+2.3 datum visualization
+62
+2.3 datum visualization
+64
+2.4 measure datum similarity dissimilarity
+66
+2.4 measure datum similarity dissimilarity
+68
+2.4 measure datum similarity dissimilarity
+70
+2.4 measure datum similarity dissimilarity
+72
+2.4 measure datum similarity dissimilarity
+74
+2.4 measure datum similarity dissimilarity
+76
+2.4 measure datum similarity dissimilarity
+78
+2.6 exercise
+80
+2.7 bibliographic note
+82
+10
+444
+10.1 cluster analysis
+446
+10.1 cluster analysis
+448
+10.1 cluster analysis
+450
+10.2 partition method
+452
+10.2 partition method
+454
+10.2 partition method
+456
+10.3 hierarchical method
+458
+10.3 hierarchical method
+chapter 10 cluster analysis : basic concept method
+10.3 hierarchical method
+462
+10.3 hierarchical method
+464
+10.3 hierarchical method
+466
+10.3 hierarchical method
+468
+10.3 hierarchical method
+470
+10.4 density-based method
+472
+10.4 density-based method
+474
+10.4 density-based method
+476
+10.4 density-based method
+478
+10.5 grid-based method
+480
+10.5 grid-based method
+482
+10.6 evaluation cluster
+484
+10.6 evaluation cluster
+486
+10.6 evaluation cluster
+488
+10.6 evaluation cluster
+490
+10.8 exercise
+492
+10.8 exercise
+494
+10.9 bibliographic note
+11
+498
+11.1 probabilistic model-based cluster
+500
+11.1 probabilistic model-based cluster
+502
+11.1 probabilistic model-based cluster
+504
+11.1 probabilistic model-based cluster
+506
+11.1 probabilistic model-based cluster
+508
+11.2 cluster high-dimensional datum
+510
+11.2 cluster high-dimensional datum
+512
+11.2 cluster high-dimensional datum
+514
+11.2 cluster high-dimensional datum
+516
+11.2 cluster high-dimensional datum
+518
+11.2 cluster high-dimensional datum
+520
+11.2 cluster high-dimensional datum
+522
+11.3 cluster graph network datum
+524
+11.3 cluster graph network datum
+526
+11.3 cluster graph network datum
+528
+11.3 cluster graph network datum
+530
+11.3 cluster graph network datum
+532
+11.4 cluster constraint
+534
+11.4 cluster constraint
+536
+11.4 cluster constraint
+538
+11.6 exercise
+540
+11.7 bibliographic note
+13
+586
+13.1 mining complex datum type
+chapter 13 datum mining trend research frontier
+13.1 mining complex datum type
+590
+13.1 mining complex datum type
+592
+13.1 mining complex datum type
+594
+13.1 mining complex datum type
+596
+13.1 mining complex datum type
+598
+13.2 methodology datum mining
+600
+13.2 methodology datum mining
+602
+13.2 methodology datum mining
+604
+13.2 methodology datum mining
+606
+13.3 datum mining application
+608
+13.3 datum mining application
+610
+13.3 datum mining application
+612
+13.3 datum mining application
+614
+13.3 datum mining application
+616
+13.3 datum mining application
+618
+13.4 datum mining society
+620
+13.4 datum mining society
+622
+13.5 datum mining trend
+624
+13.6 summary
+626
+13.7 exercise
+628
+13.8 bibliographic note
+630
+13.8 bibliographic note
+. .
+concept
+cluster validation assessment
+. .
+measure cluster quality
+measure cluster quality
+. .
+cluster validation
+measure cluster quality : external method
+commonly used external measure
+. .
+matching-based measure
+matching-based measure ( ) : purity vs. maximum match
+matching-based measure ( ii ) : f-measure
+. .
+entropy-based measure
+entropy-based measure ( ) : conditional entropy
+entropy-based measure ( ii ) :
+. .
+measure
+pairwise measure : four possibility truth assignment
+pairwise measure : jaccard coefficient rand statistic
+. .
+cluster validation
+internal measure ( ) : betacv measure
+internal measure ( ii ) : normalize cut modularity
+. .
+relative measure
+relative measure
+. .
+cluster stability
+cluster stability
+method find k , number cluster
+. .
+cluster tendency
+cluster tendency : whether datum contain
+testing cluster tendency : spatial histogram approach
+recommend reading
+. .
+1
+motivation : harness big text datum
+main technique harness big text datum :
+design cs410 : overview
+design cs410 : goal
+design cs410 : goal
+design cs410 : format & grade
+complete control grade !
+work load
+already take mooc ( )
+forum discussion
+protocol question answer
+format office hour
+get cs410 dso ?
+information , visit course website :
+. .
+university illinois urbana-champaign
+table content
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+department computer science
+contact cs academic office
+. .
+1
+course schedule
+overview
+example nlp
+nlp difficult !
+example challenge
+state art
+’
+nlp text retrieval
+summary
+additional read
+. .
+1
+course schedule
+access relevant text datum
+two mode text access : pull vs. push
+pull mode : query vs. browse
+information seek sightseeing
+summary
+additional read
+. .
+1
+course schedule
+overview
+text retrieval ( tr ) ?
+tr vs. database retrieval
+formal formulation tr
+compute r ’ ( q )
+document selection vs. ranking
+problem document selection
+theoretical justification ranking
+summary
+additional reading
+. .
+1
+course
+design ranking function
+many different retrieval model
+common idea state art retrieval model
+model work best ?
+summary
+additional reading
+. .
+1
+course schedule
+many different retrieval model
+vector space model ( vsm ) : illustration
+vsm framework
+vsm ’ say
+. .
+1
+course schedule
+vsm ’ say
+dimension instantiation : bag word ( bow )
+vector placement : bit vector
+similarity instantiation : dot product
+simplest = bit-vector + dot-product + bow
+example : would rank document ?
+ranking used simplest vsm
+simplest vsm effective ?
+summary
+. .
+1
+course schedule
+two problem simplest vsm
+improve vector placement : term frequency vector
+improve vsm term frequency weighting
+ranking used term frequency ( tf ) weighting
+fix problem 2 ( “ presidential ” vs. “ ” )
+improvement vector placement :
+idf weighting : penalize popular term
+solve problem 2 ( “ presidential ” vs “ ” )
+effective vsm tf-idf weighting ?
+summary
+. .
+1
+course schedule
+vsm tf-idf weighting still problem !
+ranking function tf-idf weighting
+tf transformation : c ( w , ) tf ( w , )
+tf transformation : bm25 transformation
+summary
+. .
+1
+course schedule
+document length ?
+document length normalization
+pivot length normalization
+state art vsm ranking function
+improvement vsm ?
+improvement bm25
+summary vector space model
+additional reading
+. .
+1
+implementation text retrieval system
+typical tr system architecture
+tokenization
+indexing
+inverted index example
+inverted index fast search
+empirical distribution word
+zipf ’ law
+datum structure inverted index
+. .
+1
+system implementation : inverted index construction
+construct inverted index
+sort-based inversion
+inverted index compression
+integer compression method
+uncompress inverted index
+. .
+1
+system implementation : fast search
+score document quickly
+general algorithm ranking document
+example : ranking base tf sum
+improve efficiency
+text retrieval toolkit
+summary system implementation
+additional reading
+. .
+1
+evaluation
+evaluation ?
+measure ?
+cranfield evaluation methodology
+test collection evaluation
+. .
+1
+evaluation tr system : basic measure
+test collection evaluation
+test collection evaluation
+evaluate set retrieve docs :
+combine precision recall : f-measure
+summary
+. .
+1
+evaluation tr system : evaluate rank list
+evaluate ranking : precision-recall ( pr ) curve
+compare pr curf
+summarize ranking
+. .
+1
+evaluation tr system : evaluate rank list
+mean average precision ( map )
+special case : mean reciprocal rank
+summary
+. .
+university illinois urbana-champaign
+evaluation tr system : multi-level judgment
+multi-level relevance judgment ?
+normalize discount cumulative gain ( ndcg )
+. .
+1
+2
+challenge create test collection
+statistical significance test
+statistical significance testing
+pool : avoid judge document
+summary tr evaluation
+additional reading
+. .
+1
+probabilistic retrieval model : basic idea
+many different retrieval model
+probabilistic retrieval model : basic idea
+query likelihood retrieval model
+doc likely “ imaginary relevant doc ” ?
+summary
+. .
+1
+probabilistic retrieval model : statistical language model
+overview
+statistical language model ( lm ) ?
+lm useful ?
+simplest language model : unigram lm
+text generation unigram lm
+estimation unigram lm
+lm topic representation
+lm association analysis
+summary
+additional reading
+. .
+1
+probabilistic retrieval model : query likelihood
+query generation sampling word doc
+unigram query likelihood
+query likelihood make sense ?
+try different query ?
+improve model : sampling word doc model
+computation query likelihood
+summary : ranking base query likelihood
+. .
+1
+probabilistic retrieval model : smooth
+ranking function base query likelihood
+estimate p ( w|d )
+smooth lm
+rewrite ranking function smooth
+benefit rewrite
+. .
+1
+probabilistic retrieval model : smooth
+benefit rewrite
+summary
+. .
+1
+probabilistic retrieval model : smooth method
+query likelihood + smooth p ( w|c )
+linear interpolation ( jelinek-mercer ) smooth
+dirichlet prior ( bayesian ) smooth
+. .
+1
+probabilistic retrieval model : smooth method
+ranking function jm smooth
+ranking function dirichlet prior smooth
+summary
+summary query likelihood probabilistic model
+additional reading
+. .
+1
+text retrieval method : feedback tr
+relevance feedback
+automatic feedback
+implicit feedback
+. .
+1
+feedback text retrieval : feedback vsm
+feedback vector space model
+rocchio feedback : illustration
+rocchio feedback : formula
+example rocchio feedback
+rocchio practice
+. .
+1
+feedback text retrieval : feedback lm
+feedback language model
+kullback-leibler ( kl ) divergence retrieval model
+feedback model interpolation
+generative mixture model
+example pseudo-feedback query model
+summary feedback text retrieval
+additional reading
+. .
+1
+web search
+web search : challenge & opportunity
+basic search engine technology
+component : robot
+major crawl strategy
+summary
+. .
+1
+web search : web indexing
+basic search engine technology
+overview web indexing
+gfs architecture
+mapreduce : framework parallel programming
+mapreduce : computation pipeline
+word count
+word count : map function
+word count : reduce function
+inverted indexing mapreduce
+inverted indexing : pseudo-code
+summary
+. .
+1
+web search : link analysis
+ranking algorithms web search
+exploit inter-document link
+pagerank : capture page “ popularity ”
+pagerank algorithm
+pagerank : example
+pagerank practice
+hit : capture authority & hub
+hit algorithm
+summary
+. .
+1
+web search : learn rank
+combine many feature ?
+regression-based approach
+advanced learn algorithms
+summary
+additional reading
+. .
+1
+web search : future web search
+next generation search engine
+data-user-service ( dus ) triangle
+million way connect dus triangle
+future intelligent information system
+. .
+1
+recommender system
+two mode text access : pull vs. push
+recommender  filter system
+basic filter question : user u like item x ?
+typical content-based filter system
+three basic problem content-based filter
+extend retrieval system information filter
+general vector-space approach
+difficulty threshold learn
+empirical utility optimization
+beta-gamma threshold learn
+beta-gamma threshold learn ( cont
+summary
+. .
+1
+recommender system : collaborative filter
+basic filter question : user u like item x ?
+collaborative filter ( cf ) ?
+cf : assumption
+collaboration filter problem
+memory-based approach
+user similarity measure
+improve user similarity measure
+summary recommender system
+additional reading
+. .
+1
+course summary : major topic cover
+key high-level take-away message
+search user interface ,
+additional reading
+main technique harness big text datum :
+. .
+1
+text mining analytic
+text vs. non-text datum :
+general problem datum mining
+problem text mining
+landscape text mining analytic
+topic cover course
+. .
+1
+text mining analytic
+text vs. non-text datum :
+general problem datum mining
+problem text mining
+landscape text mining analytic
+topic cover course
+. .
+1
+natural language content analysis
+basic concept nlp
+nlp difficult !
+example challenge
+state art
+’
+summary
+additional read
+. .
+1
+natural language content analysis
+basic concept nlp
+nlp difficult !
+example challenge
+state art
+’
+summary
+additional read
+. .
+1
+text representation
+dog chasing boy playground
+text representation enabled analysis
+summary
+. .
+1
+text representation
+dog chasing boy playground
+text representation enabled analysis
+summary
+. .
+1
+word association mining & analysis
+outline
+basic word relation : paradigmatic vs. syntagmatic
+mine word association ?
+mining word association : intuition
+mining word association : intuition
+mining word association : general idea
+. .
+1
+paradigmatic relation discovery
+word context “ pseudo document ”
+measure context similarity
+bag word  vector space model ( vsm )
+vsm paradigmatic relation mining
+expect overlap word context ( eowc )
+would eowc work well ?
+expect overlap word context ( eowc )
+improve eowc retrieval heuristic
+tf transformation : c ( w , ) tf ( w , )
+tf transformation : bm25 transformation
+idf weighting : penalize popular term
+adapt bm25 retrieval model
+bm25 also discover syntagmatic relation
+summary
+. .
+1
+paradigmatic relation discovery
+word context “ pseudo document ”
+measure context similarity
+bag word  vector space model ( vsm )
+vsm paradigmatic relation mining
+expect overlap word context ( eowc )
+would eowc work well ?
+expect overlap word context ( eowc )
+improve eowc retrieval heuristic
+tf transformation : c ( w , ) tf ( w , )
+tf transformation : bm25 transformation
+idf weighting : penalize popular term
+adapt bm25 retrieval model
+bm25 also discover syntagmatic relation
+summary
+. .
+1
+syntagmatic relation discovery : entropy
+syntagmatic relation = correlated occurrence
+word prediction : intuition
+word prediction : formal definition
+entropy h ( x ) measure randomness x
+entropy h ( x ) : coin toss
+entropy word prediction
+. .
+1
+syntagmatic relation discovery :
+know text segment ?
+conditional entropy
+conditional entropy : complete definition
+conditional entropy capture syntagmatic relation
+conditional entropy mining syntagmatic relation
+. .
+1
+syntagmatic relation discovery :
+mutual information ( x ; ) : measure entropy
+mutual information ( x ; )
+rewrite mutual information ( mi )
+probability involved mutual information
+relation different probability
+computation mutual information
+estimation probability ( depend datum )
+smooth : accommodate zero count
+summary syntagmatic relation discovery
+summary word association mining
+additional read
+. .
+1
+syntagmatic relation discovery :
+mutual information ( x ; ) : measure entropy
+mutual information ( x ; )
+rewrite mutual information ( mi )
+probability involved mutual information
+relation different probability
+computation mutual information
+estimation probability ( depend datum )
+smooth : accommodate zero count
+summary syntagmatic relation discovery
+summary word association mining
+additional read
+. .
+1
+topic mining analysis :
+topic mining analysis : motivation
+topic knowledge world
+task topic mining analysis
+formal definition topic mining analysis
+. .
+1
+formal definition topic mining analysis
+initial idea : topic = term
+mining k topical term collection c
+compute topic coverage : ij
+well approach work ?
+problem “ term topic ”
+. .
+1
+topic mining analysis :
+problem “ term topic ”
+improve idea : topic = word distribution
+probabilistic topic mining analysis
+computation task
+generative model text mining
+summary
+summary ( cont
+. .
+university illinois urbana-champaign
+probabilistic topic model :
+statistical language model ( lm ) ?
+simplest language model : unigram lm
+text generation unigram lm
+estimation unigram lm
+maximum likelihood vs. bayesian
+illustration bayesian estimation
+summary
+. .
+university illinois urbana-champaign
+probabilistic topic model :
+statistical language model ( lm ) ?
+simplest language model : unigram lm
+text generation unigram lm
+estimation unigram lm
+maximum likelihood vs. bayesian
+illustration bayesian estimation
+summary
+. .
+1
+probabilistic topic model : mining one topic
+simplest case topic model : mining one topic
+language model setup
+computation maximum likelihood estimate
+topic look like ?
+. .
+1
+probabilistic topic model : mixture unigram lm
+factor background word
+generate used two word distribution
+’ probability observe word w ?
+idea mixture model
+generative model…
+mixture two unigram language model
+. .
+1
+probabilistic topic model :
+back factor background word
+estimation one topic : p ( | d )
+behavior mixture model
+“ collaboration ” “ competition ” d b
+response datum frequency
+summary
+. .
+1
+probabilistic topic model :
+back factor background word
+estimation one topic : p ( | d )
+behavior mixture model
+“ collaboration ” “ competition ” d b
+response datum frequency
+summary
+. .
+university illinois urbana-champaign
+probabilistic topic model :
+estimation one topic : p ( | d )
+know word distribution…
+give parameter , infer distribution
+expectation-maximization ( em ) algorithm
+em computation action
+em hill-climb  converge local maximum
+summary
+. .
+university illinois urbana-champaign
+probabilistic topic model :
+estimation one topic : p ( | d )
+know word distribution…
+give parameter , infer distribution
+expectation-maximization ( em ) algorithm
+em computation action
+em hill-climb  converge local maximum
+summary
+. .
+university illinois urbana-champaign
+probabilistic topic model :
+estimation one topic : p ( | d )
+know word distribution…
+give parameter , infer distribution
+expectation-maximization ( em ) algorithm
+em computation action
+em hill-climb  converge local maximum
+summary
+. .
+1
+probabilistic latent semantic analysis ( plsa )
+document sample mixed topic
+mining multiple topic text
+generate text multiple topic : p ( w ) = ?
+probabilistic latent semantic analysis ( plsa )
+ml parameter estimation
+em algorithm plsa : e-step
+em algorithm plsa : m-step
+computation em algorithm
+summary
+. .
+1
+probabilistic latent semantic analysis ( plsa )
+document sample mixed topic
+mining multiple topic text
+generate text multiple topic : p ( w ) = ?
+probabilistic latent semantic analysis ( plsa )
+ml parameter estimation
+em algorithm plsa : e-step
+em algorithm plsa : m-step
+computation em algorithm
+summary
+. .
+1
+latent dirichlet allocation ( lda )
+extension plsa
+plsa prior knowledge
+maximum posteriori ( map ) estimate
+em algorithm conjugate prior p ( | i )
+deficiency plsa
+latent dirichlet allocation ( lda )
+plsa  lda
+likelihood function plsa vs. lda
+parameter estimation inference lda
+summary probabilistic topic model
+suggest reading
+. .
+1
+latent dirichlet allocation ( lda )
+extension plsa
+plsa prior knowledge
+maximum posteriori ( map ) estimate
+em algorithm conjugate prior p ( | i )
+deficiency plsa
+latent dirichlet allocation ( lda )
+plsa  lda
+likelihood function plsa vs. lda
+parameter estimation inference lda
+summary probabilistic topic model
+suggest reading
+. .
+1
+text cluster : motivation
+overview
+text cluster ?
+“ cluster bias ”
+example text cluster
+text cluster ?
+. .
+1
+text cluster : generative probabilistic model
+overview
+topic mining revisit
+one topic ( cluster ) per document
+mining one topic revisit
+generative model cluster ?
+generative topic model revisit
+mixture model document cluster
+likelihood function : p ( ) = ?
+. .
+1
+text cluster : generative probabilistic model
+likelihood function : p ( ) = ?
+mixture model document cluster
+cluster allocation parameter estimation
+. .
+1
+text cluster : generative probabilistic model
+compute ml estimate ?
+em algorithm document cluster
+example 2 cluster
+normalization avoid underflow
+example 2 cluster ( cont
+summary generative model cluster
+. .
+1
+overview
+similarity-based cluster : general idea
+similarity-based cluster method
+agglomerative hierarchical cluster
+similarity-induce structure
+compute group similarity
+group similarity illustrated
+comparison single-link , complete-link ,
+k-mean cluster
+summary cluster method
+. .
+1
+overview
+“ cluster bias ”
+direct evaluation text cluster
+indirect evaluation text cluster
+summary text cluster
+suggest read
+. .
+1
+text categorization
+overview
+text categorization
+example text categorization
+variant problem formulation
+text categorization ?
+. .
+1
+overview
+categorization method : manual
+categorization method : “ automatic ”
+machine learn text categorization
+generative vs. discriminative classifier
+. .
+1
+overview
+document cluster revisit
+text categorization naïve baye classifier
+learn training datum
+estimate p ( w|i ) p ( i )
+naïve baye classifier : p ( i ) = ? p ( w|i ) = ?
+smooth naïve baye
+anatomy naïve baye classifier
+. .
+1
+overview
+anatomy naïve baye classifier
+discriminative classifier 1 : logistic regression
+estimation parameter
+discriminative classifier 2 : k-nearest neighbor ( k-nn )
+illustration k-nn classifier
+k-nn estimate p ( y|x )
+. .
+1
+discriminative classifier 3 : support vector machine ( svm )
+linear separator best ?
+best separator = maximize margin
+support vector matter
+linear svm
+linear svm soft margin
+summary text categorization method
+summary text categorization method ( cont
+suggest read
+. .
+1
+overview
+general evaluation methodology
+classification accuracy ( percentage correct decision )
+problem classification accuracy
+per-document evaluation
+per-category evaluation
+combine precision recall : f-measure
+. .
+1
+( macro ) average category
+( macro ) average document
+micro-average precision recall
+sometimes ranking appropriate
+summary categorization evaluation
+suggest read
+. .
+1
+opinion mining sentiment analysis : motivation
+objective vs. subjective sensor
+opinion ?
+opinion representation
+product review ( explicit holder target )
+sentence news ( implicit holder target )
+variation opinion
+different kind opinion text datum
+task opinion mining
+opinion mining ?
+. .
+1
+sentiment classification
+sentiment classification : task definition
+commonly used text feature
+commonly used text feature ( cont
+nlp enrich text representation
+feature construction text categorization
+. .
+1
+motivation : rating prediction
+logistic regression binary sentiment classification
+logistic regression multi-level rating
+rating prediction
+problem k-1 independent classifier ?
+ordinal logistic regression
+ordinal logistic regression : rating prediction
+. .
+1
+opinion mining sentiment analysis :
+motivation
+latent aspect rating analysis [ wang et al
+solve lara two stage
+latent rating regression [ wang et al
+latent rating regression ( cont
+suggest read
+. .
+1
+unify generative model lara [ wang et al
+sample result 1 : rating decomposition [ wang et al
+sample result 2 : comparison reviewer
+sample result 3 : aspect-specific sentiment lexicon
+sample result 4 : validate preference weight
+application 1 : rate aspect summarization
+application 2 : discover consumer preference
+application 3 : user rating behavior analysis
+application 4 : personalize ranking entity
+summary opinion mining
+suggest read
+. .
+1
+text-based prediction
+big picture prediction : datum mining loop
+text-based prediction
+text-based prediction =
+joint mining analysis text non-text datum
+suggest read
+. .
+1
+contextual text mining
+contextual text mining : motivation
+context = partition text
+many interesting question require
+. .
+1
+contextual text mining : contextual probabilistic
+contextual probabilistic latent semantic analysis ( cplsa )
+generation process cplsa
+compare news article [ zhai et al
+theme life cycle blog article
+spatial distribution topic “ government
+event impact analysis : ir research [ mei & zhai 06 ]
+suggest read
+. .
+1
+contextual text mining :
+topic analysis network context
+network supervised topic modele : general idea
+instantiation : netplsa [ mei et al
+mining 4 topical community : result plsa
+mining 4 topical community : result netplsa
+text information network
+suggest read
+. .
+1
+contextual text mining :
+text mining understand time series
+analysis presidential prediction market
+joint analysis text time series
+topic model apply text stream
+iterative causal topic modele [ kim et al
+heuristic optimization causality + coherence
+measure causality ( correlation )
+topic ny time correlated stock
+major topic 2000 presidential election
+suggest read
+summary text-based prediction
+. .
+1
+topic cover course
+key high-level take-away message
+learn next
+main technique harness big text datum :
+. .
+welcome video
+welcome !
+?
+course ?
+course ?
+course ?
+. .
+main approach nlp
+main approach nlp
+semantic slot fill : cfg
+semantic slot fill : crf
+semantic slot fill : crf
+semantic slot fill : lstm
+deep learn vs. traditional nlp
+deep learn vs. traditional nlp
+. .
+brief overview next week
+week 1
+week 2
+week 3
+week 3
+week 4
+week 4
+week 4
+week 4
+week 4
+week 4
+week 4
+week 4
+week 5
+. .
+linguistic knowledge nlp
+nlp pyramid
+library tool
+linguistic knowledge
+linguistic knowledge + deep learn
+syntax : dependency tree
+syntax : constituency tree
+sentiment analysis
+. .
+area ’ fun us
+text preprocess
+text ?
+word ?
+tokenization
+tokenization
+python tokenization example
+token normalization
+stem example
+lemmatization example
+python stem example
+normalization
+summary
+. .
+transform token feature
+bag word ( bow )
+let ’ preserve order
+remove n-grams
+remove n-grams
+’ lot medium frequency n-grams
+tf-idf
+tf-idf
+better bow
+python tf-idf example
+summary
+. .
+first text classification model
+sentiment classification
+sentiment classification
+sentiment classification
+sentiment classification
+better sentiment classification
+better sentiment classification
+make even better
+summary
+. .
+spam filter task
+mapping n-grams feature index
+spam filter huge task
+hashing example
+trillion feature hashing
+experimental result
+personalize feature work
+personalize feature work
+size matter
+vowpal wabbit
+summary
+. .
+neural network text
+text ?
+bag word way ( sparse )
+bag word way ( sparse )
+neural way ( dense )
+neural way ( dense )
+better way : 1d convolution
+better way : 1d convolution
+better way : 1d convolution
+1d convolution
+1d convolution
+1d convolution
+1d convolution
+1d convolution
+1d convolution
+let ’ train many filter
+summary
+. .
+go deeper text
+text ?
+text sequence character
+1d convolution character
+1d convolution character
+1d convolution character
+1d convolution character
+1d convolution character
+1d convolution character
+max pool
+max pool
+max pool
+max pool
+repeat 1d convolution + pool
+repeat 1d convolution + pool
+repeat 1d convolution + pool
+final architecture
+experimental dataset
+experimental result
+summary
+. .
+n-gram language model
+language modele
+toy corpus
+toy corpus
+toy corpus
+toy corpus
+toy corpus
+toy corpus
+need lm ?
+language modele
+let ’ math
+let ’ math
+let ’ math
+bigram language model
+bigram language model
+bigram language model
+bigram language model
+bigram language model
+bigram language model
+bigram language model
+let ’ check model
+let ’ check model
+let ’ check model
+let ’ check model
+let ’ check model
+let ’ check model
+let ’ check model
+let ’ check model
+let ’ check model
+resume : bigram language model
+. .
+model surprised real text ?
+train n-gram model
+train n-gram model
+train n-gram model
+generate shakespeare
+generate shakespeare
+model better ?
+evaluate model test set
+out-of-vocabulary word
+out-of-vocabulary word
+out-of-vocabulary word
+out-of-vocabulary word
+out-of-vocabulary word
+out-of-vocabulary word
+fix ?
+ok , oov word
+ok , oov word
+ok , oov word
+ok , oov word
+ok , oov word
+. .
+see new n-grams ?
+zero probability test datum
+laplacian smooth
+katz backoff
+katz backoff
+interpolation smooth
+absolute discounting
+absolute discounting
+kneser-ney smooth
+resume
+. .
+probable tag ?
+motivation
+decode hmm
+viterbi decode
+example hmm : transition probability
+example hmm : transition probability
+example hmm : output probability
+probability hide state “ like ”
+possible transition adj state
+best transition adj
+probability adj state give “ like ”
+possible transition noun state
+best transition noun
+probability noun state give “ like ”
+possible transition verb state
+best transition verb
+probability verb state give “ like ”
+probability hide state “ like ”
+remember best transition !
+backtrace
+backtrace
+backtrace
+backtrace
+backtrace
+viterbi algorithm
+. .
+model name entity recognition
+hide markov model
+maximum entropy markov model
+maximum entropy markov model
+conditional random field ( linear chain )
+conditional random field ( general form )
+black-box implementation
+feature engineering
+observation function example
+dependency input
+resume lesson
+. .
+neural language model
+recap : language modele
+curse dimensionality
+generalize better
+probabilistic neural language model
+probabilistic neural language model
+probabilistic neural language model
+probabilistic neural language model
+probabilistic neural language model
+’ over-complicated…
+log-bilinear language model
+. .
+label - lstms help !
+recap : recurrent neural network
+rnn language model
+train ?
+use generate language ?
+use generate language ?
+use generate language ?
+use generate language ?
+use generate language ?
+rnn language model
+character-level rnn : shakespeare example
+cook language model
+sequence tag task
+sequence tag task
+bi-directional lstm
+. .
+honey vs. bee bumblebee
+word similarity
+distributional hypothesis
+distributional hypothesis
+distributional hypothesis
+problem ?
+vector space model semantic
+context ?
+context ?
+. .
+factorization
+singular value decomposition ( svd )
+truncate svd
+truncate svd
+use ?
+vector space model semantic
+weight square loss : glove
+word prediction : skip-gram model
+train model ?
+skip-gram negative sampling ( sgn )
+sgn implicit matrix factorization
+. .
+( evaluate )
+word2vec
+evaluation : word similarity
+evaluation : word analogy
+word similarity task performance
+word analogy task performance
+paragraph2vec aka doc2vec
+evaluation : document similarity
+evaluation : document similarity
+evaluation : document similarity
+evaluation : document similarity
+resume
+. .
+king – man + woman ! = queen
+magical property word2vec
+closer look analogy task
+closest neighbor b good enough ?
+good accuracy b b ' close
+bat dataset
+performance category
+gender county cherry-pick
+resume
+. .
+sentence embedding
+morphology help
+fasttext
+sent2vec
+starspace
+starspace
+deep learn ?
+skip-thought vector
+. .
+text collection
+text topic
+formal task
+formal task
+need ?
+need ?
+need ?
+generative model text
+generative model text
+generative model text
+generative model text
+matrix way think
+. .
+train plsa ?
+would train model ?
+would train model ?
+would train model ?
+plain text
+plain text
+know topic assignments…
+know topic assignments…
+know topic assignments…
+plain text
+plain text
+put everything together : em-algorithm
+. .
+zoo topic model
+martha ballard ’ diary
+martha ballard ’ diary
+latent dirichlet allocation
+bayesian method graphical model
+hierarchical topic model
+dynamic topic model
+dynamic topic model
+multilingual topic model
+additive regularization topic model
+regularize em-algorithm
+multimodal topic model
+multi-artm
+inter-modality similarity
+library topic modele
+word visualization
+380 way visualize : textvis.lnu.se
+. .
+introduction machine translation
+machine translation
+parallel datum
+evaluation
+evaluation
+evaluation
+evaluation
+evaluation
+evaluation
+evaluation
+mandatory slide
+roller-coaster machine translation
+two main paradigm
+zero-shot translation
+. .
+say english , receive french
+main equation
+main equation
+main equation
+easier deal ?
+noisy chanel
+language model : p ( e )
+translation model : p ( f|e )
+translation model : p ( f|e )
+translation model : p ( f|e )
+translation model : p ( f|e )
+word alignment
+. .
+word alignment model
+word alignment
+word alignment task
+recap : baye ’ rule
+word alignment matrix
+word alignment matrix
+a1 =
+a1 =
+a1 =
+a1 =
+a1 =
+sketch learn algorithm
+sketch learn algorithm
+sketch learn algorithm
+sketch learn algorithm
+sketch learn algorithm
+sketch learn algorithm
+generative story
+generative story
+generative story
+ibm model 1
+translation table
+ibm model 2
+position-based prior
+re-parametrization , dyer et
+hmm prior
+resume
+. .
+encoder-decoder architecture
+sequence sequence
+sequence sequence
+sequence sequence
+sequence sequence
+sequence sequence
+hide representation good…
+… still bottleneck
+. .
+attention mechanism
+attention mechanism
+attention mechanism
+compute attention weight ?
+put together
+help long sentence
+example : attention ( alignment )
+attention similar human ?
+local attention
+global vs local attention
+global vs local attention
+. .
+conversational chat-bot ?
+mean chat-bot ?
+model pro con
+sequence sequence
+padding
+bucketing
+trained movie subtitle
+trained call
+context conversation
+coherent personality
+diversity response
+intent cluster
+google smart reply
+still human
+. .
+one-size fit ?
+sequence sequence
+sequence sequence
+summarization
+summarization
+sequence sequence !
+google research blog
+google research blog
+encoder-decoder framework
+simplification
+operation simplify text
+rule-based approach paraphrase
+simplification
+simplification
+measure simplicity ?
+measure simplicity ?
+sari : example
+compare bleu
+. .
+pointer-generator network
+seq2seq + attention
+seq2seq + attention
+seq2seq + attention
+seq2seq + attention
+original text ( truncate ) : lago , nigeria ( cnn ) day winning nigeria ’
+seq2seq + attention : unk unk say administration
+closer look formula
+closer look formula
+pointer-generator network
+closer look formula
+pointer-generator network
+pointer-gen : muhammadu buhari say plan aggressively
+coverage mechanism
+model avoid repetition
+become extractive
+pointer-gen + coverage : muhammadu buhari say plan
+original text ( truncate ) : lago , nigeria ( cnn ) day winning
+comparison model
+. .
+task-oriented dialog system
+task-oriented dialog system
+task-oriented dialog system
+utterance
+intent classification
+’ many intent
+one example
+form fill approach dialog management
+slot tag
+slot tag
+form fill dialog manager ( single turn )
+form fill dialog manager ( multi-turn )
+form fill dialog manager ( multi-turn )
+form fill dialog manager ( multi-turn )
+track context ( easy way )
+track form switch
+track form switch
+task-oriented dialog system overview
+summary
+. .
+intent classifier slot tagger
+intent classifier
+slot tagger
+cnn sequence : gate linear unit
+cnn sequence : result
+cnn sequence : speed benefit
+cnn sequence : encoder look like
+atis dataset
+joint training intent classifier slot tagger
+joint training intent classifier slot tagger
+attention decoder
+joint training loss
+joint training result
+summary
+. .
+utilize context nlu
+need context handle multi-turn dialog
+let ’ store previous utterance “ memory ”
+knowledge relevant new utterance ?
+tag current utterance knowledge
+track context ( memory network )
+track context ( memory network )
+summary
+. .
+utilize lexicon nlu
+want utilize lexicon ?
+let ’ add lexicon feature input word
+match encode
+add feature model
+lexicon help ?
+training detail
+summary
+. .
+dialog manager ( state tracking )
+dialog manager
+state tracking policy learn
+dstc 2 dataset
+dstc 2 dataset
+dstc 2 dialog excerpt
+dstc 2 result
+rule-based state tracking
+neural belief tracker
+utterance representation
+neural belief tracker result
+frame dataset
+frame dataset
+frame dataset
+summary
+. .
+dialog manager ( policy learner )
+state tracking policy learn
+dialog policy
+simple approach : hand craft rule
+optimize dialog policy ml
+joint nlu dm
+joint nlu dm result
+summary
+. .
+final remark
+task-oriented dialog system overview
+nlu dm
+evaluation
+importance nlu
+important : slot intent ?
+important : slot intent ?
+summary
+. .
+machine learn specializa0on
+part specialization
+course part
+course ?
+retrieval ?
+retrieve “ nearest neighbor ” article
+set nearest neighbor
+retrieval application
+cluster ?
+case study :
+like retrieval , cluster application
+cluster image
+coursera learners…
+impact retrieval & cluster
+impact retrieval & cluster
+course overview
+course philosophy : always use case study & …
+overview content
+course outline
+overview content
+module 1 : nearest neighbor search
+module 1 : nearest neighbor search
+module 1 : nearest neighbor search
+module 2 : k-mean mapreduce
+module 2 : k-mean mapreduce
+module 2 : k-mean mapreduce
+module 3 : mixture model
+module 3 : mixture model
+module 3 : mixture model
+module 3 : mixture model
+modele complex dynamic change
+modele complex dynamic change
+modele complex dynamic change
+module 4 : latent dirichlet allocation
+modele complex dynamic change
+assume background
+course 1 , 2 , & 3 ml specialization
+math background
+programming experience
+reliance graphlab create
+compute need
+let ’ get start !
+. .
+machine learn specializa0on
+retrieve document interest
+document retrieval
+document retrieval
+document retrieval
+challenge
+retrieval k-nearest neighbor search
+1-nn search retrieval
+compute distance docs
+retrieve “ nearest neighbor ”
+set nearest neighbor
+1-nn algorithm
+1 – nearest neighbor
+1-nn algorithm
+k-nn algorithm
+k – nearest neighbor
+k-nn algorithm
+critical element nn search
+document representation
+word count document
+issue word count –
+tf-idf document representation
+tf-idf document representation
+tf-idf document representation
+tf-idf document representation
+distance metric
+distance metric :
+weighting diﬀerent feature
+weighting diﬀerent feature
+weighting diﬀerent feature
+scale euclidean distance
+eﬀect binary weight
+( non-scaled ) euclidean distance
+( non-scaled ) euclidean distance
+scale euclidean distance
+another natural inner product measure
+another natural inner product measure
+cosine similarity – normalize
+normalize
+cosine similarity
+normalize ?
+normalize
+normalize case
+always desired…
+distance metric
+combine distance metric
+scaling k-nn search
+complexity search
+complexity brute-force search
+kd-tree representation
+kd-tree
+kd-tree construction
+kd-tree construction
+kd-tree construction
+kd-tree construction
+kd-tree construction
+kd-tree construction
+kd-tree construction choice
+many heuristics…
+nn search kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+nearest neighbor kd-tree
+complexity
+complexity
+complexity n query
+inspection vs. n
+k-nn kd-tree
+approximate k-nn search
+approximate k-nn kd-tree
+close remark kd-tree
+acknowledgement
+locality sensitive hashing
+motivate alternative approach
+kd-tree high dimension
+move away exact nn search
+lsh alternative kd-tree
+simple “ bin ” datum 2 bin
+simple “ bin ” datum 2 bin
+used bin nn search
+used score nn search
+provide approximate nn
+practical implementation
+three potential issue simple approach
+define line ?
+bad random line ?
+bad random line ?
+bad random line ?
+bad random line ?
+three potential issue simple approach
+improve eﬃciency :
+# awful
+used score nn search
+improve search quality
+improve search quality
+improve search quality
+improve search quality
+kd-tree competitor
+move higher dimension
+x [ 2 ]
+cost bin point d-dim
+used multiple table even
+throw 2 lines…
+repeat 2-line bin ?
+repeat 2-line bin ?
+repeat 2-line bin ?
+probability splitting
+probability splitting
+compare approach
+compare probability
+throw h lines…
+throw h lines…
+probability splitting
+compare approach
+compare probability
+fix # bit increase depth
+fix # bit increase depth
+summary lsh approach
+summary retrieval used
+now…
+. .
+machine learn specializa0on
+motivate cluster approach
+goal : structure document topic
+might cluster useful ?
+learn user preference
+cluster : unsupervised learn task
+label know ?
+multiclass classification problem
+cluster
+define cluster ?
+hope unsupervised learn
+( challenge ! ) cluster discover…
+( challenge ! ) cluster discover…
+k-mean : cluster algorithm
+k-mean
+k-mean algorithm
+k-mean algorithm
+k-mean algorithm
+k-mean algorithm
+k-mean coordinate descent
+coordinate descent algorithm
+coordinate descent algorithm
+coordinate descent algorithm
+convergence k-mean
+convergence k-mean local mode
+convergence k-mean local mode
+convergence k-mean local mode
+smart initialization +
++ overview
++ visualize
++ visualize
++ visualize
++ visualize
++ con
+assess quality cluster
+cluster prefer ?
+k-mean objective
+cluster heterogeneity
+happen k increase ?
+lowest possible
+mapreduce
+count word single processor
+naïve parallel word count
+count word parallel &
+mapreduce abstraction
+mapreduce – execution overview
+improve performance :
+scaling k-mean
+mapreduce 1 iteration k-mean
+classification step map
+recenter step reduce
+practical consideration
+summary parallel k-mean
+example
+cluster image
+structuring web search result
+grouping patient medical condition
+channel
+cluster seizure observed time course
+product amazon
+−01
+discover similar neighborhood
+summary k-mean
+now…
+. .
+machine learn specializa0on
+probabilistic approach ?
+learn user preference
+uncertainty cluster assignment
+uncertainty cluster assignment
+limitation k-mean
+failure mode k-mean
+motivate probabilistic model :
+mixture model
+motivate application : cluster image
+simple image representation
+distribution cloud image
+distribution sunset image
+distribution forest image
+distribution image
+distinguish along dim
+background :
+model give image type
+1d gaussian
+notating 1d gaussian distribution
+2d gaussian – bird ’ eye view
+2d gaussian – parameter
+2d gaussian – parameter
+covariance structure
+notating multivariate gaussian
+mixture gaussian
+model gaussian per cluster
+jumble unlabeled image
+model jumble unlabeled image
+image type equally represent ?
+combination weight gaussian
+combination weight gaussian
+mixture gaussian ( 1d )
+mixture gaussian ( general )
+accord model…
+document cluster
+discover group related document
+document representation
+mixture gaussian
+mixture gaussian
+count parameter
+count parameter
+restrict diagonal covariance
+restrictive assumption , but…
+infer soft assignment
+infer cluster label
+part 1 :
+compute responsibility
+responsibility picture
+responsibility picture
+responsibility equation
+responsibility equation
+recall : accord model…
+part 1 summary
+responsibility calculation
+application baye ’ rule
+application baye ’ rule
+application baye ’ rule
+part 2a :
+estimate cluster parameter
+datum table decouple cluster
+maximum likelihood estimation
+covariance mle
+cluster proportion mle
+part 2a summary
+part 2b :
+estimate cluster parameter
+maximum likelihood estimation
+maximum likelihood estimation
+maximum likelihood estimation
+cluster-specific shape mle
+mle cluster proportion
+default hard assignment case
+equate estimates…
+part 2b summary
+expectation maximization ( em )
+expectation maximization ( em ) :
+em mixture gaussian
+em mixture gaussian
+em mixture gaussian
+em mixture gaussian
+em mixture gaussian
+nitty gritty em
+convergence em
+initialization
+overfitting mle
+overfitting high dim
+simple regularization m-step
+relationship k-mean
+infinitesimally small variance em
+summary mixture model
+now…
+. .
+machine learn specializa0on
+mixed membership model
+far , cluster article group
+document one thing ?
+soft assignment capture uncertainty
+modele complex dynamic change
+modele complex dynamic change
+modele complex dynamic change
+modele complex dynamic change
+build document
+alternative document cluster model
+far , considered…
+bag-of-words representation
+bag-of-words representation
+modele complex dynamic change
+drausin f. wulsina , emily b. foxc , brian litta , b
+topic-specific word probability
+compare contrast
+latent dirichlet allocation ( lda )
+modele complex dynamic change
+modele complex dynamic change
+modele complex dynamic change
+modele complex dynamic change
+inference lda model
+modele complex dynamic change
+modele complex dynamic change
+modele complex dynamic change
+interpret lda output
+interpret lda output
+interpret lda output
+interpret lda output
+inference algorithm lda :
+cluster algorithms far
+bag-of-words model ?
+bag-of-words model ?
+bag-of-words model ?
+typical lda implementation
+gibbs sampling bayesian inference
+gibbs sampling
+random sample # 10000
+random sample # 10001
+random sample # 10002
+know process ?
+sampling output ?
+standard gibbs sampling step
+gibbs sampling algorithm outline
+gibbs sampling lda
+gibbs sampling lda
+gibbs sampling lda
+gibbs sampling lda
+gibbs sampling lda
+gibbs sampling lda
+collapse gibbs sampling lda
+“ collapse ” gibbs sampling lda
+collapse gibbs sampling lda
+select document
+randomly assign topic
+randomly assign topic
+maintain local statistic
+maintain global statistic
+randomly reassign topic
+probability new assignment
+probability new assignment
+probability new assignment
+probability new assignment
+probability new assignment
+probability new assignment
+randomly draw new topic indicator
+update count
+geometrically…
+iterate doc
+used sample collapse gibbs
+collapse sample ?
+collapse sample ?
+collapse sample ?
+embedding new document
+summary lda
+now…
+acknowledgement
+. .
+1
+bit history
+information retrieval
+bit history
+bit history
+usenet interface
+work meaningfully well !
+amazon.com
+k‐nearest neighbor user‐user
+cf classic : store rating
+cf classic : request recommendation
+cf classic : select item ; predict rating
+understand computation
+understand computation
+understand computation
+bigger picture
+little vocabulary
+design recommender
+introduction recommender
+. .
+1
+dedication
+order dependency
+course feature
+interaction … class forum
+academic standard
+course # 1 : non-personalized
+introduction
+. .
+1
+history movielen
+. .
+1
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+image currently display ed
+. .
+1
+prediction
+introduction recommender system
+recommendation
+introduction recommender system
+introduction recommender system
+introduction recommender system
+another dimension consider
+2-3 : prediction
+. .
+1
+analytical framework
+google : content example
+purpose recommendation
+introduction recommender system
+recommendation context
+whose opinion ?
+phoak
+land ’ end
+cdnow album advisor
+cdnow
+interface
+1-4 ( b ) : taxonomy
+abstract specific
+non-personalized summary stat
+personalize collaborative filter
+note evaluation
+move forward
+. .
+1
+analytical framework
+google : content example
+purpose recommendation
+introduction recommender system
+recommendation context
+whose opinion ?
+phoak
+land ’ end
+cdnow album advisor
+cdnow
+interface
+1-4 ( b ) : taxonomy
+abstract specific
+non-personalized summary stat
+personalize collaborative filter
+note evaluation
+move forward
+. .
+1
+analytical framework
+analytical framework
+analytical framework
+. .
+1
+early day
+wave two : netflix prize
+state field today
+promising direction
+. .
+1
+programming assignment
+software require
+grade
+lenskit ?
+introduction
+. .
+1
+compute environment
+set
+. .
+1
+intro : recommendation
+aggregate opinion : zagat
+aggregate behavior :
+weak personalization
+assessment
+introduce
+. .
+1
+zagat guide …
+secret reveal !
+idea , different formula
+breaking
+tripadvisor.com
+take-away lesson
+. .
+1
+learn objective
+overview
+introduction recommender
+overview
+goal display
+example : amazon.com
+overview
+rank score ?
+damp mean
+domain consideration : time
+reddit algorithm ( c. 2010 )
+predict sophisticated score ?
+summary statistic ii
+. .
+1
+ok , ?
+find relevant demographic
+power limit
+. .
+1
+copyright 2016 joseph a. konstan
+ephemeral , contextual
+start simple
+solution …
+take-away lesson
+. .
+1
+non‐personalized summary statistic
+spreadsheet tip
+explore demographic dataset
+. .
+1
+• meanitembaseditemrecommender ( item recommender ) compute top-n recommendation base mean rating
+example output
+estimate probability count : p ( ) fraction user system
+2439 ( affliction ( 1997 ) ) : 4.490
+create file nonpers-submission.jar distribution contain
+. .
+1
+get start
+recommender structure
+association rule
+submit work
+. .
+1
+• meanitembaseditemrecommender ( item recommender ) compute top-n recommendation base mean rating
+example output
+estimate probability count : p ( ) fraction user system
+2439 ( affliction ( 1997 ) ) : 4.490
+create file nonpers-submission.jar distribution contain
+. .
+1
+key idea
+learn objective ( ii )
+copyright 2016 joseph a. konstan
+wide range possibility
+use preference
+case‐based recommendation
+copyright 2016 joseph a. konstan
+copyright 2016 joseph a. konstan
+copyright 2016 joseph a. konstan
+copyright 2016 joseph a. konstan
+copyright 2016 joseph a. konstan
+knowledge‐base recommender
+copyright 2016 joseph a. konstan
+generally
+take‐away lesson
+introduction
+. .
+1
+search problem …
+tfidf ?
+variant alternative
+take-away move forward
+. .
+1
+key concept : keyword vector
+choice come play …
+little formalization
+item user profile ( 1 )
+…to user profile ( 3 )
+compute prediction …
+challenge
+take‐away
+content‐based filter :
+. .
+1
+qi tag vector item i. final computation , unit-normalized
+user ’ profile
+john turturro=0.2606167586076272
+example output weight user profile
+create file cbf-submission.jar distribution contain
+. .
+1
+get start
+recommender structure
+datum access
+gotcha
+honor assignment
+. .
+1
+qi tag vector item i. final computation , unit-normalized
+user ’ profile
+john turturro=0.2606167586076272
+example output weight user profile
+create file cbf-submission.jar distribution contain
+. .
+unify mathematical model
+objective
+review recommender task
+score item
+expand score
+full score function
+full score function
+compute
+score recommendation
+basic top-n recommendation
+tweak top-n recommendation
+extend recommendation
+wrap-up
+unify mathematical model
+. .
+http : www.mendeley.com
+article strong interest computer vision researcher
+. user-item pair ( , j ) , draw response
+. item j ,
+average , article appear 12 user ’ library , range 1
+ctr , in−matrix
+0.5
+top 3 topic
+title
+. .
