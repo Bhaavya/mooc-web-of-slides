@@ -12,7 +12,51 @@
 {% endblock %}
 
 {% block body %}
+<!-- <script type=text/javascript> -->
+  <!-- $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; -->
+<!-- </script> -->
 
+<script>
+// $(document).ready(function() {
+//   $.ajaxSetup({ cache: false,async: false, });
+// });
+// });
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Synchronous ajax request are deprecated so using navigator send beacon
+    // $.getJSON($SCRIPT_ROOT + '/webofslides/log_action', {
+    //     action: 'back_forward',
+    //     route: window.location.pathname
+    //   });
+    logdata = JSON.stringify({
+      action: 'cache_open',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+  else{
+    logdata = JSON.stringify({
+      action: 'open',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+});
+window.addEventListener("beforeunload", function(event) { 
+    logdata = JSON.stringify({
+      action: 'close',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  
+});
+
+                    
+
+</script>
 
 <div class="jumbotron" padding-bottom="15px">
   <div class="container" >

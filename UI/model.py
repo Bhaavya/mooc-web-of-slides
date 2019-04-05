@@ -20,7 +20,12 @@ tfidfs = np.load("static/tf_idf_outputs/normalized_tfidfs.npy")
 title_tfidfs = np.load("static/tf_idf_outputs/normalized_title_tfidfs.npy")
 ss_corpus = pickle.load(open('static/tf_idf_outputs/ss_corpus.p', 'rb'))
 
+log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),'log','log.txt')
 
+def log(ip,to_slide,action,start_time):
+    with open(log_path,'a+') as f:
+        f.write('{},{},{},{}\n'.format(ip,to_slide,action,start_time))
+        
 def get_snippet_sentences(slide_name, matching_keywords):
     idx = slide_names.index(slide_name)
     content = ss_corpus[idx].split(' ')
@@ -138,13 +143,12 @@ def get_next_slide(course_name,lno,curr_slide=None):
         next_slide = slides[0]
     else:
         if lno==len(lectures)-1:
-            return None,None,None,(None,None,None,None,None),None,None
+            return None,None,None,(None,None,None,None,None,None,None),None,None
         else:
             next_slide = sort_slide_names(os.listdir(os.path.join(slides_path,course_name,lectures[lno+1])))[0]
             lno+=1
     related_slides_info = get_related_slides(next_slide)
     return next_slide, lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
-
 def get_prev_slide(course_name,lno,curr_slide):
     lectures = sort_slide_names(os.listdir(os.path.join(slides_path, course_name)))
     lno = int(lno)
@@ -152,14 +156,15 @@ def get_prev_slide(course_name,lno,curr_slide):
     idx = slides.index(curr_slide)
     if idx==0:
             if lno==0:
-                return None,None,None,(None,None,None,None,None),None,None
+                return None,None,None,(None,None,None,None,None,None,None),None,None
             else:
                 prev_slide = sort_slide_names(os.listdir(os.path.join(slides_path,course_name,lectures[lno-1])))[-1]
                 lno-=1
     else:
         prev_slide = slides[:idx][-1]
     related_slides_info = get_related_slides(prev_slide)
-    return prev_slide ,lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
+    return prev_slide, lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
+
 
 def get_related_slides(slide_name):
     if related_dict=={}:
@@ -198,7 +203,9 @@ def get_related_slides(slide_name):
 def get_search_results(search):
     query = metapy.index.Document()
     query.content(search)
+    print (query,idx,ranker)
     top_docs = ranker.score(idx, query, num_results=50)
+    print (top_docs)
     top_docs = [slide_titles[x[0]] for x in top_docs]
     results = []
     disp_strs = []
