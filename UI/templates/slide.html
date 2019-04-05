@@ -54,8 +54,76 @@ window.addEventListener("beforeunload", function(event) {
   
 });
 
-                    
+var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+  hidden = "msHidden";
+  visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+  hidden = "webkitHidden";
+  visibilityChange = "webkitvisibilitychange";
+}
+ 
 
+function handleVisibilityChange() {
+  console.log(document['hidden'])
+  if (document[hidden]) {
+      logdata = JSON.stringify({
+      action: 'hide',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+   else {
+      logdata = JSON.stringify({
+      action: 'unhide',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+
+}
+
+// Warn if the browser doesn't support addEventListener or the Page Visibility API
+if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+  console.log("requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+} else {
+  // Handle page visibility change   
+  document.addEventListener(visibilityChange, handleVisibilityChange, false);
+  }                   
+window.addEventListener("DOMContentLoaded", function(event) {
+var relLinks = document.getElementsByClassName("related");
+
+var relLog = function(idx) {
+    logdata = JSON.stringify({
+      action: 'related_'+idx,
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+};
+
+for (var i = 0; i < relLinks.length; i++) {
+    relLinks[i].addEventListener('click', function(){
+    relLog(this.id);
+} , false);
+}
+
+document.getElementById("next").addEventListener('click',function(){  logdata = JSON.stringify({
+      action: 'next',
+      route: window.location.pathname
+    });
+  console.log('next')
+    navigator.sendBeacon('/webofslides/log_action', logdata);},false)
+
+document.getElementById("prev").addEventListener('click',function(){  logdata = JSON.stringify({
+      action: 'prev',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);},false)
+})
+ 
 </script>
 
 <div class="jumbotron" padding-bottom="15px">
@@ -67,8 +135,8 @@ window.addEventListener("beforeunload", function(event) {
   ></iframe>
 </div>
   <div class="container" style="padding-top:0px"></div>
-  <button type="button" class="btn btn-success pull-left" onclick="location.href='/webofslides/prev_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Prev Slide</button>
-  <button type="button" class="btn btn-success pull-right" onclick="location.href='/webofslides/next_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Next Slide</button>
+  <button type="button" id="prev" class="btn btn-success pull-left" onclick="location.href='/webofslides/prev_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Prev Slide</button>
+  <button type="button" id="next" class="btn btn-success pull-right" onclick="location.href='/webofslides/next_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Next Slide</button>
   </div>
   <div class="container" style="margin-left:0px;padding-left:0px;padding-top:15px" >
  
@@ -77,7 +145,7 @@ window.addEventListener("beforeunload", function(event) {
   {% for i in range(num_related_slides) %}
   	<li>
       <!--<div class="tooltip">-->
-      <a href="/webofslides/related_slide/{{related_course_names[i]}}/{{rel_lnos[i]}}/{{related_slides[i]}}" title="{{disp_snippet[i]}}" style="color:{{disp_color[i]}};">{{disp_str[i]}}</a>
+      <a href="/webofslides/related_slide/{{related_course_names[i]}}/{{rel_lnos[i]}}/{{related_slides[i]}}" id="{{i}}" class="related" title="{{disp_snippet[i]}}" style="color:{{disp_color[i]}};">{{disp_str[i]}}</a>
 <!--       <span class="tooltiptext">Tooltip text</span>
       </div>-->
     </li>

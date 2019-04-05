@@ -129,6 +129,7 @@ def get_slide(course_name,slide,lno):
     lectures = sort_slide_names(os.listdir(os.path.join(slides_path, course_name)))
     lno = int(lno)
     related_slides_info = get_related_slides(slide)
+
     return slide,lno,lectures[lno],related_slides_info,lectures,range(len(lectures))
 
 
@@ -169,7 +170,7 @@ def get_prev_slide(course_name,lno,curr_slide):
 def get_related_slides(slide_name):
     if related_dict=={}:
         load_related_slides()
-    related_slides = related_dict[slide_name]
+    filtered_related_slides = []
     disp_strs = []
     disp_colors = []
     disp_snippets= []
@@ -177,33 +178,40 @@ def get_related_slides(slide_name):
     lnos = []
     slide_comp = slide_name.split('----')
     related_slide_trim_names = []
-    for r in related_slides:
-        comp = r.split('----')
-        #disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
-        related_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
-        slide_course_name = ' '.join(slide_comp[0].replace('_','-').split('-')).title()
-        related_slide_course_name = ' '.join(comp[0].replace('_','-').split('-')).title()
-        trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
-        if trimmed_name in related_slide_trim_names:
-            continue
-        else:
-            related_slide_trim_names += [trimmed_name]
-        color = get_color(slide_course_name, related_slide_course_name)
-        snippet,no_keywords = get_snippet(slide_name, r)
-        if no_keywords==True:
-            continue
-        disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name))
-        disp_snippets.append(snippet)
-        disp_colors.append(color)
-        course_names.append(comp[0])
-        lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
-        lnos.append(lectures.index('----'.join(comp[1:-1])))
-    return len(disp_strs),related_slides,disp_strs,course_names,lnos,disp_colors,disp_snippets
+    if slide_name in related_dict:
+        related_slides = related_dict[slide_name]
+        filtered_related_slides = []
+        for r in related_slides:
+            comp = r.split('----')
+            #disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
+            related_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
+            slide_course_name = ' '.join(slide_comp[0].replace('_','-').split('-')).title()
+            related_slide_course_name = ' '.join(comp[0].replace('_','-').split('-')).title()
+            trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
+            if trimmed_name in related_slide_trim_names:
+                continue
+            else:
+                related_slide_trim_names += [trimmed_name]
+            color = get_color(slide_course_name, related_slide_course_name)
+            snippet,no_keywords = get_snippet(slide_name, r)
+            if no_keywords==True:
+                continue
+            filtered_related_slides.append(r)
+            disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name))
+            disp_snippets.append(snippet)
+            disp_colors.append(color)
+            course_names.append(comp[0])
+            lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
+            lnos.append(lectures.index('----'.join(comp[1:-1])))
+
+    else:
+        related_slides = []
+    return len(disp_strs),filtered_related_slides,disp_strs,course_names,lnos,disp_colors,disp_snippets
 
 def get_search_results(search):
     query = metapy.index.Document()
     query.content(search)
-    print (query,idx,ranker)
+    print (query,idx,ranker,search)
     top_docs = ranker.score(idx, query, num_results=50)
     print (top_docs)
     top_docs = [slide_titles[x[0]] for x in top_docs]
