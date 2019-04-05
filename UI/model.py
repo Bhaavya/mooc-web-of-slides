@@ -20,7 +20,12 @@ tfidfs = np.load("static/tf_idf_outputs/normalized_tfidfs.npy")
 title_tfidfs = np.load("static/tf_idf_outputs/normalized_title_tfidfs.npy")
 ss_corpus = pickle.load(open('static/tf_idf_outputs/ss_corpus.p', 'rb'))
 
+log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),'log','log.txt')
 
+def log(ip,to_slide,action,start_time):
+    with open(log_path,'a+') as f:
+        f.write('{},{},{},{}\n'.format(ip,to_slide,action,start_time))
+        
 def get_snippet_sentences(slide_name, matching_keywords):
     idx = slide_names.index(slide_name)
     content = ss_corpus[idx].split(' ')
@@ -124,6 +129,7 @@ def get_slide(course_name,slide,lno):
     lectures = sort_slide_names(os.listdir(os.path.join(slides_path, course_name)))
     lno = int(lno)
     related_slides_info = get_related_slides(slide)
+
     return slide,lno,lectures[lno],related_slides_info,lectures,range(len(lectures))
 
 
@@ -138,13 +144,12 @@ def get_next_slide(course_name,lno,curr_slide=None):
         next_slide = slides[0]
     else:
         if lno==len(lectures)-1:
-            return None,None,None,(None,None,None,None,None),None,None
+            return None,None,None,(None,None,None,None,None,None,None),None,None
         else:
             next_slide = sort_slide_names(os.listdir(os.path.join(slides_path,course_name,lectures[lno+1])))[0]
             lno+=1
     related_slides_info = get_related_slides(next_slide)
     return next_slide, lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
-
 def get_prev_slide(course_name,lno,curr_slide):
     lectures = sort_slide_names(os.listdir(os.path.join(slides_path, course_name)))
     lno = int(lno)
@@ -152,19 +157,20 @@ def get_prev_slide(course_name,lno,curr_slide):
     idx = slides.index(curr_slide)
     if idx==0:
             if lno==0:
-                return None,None,None,(None,None,None,None,None),None,None
+                return None,None,None,(None,None,None,None,None,None,None),None,None
             else:
                 prev_slide = sort_slide_names(os.listdir(os.path.join(slides_path,course_name,lectures[lno-1])))[-1]
                 lno-=1
     else:
         prev_slide = slides[:idx][-1]
     related_slides_info = get_related_slides(prev_slide)
-    return prev_slide ,lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
+    return prev_slide, lno,lectures[lno],related_slides_info,lectures,range(len(lectures))    
+
 
 def get_related_slides(slide_name):
     if related_dict=={}:
         load_related_slides()
-    related_slides = related_dict[slide_name]
+    filtered_related_slides = []
     disp_strs = []
     disp_colors = []
     disp_snippets= []
@@ -172,33 +178,42 @@ def get_related_slides(slide_name):
     lnos = []
     slide_comp = slide_name.split('----')
     related_slide_trim_names = []
-    for r in related_slides:
-        comp = r.split('----')
-        #disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
-        related_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
-        slide_course_name = ' '.join(slide_comp[0].replace('_','-').split('-')).title()
-        related_slide_course_name = ' '.join(comp[0].replace('_','-').split('-')).title()
-        trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
-        if trimmed_name in related_slide_trim_names:
-            continue
-        else:
-            related_slide_trim_names += [trimmed_name]
-        color = get_color(slide_course_name, related_slide_course_name)
-        snippet,no_keywords = get_snippet(slide_name, r)
-        if no_keywords==True:
-            continue
-        disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name))
-        disp_snippets.append(snippet)
-        disp_colors.append(color)
-        course_names.append(comp[0])
-        lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
-        lnos.append(lectures.index('----'.join(comp[1:-1])))
-    return len(disp_strs),related_slides,disp_strs,course_names,lnos,disp_colors,disp_snippets
+    if slide_name in related_dict:
+        related_slides = related_dict[slide_name]
+        filtered_related_slides = []
+        for r in related_slides:
+            comp = r.split('----')
+            #disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
+            related_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
+            slide_course_name = ' '.join(slide_comp[0].replace('_','-').split('-')).title()
+            related_slide_course_name = ' '.join(comp[0].replace('_','-').split('-')).title()
+            trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
+            if trimmed_name in related_slide_trim_names:
+                continue
+            else:
+                related_slide_trim_names += [trimmed_name]
+            color = get_color(slide_course_name, related_slide_course_name)
+            snippet,no_keywords = get_snippet(slide_name, r)
+            if no_keywords==True:
+                continue
+            filtered_related_slides.append(r)
+            disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name))
+            disp_snippets.append(snippet)
+            disp_colors.append(color)
+            course_names.append(comp[0])
+            lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
+            lnos.append(lectures.index('----'.join(comp[1:-1])))
+
+    else:
+        related_slides = []
+    return len(disp_strs),filtered_related_slides,disp_strs,course_names,lnos,disp_colors,disp_snippets
 
 def get_search_results(search):
     query = metapy.index.Document()
     query.content(search)
-    top_docs = ranker.score(idx, query, num_results=20)
+    print (query,idx,ranker,search)
+    top_docs = ranker.score(idx, query, num_results=50)
+    print (top_docs)
     top_docs = [slide_titles[x[0]] for x in top_docs]
     results = []
     disp_strs = []
@@ -209,20 +224,13 @@ def get_search_results(search):
     for r in top_docs:
         try:
             comp = r.split('##')
-            top_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
-            trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
-            if trimmed_name in top_slide_trim_names:
-                continue
-            else:
-                top_slide_trim_names += [trimmed_name]
             disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
             course_names.append(comp[0])
             lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
             lnos.append(lectures.index('----'.join(comp[1:-1])))
             if len(results) < 10:
                 results.append(r)
-            snippet,no_keywords = get_snippet_sentences(r, search)
-            snippets.append(snippet)
+            snippets.append(get_snippet_sentences(r, search))
         except ValueError:
             continue
     for x in range(len(results)):
