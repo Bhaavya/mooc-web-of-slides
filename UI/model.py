@@ -193,6 +193,7 @@ def get_search_results(search):
     results = []
     disp_strs = []
     course_names = []
+    snippets = []
     lnos = []
     for r in top_docs:
         try:
@@ -203,12 +204,12 @@ def get_search_results(search):
             lnos.append(lectures.index('----'.join(comp[1:-1])))
             if len(results) < 10:
                 results.append(r)
-
+            snippets.append(get_snippet_sentences(r, search))
         except ValueError:
             continue
     for x in range(len(results)):
         results[x] = results[x].replace('##', '----') + '.pdf'
-    return len(results),results,disp_strs,course_names,lnos
+    return len(results),results,disp_strs,course_names,lnos, snippets
 
 
 if __name__ == '__main__':
