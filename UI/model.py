@@ -105,9 +105,9 @@ def load_related_slides():
         for col_num in range(1,len(cols),2):
             pdf_name = cols[col_num].replace('##','----')+'.pdf'
             if cols[col_num+1].strip() != '':
-		        score = float(cols[col_num+1].strip())
-		        if score < 0.03:
-		        	break
+                score = float(cols[col_num+1].strip())
+                if score < 0.03:
+                    break
             name_comp = pdf_name.split('----')
             course_name = name_comp[0]
             lec_name ='----'.join(name_comp[1:-1])
@@ -180,9 +180,9 @@ def get_related_slides(slide_name):
         related_slide_course_name = ' '.join(comp[0].replace('_','-').split('-')).title()
         trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
         if trimmed_name in related_slide_trim_names:
-        	continue
+            continue
         else:
-        	related_slide_trim_names += [trimmed_name]
+            related_slide_trim_names += [trimmed_name]
         color = get_color(slide_course_name, related_slide_course_name)
         snippet,no_keywords = get_snippet(slide_name, r)
         if no_keywords==True:
@@ -198,22 +198,36 @@ def get_related_slides(slide_name):
 def get_search_results(search):
     query = metapy.index.Document()
     query.content(search)
-    print 'came here'
-    top_docs = ranker.score(idx, query, num_results=10)
-    print 'got results'
-    results = [slide_titles[x[0]] for x in top_docs]
+    top_docs = ranker.score(idx, query, num_results=20)
+    top_docs = [slide_titles[x[0]] for x in top_docs]
+    results = []
     disp_strs = []
     course_names = []
+    snippets = []
     lnos = []
-    for r in results:
-        comp = r.split('##')
-        disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
-        course_names.append(comp[0])
-        lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
-        lnos.append(lectures.index('----'.join(comp[1:-1])))
+    top_slide_trim_names = []
+    for r in top_docs:
+        try:
+            comp = r.split('##')
+            top_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
+            trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
+            if trimmed_name in top_slide_trim_names:
+                continue
+            else:
+                top_slide_trim_names += [trimmed_name]
+            disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
+            course_names.append(comp[0])
+            lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
+            lnos.append(lectures.index('----'.join(comp[1:-1])))
+            if len(results) < 10:
+                results.append(r)
+            snippet,no_keywords = get_snippet_sentences(r, search)
+            snippets.append(snippet)
+        except ValueError:
+            continue
     for x in range(len(results)):
         results[x] = results[x].replace('##', '----') + '.pdf'
-    return len(results),results,disp_strs,course_names,lnos
+    return len(results),results,disp_strs,course_names,lnos, snippets
 
 
 if __name__ == '__main__':

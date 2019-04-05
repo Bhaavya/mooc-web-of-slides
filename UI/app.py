@@ -91,12 +91,12 @@ def search_results(search):
     #    flash('No results found!')
     #    return redirect('/')
 
-    num_results,results,disp_strs,search_course_names,lnos = model.get_search_results(search_string)
+    num_results,results,disp_strs,search_course_names,lnos, snippets = model.get_search_results(search_string)
     if not results:
         return render_template("search.html",num_results=0,results = [],disp_strs=disp_strs,search_course_names=search_course_names,lnos=lnos,course_names=COURSE_NAMES,num_courses=NUM_COURSES)
     else:
         # display results
-        return render_template("search.html",num_results=num_results,results = results,disp_strs=disp_strs,search_course_names=search_course_names,lnos=lnos,course_names=COURSE_NAMES,num_courses=NUM_COURSES)
+        return render_template("search.html",num_results=num_results,results = results,disp_strs=disp_strs,search_course_names=search_course_names,lnos=lnos,course_names=COURSE_NAMES,num_courses=NUM_COURSES, snippets=snippets)
 
 if __name__ == '__main__':
     app.run()

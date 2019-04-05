@@ -11,8 +11,10 @@
   <h2>Results</h2>
    <ul>
   {% for i in range(num_results) %}
-  	<li><a href="/webofslides/related_slide/{{search_course_names[i]}}/{{lnos[i]}}/{{results[i]}}">{{disp_strs[i]}}</a></li>
-  	{% endfor %}
+  	<li><a href="/webofslides/related_slide/{{search_course_names[i]}}/{{lnos[i]}}/{{results[i]}}">{{disp_strs[i]}}</a>
+  	<br>
+	{{snippets[i]}}</li>
+	{% endfor %}
   </ul>
 </div>
   </div>
