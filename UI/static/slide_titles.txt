@@ -1,294 +1,294 @@
 think bayesian
-man run
-man run
-man run
-man run
-man run
-man run
-man run
-man run
-main principle
-review probability
-probability
-random variable
-discrete : probability mass function ( pmf )
-continuous : probability density function ( pdf )
-independence
-draw deck
-two coin
-conditional probability
-conditional probability
-chain rule
-chain rule
-chain rule
-sum rule
-baye theorem
-. .
+A man is running. Why?
+A man is running. Why?
+A man is running. Why?
+A man is running. Why?
+A man is running. Why?
+A man is running. Why?
+A man is running. Why?
+A man is running. Why?
+Main principles
+Review of probability
+Probability
+Random variables
+Discrete: Probability Mass Function (PMF)
+Continuous: Probability Density Function (PDF)
+Independence
+Draws from the deck
+Two coins
+Conditional probability
+Conditional probability
+Chain rule
+Chain rule
+Chain rule
+Sum rule
+Bayes theorem
+
 bayesian approach statistic
-different approach statistic
-uncertainty interpretation
-datum parameter
-datum parameter
-training
-training
-classification
-regularization
-regularization
-p ( θ )
-on-line learn
-on-line learn
-on-line learn
-on-line learn
-on-line learn
-. .
+Different approaches to statistics
+Uncertainty interpretation
+Data and parameters
+Data and parameters
+Training
+Training
+Classification
+Regularization
+Regularization
+p(θ)
+On-line learning
+On-line learning
+On-line learning
+On-line learning
+On-line learning
+
 define model
-bayesian *
-bayesian *
-probabilistic model bn
-probabilistic model bn
-probabilistic model bn
-probabilistic model bn
-probabilistic model bn
-probabilistic model bn
-naïve baye classifier
-naïve baye classifier
-. .
+Bayesian network*
+Bayesian network*
+Probabilistic model from BN
+Probabilistic model from BN
+Probabilistic model from BN
+Probabilistic model from BN
+Probabilistic model from BN
+Probabilistic model from BN
+Naïve Bayes classifier
+Naïve Bayes classifier
+
 example : thief & alarm
-model
-model
-model
-model
-model
-model
-model
-distribution
-технический слайд
-distribution
-distribution
-distribution
-distribution
-< < part marker board > > ( 8 mins )
-correct model
-. .
+Model
+Model
+Model
+Model
+Model
+Model
+Model
+Distributions
+ТЕХНИЧЕСКИЙ СЛАЙД
+Distributions
+Distributions
+Distributions
+Distributions
+<< Part on marker board >> (8 mins)
+Correct model
+
 example : linear regression
-univariate normal
-univariate normal
-univariate normal
-univariate normal
-univariate normal : mean
-univariate normal : variance
-multivariate normal
-multivariate normal
-multivariate normal
-multivariate normal
-multivariate normal
-linear regression
-linear regression
-linear regression
-least square problem
-least square problem
-model
-model
-model
-model
-training технический слайд ( на доске ) , 6
-training технический слайд ( на доске )
-training технический слайд ( на доске )
-training технический слайд ( на доске )
-training технический слайд ( на доске )
-training технический слайд ( на доске )
-training технический слайд ( на доске )
-. .
+Univariate normal
+Univariate normal
+Univariate normal
+Univariate normal
+Univariate normal: mean
+Univariate normal: variance
+Multivariate normal
+Multivariate normal
+Multivariate normal
+Multivariate normal
+Multivariate normal
+Linear regression
+Linear regression
+Linear regression
+Least squares problem
+Least squares problem
+Model
+Model
+Model
+Model
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ), 6
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ)
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ)
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ)
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ)
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ)
+Training ТЕХНИЧЕСКИЙ СЛАЙД (НА ДОСКЕ)
+
 n i=1
 let us also consider multidimensional case problem : xi d-dimensional
 . .
 analytical inference
-posterior distribution
-posterior distribution
-posterior distribution
-posterior distribution
-posterior distribution
-maximum posteriori
-maximum posteriori
-maximum posteriori
-maximum posteriori
-maximum posteriori
-maximum posteriori
-map : problem
-map : problem
-map : problem
-map : problem
-map : problem
-map : problem
-map : problem
-summary
-. .
+Posterior distribution
+Posterior distribution
+Posterior distribution
+Posterior distribution
+Posterior distribution
+Maximum a posteriori
+Maximum a posteriori
+Maximum a posteriori
+Maximum a posteriori
+Maximum a posteriori
+Maximum a posteriori
+MAP: problems
+MAP: problems
+MAP: problems
+MAP: problems
+MAP: problems
+MAP: problems
+MAP: problems
+Summary
+
 . conjugate distribution
-baye formula
-conjugate prior
-example
-two gaussian
-two gaussian
-solution
-example
-example
-example
-example
-. .
+Bayes formula
+Conjugate prior
+Example
+Two Gaussians
+Two Gaussians
+Solution
+Example
+Example
+Example
+Example
+
 distribution : gamma
-gamma distribution
-gamma distribution
-gamma distribution
-gamma distribution
-gamma distribution
-технический слайд
-statistic
-example
-технический слайд
-example
-example
-example
-example
-example : normal , precision
-precision
-precision
-precision
-functional form
-functional form
-functional form
-functional form
-functional form
-functional form
-functional form
-functional form
-functional form
-gamma prior
-gamma prior
-gamma prior
-gamma prior
-gamma prior
-. .
+Gamma distribution
+Gamma distribution
+Gamma distribution
+Gamma distribution
+Gamma distribution
+ТЕХНИЧЕСКИЙ СЛАЙД
+Statistics
+Example
+ТЕХНИЧЕСКИЙ СЛАЙД
+Example
+Example
+Example
+Example
+Example: Normal, precision
+Precision
+Precision
+Precision
+Functional form
+Functional form
+Functional form
+Functional form
+Functional form
+Functional form
+Functional form
+Functional form
+Functional form
+Gamma prior
+Gamma prior
+Gamma prior
+Gamma prior
+Gamma prior
+
 distribution : beta
-beta distribution
-beta distribution
-beta distribution
-beta distribution
-beta distribution
-statistic
-example
-example технический слайд
-example
-example
-example
-example : bernoulli
-beta prior
-beta prior
-beta prior
-beta prior
-beta prior
-beta prior
-summary
-summary
-summary
-summary
-summary
-pro con
-pro con
-pro con
-pro con
-pro con
-. .
+Beta distribution
+Beta distribution
+Beta distribution
+Beta distribution
+Beta distribution
+Statistics
+Example
+Example ТЕХНИЧЕСКИЙ СЛАЙД
+Example
+Example
+Example
+Example: Bernoulli
+Beta prior
+Beta prior
+Beta prior
+Beta prior
+Beta prior
+Beta prior
+Summary
+Summary
+Summary
+Summary
+Summary
+Pros and cons
+Pros and cons
+Pros and cons
+Pros and cons
+Pros and cons
+
 expectation maximization
-week 2
-week 2
-latent ( hide ) variable variable
-.
-.
+Week 2
+Week 2
+Latent (hidden) variable is a variable
 ?
-john
-john
-john
-john
-john
-john
-john
-john
-probabilistic model
-probabilistic model
-probabilistic model
-probabilistic model
-probabilistic model
-probabilistic model
-probabilistic model
-probabilistic model
-latent variable model
-latent variable model
-latent variable model
+John
+John
+John
+John
+John
+John
+John
+John
+Probabilistic model
+Probabilistic model
+Probabilistic model
+Probabilistic model
+Probabilistic model
+Probabilistic model
+Probabilistic model
+Probabilistic model
+Latent variable models
+Latent variable models
+Latent variable models
+Latent variable models
+
 latent variable model
 . .
 probabilistic cluster
-cluster
-hard cluster
-soft cluster
-hyperparameter tune
-hyperparameter tune
-generate new datum point
-summary
-. .
+Clustering
+Hard clustering
+Soft clustering
+Hyperparameter tuning
+Hyperparameter tuning
+Generating new data points
+Summary
+
 probabilistic model datum
-probabilistic model datum
+Probabilistic model of data
+Gaussian Mixture Model (GMM)
+Gaussian Mixture Model (GMM)
+Gaussian Mixture Model (GMM)
+Gaussian Mixture Model (GMM)
+GMM vs Guassian
+Training GMM
+Training GMM
+Training GMM
+Training GMM
+Training GMM
+Training GMM
+Training GMM
+Summary
+
 gaussian mixture model ( gmm )
-gaussian mixture model ( gmm )
-gaussian mixture model ( gmm )
-gaussian mixture model ( gmm )
-gmm vs guassian
-training gmm
-training gmm
-training gmm
-training gmm
-training gmm
-training gmm
-training gmm
-summary
+Introducing latent variable
+Introducing latent variable
+Introducing latent variable
+Introducing latent variable
+Introducing latent variable
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+Expectation Maximization
+
 . .
-gaussian mixture model ( gmm )
-introduce latent variable
-introduce latent variable
-introduce latent variable
-introduce latent variable
-introduce latent variable
-expectation maximization
-expectation maximization
-expectation maximization
-expectation maximization
-expectation maximization
-expectation maximization
-expectation maximization
-expectation maximization
-expectation maximization
-. .
-. .
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em example
-gmm em local maximum example
-gmm em local maximum example
-gmm em local maximum example
-gmm em local maximum example
-gmm em local maximum example
-gmm em local maximum example
-gmm em local maximum example
-gmm em local maximum example
-summary
-. .
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM example
+GMM EM local maximum example
+GMM EM local maximum example
+GMM EM local maximum example
+GMM EM local maximum example
+GMM EM local maximum example
+GMM EM local maximum example
+GMM EM local maximum example
+GMM EM local maximum example
+Summary
+
 general form expectation maximization
 concave function
 concave function
@@ -315,705 +315,705 @@ kullback–leibler divergence
 kullback–leibler divergence
 . .
 general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-general form expectation maximization
-summary expectation maximization
-. .
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+General form of Expectation Maximization
+Summary of Expectation Maximization
+
 e-step detail
-e-step detail
-e-step detail
-e-step detail
-e-step summary
-e-step summary
-. .
+E-step details
+E-step details
+E-step details
+E-step summary
+E-step summary
+
 m-step detail
-m-step detail
-m-step detail
-m-step detail
-m-step detail
-m-step detail
-expectation maximization algorithm
-convergence guaranty
-convergence guaranty
-convergence guaranty
-convergence guaranty
-convergence guaranty
-convergence guaranty
-convergence guaranty
-. .
+M-step details
+M-step details
+M-step details
+M-step details
+M-step details
+Expectation Maximization algorithm
+Convergence guaranties
+Convergence guaranties
+Convergence guaranties
+Convergence guaranties
+Convergence guaranties
+Convergence guaranties
+Convergence guaranties
+
 summary expectation maximization
-summary expectation maximization
-summary expectation maximization
-summary expectation maximization
-summary expectation maximization
-summary expectation maximization
-summary expectation maximization
-summary expectation maximization
-. .
+Summary of Expectation Maximization
+Summary of Expectation Maximization
+Summary of Expectation Maximization
+Summary of Expectation Maximization
+Summary of Expectation Maximization
+Summary of Expectation Maximization
+Summary of Expectation Maximization
+
 application em
-gaussian mixture model revisit
-gaussain mixture model connection
-gaussain mixture model connection
-gaussain mixture model connection
-gaussain mixture model connection
-. .
+Gaussian Mixture Model revisited
+Gaussain Mixture Model connection
+Gaussain Mixture Model connection
+Gaussain Mixture Model connection
+Gaussain Mixture Model connection
+
 k-mean connection
-k-mean
-k-mean
-k-mean
-k-mean gmm perspective
-k-mean gmm perspective
-k-mean gmm perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-k-mean em perspective
-. .
+K-Means
+K-Means
+K-Means
+K-Means from GMM perspective
+K-Means from GMM perspective
+K-Means from GMM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+K-Means from EM perspective
+
 : ci c
-k-mean em perspective
-k-mean em perspective
-. .
+K-Means from EM perspective
+K-Means from EM perspective
+
 ice cream conspiracy
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Ice cream priсe, $
+Principal Component Analysis
+Ice cream price, $
+Ice cream price, $
+Ice cream price, $
+Ice cream price, $
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+
 principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-ice cream priсe , $
-principal component analysis
-ice cream price , $
-ice cream price , $
-ice cream price , $
-ice cream price , $
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-. .
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-principal component analysis
-summary
-. .
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Principal Component Analysis
+Summary
+
 approximate inference ?
-analytical inference
-analytical inference
-analytical inference
-analytical inference
-need exact posterior ?
-need exact posterior ?
-. .
+Analytical inference
+Analytical inference
+Analytical inference
+Analytical inference
+Do we need exact posterior?
+Do we need exact posterior?
+
 variational inference
-variational inference
-variational inference
-variational inference ( технический
-variational inference
-variational inference
-choice variational family
-choice variational family
-unnormalized distribution
-unnormalized distribution
-unnormalized distribution
-unnormalized distribution
-unnormalized distribution
-unnormalized distribution
-unnormalized distribution
-. .
+Variational inference
+Variational inference
+Variational inference (ТЕХНИЧЕСКИЙ
+Variational inference
+Variational inference
+Choice of variational family
+Choice of variational family
+Unnormalized distribution
+Unnormalized distribution
+Unnormalized distribution
+Unnormalized distribution
+Unnormalized distribution
+Unnormalized distribution
+Unnormalized distribution
+
 mean field
-mean field
-mean field
-mean field
-example
-example
-example
-example
-example
-optimization
-технический слайд ( < = 12.5 min )
-. .
+Mean field
+Mean field
+Mean field
+Example
+Example
+Example
+Example
+Example
+Optimization
+Технический слайд (<= 12.5 min)
+
 example : is model
-is model
-is model
-normalization constant
-mean field
-технический слайд ( 5 минут на доску )
-технический слайд
-технический слайд
-example
-example
-example
-optimization solution
-optimization solution
-optimization solution
-optimization solution
-optimization solution
-optimization solution
-optimization solution
-. .
+Ising model
+Ising model
+Normalization constant
+Mean field
+Технический слайд (5 минут на доску)
+Технический слайд
+Технический слайд
+Example
+Example
+Example
+Optimization solutions
+Optimization solutions
+Optimization solutions
+Optimization solutions
+Optimization solutions
+Optimization solutions
+Optimization solutions
+
 topic modele
-recommender system
-topic modele
-topic modele
-topic modele
-topic modele
-topic modele
-topic modele
-topic modele
-similarity
-distance
-goal
-. .
+Recommender system
+Topic modeling
+Topic modeling
+Topic modeling
+Topic modeling
+Topic modeling
+Topic modeling
+Topic modeling
+Similarity
+Similarity/distance
+Goals
+
 dirichlet distribution
-dirichlet distribution
-dirichlet distribution
-dirichlet distribution
-dirichlet distribution
-dirichlet distribution
-statistic
-example
-example
-example
-example
-conjugate prior
-multinomial likelihood
-multinomial likelihood
-multinomial likelihood
-multinomial likelihood
-. .
+Dirichlet distribution
+Dirichlet distribution
+Dirichlet distribution
+Dirichlet distribution
+Dirichlet distribution
+Statistics
+Example
+Example
+Example
+Example
+Conjugate prior
+Multinomial likelihood
+Multinomial likelihood
+Multinomial likelihood
+Multinomial likelihood
+
 latent dirichlet allocation
-topic
-topic
-topic
-topic
-text generation
-text generation
-text generation
-model
-model
-model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-lda model
-технический слайд ( 15 мин на
-. .
+Topics
+Topics
+Topics
+Topics
+Text generation
+Text generation
+Text generation
+Model
+Model
+Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+LDA Model
+ТЕХНИЧЕСКИЙ СЛАЙД (15 мин на
+
 extension & summary
-sparsity document
-sparsity topic
-topic correlation
-dynamic topic model
-summary
-. .
+Sparsity of documents
+Sparsity of topics
+Topics correlation
+Dynamic Topic Model
+Summary
+
 • mcmc — silver bullet probabilistic modele
-markov chain monte carlo ( mcmc )
-markov chain monte carlo ( mcmc )
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-monte carlo
-. .
+Markov Chain Monte Carlo (MCMC)
+Markov Chain Monte Carlo (MCMC)
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+Monte Carlo
+
 sampling 1d distribution
-1d sampling ( discrete )
-1d sampling ( discrete )
-1d sampling ( discrete )
-1d sampling ( discrete )
-1d sampling ( discrete )
-1d sampling ( discrete )
-1d sampling ( discrete )
-summary
-summary
-continuous sampling
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-1d sampling ( continuous )
-summary
-summary
-summary
-. .
+1d sampling (discrete)
+1d sampling (discrete)
+1d sampling (discrete)
+1d sampling (discrete)
+1d sampling (discrete)
+1d sampling (discrete)
+1d sampling (discrete)
+Summary
+Summary
+Continuous sampling
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+1d sampling (continuous)
+Summary
+Summary
+Summary
+
 markov chain monte carlo ( mcmc )
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-markov chain
-used markov chain
-used markov chain
-used markov chain
-used markov chain
-used markov chain
-markov chain always converge ?
-markov chain always converge ?
-markov chain always converge ?
-markov chain
-markov chain
-markov chain
-. .
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Markov Chains
+Using Markov Chain
+Using Markov Chain
+Using Markov Chain
+Using Markov Chain
+Using Markov Chain
+Do Markov chains always converge?
+Do Markov chains always converge?
+Do Markov chains always converge?
+Markov Chains
+Markov Chains
+Markov Chains
+
 gibbs sampling
-gibbs sampling
-gibbs sampling
-gibbs sampling
-gibbs sampling
-gibbs sampling
-gibbs sampling
-gibbs sampling
-. .
+Gibbs Sampling
+Gibbs Sampling
+Gibbs Sampling
+Gibbs Sampling
+Gibbs Sampling
+Gibbs Sampling
+Gibbs Sampling
+
 gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-gibbs sampling demo
-summary
-summary
-summary
-summary
-summary
-. .
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Gibbs Sampling Demo
+Summary
+Summary
+Summary
+Summary
+Summary
+
 metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-metropolis-hasting
-detailed balance
-detailed balance
-detailed balance
-detailed balance
-detailed balance
-detailed balance
-metropolis-hasting
-metropolis-hasting
-. .
+Metropolis-Hastings
+Metropolis-Hastings
+Metropolis-Hastings
+Metropolis-Hastings
+Metropolis-Hastings
+Metropolis-Hastings
+Metropolis-Hastings
+Metropolis-Hastings
+Detailed Balance
+Detailed Balance
+Detailed Balance
+Detailed Balance
+Detailed Balance
+Detailed Balance
+Metropolis-Hastings
+Metropolis-Hastings
+
 ◆
-metropolis hasting
-choice q
-. .
+Metropolis Hastings
+Choice of Q
+
 demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-demo
-metropolis hasting correction scheme
-metropolis hasting correction scheme
-metropolis hasting correction scheme
-metropolis hasting correction scheme
-metropolis hasting correction scheme
-metropolis hasting correction scheme
-summary
-summary
-summary
-summary
-summary
-. .
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Demo
+Metropolis Hastings as correction scheme
+Metropolis Hastings as correction scheme
+Metropolis Hastings as correction scheme
+Metropolis Hastings as correction scheme
+Metropolis Hastings as correction scheme
+Metropolis Hastings as correction scheme
+Summary
+Summary
+Summary
+Summary
+Summary
+
 monte carlo method approximate expect value
-week summary
-week summary
-monte carlo vs variational inference
-monte carlo vs variational inference
-monte carlo vs variational inference
-monte carlo vs variational inference
-method
-method
-method
-method
-method
-method
-summary markov chain monte carlo
-. .
+Week summary
+Week summary
+Monte Carlo vs Variational Inference
+Monte Carlo vs Variational Inference
+Monte Carlo vs Variational Inference
+Monte Carlo vs Variational Inference
+Methods
+Methods
+Methods
+Methods
+Methods
+Methods
+Summary of Markov Chain Monte Carlo
+
 mcmc lda
-latent dirichlet allocation
-text generation
-model
-mean field lda ( week 3 )
-mean field lda ( week 3 )
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-mcmc lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-collapse gibbs lda
-. .
+Latent Dirichlet Allocation
+Text generation
+Model
+Mean Field for LDA (week 3)
+Mean Field for LDA (week 3)
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+MCMC for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+Collapsed Gibbs for LDA
+
 bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-bayesian neural network
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-langevin monte carlo
-. .
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Bayesian Neural Networks
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+Langevin Monte Carlo
+
 scalable variational inference
-scalable variational inference
-scalable variational inference
-scalable variational inference
-scalable variational inference
-scalable variational inference
-scalable variational inference
-scalable variational inference
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-unbiased estimate
-. .
+Scalable Variational Inference
+Scalable Variational Inference
+Scalable Variational Inference
+Scalable Variational Inference
+Scalable Variational Inference
+Scalable Variational Inference
+Scalable Variational Inference
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+Unbiased estimates
+
 p ( x ) dataset
-scalable variational inference
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-model p ( x )
-. .
+Scalable Variational Inference
+Why model p(x)
+Why model p(x)
+Why model p(x)
+Why model p(x)
+Why model p(x)
+Why model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+How to model p(x)
+
 p ( x | ) p ( ) dt
-continuous mixture gaussian
-continuous mixture gaussian
-continuous mixture gaussian
-continuous mixture gaussian
-continuous mixture gaussian
-continuous mixture gaussian
-continuous mixture gaussian
-continuous mixture gaussian
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-scaling expectation maximization
-. .
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Continuous mixture of Gaussians
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+Scaling up Expectation Maximization
+
 w , q
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-scaling variational em
-objective interpretation
-objective interpretation
-objective interpretation
-objective interpretation
-objective interpretation
-detect outlier
-detect outlier
-generate new sample
-. .
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Scaling up Variational EM
+Objective interpretation
+Objective interpretation
+Objective interpretation
+Objective interpretation
+Objective interpretation
+Detecting outliers
+Detecting outliers
+Generating new samples
+
 kl ( qi ( ti ) k p ( ti ) )
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-. .
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+
 log p ( xi | ti , w )
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-. .
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+
 log p ( xi | ti , w )
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-gradient
-variational autoencoder summary
-. .
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Gradients
+Variational Autoencoder summary
+
 nonparametric method
-parametric method
-parametric method
-parametric method
-parametric method
-parametric method
-non-parametric method
-non-parametric method
-non-parametric method
-kernel
-parametric vs non-parametric
+Parametric methods
+Parametric methods
+Parametric methods
+Parametric methods
+Parametric methods
+Non-parametric methods
+Non-parametric methods
+Non-parametric methods
+Some kernels
+Parametric vs Non-parametric
+Gaussian Processes
+
 gaussian process
-. .
-gaussian process
-random process
-random process ( технический слайд )
-gaussian process
-gaussian process ( технический слайд )
-gaussian process
-stationary process
-stationary process
-stationary process
-stationary process
-stationary process
-stationary process
-stationary process
-stationary process
-kernel
-kernel
-kernel
-kernel
-. .
+Random process
+Random process (Технический слайд)
+Gaussian process
+Gaussian process (ТЕХНИЧЕСКИЙ СЛАЙД)
+Gaussian process
+Stationary process
+Stationary process
+Stationary process
+Stationary process
+Stationary process
+Stationary process
+Stationary process
+Stationary process
+Kernel
+Kernel
+Kernel
+Kernel
+
 gp machine learn
-task
-task
-task
-prediction
-prediction
-prediction
-prediction
-prediction
-prediction
-prediction
-prediction
-технически слайд
-preprocess
-технический слайд
-. .
+Task
+Task
+Task
+Prediction
+Prediction
+Prediction
+Prediction
+Prediction
+Prediction
+Prediction
+Prediction
+ТЕХНИЧЕСКИ СЛАЙД
+Preprocessing
+ТЕХНИЧЕСКИЙ СЛАЙД
+
 nuance gp
-noisy observation
-noisy observation
-noisy observation
-noisy observation
-kernel parameter
-kernel parameter
-kernel parameter
-kernel parameter
-kernel parameter
-kernel parameter
-kernel parameter
-kernel parameter
-classification
-classification
-classification
-induce input
-induce input ( технический слайд )
-induce input
-induce input
-. .
+Noisy observations
+Noisy observations
+Noisy observations
+Noisy observations
+Kernel parameters
+Kernel parameters
+Kernel parameters
+Kernel parameters
+Kernel parameters
+Kernel parameters
+Kernel parameters
+Kernel parameters
+Classification
+Classification
+Classification
+Inducing inputs
+Inducing inputs (ТЕХНИЧЕСКИЙ СЛАЙД)
+Inducing inputs
+Inducing inputs
+
 bayesian optimization
-black-box optimization
-black-box optimization
-black-box optimization
-black-box optimization
-black-box optimization
-surrogate model
-acquisition function
-maximum probability improvement ( mpi )
-upper confidence bound ( ucb )
-expect improvement ( ei )
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-example
-технический слайд
-random search vs gaussian process
-. .
+Black-box optimization
+Black-box optimization
+Black-box optimization
+Black-box optimization
+Black-box optimization
+Surrogate model
+Acquisition function
+Maximum probability of improvement (MPI)
+Upper confidence bound (UCB)
+Expected improvement (EI)
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+Example
+ТЕХНИЧЕСКИЙ СЛАЙД
+Random search vs Gaussian processes
+
 bayesian optimization
 hyperparameter tune
 discrete continuous variable
@@ -1061,205 +1061,205 @@ next step “ complete square ” exponent :
 estimate β treat σ 2 know , posterior β ( multivariate )
 . .
 mining : course overview
-cluster analysis ?
-value cluster analysis
-broad application cluster analysis
-major reference reading course
-course structure
-course general information
-. .
+What Is Cluster Analysis?
+The Value of Cluster Analysis
+Broad Applications of Cluster Analysis
+Major Reference Readings for the Course
+Course Structure
+Course General Information
+
 10 9 8 7 6 5 4 3 2 1
-author
+About the Authors
 2
 40
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 42
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 44
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 46
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 48
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 50
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 52
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 54
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 56
-2.3 datum visualization
+2.3 Data Visualization
 58
-2.3 datum visualization
+2.3 Data Visualization
 60
-2.3 datum visualization
+2.3 Data Visualization
 62
-2.3 datum visualization
+2.3 Data Visualization
 64
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 66
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 68
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 70
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 72
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 74
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 76
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 78
-2.6 exercise
+2.6 Exercises
 80
-2.7 bibliographic note
+2.7 Bibliographic Notes
 82
 10
 444
-10.1 cluster analysis
+10.1 Cluster Analysis
 446
-10.1 cluster analysis
+10.1 Cluster Analysis
 448
-10.1 cluster analysis
+10.1 Cluster Analysis
 450
-10.2 partition method
+10.2 Partitioning Methods
 452
-10.2 partition method
+10.2 Partitioning Methods
 454
-10.2 partition method
+10.2 Partitioning Methods
 456
-10.3 hierarchical method
+10.3 Hierarchical Methods
 458
-10.3 hierarchical method
-chapter 10 cluster analysis : basic concept method
-10.3 hierarchical method
+10.3 Hierarchical Methods
+Chapter 10 Cluster Analysis: Basic Concepts and Methods
+10.3 Hierarchical Methods
 462
-10.3 hierarchical method
+10.3 Hierarchical Methods
 464
-10.3 hierarchical method
+10.3 Hierarchical Methods
 466
-10.3 hierarchical method
+10.3 Hierarchical Methods
 468
-10.3 hierarchical method
+10.3 Hierarchical Methods
 470
-10.4 density-based method
+10.4 Density-Based Methods
 472
-10.4 density-based method
+10.4 Density-Based Methods
 474
-10.4 density-based method
+10.4 Density-Based Methods
 476
-10.4 density-based method
+10.4 Density-Based Methods
 478
-10.5 grid-based method
+10.5 Grid-Based Methods
 480
-10.5 grid-based method
+10.5 Grid-Based Methods
 482
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 484
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 486
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 488
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 490
-10.8 exercise
+10.8 Exercises
 492
-10.8 exercise
+10.8 Exercises
 494
-10.9 bibliographic note
+10.9 Bibliographic Notes
 11
 498
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 500
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 502
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 504
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 506
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 508
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 510
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 512
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 514
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 516
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 518
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 520
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 522
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 524
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 526
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 528
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 530
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 532
-11.4 cluster constraint
+11.4 Clustering with Constraints
 534
-11.4 cluster constraint
+11.4 Clustering with Constraints
 536
-11.4 cluster constraint
+11.4 Clustering with Constraints
 538
-11.6 exercise
+11.6 Exercises
 540
-11.7 bibliographic note
+11.7 Bibliographic Notes
 13
 586
-13.1 mining complex datum type
-chapter 13 datum mining trend research frontier
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
+Chapter 13 Data Mining Trends and Research Frontiers
+13.1 Mining Complex Data Types
 590
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 592
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 594
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 596
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 598
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 600
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 602
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 604
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 606
-13.3 datum mining application
+13.3 Data Mining Applications
 608
-13.3 datum mining application
+13.3 Data Mining Applications
 610
-13.3 datum mining application
+13.3 Data Mining Applications
 612
-13.3 datum mining application
+13.3 Data Mining Applications
 614
-13.3 datum mining application
+13.3 Data Mining Applications
 616
-13.3 datum mining application
+13.3 Data Mining Applications
 618
-13.4 datum mining society
+13.4 Data Mining and Society
 620
-13.4 datum mining society
+13.4 Data Mining and Society
 622
-13.5 datum mining trend
+13.5 Data Mining Trends
 624
-13.6 summary
+13.6 Summary
 626
-13.7 exercise
+13.7 Exercises
 628
-13.8 bibliographic note
+13.8 Bibliographic Notes
 630
-13.8 bibliographic note
-. .
+13.8 Bibliographic Notes
+
 cluster
 user insight interaction cluster
 recommend reading
@@ -1269,633 +1269,633 @@ cosine similarity two vector
 example : calculate cosine similarity
 . .
 10 9 8 7 6 5 4 3 2 1
-author
+About the Authors
 2
 40
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 42
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 44
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 46
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 48
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 50
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 52
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 54
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 56
-2.3 datum visualization
+2.3 Data Visualization
 58
-2.3 datum visualization
+2.3 Data Visualization
 60
-2.3 datum visualization
+2.3 Data Visualization
 62
-2.3 datum visualization
+2.3 Data Visualization
 64
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 66
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 68
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 70
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 72
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 74
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 76
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 78
-2.6 exercise
+2.6 Exercises
 80
-2.7 bibliographic note
+2.7 Bibliographic Notes
 82
 10
 444
-10.1 cluster analysis
+10.1 Cluster Analysis
 446
-10.1 cluster analysis
+10.1 Cluster Analysis
 448
-10.1 cluster analysis
+10.1 Cluster Analysis
 450
-10.2 partition method
+10.2 Partitioning Methods
 452
-10.2 partition method
+10.2 Partitioning Methods
 454
-10.2 partition method
+10.2 Partitioning Methods
 456
-10.3 hierarchical method
+10.3 Hierarchical Methods
 458
-10.3 hierarchical method
-chapter 10 cluster analysis : basic concept method
-10.3 hierarchical method
+10.3 Hierarchical Methods
+Chapter 10 Cluster Analysis: Basic Concepts and Methods
+10.3 Hierarchical Methods
 462
-10.3 hierarchical method
+10.3 Hierarchical Methods
 464
-10.3 hierarchical method
+10.3 Hierarchical Methods
 466
-10.3 hierarchical method
+10.3 Hierarchical Methods
 468
-10.3 hierarchical method
+10.3 Hierarchical Methods
 470
-10.4 density-based method
+10.4 Density-Based Methods
 472
-10.4 density-based method
+10.4 Density-Based Methods
 474
-10.4 density-based method
+10.4 Density-Based Methods
 476
-10.4 density-based method
+10.4 Density-Based Methods
 478
-10.5 grid-based method
+10.5 Grid-Based Methods
 480
-10.5 grid-based method
+10.5 Grid-Based Methods
 482
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 484
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 486
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 488
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 490
-10.8 exercise
+10.8 Exercises
 492
-10.8 exercise
+10.8 Exercises
 494
-10.9 bibliographic note
+10.9 Bibliographic Notes
 11
 498
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 500
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 502
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 504
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 506
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 508
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 510
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 512
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 514
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 516
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 518
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 520
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 522
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 524
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 526
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 528
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 530
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 532
-11.4 cluster constraint
+11.4 Clustering with Constraints
 534
-11.4 cluster constraint
+11.4 Clustering with Constraints
 536
-11.4 cluster constraint
+11.4 Clustering with Constraints
 538
-11.6 exercise
+11.6 Exercises
 540
-11.7 bibliographic note
+11.7 Bibliographic Notes
 13
 586
-13.1 mining complex datum type
-chapter 13 datum mining trend research frontier
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
+Chapter 13 Data Mining Trends and Research Frontiers
+13.1 Mining Complex Data Types
 590
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 592
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 594
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 596
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 598
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 600
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 602
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 604
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 606
-13.3 datum mining application
+13.3 Data Mining Applications
 608
-13.3 datum mining application
+13.3 Data Mining Applications
 610
-13.3 datum mining application
+13.3 Data Mining Applications
 612
-13.3 datum mining application
+13.3 Data Mining Applications
 614
-13.3 datum mining application
+13.3 Data Mining Applications
 616
-13.3 datum mining application
+13.3 Data Mining Applications
 618
-13.4 datum mining society
+13.4 Data Mining and Society
 620
-13.4 datum mining society
+13.4 Data Mining and Society
 622
-13.5 datum mining trend
+13.5 Data Mining Trends
 624
-13.6 summary
+13.6 Summary
 626
-13.7 exercise
+13.7 Exercises
 628
-13.8 bibliographic note
+13.8 Bibliographic Notes
 630
-13.8 bibliographic note
-. .
+13.8 Bibliographic Notes
+
 partition algorithms
-partition algorithms : basic concept
-. .
+Partitioning Algorithms: Basic Concepts
+
 method
-k-mean cluster method
-example : k-mean cluster
-discussion k-mean method
-variation k-mean
-. .
+The K-Means Clustering Method
+Example: K-Means Clustering
+Discussion on the K-Means Method
+Variations of K-Means
+
 cluster
-initialization k-mean
-example : poor initialization may lead poor cluster
-. .
+Initialization of K-Means
+Example: Poor Initialization May Lead to Poor Clustering
+
 method
-handle outlier : k-mean k-medoid
-pam : typical k-medoid algorithm
-discussion k-medoid cluster
-. .
+Handling Outliers: From K-Means to K-Medoids
+PAM: A Typical K-Medoids Algorithm
+Discussion on K-Medoids Clustering
+
 cluster method
 k-median : handle outlier compute median
 k-mode : cluster categorical datum
 . .
 kernel k-mean cluster
-kernel k-mean cluster
-kernel function kernel k-mean cluster
-example : kernel function kernel k-mean cluster
-example : kernel k-mean cluster
-recommend reading
-. .
+Kernel K-Means Clustering
+Kernel Functions and Kernel K-Means Clustering
+Example: Kernel Functions and Kernel K-Means Clustering
+Example: Kernel K-Means Clustering
+Recommended Readings
+
 10 9 8 7 6 5 4 3 2 1
-author
+About the Authors
 2
 40
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 42
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 44
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 46
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 48
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 50
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 52
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 54
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 56
-2.3 datum visualization
+2.3 Data Visualization
 58
-2.3 datum visualization
+2.3 Data Visualization
 60
-2.3 datum visualization
+2.3 Data Visualization
 62
-2.3 datum visualization
+2.3 Data Visualization
 64
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 66
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 68
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 70
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 72
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 74
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 76
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 78
-2.6 exercise
+2.6 Exercises
 80
-2.7 bibliographic note
+2.7 Bibliographic Notes
 82
 10
 444
-10.1 cluster analysis
+10.1 Cluster Analysis
 446
-10.1 cluster analysis
+10.1 Cluster Analysis
 448
-10.1 cluster analysis
+10.1 Cluster Analysis
 450
-10.2 partition method
+10.2 Partitioning Methods
 452
-10.2 partition method
+10.2 Partitioning Methods
 454
-10.2 partition method
+10.2 Partitioning Methods
 456
-10.3 hierarchical method
+10.3 Hierarchical Methods
 458
-10.3 hierarchical method
-chapter 10 cluster analysis : basic concept method
-10.3 hierarchical method
+10.3 Hierarchical Methods
+Chapter 10 Cluster Analysis: Basic Concepts and Methods
+10.3 Hierarchical Methods
 462
-10.3 hierarchical method
+10.3 Hierarchical Methods
 464
-10.3 hierarchical method
+10.3 Hierarchical Methods
 466
-10.3 hierarchical method
+10.3 Hierarchical Methods
 468
-10.3 hierarchical method
+10.3 Hierarchical Methods
 470
-10.4 density-based method
+10.4 Density-Based Methods
 472
-10.4 density-based method
+10.4 Density-Based Methods
 474
-10.4 density-based method
+10.4 Density-Based Methods
 476
-10.4 density-based method
+10.4 Density-Based Methods
 478
-10.5 grid-based method
+10.5 Grid-Based Methods
 480
-10.5 grid-based method
+10.5 Grid-Based Methods
 482
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 484
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 486
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 488
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 490
-10.8 exercise
+10.8 Exercises
 492
-10.8 exercise
+10.8 Exercises
 494
-10.9 bibliographic note
+10.9 Bibliographic Notes
 11
 498
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 500
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 502
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 504
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 506
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 508
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 510
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 512
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 514
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 516
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 518
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 520
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 522
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 524
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 526
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 528
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 530
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 532
-11.4 cluster constraint
+11.4 Clustering with Constraints
 534
-11.4 cluster constraint
+11.4 Clustering with Constraints
 536
-11.4 cluster constraint
+11.4 Clustering with Constraints
 538
-11.6 exercise
+11.6 Exercises
 540
-11.7 bibliographic note
+11.7 Bibliographic Notes
 13
 586
-13.1 mining complex datum type
-chapter 13 datum mining trend research frontier
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
+Chapter 13 Data Mining Trends and Research Frontiers
+13.1 Mining Complex Data Types
 590
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 592
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 594
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 596
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 598
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 600
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 602
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 604
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 606
-13.3 datum mining application
+13.3 Data Mining Applications
 608
-13.3 datum mining application
+13.3 Data Mining Applications
 610
-13.3 datum mining application
+13.3 Data Mining Applications
 612
-13.3 datum mining application
+13.3 Data Mining Applications
 614
-13.3 datum mining application
+13.3 Data Mining Applications
 616
-13.3 datum mining application
+13.3 Data Mining Applications
 618
-13.4 datum mining society
+13.4 Data Mining and Society
 620
-13.4 datum mining society
+13.4 Data Mining and Society
 622
-13.5 datum mining trend
+13.5 Data Mining Trends
 624
-13.6 summary
+13.6 Summary
 626
-13.7 exercise
+13.7 Exercises
 628
-13.8 bibliographic note
+13.8 Bibliographic Notes
 630
-13.8 bibliographic note
-. .
+13.8 Bibliographic Notes
+
 hierarchical algorithms
-hierarchical cluster : basic concept
-dendrogram : show cluster merged
-. .
+Hierarchical Clustering: Basic Concepts
+Dendrogram: Shows How Clusters are Merged
+
 algorithms
-agglomerative cluster algorithm
-single link vs. complete link hierarchical cluster
-agglomerative cluster : average vs. centroid link
-. .
+Agglomerative Clustering Algorithm
+Single Link vs. Complete Link in Hierarchical Clustering
+Agglomerative Clustering: Average vs. Centroid Links
+
 algorithms
-divisive cluster
-algorithm design divisive cluster
-. .
+Divisive Clustering
+More on Algorithm Design for Divisive Clustering
+
 cluster
-extension hierarchical cluster
-. .
+Extensions to Hierarchical Clustering
+
 birch : micro-clusteringbased approach
-birch ( balanced iterative reduce
-cluster feature vector birch
-measure cluster : centroid , radius diameter
-cf tree structure birch
-birch : scalable flexible cluster method
-. .
+BIRCH (Balanced Iterative Reducing and
+Clustering Feature Vector in BIRCH
+Measures of Cluster: Centroid, Radius and Diameter
+The CF Tree Structure in BIRCH
+BIRCH: A Scalable and Flexible Clustering Method
+
 10 9 8 7 6 5 4 3 2 1
-author
+About the Authors
 2
 40
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 42
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 44
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 46
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 48
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 50
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 52
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 54
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 56
-2.3 datum visualization
+2.3 Data Visualization
 58
-2.3 datum visualization
+2.3 Data Visualization
 60
-2.3 datum visualization
+2.3 Data Visualization
 62
-2.3 datum visualization
+2.3 Data Visualization
 64
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 66
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 68
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 70
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 72
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 74
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 76
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 78
-2.6 exercise
+2.6 Exercises
 80
-2.7 bibliographic note
+2.7 Bibliographic Notes
 82
 10
 444
-10.1 cluster analysis
+10.1 Cluster Analysis
 446
-10.1 cluster analysis
+10.1 Cluster Analysis
 448
-10.1 cluster analysis
+10.1 Cluster Analysis
 450
-10.2 partition method
+10.2 Partitioning Methods
 452
-10.2 partition method
+10.2 Partitioning Methods
 454
-10.2 partition method
+10.2 Partitioning Methods
 456
-10.3 hierarchical method
+10.3 Hierarchical Methods
 458
-10.3 hierarchical method
-chapter 10 cluster analysis : basic concept method
-10.3 hierarchical method
+10.3 Hierarchical Methods
+Chapter 10 Cluster Analysis: Basic Concepts and Methods
+10.3 Hierarchical Methods
 462
-10.3 hierarchical method
+10.3 Hierarchical Methods
 464
-10.3 hierarchical method
+10.3 Hierarchical Methods
 466
-10.3 hierarchical method
+10.3 Hierarchical Methods
 468
-10.3 hierarchical method
+10.3 Hierarchical Methods
 470
-10.4 density-based method
+10.4 Density-Based Methods
 472
-10.4 density-based method
+10.4 Density-Based Methods
 474
-10.4 density-based method
+10.4 Density-Based Methods
 476
-10.4 density-based method
+10.4 Density-Based Methods
 478
-10.5 grid-based method
+10.5 Grid-Based Methods
 480
-10.5 grid-based method
+10.5 Grid-Based Methods
 482
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 484
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 486
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 488
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 490
-10.8 exercise
+10.8 Exercises
 492
-10.8 exercise
+10.8 Exercises
 494
-10.9 bibliographic note
+10.9 Bibliographic Notes
 11
 498
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 500
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 502
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 504
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 506
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 508
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 510
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 512
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 514
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 516
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 518
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 520
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 522
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 524
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 526
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 528
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 530
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 532
-11.4 cluster constraint
+11.4 Clustering with Constraints
 534
-11.4 cluster constraint
+11.4 Clustering with Constraints
 536
-11.4 cluster constraint
+11.4 Clustering with Constraints
 538
-11.6 exercise
+11.6 Exercises
 540
-11.7 bibliographic note
+11.7 Bibliographic Notes
 13
 586
-13.1 mining complex datum type
-chapter 13 datum mining trend research frontier
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
+Chapter 13 Data Mining Trends and Research Frontiers
+13.1 Mining Complex Data Types
 590
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 592
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 594
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 596
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 598
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 600
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 602
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 604
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 606
-13.3 datum mining application
+13.3 Data Mining Applications
 608
-13.3 datum mining application
+13.3 Data Mining Applications
 610
-13.3 datum mining application
+13.3 Data Mining Applications
 612
-13.3 datum mining application
+13.3 Data Mining Applications
 614
-13.3 datum mining application
+13.3 Data Mining Applications
 616
-13.3 datum mining application
+13.3 Data Mining Applications
 618
-13.4 datum mining society
+13.4 Data Mining and Society
 620
-13.4 datum mining society
+13.4 Data Mining and Society
 622
-13.5 datum mining trend
+13.5 Data Mining Trends
 624
-13.6 summary
+13.6 Summary
 626
-13.7 exercise
+13.7 Exercises
 628
-13.8 bibliographic note
+13.8 Bibliographic Notes
 630
-13.8 bibliographic note
-. .
+13.8 Bibliographic Notes
+
 cure : cluster used wellscatter representative
 cure : cluster used representative
 . .
@@ -1907,204 +1907,204 @@ relative closeness & merge sub-cluster
 chameleon : cluster complex object
 . .
 cluster
-probabilistic hierarchical cluster
-generative model
-gaussian distribution
-probabilistic hierarchical cluster algorithm
-recommend reading
-. .
+Probabilistic Hierarchical Clustering
+Generative Model
+Gaussian Distribution
+A Probabilistic Hierarchical Clustering Algorithm
+Recommended Readings
+
 10 9 8 7 6 5 4 3 2 1
-author
+About the Authors
 2
 40
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 42
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 44
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 46
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 48
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 50
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 52
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 54
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 56
-2.3 datum visualization
+2.3 Data Visualization
 58
-2.3 datum visualization
+2.3 Data Visualization
 60
-2.3 datum visualization
+2.3 Data Visualization
 62
-2.3 datum visualization
+2.3 Data Visualization
 64
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 66
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 68
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 70
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 72
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 74
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 76
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 78
-2.6 exercise
+2.6 Exercises
 80
-2.7 bibliographic note
+2.7 Bibliographic Notes
 82
 10
 444
-10.1 cluster analysis
+10.1 Cluster Analysis
 446
-10.1 cluster analysis
+10.1 Cluster Analysis
 448
-10.1 cluster analysis
+10.1 Cluster Analysis
 450
-10.2 partition method
+10.2 Partitioning Methods
 452
-10.2 partition method
+10.2 Partitioning Methods
 454
-10.2 partition method
+10.2 Partitioning Methods
 456
-10.3 hierarchical method
+10.3 Hierarchical Methods
 458
-10.3 hierarchical method
-chapter 10 cluster analysis : basic concept method
-10.3 hierarchical method
+10.3 Hierarchical Methods
+Chapter 10 Cluster Analysis: Basic Concepts and Methods
+10.3 Hierarchical Methods
 462
-10.3 hierarchical method
+10.3 Hierarchical Methods
 464
-10.3 hierarchical method
+10.3 Hierarchical Methods
 466
-10.3 hierarchical method
+10.3 Hierarchical Methods
 468
-10.3 hierarchical method
+10.3 Hierarchical Methods
 470
-10.4 density-based method
+10.4 Density-Based Methods
 472
-10.4 density-based method
+10.4 Density-Based Methods
 474
-10.4 density-based method
+10.4 Density-Based Methods
 476
-10.4 density-based method
+10.4 Density-Based Methods
 478
-10.5 grid-based method
+10.5 Grid-Based Methods
 480
-10.5 grid-based method
+10.5 Grid-Based Methods
 482
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 484
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 486
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 488
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 490
-10.8 exercise
+10.8 Exercises
 492
-10.8 exercise
+10.8 Exercises
 494
-10.9 bibliographic note
+10.9 Bibliographic Notes
 11
 498
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 500
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 502
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 504
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 506
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 508
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 510
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 512
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 514
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 516
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 518
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 520
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 522
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 524
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 526
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 528
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 530
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 532
-11.4 cluster constraint
+11.4 Clustering with Constraints
 534
-11.4 cluster constraint
+11.4 Clustering with Constraints
 536
-11.4 cluster constraint
+11.4 Clustering with Constraints
 538
-11.6 exercise
+11.6 Exercises
 540
-11.7 bibliographic note
+11.7 Bibliographic Notes
 13
 586
-13.1 mining complex datum type
-chapter 13 datum mining trend research frontier
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
+Chapter 13 Data Mining Trends and Research Frontiers
+13.1 Mining Complex Data Types
 590
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 592
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 594
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 596
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 598
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 600
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 602
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 604
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 606
-13.3 datum mining application
+13.3 Data Mining Applications
 608
-13.3 datum mining application
+13.3 Data Mining Applications
 610
-13.3 datum mining application
+13.3 Data Mining Applications
 612
-13.3 datum mining application
+13.3 Data Mining Applications
 614
-13.3 datum mining application
+13.3 Data Mining Applications
 616
-13.3 datum mining application
+13.3 Data Mining Applications
 618
-13.4 datum mining society
+13.4 Data Mining and Society
 620
-13.4 datum mining society
+13.4 Data Mining and Society
 622
-13.5 datum mining trend
+13.5 Data Mining Trends
 624
-13.6 summary
+13.6 Summary
 626
-13.7 exercise
+13.7 Exercises
 628
-13.8 bibliographic note
+13.8 Bibliographic Notes
 630
-13.8 bibliographic note
-. .
+13.8 Bibliographic Notes
+
 basic concept densitybased cluster
 density-based cluster method
 . .
@@ -2120,8 +2120,8 @@ optic : extension dbscan
 optic : find hierarchically nest cluster structure
 . .
 method
-grid-based cluster method
-. .
+Grid-Based Clustering Methods
+
 information grid approach
 sting : statistical information grid approach
 query process sting analysis
@@ -2134,1066 +2134,1066 @@ additional comment clique
 recommend reading
 . .
 10 9 8 7 6 5 4 3 2 1
-author
+About the Authors
 2
 40
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 42
-2.1 datum object attribute type
+2.1 Data Objects and Attribute Types
 44
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 46
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 48
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 50
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 52
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 54
-2.2 basic statistical description datum
+2.2 Basic Statistical Descriptions of Data
 56
-2.3 datum visualization
+2.3 Data Visualization
 58
-2.3 datum visualization
+2.3 Data Visualization
 60
-2.3 datum visualization
+2.3 Data Visualization
 62
-2.3 datum visualization
+2.3 Data Visualization
 64
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 66
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 68
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 70
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 72
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 74
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 76
-2.4 measure datum similarity dissimilarity
+2.4 Measuring Data Similarity and Dissimilarity
 78
-2.6 exercise
+2.6 Exercises
 80
-2.7 bibliographic note
+2.7 Bibliographic Notes
 82
 10
 444
-10.1 cluster analysis
+10.1 Cluster Analysis
 446
-10.1 cluster analysis
+10.1 Cluster Analysis
 448
-10.1 cluster analysis
+10.1 Cluster Analysis
 450
-10.2 partition method
+10.2 Partitioning Methods
 452
-10.2 partition method
+10.2 Partitioning Methods
 454
-10.2 partition method
+10.2 Partitioning Methods
 456
-10.3 hierarchical method
+10.3 Hierarchical Methods
 458
-10.3 hierarchical method
-chapter 10 cluster analysis : basic concept method
-10.3 hierarchical method
+10.3 Hierarchical Methods
+Chapter 10 Cluster Analysis: Basic Concepts and Methods
+10.3 Hierarchical Methods
 462
-10.3 hierarchical method
+10.3 Hierarchical Methods
 464
-10.3 hierarchical method
+10.3 Hierarchical Methods
 466
-10.3 hierarchical method
+10.3 Hierarchical Methods
 468
-10.3 hierarchical method
+10.3 Hierarchical Methods
 470
-10.4 density-based method
+10.4 Density-Based Methods
 472
-10.4 density-based method
+10.4 Density-Based Methods
 474
-10.4 density-based method
+10.4 Density-Based Methods
 476
-10.4 density-based method
+10.4 Density-Based Methods
 478
-10.5 grid-based method
+10.5 Grid-Based Methods
 480
-10.5 grid-based method
+10.5 Grid-Based Methods
 482
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 484
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 486
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 488
-10.6 evaluation cluster
+10.6 Evaluation of Clustering
 490
-10.8 exercise
+10.8 Exercises
 492
-10.8 exercise
+10.8 Exercises
 494
-10.9 bibliographic note
+10.9 Bibliographic Notes
 11
 498
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 500
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 502
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 504
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 506
-11.1 probabilistic model-based cluster
+11.1 Probabilistic Model-Based Clustering
 508
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 510
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 512
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 514
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 516
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 518
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 520
-11.2 cluster high-dimensional datum
+11.2 Clustering High-Dimensional Data
 522
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 524
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 526
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 528
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 530
-11.3 cluster graph network datum
+11.3 Clustering Graph and Network Data
 532
-11.4 cluster constraint
+11.4 Clustering with Constraints
 534
-11.4 cluster constraint
+11.4 Clustering with Constraints
 536
-11.4 cluster constraint
+11.4 Clustering with Constraints
 538
-11.6 exercise
+11.6 Exercises
 540
-11.7 bibliographic note
+11.7 Bibliographic Notes
 13
 586
-13.1 mining complex datum type
-chapter 13 datum mining trend research frontier
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
+Chapter 13 Data Mining Trends and Research Frontiers
+13.1 Mining Complex Data Types
 590
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 592
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 594
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 596
-13.1 mining complex datum type
+13.1 Mining Complex Data Types
 598
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 600
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 602
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 604
-13.2 methodology datum mining
+13.2 Other Methodologies of Data Mining
 606
-13.3 datum mining application
+13.3 Data Mining Applications
 608
-13.3 datum mining application
+13.3 Data Mining Applications
 610
-13.3 datum mining application
+13.3 Data Mining Applications
 612
-13.3 datum mining application
+13.3 Data Mining Applications
 614
-13.3 datum mining application
+13.3 Data Mining Applications
 616
-13.3 datum mining application
+13.3 Data Mining Applications
 618
-13.4 datum mining society
+13.4 Data Mining and Society
 620
-13.4 datum mining society
+13.4 Data Mining and Society
 622
-13.5 datum mining trend
+13.5 Data Mining Trends
 624
-13.6 summary
+13.6 Summary
 626
-13.7 exercise
+13.7 Exercises
 628
-13.8 bibliographic note
+13.8 Bibliographic Notes
 630
-13.8 bibliographic note
-. .
+13.8 Bibliographic Notes
+
 concept
-cluster validation assessment
-. .
+Clustering Validation and Assessment
+
 measure cluster quality
 measure cluster quality
 . .
 cluster validation
-measure cluster quality : external method
-commonly used external measure
-. .
+Measuring Clustering Quality: External Methods
+Commonly Used External Measures
+
 matching-based measure
 matching-based measure ( ) : purity vs. maximum match
 matching-based measure ( ii ) : f-measure
 . .
 entropy-based measure
-entropy-based measure ( ) : conditional entropy
-entropy-based measure ( ii ) :
-. .
+Entropy-Based Measures (I): Conditional Entropy
+Entropy-Based Measures (II):
+
 measure
-pairwise measure : four possibility truth assignment
-pairwise measure : jaccard coefficient rand statistic
-. .
+Pairwise Measures: Four Possibilities for Truth Assignment
+Pairwise Measures: Jaccard Coefficient and Rand Statistic
+
 cluster validation
 internal measure ( ) : betacv measure
 internal measure ( ii ) : normalize cut modularity
 . .
 relative measure
-relative measure
-. .
+Relative Measure
+
 cluster stability
-cluster stability
-method find k , number cluster
-. .
+Cluster Stability
+Other Methods for Finding K, the Number of Clusters
+
 cluster tendency
-cluster tendency : whether datum contain
-testing cluster tendency : spatial histogram approach
-recommend reading
-. .
+Clustering Tendency: Whether the Data Contains
+Testing Clustering Tendency: A Spatial Histogram Approach
+Recommended Readings
+
 1
-motivation : harness big text datum
-main technique harness big text datum :
-design cs410 : overview
-design cs410 : goal
-design cs410 : goal
-design cs410 : format & grade
-complete control grade !
-work load
-already take mooc ( )
-forum discussion
-protocol question answer
-format office hour
-get cs410 dso ?
-information , visit course website :
-. .
+Motivation:	Harnessing	Big	Text	Data
+Main	Techniques	for	Harnessing	Big	Text	Data:
+Design	of	CS410:	Overview
+Design	of	CS410:	Goals
+Design	of	CS410:	Goals
+Design	of	CS410:	Format	&	Grading
+You	have	Complete	Control	over	Your	Grade!
+Your	Work	Load
+If	you	have	already	taken	the	MOOC(s)
+Forum	Discussion
+Protocol	of	Question	Answering
+Format	of	Office	Hours
+How	to	Get	the	Most	out	of	CS410	DSO?
+For	more	information,	visit	the	course	website:
+
 university illinois urbana-champaign
-table content
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-department computer science
-contact cs academic office
-. .
+TABLE OF CONTENTS
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Department of Computer Science
+Who to Contact in the CS Academic Office
+
 1
-course schedule
-overview
-example nlp
-nlp difficult !
-example challenge
-state art
-’
-nlp text retrieval
-summary
-additional read
-. .
+Course Schedule
+Overview
+An Example of NLP
+NLP Is Difficult!
+Examples of Challenges
+The State of the Art
+What We Can’t Do
+NLP for Text Retrieval
+Summary
+Additional Reading
+
 1
-course schedule
-access relevant text datum
-two mode text access : pull vs. push
-pull mode : query vs. browse
-information seek sightseeing
-summary
-additional read
-. .
+Course Schedule
+Access to Relevant Text Data
+Two Modes of Text Access: Pull vs. Push
+Pull Mode: Querying vs. Browsing
+Information Seeking as Sightseeing
+Summary
+Additional Reading
+
 1
-course schedule
-overview
-text retrieval ( tr ) ?
-tr vs. database retrieval
-formal formulation tr
-compute r ’ ( q )
-document selection vs. ranking
-problem document selection
-theoretical justification ranking
-summary
-additional reading
-. .
+Course Schedule
+Overview
+What Is Text Retrieval (TR)?
+TR vs. Database Retrieval
+Formal Formulation of TR
+How to Compute R’(q)
+Document Selection vs. Ranking
+Problems of Document Selection
+Theoretical Justification for Ranking
+Summary
+Additional Readings
+
 1
-course
-design ranking function
-many different retrieval model
-common idea state art retrieval model
-model work best ?
-summary
-additional reading
-. .
+Course
+How to Design a Ranking Function
+Many Different Retrieval Models
+Common Ideas in State of the Art Retrieval Models
+Which Model Works the Best?
+Summary
+Additional Readings
+
 1
-course schedule
-many different retrieval model
-vector space model ( vsm ) : illustration
-vsm framework
-vsm ’ say
-. .
+Course Schedule
+Many Different Retrieval Models
+Vector Space Model (VSM): Illustration
+VSM Is a Framework
+What VSM Doesn’t Say
+
 1
-course schedule
-vsm ’ say
-dimension instantiation : bag word ( bow )
-vector placement : bit vector
-similarity instantiation : dot product
-simplest = bit-vector + dot-product + bow
-example : would rank document ?
-ranking used simplest vsm
-simplest vsm effective ?
-summary
-. .
+Course Schedule
+What VSM Doesn’t Say
+Dimension Instantiation: Bag of Words (BOW)
+Vector Placement: Bit Vector
+Similarity Instantiation: Dot Product
+Simplest VSM= Bit-Vector + Dot-Product + BOW
+An Example: How Would You Rank These Documents?
+Ranking Using the Simplest VSM
+Is the Simplest VSM Effective?
+Summary
+
 1
-course schedule
-two problem simplest vsm
-improve vector placement : term frequency vector
-improve vsm term frequency weighting
-ranking used term frequency ( tf ) weighting
-fix problem 2 ( “ presidential ” vs. “ ” )
-improvement vector placement :
-idf weighting : penalize popular term
-solve problem 2 ( “ presidential ” vs “ ” )
-effective vsm tf-idf weighting ?
-summary
-. .
+Course Schedule
+Two Problems of the Simplest VSM
+Improved Vector Placement: Term Frequency Vector
+Improved VSM with Term Frequency Weighting
+Ranking Using Term Frequency (TF) Weighting
+How to Fix Problem 2 (“presidential” vs. “about”)
+Further Improvement of Vector Placement:
+IDF Weighting: Penalizing Popular Terms
+Solving Problem 2 (“Presidential” vs “About”)
+How Effective Is VSM with TF-IDF Weighting?
+Summary
+
 1
-course schedule
-vsm tf-idf weighting still problem !
-ranking function tf-idf weighting
-tf transformation : c ( w , ) tf ( w , )
-tf transformation : bm25 transformation
-summary
-. .
+Course Schedule
+VSM with TF-IDF Weighting Still Has a Problem!
+Ranking Function with TF-IDF Weighting
+TF Transformation: c(w,d)TF(w,d)
+TF Transformation: BM25 Transformation
+Summary
+
 1
-course schedule
-document length ?
-document length normalization
-pivot length normalization
-state art vsm ranking function
-improvement vsm ?
-improvement bm25
-summary vector space model
-additional reading
-. .
+Course Schedule
+What about Document Length?
+Document Length Normalization
+Pivoted Length Normalization
+State of the Art VSM Ranking Functions
+Further Improvement of VSM?
+Further Improvement of BM25
+Summary of Vector Space Model
+Additional Readings
+
 1
-implementation text retrieval system
-typical tr system architecture
-tokenization
-indexing
-inverted index example
-inverted index fast search
-empirical distribution word
-zipf ’ law
-datum structure inverted index
-. .
+Implementation of Text Retrieval Systems
+Typical TR System Architecture
+Tokenization
+Indexing
+Inverted Index Example
+Inverted Index for Fast Search
+Empirical Distribution of Words
+Zipf’s Law
+Data Structures for Inverted Index
+
 1
-system implementation : inverted index construction
-construct inverted index
-sort-based inversion
-inverted index compression
-integer compression method
-uncompress inverted index
-. .
+System Implementation: Inverted Index Construction
+Constructing Inverted Index
+Sort-based Inversion
+Inverted Index Compression
+Integer Compression Methods
+Uncompress Inverted Index
+
 1
-system implementation : fast search
-score document quickly
-general algorithm ranking document
-example : ranking base tf sum
-improve efficiency
-text retrieval toolkit
-summary system implementation
-additional reading
-. .
+System Implementation: Fast Search
+How to Score Documents Quickly
+A General Algorithm for Ranking Documents
+An Example: Ranking Based on TF Sum
+Further Improving Efficiency
+Some Text Retrieval Toolkits
+Summary of System Implementation
+Additional Readings
+
 1
-evaluation
-evaluation ?
-measure ?
-cranfield evaluation methodology
-test collection evaluation
-. .
+Evaluation
+Why Evaluation?
+What to Measure?
+The Cranfield Evaluation Methodology
+Test Collection Evaluation
+
 1
-evaluation tr system : basic measure
-test collection evaluation
-test collection evaluation
-evaluate set retrieve docs :
-combine precision recall : f-measure
-summary
-. .
+Evaluation of TR Systems: Basic Measures
+Test Collection Evaluation
+Test Collection Evaluation
+Evaluating a Set of Retrieved Docs:
+Combine Precision and Recall: F-Measure
+Summary
+
 1
-evaluation tr system : evaluate rank list
-evaluate ranking : precision-recall ( pr ) curve
-compare pr curf
-summarize ranking
-. .
+Evaluation of TR Systems: Evaluating a Ranked List
+Evaluating Ranking: Precision-Recall (PR) Curve
+Comparing PR Curves
+How to Summarize a Ranking
+
 1
-evaluation tr system : evaluate rank list
-mean average precision ( map )
-special case : mean reciprocal rank
-summary
-. .
+Evaluation of TR Systems: Evaluating a Ranked List
+Mean Average Precision (MAP)
+Special Case: Mean Reciprocal Rank
+Summary
+
 university illinois urbana-champaign
-evaluation tr system : multi-level judgment
-multi-level relevance judgment ?
-normalize discount cumulative gain ( ndcg )
-. .
+Evaluation of TR Systems: Multi-Level Judgments
+What If We Have Multi-level Relevance Judgments?
+Normalized Discounted Cumulative Gain (nDCG)
+
 1
 2
-challenge create test collection
-statistical significance test
-statistical significance testing
-pool : avoid judge document
-summary tr evaluation
-additional reading
-. .
+Challenges in Creating a Test Collection
+Statistical Significance Tests
+Statistical Significance Testing
+Pooling: Avoid Judging all Documents
+Summary of TR Evaluation
+Additional Readings
+
 1
-probabilistic retrieval model : basic idea
-many different retrieval model
-probabilistic retrieval model : basic idea
-query likelihood retrieval model
-doc likely “ imaginary relevant doc ” ?
-summary
-. .
+Probabilistic Retrieval Model: Basic Idea
+Many Different Retrieval Models
+Probabilistic Retrieval Models: Basic Idea
+Query Likelihood Retrieval Model
+Which doc is Most Likely the “Imaginary Relevant Doc”?
+Summary
+
 1
-probabilistic retrieval model : statistical language model
-overview
-statistical language model ( lm ) ?
-lm useful ?
-simplest language model : unigram lm
-text generation unigram lm
-estimation unigram lm
-lm topic representation
-lm association analysis
-summary
-additional reading
-. .
+Probabilistic Retrieval Model: Statistical Language Model
+Overview
+What is a Statistical Language Model (LM)?
+Why is a LM Useful?
+The Simplest Language Model: Unigram LM
+Text Generation with Unigram LM
+Estimation of Unigram LM
+LMs for Topic Representation
+LMs for Association Analysis
+Summary
+Additional Readings
+
 1
-probabilistic retrieval model : query likelihood
-query generation sampling word doc
-unigram query likelihood
-query likelihood make sense ?
-try different query ?
-improve model : sampling word doc model
-computation query likelihood
-summary : ranking base query likelihood
-. .
+Probabilistic Retrieval Model: Query Likelihood
+Query Generation by Sampling Words from Doc
+Unigram Query Likelihood
+Does Query Likelihood Make Sense?
+Try a Different Query?
+Improved Model: Sampling Words from a Doc Model
+Computation of Query Likelihood
+Summary: Ranking based on Query Likelihood
+
 1
-probabilistic retrieval model : smooth
-ranking function base query likelihood
-estimate p ( w|d )
-smooth lm
-rewrite ranking function smooth
-benefit rewrite
-. .
+Probabilistic Retrieval Model: Smoothing
+Ranking Function based on Query Likelihood
+How to Estimate p(w|d)
+How to smooth a LM
+Rewriting the Ranking Function with Smoothing
+Benefit of Rewriting
+
 1
-probabilistic retrieval model : smooth
-benefit rewrite
-summary
-. .
+Probabilistic Retrieval Model: Smoothing
+Benefit of Rewriting
+Summary
+
 1
-probabilistic retrieval model : smooth method
-query likelihood + smooth p ( w|c )
-linear interpolation ( jelinek-mercer ) smooth
-dirichlet prior ( bayesian ) smooth
-. .
+Probabilistic Retrieval Model: Smoothing Methods
+Query Likelihood + Smoothing with p(w|C)
+Linear Interpolation (Jelinek-Mercer) Smoothing
+Dirichlet Prior (Bayesian) Smoothing
+
 1
-probabilistic retrieval model : smooth method
-ranking function jm smooth
-ranking function dirichlet prior smooth
-summary
-summary query likelihood probabilistic model
-additional reading
-. .
+Probabilistic Retrieval Model: Smoothing Methods
+Ranking Function for JM Smoothing
+Ranking Function for Dirichlet Prior Smoothing
+Summary
+Summary of Query Likelihood Probabilistic Model
+Additional Readings
+
 1
-text retrieval method : feedback tr
-relevance feedback
-automatic feedback
-implicit feedback
-. .
+Text Retrieval Methods: Feedback in TR
+Relevance Feedback
+Pseudo/Blind/Automatic Feedback
+Implicit Feedback
+
 1
-feedback text retrieval : feedback vsm
-feedback vector space model
-rocchio feedback : illustration
-rocchio feedback : formula
-example rocchio feedback
-rocchio practice
-. .
+Feedback in Text Retrieval: Feedback in VSM
+Feedback in Vector Space Model
+Rocchio Feedback: Illustration
+Rocchio Feedback: Formula
+Example of Rocchio Feedback
+Rocchio in Practice
+
 1
-feedback text retrieval : feedback lm
-feedback language model
-kullback-leibler ( kl ) divergence retrieval model
-feedback model interpolation
-generative mixture model
-example pseudo-feedback query model
-summary feedback text retrieval
-additional reading
-. .
+Feedback in Text Retrieval: Feedback in LM
+Feedback with Language Models
+Kullback-Leibler (KL) Divergence Retrieval Model
+Feedback as Model Interpolation
+Generative Mixture Model
+Example of Pseudo-Feedback Query Model
+Summary of Feedback in Text Retrieval
+Additional Readings
+
 1
-web search
-web search : challenge & opportunity
-basic search engine technology
-component : robot
-major crawl strategy
-summary
-. .
+Web Search
+Web Search: Challenges & Opportunities
+Basic Search Engine Technologies
+Component I: Crawler/Spider/Robot
+Major Crawling Strategies
+Summary
+
 1
-web search : web indexing
-basic search engine technology
-overview web indexing
-gfs architecture
-mapreduce : framework parallel programming
-mapreduce : computation pipeline
-word count
-word count : map function
-word count : reduce function
-inverted indexing mapreduce
-inverted indexing : pseudo-code
-summary
-. .
+Web Search: Web Indexing
+Basic Search Engine Technologies
+Overview of Web Indexing
+GFS Architecture
+MapReduce: A Framework for Parallel Programming
+MapReduce: Computation Pipeline
+Word Counting
+Word Counting: Map Function
+Word Counting: Reduce Function
+Inverted Indexing with MapReduce
+Inverted Indexing: Pseudo-Code
+Summary
+
 1
-web search : link analysis
-ranking algorithms web search
-exploit inter-document link
-pagerank : capture page “ popularity ”
-pagerank algorithm
-pagerank : example
-pagerank practice
-hit : capture authority & hub
-hit algorithm
-summary
-. .
+Web Search: Link Analysis
+Ranking Algorithms for Web Search
+Exploiting Inter-Document Links
+PageRank: Capturing Page “Popularity”
+The PageRank Algorithm
+PageRank: Example
+PageRank in Practice
+HITS: Capturing Authorities & Hubs
+The HITS Algorithm
+Summary
+
 1
-web search : learn rank
-combine many feature ?
-regression-based approach
-advanced learn algorithms
-summary
-additional reading
-. .
+Web Search: Learning to Rank
+How Can We Combine Many Features?
+Regression-Based Approaches
+More Advanced Learning Algorithms
+Summary
+Additional Readings
+
 1
-web search : future web search
-next generation search engine
-data-user-service ( dus ) triangle
-million way connect dus triangle
-future intelligent information system
-. .
+Web Search: Future of Web Search
+Next Generation Search Engines
+The Data-User-Service (DUS) Triangle
+Millions of Ways to Connect the DUS Triangle
+Future Intelligent Information Systems
+
 1
-recommender system
-two mode text access : pull vs. push
-recommender  filter system
-basic filter question : user u like item x ?
-typical content-based filter system
-three basic problem content-based filter
-extend retrieval system information filter
-general vector-space approach
-difficulty threshold learn
-empirical utility optimization
-beta-gamma threshold learn
-beta-gamma threshold learn ( cont
-summary
-. .
+Recommender Systems
+Two Modes of Text Access: Pull vs. Push
+Recommender  Filtering System
+Basic Filtering Question: Will User U Like Item X?
+A Typical Content-Based Filtering System
+Three Basic Problems in Content-Based Filtering
+Extend a Retrieval System for Information Filtering
+A General Vector-Space Approach
+Difficulties in Threshold Learning
+Empirical Utility Optimization
+Beta-Gamma Threshold Learning
+Beta-Gamma Threshold Learning (cont.)
+Summary
+
 1
-recommender system : collaborative filter
-basic filter question : user u like item x ?
-collaborative filter ( cf ) ?
-cf : assumption
-collaboration filter problem
-memory-based approach
-user similarity measure
-improve user similarity measure
-summary recommender system
-additional reading
-. .
+Recommender Systems: Collaborative Filtering
+Basic Filtering Question: Will user U like item X?
+What is Collaborative Filtering (CF)?
+CF: Assumptions
+The Collaboration Filtering Problem
+Memory-based Approaches
+User Similarity Measures
+Improving User Similarity Measures
+Summary of Recommender Systems
+Additional Readings
+
 1
-course summary : major topic cover
-key high-level take-away message
-search user interface ,
-additional reading
-main technique harness big text datum :
-. .
+Course Summary: Major Topics Covered
+Key High-Level Take-Away Messages
+Search User Interface,
+Additional Readings
+Main Techniques for Harnessing Big Text Data:
+
 1
-text mining analytic
-text vs. non-text datum :
-general problem datum mining
-problem text mining
-landscape text mining analytic
-topic cover course
-. .
+Text Mining and Analytics
+Text vs. Non-Text Data:
+The General Problem of Data Mining
+The Problem of Text Mining
+Landscape of Text Mining and Analytics
+Topics Covered in This Course
+
 1
-text mining analytic
-text vs. non-text datum :
-general problem datum mining
-problem text mining
-landscape text mining analytic
-topic cover course
-. .
+Text Mining and Analytics
+Text vs. Non-Text Data:
+The General Problem of Data Mining
+The Problem of Text Mining
+Landscape of Text Mining and Analytics
+Topics Covered in This Course
+
 1
-natural language content analysis
-basic concept nlp
-nlp difficult !
-example challenge
-state art
-’
-summary
-additional read
-. .
+Natural Language Content Analysis
+Basic Concepts in NLP
+NLP Is Difficult!
+Examples of Challenges
+The State of the Art
+What We Can’t Do
+Summary
+Additional Reading
+
 1
-natural language content analysis
-basic concept nlp
-nlp difficult !
-example challenge
-state art
-’
-summary
-additional read
-. .
+Natural Language Content Analysis
+Basic Concepts in NLP
+NLP Is Difficult!
+Examples of Challenges
+The State of the Art
+What We Can’t Do
+Summary
+Additional Reading
+
 1
-text representation
-dog chasing boy playground
-text representation enabled analysis
-summary
-. .
+Text Representation
+A dog is chasing a boy on the playground
+Text Representation and Enabled Analysis
+Summary
+
 1
-text representation
-dog chasing boy playground
-text representation enabled analysis
-summary
-. .
+Text Representation
+A dog is chasing a boy on the playground
+Text Representation and Enabled Analysis
+Summary
+
 1
-word association mining & analysis
-outline
-basic word relation : paradigmatic vs. syntagmatic
-mine word association ?
-mining word association : intuition
-mining word association : intuition
-mining word association : general idea
-. .
+Word Association Mining & Analysis
+Outline
+Basic Word Relations: Paradigmatic vs. Syntagmatic
+Why Mine Word Associations?
+Mining Word Associations: Intuitions
+Mining Word Associations: Intuitions
+Mining Word Associations: General Ideas
+
 1
-paradigmatic relation discovery
-word context “ pseudo document ”
-measure context similarity
-bag word  vector space model ( vsm )
-vsm paradigmatic relation mining
-expect overlap word context ( eowc )
-would eowc work well ?
-expect overlap word context ( eowc )
-improve eowc retrieval heuristic
-tf transformation : c ( w , ) tf ( w , )
-tf transformation : bm25 transformation
-idf weighting : penalize popular term
-adapt bm25 retrieval model
-bm25 also discover syntagmatic relation
-summary
-. .
+Paradigmatic Relation Discovery
+Word Context as “Pseudo Document”
+Measuring Context Similarity
+Bag of Words  Vector Space Model (VSM)
+VSM for Paradigmatic Relation Mining
+Expected Overlap of Words in Context (EOWC)
+Would EOWC Work Well?
+Expected Overlap of Words in Context (EOWC)
+Improving EOWC with Retrieval Heuristics
+TF Transformation: c(w,d)TF(w,d)
+TF Transformation: BM25 Transformation
+IDF Weighting: Penalizing Popular Terms
+Adapting BM25 Retrieval Model for
+BM25 can also Discover Syntagmatic Relations
+Summary
+
 1
-paradigmatic relation discovery
-word context “ pseudo document ”
-measure context similarity
-bag word  vector space model ( vsm )
-vsm paradigmatic relation mining
-expect overlap word context ( eowc )
-would eowc work well ?
-expect overlap word context ( eowc )
-improve eowc retrieval heuristic
-tf transformation : c ( w , ) tf ( w , )
-tf transformation : bm25 transformation
-idf weighting : penalize popular term
-adapt bm25 retrieval model
-bm25 also discover syntagmatic relation
-summary
-. .
+Paradigmatic Relation Discovery
+Word Context as “Pseudo Document”
+Measuring Context Similarity
+Bag of Words  Vector Space Model (VSM)
+VSM for Paradigmatic Relation Mining
+Expected Overlap of Words in Context (EOWC)
+Would EOWC Work Well?
+Expected Overlap of Words in Context (EOWC)
+Improving EOWC with Retrieval Heuristics
+TF Transformation: c(w,d)TF(w,d)
+TF Transformation: BM25 Transformation
+IDF Weighting: Penalizing Popular Terms
+Adapting BM25 Retrieval Model for
+BM25 can also Discover Syntagmatic Relations
+Summary
+
 1
-syntagmatic relation discovery : entropy
-syntagmatic relation = correlated occurrence
-word prediction : intuition
-word prediction : formal definition
-entropy h ( x ) measure randomness x
-entropy h ( x ) : coin toss
-entropy word prediction
-. .
+Syntagmatic Relation Discovery: Entropy
+Syntagmatic Relation = Correlated Occurrences
+Word Prediction: Intuition
+Word Prediction: Formal Definition
+Entropy H(X) Measures Randomness of X
+Entropy H(X): Coin Tossing
+Entropy for Word Prediction
+
 1
-syntagmatic relation discovery :
-know text segment ?
-conditional entropy
-conditional entropy : complete definition
-conditional entropy capture syntagmatic relation
-conditional entropy mining syntagmatic relation
-. .
+Syntagmatic Relation Discovery:
+What If We Know More About a Text Segment?
+Conditional Entropy
+Conditional Entropy: Complete Definition
+Conditional Entropy to Capture Syntagmatic Relation
+Conditional Entropy for Mining Syntagmatic Relations
+
 1
-syntagmatic relation discovery :
-mutual information ( x ; ) : measure entropy
-mutual information ( x ; )
-rewrite mutual information ( mi )
-probability involved mutual information
-relation different probability
-computation mutual information
-estimation probability ( depend datum )
-smooth : accommodate zero count
-summary syntagmatic relation discovery
-summary word association mining
-additional read
-. .
+Syntagmatic Relation Discovery:
+Mutual Information I(X;Y): Measuring Entropy
+Mutual Information I(X;Y) for
+Rewriting Mutual Information (MI)
+Probabilities Involved in Mutual Information
+Relations Between Different Probabilities
+Computation of Mutual Information
+Estimation of Probabilities (Depending on the Data)
+Smoothing: Accommodating Zero Counts
+Summary of Syntagmatic Relation Discovery
+Summary of Word Association Mining
+Additional Reading
+
 1
-syntagmatic relation discovery :
-mutual information ( x ; ) : measure entropy
-mutual information ( x ; )
-rewrite mutual information ( mi )
-probability involved mutual information
-relation different probability
-computation mutual information
-estimation probability ( depend datum )
-smooth : accommodate zero count
-summary syntagmatic relation discovery
-summary word association mining
-additional read
-. .
+Syntagmatic Relation Discovery:
+Mutual Information I(X;Y): Measuring Entropy
+Mutual Information I(X;Y) for
+Rewriting Mutual Information (MI)
+Probabilities Involved in Mutual Information
+Relations Between Different Probabilities
+Computation of Mutual Information
+Estimation of Probabilities (Depending on the Data)
+Smoothing: Accommodating Zero Counts
+Summary of Syntagmatic Relation Discovery
+Summary of Word Association Mining
+Additional Reading
+
 1
-topic mining analysis :
-topic mining analysis : motivation
-topic knowledge world
-task topic mining analysis
-formal definition topic mining analysis
-. .
+Topic Mining and Analysis:
+Topic Mining and Analysis: Motivation
+Topics As Knowledge About the World
+Tasks of Topic Mining and Analysis
+Formal Definition of Topic Mining and Analysis
+
 1
-formal definition topic mining analysis
-initial idea : topic = term
-mining k topical term collection c
-compute topic coverage : ij
-well approach work ?
-problem “ term topic ”
-. .
+Formal Definition of Topic Mining and Analysis
+Initial Idea: Topic = Term
+Mining k Topical Terms from Collection C
+Computing Topic Coverage: ij
+How Well Does This Approach Work?
+Problems with “Term as Topic”
+
 1
-topic mining analysis :
-problem “ term topic ”
-improve idea : topic = word distribution
-probabilistic topic mining analysis
-computation task
-generative model text mining
-summary
-summary ( cont
-. .
+Topic Mining and Analysis:
+Problems with “Term as Topic”
+Improved Idea: Topic = Word Distribution
+Probabilistic Topic Mining and Analysis
+The Computation Task
+Generative Model for Text Mining
+Summary
+Summary (cont.)
+
 university illinois urbana-champaign
-probabilistic topic model :
-statistical language model ( lm ) ?
-simplest language model : unigram lm
-text generation unigram lm
-estimation unigram lm
-maximum likelihood vs. bayesian
-illustration bayesian estimation
-summary
-. .
+Probabilistic Topic Models:
+What Is a Statistical Language Model (LM)?
+The Simplest Language Model: Unigram LM
+Text Generation with Unigram LM
+Estimation of Unigram LM
+Maximum Likelihood vs. Bayesian
+Illustration of Bayesian Estimation
+Summary
+
 university illinois urbana-champaign
-probabilistic topic model :
-statistical language model ( lm ) ?
-simplest language model : unigram lm
-text generation unigram lm
-estimation unigram lm
-maximum likelihood vs. bayesian
-illustration bayesian estimation
-summary
-. .
+Probabilistic Topic Models:
+What Is a Statistical Language Model (LM)?
+The Simplest Language Model: Unigram LM
+Text Generation with Unigram LM
+Estimation of Unigram LM
+Maximum Likelihood vs. Bayesian
+Illustration of Bayesian Estimation
+Summary
+
 1
-probabilistic topic model : mining one topic
-simplest case topic model : mining one topic
-language model setup
-computation maximum likelihood estimate
-topic look like ?
-. .
+Probabilistic Topic Models: Mining One Topic
+Simplest Case of Topic Model: Mining One Topic
+Language Model Setup
+Computation of Maximum Likelihood Estimate
+What Does the Topic Look Like?
+
 1
-probabilistic topic model : mixture unigram lm
-factor background word
-generate used two word distribution
-’ probability observe word w ?
-idea mixture model
-generative model…
-mixture two unigram language model
-. .
+Probabilistic Topic Models: Mixture of Unigram LMs
+Factoring out Background Words
+Generate d Using Two Word Distributions
+What’s the probability of observing a word w?
+The Idea of a Mixture Model
+As a Generative Model…
+Mixture of Two Unigram Language Models
+
 1
-probabilistic topic model :
-back factor background word
-estimation one topic : p ( | d )
-behavior mixture model
-“ collaboration ” “ competition ” d b
-response datum frequency
-summary
-. .
+Probabilistic Topic Models:
+Back to Factoring out Background Words
+Estimation of One Topic: P(w| d)
+Behavior of a Mixture Model
+“Collaboration” and “Competition” of d and B
+Response to Data Frequency
+Summary
+
 1
-probabilistic topic model :
-back factor background word
-estimation one topic : p ( | d )
-behavior mixture model
-“ collaboration ” “ competition ” d b
-response datum frequency
-summary
-. .
+Probabilistic Topic Models:
+Back to Factoring out Background Words
+Estimation of One Topic: P(w| d)
+Behavior of a Mixture Model
+“Collaboration” and “Competition” of d and B
+Response to Data Frequency
+Summary
+
 university illinois urbana-champaign
-probabilistic topic model :
-estimation one topic : p ( | d )
-know word distribution…
-give parameter , infer distribution
-expectation-maximization ( em ) algorithm
-em computation action
-em hill-climb  converge local maximum
-summary
-. .
+Probabilistic Topic Models:
+Estimation of One Topic: P(w| d)
+If we know which word is from which distribution…
+Given all the parameters, infer the distribution a
+The Expectation-Maximization (EM) Algorithm
+EM Computation in Action
+EM As Hill-Climbing  Converge to Local Maximum
+Summary
+
 university illinois urbana-champaign
-probabilistic topic model :
-estimation one topic : p ( | d )
-know word distribution…
-give parameter , infer distribution
-expectation-maximization ( em ) algorithm
-em computation action
-em hill-climb  converge local maximum
-summary
-. .
+Probabilistic Topic Models:
+Estimation of One Topic: P(w| d)
+If we know which word is from which distribution…
+Given all the parameters, infer the distribution a
+The Expectation-Maximization (EM) Algorithm
+EM Computation in Action
+EM As Hill-Climbing  Converge to Local Maximum
+Summary
+
 university illinois urbana-champaign
-probabilistic topic model :
-estimation one topic : p ( | d )
-know word distribution…
-give parameter , infer distribution
-expectation-maximization ( em ) algorithm
-em computation action
-em hill-climb  converge local maximum
-summary
-. .
+Probabilistic Topic Models:
+Estimation of One Topic: P(w| d)
+If we know which word is from which distribution…
+Given all the parameters, infer the distribution a
+The Expectation-Maximization (EM) Algorithm
+EM Computation in Action
+EM As Hill-Climbing  Converge to Local Maximum
+Summary
+
 1
-probabilistic latent semantic analysis ( plsa )
-document sample mixed topic
-mining multiple topic text
-generate text multiple topic : p ( w ) = ?
-probabilistic latent semantic analysis ( plsa )
-ml parameter estimation
-em algorithm plsa : e-step
-em algorithm plsa : m-step
-computation em algorithm
-summary
-. .
+Probabilistic Latent Semantic Analysis (PLSA)
+Document as a Sample of Mixed Topics
+Mining Multiple Topics from Text
+Generating Text with Multiple Topics: p(w)=?
+Probabilistic Latent Semantic Analysis (PLSA)
+ML Parameter Estimation
+EM Algorithm for PLSA: E-Step
+EM Algorithm for PLSA: M-Step
+Computation of the EM Algorithm
+Summary
+
 1
-probabilistic latent semantic analysis ( plsa )
-document sample mixed topic
-mining multiple topic text
-generate text multiple topic : p ( w ) = ?
-probabilistic latent semantic analysis ( plsa )
-ml parameter estimation
-em algorithm plsa : e-step
-em algorithm plsa : m-step
-computation em algorithm
-summary
-. .
+Probabilistic Latent Semantic Analysis (PLSA)
+Document as a Sample of Mixed Topics
+Mining Multiple Topics from Text
+Generating Text with Multiple Topics: p(w)=?
+Probabilistic Latent Semantic Analysis (PLSA)
+ML Parameter Estimation
+EM Algorithm for PLSA: E-Step
+EM Algorithm for PLSA: M-Step
+Computation of the EM Algorithm
+Summary
+
 1
-latent dirichlet allocation ( lda )
-extension plsa
-plsa prior knowledge
-maximum posteriori ( map ) estimate
-em algorithm conjugate prior p ( | i )
-deficiency plsa
-latent dirichlet allocation ( lda )
-plsa  lda
-likelihood function plsa vs. lda
-parameter estimation inference lda
-summary probabilistic topic model
-suggest reading
-. .
+Latent Dirichlet Allocation (LDA)
+Extensions of PLSA
+PLSA with Prior Knowledge
+Maximum a Posteriori (MAP) Estimate
+EM Algorithm with Conjugate Prior on p(w| i)
+Deficiency of PLSA
+Latent Dirichlet Allocation (LDA)
+PLSA  LDA
+Likelihood Functions for PLSA vs. LDA
+Parameter Estimation and Inferences in LDA
+Summary of Probabilistic Topic Models
+Suggested Readings
+
 1
-latent dirichlet allocation ( lda )
-extension plsa
-plsa prior knowledge
-maximum posteriori ( map ) estimate
-em algorithm conjugate prior p ( | i )
-deficiency plsa
-latent dirichlet allocation ( lda )
-plsa  lda
-likelihood function plsa vs. lda
-parameter estimation inference lda
-summary probabilistic topic model
-suggest reading
-. .
+Latent Dirichlet Allocation (LDA)
+Extensions of PLSA
+PLSA with Prior Knowledge
+Maximum a Posteriori (MAP) Estimate
+EM Algorithm with Conjugate Prior on p(w| i)
+Deficiency of PLSA
+Latent Dirichlet Allocation (LDA)
+PLSA  LDA
+Likelihood Functions for PLSA vs. LDA
+Parameter Estimation and Inferences in LDA
+Summary of Probabilistic Topic Models
+Suggested Readings
+
 1
-text cluster : motivation
-overview
-text cluster ?
-“ cluster bias ”
-example text cluster
-text cluster ?
-. .
+Text Clustering: Motivation
+Overview
+What Is Text Clustering?
+The “Clustering Bias”
+Examples of Text Clustering
+Why Text Clustering?
+
 1
-text cluster : generative probabilistic model
-overview
-topic mining revisit
-one topic ( cluster ) per document
-mining one topic revisit
-generative model cluster ?
-generative topic model revisit
-mixture model document cluster
-likelihood function : p ( ) = ?
-. .
+Text Clustering: Generative Probabilistic Models
+Overview
+Topic Mining Revisited
+One Topic(=cluster) Per Document
+Mining One Topic Revisited
+What Generative Model Can Do Clustering?
+Generative Topic Model Revisited
+Mixture Model for Document Clustering
+Likelihood Function: p(d)=?
+
 1
-text cluster : generative probabilistic model
-likelihood function : p ( ) = ?
-mixture model document cluster
-cluster allocation parameter estimation
-. .
+Text Clustering: Generative Probabilistic Models
+Likelihood Function: p(d)=?
+Mixture Model for Document Clustering
+Cluster Allocation After Parameter Estimation
+
 1
-text cluster : generative probabilistic model
-compute ml estimate ?
-em algorithm document cluster
-example 2 cluster
-normalization avoid underflow
-example 2 cluster ( cont
-summary generative model cluster
-. .
+Text Clustering: Generative Probabilistic Models
+How Can We Compute the ML Estimate?
+EM Algorithm for Document Clustering
+An Example of 2 Clusters
+Normalization to Avoid Underflow
+An Example of 2 Clusters (cont.)
+Summary of Generative Model for Clustering
+
 1
-overview
-similarity-based cluster : general idea
-similarity-based cluster method
-agglomerative hierarchical cluster
-similarity-induce structure
-compute group similarity
-group similarity illustrated
-comparison single-link , complete-link ,
-k-mean cluster
-summary cluster method
-. .
+Overview
+Similarity-based Clustering: General Idea
+Similarity-based Clustering Methods
+Agglomerative Hierarchical Clustering
+Similarity-induced Structure
+How to Compute Group Similarity
+Group Similarity Illustrated
+Comparison of Single-Link, Complete-Link, and
+K-Means Clustering
+Summary of Clustering Methods
+
 1
-overview
-“ cluster bias ”
-direct evaluation text cluster
-indirect evaluation text cluster
-summary text cluster
-suggest read
-. .
+Overview
+The “Clustering Bias”
+Direct Evaluation of Text Clusters
+Indirect Evaluation of Text Clusters
+Summary of Text Clustering
+Suggested Reading
+
 1
-text categorization
-overview
-text categorization
-example text categorization
-variant problem formulation
-text categorization ?
-. .
+Text Categorization
+Overview
+Text Categorization
+Examples of Text Categorization
+Variants of Problem Formulation
+Why Text Categorization?
+
 1
-overview
-categorization method : manual
-categorization method : “ automatic ”
-machine learn text categorization
-generative vs. discriminative classifier
-. .
+Overview
+Categorization Methods: Manual
+Categorization Methods: “Automatic”
+Machine Learning for Text Categorization
+Generative vs. Discriminative Classifiers
+
 1
-overview
-document cluster revisit
-text categorization naïve baye classifier
-learn training datum
-estimate p ( w|i ) p ( i )
-naïve baye classifier : p ( i ) = ? p ( w|i ) = ?
-smooth naïve baye
-anatomy naïve baye classifier
-. .
+Overview
+Document Clustering Revisited
+Text Categorization with Naïve Bayes Classifier
+Learn from the Training Data
+How to Estimate p(w|i) and p(i)
+Naïve Bayes Classifier: p(i)=? and p(w|i)=?
+Smoothing in Naïve Bayes
+Anatomy of Naïve Bayes Classifier
+
 1
-overview
-anatomy naïve baye classifier
-discriminative classifier 1 : logistic regression
-estimation parameter
-discriminative classifier 2 : k-nearest neighbor ( k-nn )
-illustration k-nn classifier
-k-nn estimate p ( y|x )
-. .
+Overview
+Anatomy of Naïve Bayes Classifier
+Discriminative Classifier 1: Logistic Regression
+Estimation of Parameters
+Discriminative Classifier 2: K-Nearest Neighbors (K-NN)
+Illustration of K-NN Classifier
+K-NN as an Estimate of p(Y|X)
+
 1
-discriminative classifier 3 : support vector machine ( svm )
-linear separator best ?
-best separator = maximize margin
-support vector matter
-linear svm
-linear svm soft margin
-summary text categorization method
-summary text categorization method ( cont
-suggest read
-. .
+Discriminative Classifier 3: Support Vector Machine (SVM)
+Which Linear Separator Is the Best?
+Best Separator = Maximize the Margin
+Only the Support Vectors Matter
+Linear SVM
+Linear SVM with Soft Margin
+Summary of Text Categorization Methods
+Summary of Text Categorization Methods (cont.)
+Suggested Reading
+
 1
-overview
-general evaluation methodology
-classification accuracy ( percentage correct decision )
-problem classification accuracy
-per-document evaluation
-per-category evaluation
-combine precision recall : f-measure
-. .
+Overview
+General Evaluation Methodology
+Classification Accuracy (Percentage of Correct Decisions)
+Problems with Classification Accuracy
+Per-Document Evaluation
+Per-Category Evaluation
+Combine Precision and Recall: F-Measure
+
 1
-( macro ) average category
-( macro ) average document
-micro-average precision recall
-sometimes ranking appropriate
-summary categorization evaluation
-suggest read
-. .
+(Macro) Average Over All the Categories
+(Macro) Average Over All the Documents
+Micro-Averaging of Precision and Recall
+Sometimes Ranking Is More Appropriate
+Summary of Categorization Evaluation
+Suggested Reading
+
 1
-opinion mining sentiment analysis : motivation
-objective vs. subjective sensor
-opinion ?
-opinion representation
-product review ( explicit holder target )
-sentence news ( implicit holder target )
-variation opinion
-different kind opinion text datum
-task opinion mining
-opinion mining ?
-. .
+Opinion Mining and Sentiment Analysis: Motivation
+Objective vs. Subjective Sensors
+What Is an Opinion?
+Opinion Representation
+A Product Review (Explicit Holder and Target)
+A Sentence in News (Implicit Holder and Target)
+Variations of Opinions
+Different Kinds of Opinions in Text Data
+The Task of Opinion Mining
+Why Opinion Mining?
+
 1
-sentiment classification
-sentiment classification : task definition
-commonly used text feature
-commonly used text feature ( cont
-nlp enrich text representation
-feature construction text categorization
-. .
+Sentiment Classification
+Sentiment Classification: Task Definition
+Commonly Used Text Features
+Commonly Used Text Features (cont.)
+NLP Enriches Text Representation with
+Feature Construction for Text Categorization
+
 1
 motivation : rating prediction
 logistic regression binary sentiment classification
@@ -3280,163 +3280,163 @@ learn next
 main technique harness big text datum :
 . .
 welcome video
-welcome !
-?
-course ?
-course ?
-course ?
-. .
+Welcome!
+Who we are?
+Who is this course for?
+Who is this course for?
+Who is this course for?
+
 main approach nlp
-main approach nlp
-semantic slot fill : cfg
-semantic slot fill : crf
-semantic slot fill : crf
-semantic slot fill : lstm
-deep learn vs. traditional nlp
-deep learn vs. traditional nlp
-. .
+Main approaches in NLP
+Semantic slot filling: CFG
+Semantic Slot Filling: CRF
+Semantic Slot Filling: CRF
+Semantic Slot Filling: LSTM
+Deep Learning vs. traditional NLP
+Deep Learning vs. traditional NLP
+
 brief overview next week
-week 1
-week 2
-week 3
-week 3
-week 4
-week 4
-week 4
-week 4
-week 4
-week 4
-week 4
-week 4
-week 5
-. .
+Week 1
+Week 2
+Week 3
+Week 3
+Week 4
+Week 4
+Week 4
+Week 4
+Week 4
+Week 4
+Week 4
+Week 4
+Week 5
+
 linguistic knowledge nlp
-nlp pyramid
-library tool
-linguistic knowledge
-linguistic knowledge + deep learn
-syntax : dependency tree
-syntax : constituency tree
-sentiment analysis
-. .
+NLP Pyramid
+Libraries and tools
+Linguistic knowledge
+Linguistic knowledge + Deep Learning
+Syntax: dependency trees
+Syntax: constituency trees
+Sentiment analysis
+
 area ’ fun us
-text preprocess
-text ?
-word ?
-tokenization
-tokenization
-python tokenization example
-token normalization
-stem example
-lemmatization example
-python stem example
-normalization
-summary
-. .
+Text preprocessing
+What is text?
+What is a word?
+Tokenization
+Tokenization
+Python tokenization example
+Token normalization
+Stemming example
+Lemmatization example
+Python stemming example
+Further normalization
+Summary
+
 transform token feature
-bag word ( bow )
-let ’ preserve order
-remove n-grams
-remove n-grams
-’ lot medium frequency n-grams
-tf-idf
-tf-idf
-better bow
-python tf-idf example
-summary
-. .
+Bag of words (BOW)
+Let’s preserve some ordering
+Remove some n-grams
+Remove some n-grams
+There’re a lot of medium frequency n-grams
+TF-IDF
+TF-IDF
+Better BOW
+Python TF-IDF example
+Summary
+
 first text classification model
-sentiment classification
-sentiment classification
-sentiment classification
-sentiment classification
-better sentiment classification
-better sentiment classification
-make even better
-summary
-. .
+Sentiment classification
+Sentiment classification
+Sentiment classification
+Sentiment classification
+Better sentiment classification
+Better sentiment classification
+How to make it even better
+Summary
+
 spam filter task
-mapping n-grams feature index
-spam filter huge task
-hashing example
-trillion feature hashing
-experimental result
-personalize feature work
-personalize feature work
-size matter
-vowpal wabbit
-summary
-. .
+Mapping n-grams to feature indices
+Spam filtering is a huge task
+Hashing example
+Trillion features with hashing
+Experimental results
+Why personalized features work
+Why personalized features work
+Why the size matters
+Vowpal Wabbit
+Summary
+
 neural network text
-text ?
-bag word way ( sparse )
-bag word way ( sparse )
-neural way ( dense )
-neural way ( dense )
-better way : 1d convolution
-better way : 1d convolution
-better way : 1d convolution
-1d convolution
-1d convolution
-1d convolution
-1d convolution
-1d convolution
-1d convolution
-let ’ train many filter
-summary
-. .
+What is text?
+Bag of words way (sparse)
+Bag of words way (sparse)
+Neural way (dense)
+Neural way (dense)
+A better way: 1D convolutions
+A better way: 1D convolutions
+A better way: 1D convolutions
+1D convolutions
+1D convolutions
+1D convolutions
+1D convolutions
+1D convolutions
+1D convolutions
+Let’s train many filters
+Summary
+
 go deeper text
-text ?
-text sequence character
-1d convolution character
-1d convolution character
-1d convolution character
-1d convolution character
-1d convolution character
-1d convolution character
-max pool
-max pool
-max pool
-max pool
-repeat 1d convolution + pool
-repeat 1d convolution + pool
-repeat 1d convolution + pool
-final architecture
-experimental dataset
-experimental result
-summary
-. .
+What is text?
+Text as a sequence of characters
+1D convolutions on characters
+1D convolutions on characters
+1D convolutions on characters
+1D convolutions on characters
+1D convolutions on characters
+1D convolutions on characters
+Max pooling
+Max pooling
+Max pooling
+Max pooling
+Repeat 1D convolution + pooling
+Repeat 1D convolution + pooling
+Repeat 1D convolution + pooling
+Final architecture
+Experimental datasets
+Experimental results
+Summary
+
 n-gram language model
-language modele
-toy corpus
-toy corpus
-toy corpus
-toy corpus
-toy corpus
-toy corpus
-need lm ?
-language modele
-let ’ math
-let ’ math
-let ’ math
-bigram language model
-bigram language model
-bigram language model
-bigram language model
-bigram language model
-bigram language model
-bigram language model
-let ’ check model
-let ’ check model
-let ’ check model
-let ’ check model
-let ’ check model
-let ’ check model
-let ’ check model
-let ’ check model
-let ’ check model
-resume : bigram language model
-. .
+Language modeling
+Toy corpus
+Toy corpus
+Toy corpus
+Toy corpus
+Toy corpus
+Toy corpus
+Where do we need LM?
+Language modeling
+Let’s do some math
+Let’s do some math
+Let’s do some math
+Bigram language model
+Bigram language model
+Bigram language model
+Bigram language model
+Bigram language model
+Bigram language model
+Bigram language model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Let’s check the model
+Resume: bigram language model
+
 model surprised real text ?
 train n-gram model
 train n-gram model
@@ -3459,42 +3459,42 @@ ok , oov word
 ok , oov word
 . .
 see new n-grams ?
-zero probability test datum
-laplacian smooth
-katz backoff
-katz backoff
-interpolation smooth
-absolute discounting
-absolute discounting
-kneser-ney smooth
-resume
-. .
+Zero probabilities for test data
+Laplacian smoothing
+Katz backoff
+Katz backoff
+Interpolation smoothing
+Absolute discounting
+Absolute discounting
+Kneser-Ney smoothing
+Resume
+
 probable tag ?
-motivation
-decode hmm
-viterbi decode
-example hmm : transition probability
-example hmm : transition probability
-example hmm : output probability
-probability hide state “ like ”
-possible transition adj state
-best transition adj
-probability adj state give “ like ”
-possible transition noun state
-best transition noun
-probability noun state give “ like ”
-possible transition verb state
-best transition verb
-probability verb state give “ like ”
-probability hide state “ like ”
-remember best transition !
-backtrace
-backtrace
-backtrace
-backtrace
-backtrace
-viterbi algorithm
-. .
+Motivation
+Decoding in HMM
+Viterbi decoding
+An example of HMM: transition probabilities
+An example of HMM: transition probabilities
+An example of HMM: output probabilities
+Probabilities of hidden states before “likes”
+Possible transitions to ADJ state
+The best transition to ADJ
+Probability of ADJ state given “likes”
+Possible transitions to NOUN state
+The best transition to NOUN
+Probability of NOUN state given “likes”
+Possible transitions to VERB state
+The best transition to VERB
+Probability of VERB state given “likes”
+Probabilities of hidden states after “likes”
+Remember the best transitions!
+Backtrace
+Backtrace
+Backtrace
+Backtrace
+Backtrace
+Viterbi algorithm
+
 model name entity recognition
 hide markov model
 maximum entropy markov model
@@ -3508,17 +3508,17 @@ dependency input
 resume lesson
 . .
 neural language model
-recap : language modele
-curse dimensionality
-generalize better
-probabilistic neural language model
-probabilistic neural language model
-probabilistic neural language model
-probabilistic neural language model
-probabilistic neural language model
-’ over-complicated…
-log-bilinear language model
-. .
+Recap: Language modeling
+Curse of dimensionality
+How to generalize better
+Probabilistic Neural Language Model
+Probabilistic Neural Language Model
+Probabilistic Neural Language Model
+Probabilistic Neural Language Model
+Probabilistic Neural Language Model
+It’s over-complicated…
+Log-Bilinear Language Model
+
 label - lstms help !
 recap : recurrent neural network
 rnn language model
@@ -3536,364 +3536,364 @@ sequence tag task
 bi-directional lstm
 . .
 honey vs. bee bumblebee
-word similarity
-distributional hypothesis
-distributional hypothesis
-distributional hypothesis
-problem ?
-vector space model semantic
-context ?
-context ?
-. .
+Word similarities
+Distributional hypothesis
+Distributional hypothesis
+Distributional hypothesis
+Any problems here?
+Vector Space Models of Semantics
+What is a context?
+What is a context?
+
 factorization
-singular value decomposition ( svd )
-truncate svd
-truncate svd
-use ?
-vector space model semantic
-weight square loss : glove
-word prediction : skip-gram model
-train model ?
-skip-gram negative sampling ( sgn )
-sgn implicit matrix factorization
-. .
+Singular Value Decomposition (SVD)
+Truncated SVD
+Truncated SVD
+How do we use it?
+Vector Space Models of Semantics
+Weighted squared loss: GloVe
+Word prediction: skip-gram model
+How do we train the model?
+Skip-gram Negative Sampling (SGNS)
+SGNS as implicit matrix factorization
+
 ( evaluate )
-word2vec
-evaluation : word similarity
-evaluation : word analogy
-word similarity task performance
-word analogy task performance
-paragraph2vec aka doc2vec
-evaluation : document similarity
-evaluation : document similarity
-evaluation : document similarity
-evaluation : document similarity
-resume
-. .
+Word2vec
+Evaluation: word similarities
+Evaluation: word analogies
+Word similarity task performance
+Word analogy task performance
+Paragraph2vec aka doc2vec
+Evaluation: document similarities
+Evaluation: document similarities
+Evaluation: document similarities
+Evaluation: document similarities
+Resume
+
 king – man + woman ! = queen
-magical property word2vec
-closer look analogy task
-closest neighbor b good enough ?
-good accuracy b b ' close
-bat dataset
-performance category
-gender county cherry-pick
-resume
-. .
+A magical property of word2vec
+Closer look into analogy task
+The closest neighbor of b is good enough?
+Good accuracy when b and b' are close
+BATS dataset
+Performance by categories
+Genders and counties are cherry-picks
+Resume
+
 sentence embedding
-morphology help
-fasttext
-sent2vec
-starspace
-starspace
-deep learn ?
-skip-thought vector
-. .
+Morphology can help
+FastText
+Sent2vec
+StarSpace
+StarSpace
+Deep learning?
+Skip-thought vectors
+
 text collection
-text topic
-formal task
-formal task
-need ?
-need ?
-need ?
-generative model text
-generative model text
-generative model text
-generative model text
-matrix way think
-. .
+From texts to topics
+The formal task
+The formal task
+Where do we need that?
+Where do we need that?
+Why do we need it?
+Generative model of texts
+Generative model of texts
+Generative model of texts
+Generative model of texts
+Matrix way of thinking
+
 train plsa ?
-would train model ?
-would train model ?
-would train model ?
-plain text
-plain text
-know topic assignments…
-know topic assignments…
-know topic assignments…
-plain text
-plain text
-put everything together : em-algorithm
-. .
+How would you train the model?
+How would you train the model?
+How would you train the model?
+We have just plain texts
+We have just plain texts
+If we knew topic assignments…
+If we knew topic assignments…
+If we knew topic assignments…
+But we have just plain texts
+But we have just plain texts
+Put everything together: EM-algorithm
+
 zoo topic model
-martha ballard ’ diary
-martha ballard ’ diary
-latent dirichlet allocation
-bayesian method graphical model
-hierarchical topic model
-dynamic topic model
-dynamic topic model
-multilingual topic model
-additive regularization topic model
-regularize em-algorithm
-multimodal topic model
-multi-artm
-inter-modality similarity
-library topic modele
-word visualization
-380 way visualize : textvis.lnu.se
-. .
+Martha Ballard’s diary
+Martha Ballard’s diary
+Latent Dirichlet Allocation
+Bayesian methods and graphical models
+Hierarchical topic models
+Dynamic topic models
+Dynamic topic models
+Multilingual topic models
+Additive Regularization for Topic Models
+Regularized EM-algorithm
+Multimodal topic models
+Multi-ARTM
+Inter-modality similarities
+Libraries for topic modeling
+A few words about visualization
+380 ways to visualize: textvis.lnu.se
+
 introduction machine translation
-machine translation
-parallel datum
-evaluation
-evaluation
-evaluation
-evaluation
-evaluation
-evaluation
-evaluation
-mandatory slide
-roller-coaster machine translation
-two main paradigm
-zero-shot translation
-. .
+Machine Translation
+Parallel data
+Evaluation
+Evaluation
+Evaluation
+Evaluation
+Evaluation
+Evaluation
+Evaluation
+The mandatory slide
+Roller-coaster of machine translation
+Two main paradigms
+Zero-shot translation
+
 say english , receive french
-main equation
-main equation
-main equation
-easier deal ?
-noisy chanel
-language model : p ( e )
-translation model : p ( f|e )
-translation model : p ( f|e )
-translation model : p ( f|e )
-translation model : p ( f|e )
-word alignment
-. .
+The main equation
+The main equation
+The main equation
+Why is it easier to deal with?
+Noisy Chanel
+Language model: p(e)
+Translation model: p(f|e)
+Translation model: p(f|e)
+Translation model: p(f|e)
+Translation model: p(f|e)
+Word Alignments
+
 word alignment model
-word alignment
-word alignment task
-recap : baye ’ rule
-word alignment matrix
-word alignment matrix
+Word Alignments
+Word alignment task
+Recap: Bayes’ rule
+Word alignment matrix
+Word alignment matrix
 a1 =
 a1 =
 a1 =
 a1 =
 a1 =
-sketch learn algorithm
-sketch learn algorithm
-sketch learn algorithm
-sketch learn algorithm
-sketch learn algorithm
-sketch learn algorithm
-generative story
-generative story
-generative story
-ibm model 1
-translation table
-ibm model 2
-position-based prior
-re-parametrization , dyer et
-hmm prior
-resume
-. .
+Sketch of learning algorithm
+Sketch of learning algorithm
+Sketch of learning algorithm
+Sketch of learning algorithm
+Sketch of learning algorithm
+Sketch of learning algorithm
+Generative story
+Generative story
+Generative story
+IBM model 1
+Translation table
+IBM model 2
+Position-based prior
+Re-parametrization, Dyer et. al 2013
+HMM for the prior
+Resume
+
 encoder-decoder architecture
-sequence sequence
-sequence sequence
-sequence sequence
-sequence sequence
-sequence sequence
-hide representation good…
-… still bottleneck
-. .
+Sequence to sequence
+Sequence to sequence
+Sequence to sequence
+Sequence to sequence
+Sequence to sequence
+Hidden representations are good…
+… but still a bottleneck
+
 attention mechanism
-attention mechanism
-attention mechanism
-compute attention weight ?
-put together
-help long sentence
-example : attention ( alignment )
-attention similar human ?
-local attention
-global vs local attention
-global vs local attention
-. .
+Attention mechanism
+Attention mechanism
+How to compute attention weights?
+Put all together
+Helps for long sentences
+Example: attention (alignments)
+Is the attention similar to what humans do?
+Local attention
+Global vs local attention
+Global vs local attention
+
 conversational chat-bot ?
-mean chat-bot ?
-model pro con
-sequence sequence
-padding
-bucketing
-trained movie subtitle
-trained call
-context conversation
-coherent personality
-diversity response
-intent cluster
-google smart reply
-still human
-. .
+What do you mean by a chat-bot?
+Models pros and cons
+Sequence to sequence
+Padding
+Bucketing
+Trained on movies subtitles
+Trained on calls
+Context of the conversation
+Coherent personality
+Diversity of the responses
+Intents clustering
+Google Smart Reply
+Still not a human
+
 one-size fit ?
-sequence sequence
-sequence sequence
-summarization
-summarization
-sequence sequence !
-google research blog
-google research blog
-encoder-decoder framework
-simplification
-operation simplify text
-rule-based approach paraphrase
-simplification
-simplification
-measure simplicity ?
-measure simplicity ?
-sari : example
-compare bleu
-. .
+Sequence to sequence
+Sequence to sequence
+Summarization
+Summarization
+Sequence to sequence!
+From Google research blog
+From Google research blog
+Encoder-decoder framework
+Simplification
+Operations to simplify text
+Rule-based approach for paraphrasing
+Simplification
+Simplification
+How to measure simplicity?
+How to measure simplicity?
+SARI: example
+Compare with BLEU
+
 pointer-generator network
-seq2seq + attention
-seq2seq + attention
-seq2seq + attention
-seq2seq + attention
-original text ( truncate ) : lago , nigeria ( cnn ) day winning nigeria ’
-seq2seq + attention : unk unk say administration
-closer look formula
-closer look formula
-pointer-generator network
-closer look formula
-pointer-generator network
-pointer-gen : muhammadu buhari say plan aggressively
-coverage mechanism
-model avoid repetition
-become extractive
-pointer-gen + coverage : muhammadu buhari say plan
-original text ( truncate ) : lago , nigeria ( cnn ) day winning
-comparison model
-. .
+Seq2seq + attention
+Seq2seq + attention
+Seq2seq + attention
+Seq2seq + attention
+Original Text (truncated): lagos, nigeria (cnn) a day after winning nigeria’s
+Seq2Seq + Attention: UNK UNK says his administration is
+Closer look into formulas
+Closer look into formulas
+Pointer-generator network
+Closer look into formulas
+Pointer-generator network
+Pointer-Gen: muhammadu buhari says he plans to aggressively
+Coverage mechanism
+Model avoids repetitions
+But becomes too extractive
+Pointer-Gen + Coverage: muhammadu buhari says he plans to
+Original Text (truncated): lagos, nigeria (cnn) a day after winning
+Comparison of the models
+
 task-oriented dialog system
-task-oriented dialog system
-task-oriented dialog system
-utterance
-intent classification
-’ many intent
-one example
-form fill approach dialog management
-slot tag
-slot tag
-form fill dialog manager ( single turn )
-form fill dialog manager ( multi-turn )
-form fill dialog manager ( multi-turn )
-form fill dialog manager ( multi-turn )
-track context ( easy way )
-track form switch
-track form switch
-task-oriented dialog system overview
-summary
-. .
+Task-oriented dialog system
+Task-oriented dialog system
+Utterance
+Intent classification
+There’re many intents
+And one more example
+Form filling approach to dialog management
+Slot filling/tagging
+Slot filling/tagging
+Form filling dialog manager (single turn)
+Form filling dialog manager (multi-turn)
+Form filling dialog manager (multi-turn)
+Form filling dialog manager (multi-turn)
+How to track context (an easy way)
+How to track a form switch
+How to track a form switch
+Task-oriented dialog system overview
+Summary
+
 intent classifier slot tagger
-intent classifier
-slot tagger
-cnn sequence : gate linear unit
-cnn sequence : result
-cnn sequence : speed benefit
-cnn sequence : encoder look like
-atis dataset
-joint training intent classifier slot tagger
-joint training intent classifier slot tagger
-attention decoder
-joint training loss
-joint training result
-summary
-. .
+Intent classifier
+Slot tagger
+CNN for sequences: Gated Linear Unit
+CNN for sequences: results
+CNN for sequences: speed benefit
+CNN for sequences: how encoder looks like
+ATIS dataset
+Joint training of intent classifier and slot tagger
+Joint training of intent classifier and slot tagger
+Attention in decoder
+Joint training loss
+Joint training results
+Summary
+
 utilize context nlu
-need context handle multi-turn dialog
-let ’ store previous utterance “ memory ”
-knowledge relevant new utterance ?
-tag current utterance knowledge
-track context ( memory network )
-track context ( memory network )
-summary
-. .
+We need context to handle multi-turn dialogs
+Let’s store all previous utterances in “memory”
+What knowledge is relevant to new utterance?
+Tagging current utterance with knowledge
+How to track context (with memory networks)
+How to track context (with memory networks)
+Summary
+
 utilize lexicon nlu
-want utilize lexicon ?
-let ’ add lexicon feature input word
-match encode
-add feature model
-lexicon help ?
-training detail
-summary
-. .
+Why do we want to utilize lexicon?
+Let’s add lexicon features to input words
+Matches encoding
+Adding these features to our model
+Does lexicon help?
+Training details
+Summary
+
 dialog manager ( state tracking )
-dialog manager
-state tracking policy learn
-dstc 2 dataset
-dstc 2 dataset
-dstc 2 dialog excerpt
-dstc 2 result
-rule-based state tracking
-neural belief tracker
-utterance representation
-neural belief tracker result
-frame dataset
-frame dataset
-frame dataset
-summary
-. .
+Dialog manager
+State tracking and policy learning
+DSTC 2 dataset
+DSTC 2 dataset
+DSTC 2 dialog excerpt
+DSTC 2 results
+Rule-based state tracking
+Neural Belief Tracker
+Utterance representation
+Neural Belief Tracker results
+Frames dataset
+Frames dataset
+Frames dataset
+Summary
+
 dialog manager ( policy learner )
-state tracking policy learn
-dialog policy
-simple approach : hand craft rule
-optimize dialog policy ml
-joint nlu dm
-joint nlu dm result
-summary
-. .
+State tracking and policy learning
+Dialog policy
+Simple approach: hand crafted rules
+Optimizing dialog policies with ML
+Joint NLU and DM
+Joint NLU and DM results
+Summary
+
 final remark
-task-oriented dialog system overview
-nlu dm
-evaluation
-importance nlu
-important : slot intent ?
-important : slot intent ?
-summary
-. .
+Task-oriented dialog system overview
+NLU and DM
+Evaluation
+The importance of NLU
+What is more important: slots or intent?
+What is more important: slots or intent?
+Summary
+
 machine learn specializa0on
-part specialization
-course part
-course ?
-retrieval ?
-retrieve “ nearest neighbor ” article
-set nearest neighbor
-retrieval application
-cluster ?
-case study :
-like retrieval , cluster application
-cluster image
-coursera learners…
-impact retrieval & cluster
-impact retrieval & cluster
-course overview
-course philosophy : always use case study & …
-overview content
-course outline
-overview content
-module 1 : nearest neighbor search
-module 1 : nearest neighbor search
-module 1 : nearest neighbor search
-module 2 : k-mean mapreduce
-module 2 : k-mean mapreduce
-module 2 : k-mean mapreduce
-module 3 : mixture model
-module 3 : mixture model
-module 3 : mixture model
-module 3 : mixture model
-modele complex dynamic change
-modele complex dynamic change
-modele complex dynamic change
-module 4 : latent dirichlet allocation
-modele complex dynamic change
-assume background
-course 1 , 2 , & 3 ml specialization
-math background
-programming experience
-reliance graphlab create
-compute need
-let ’ get start !
-. .
+Part of a specialization
+This course is a part of the
+What is the course about?
+What is retrieval?
+Retrieve “nearest neighbor” article
+Or set of nearest neighbors
+Retrieval applications
+What is clustering?
+Case Study:
+Just like retrieval, clustering has applications
+Clustering images
+Or Coursera learners…
+Impact of retrieval & clustering
+Impact of retrieval & clustering
+Course overview
+Course philosophy: Always use case studies & …
+Overview of content
+Course outline
+Overview of content
+Module 1: Nearest neighbor search
+Module 1: Nearest neighbor search
+Module 1: Nearest neighbor search
+Module 2: k-means and MapReduce
+Module 2: k-means and MapReduce
+Module 2: k-means and MapReduce
+Module 3: Mixture Models
+Module 3: Mixture Models
+Module 3: Mixture Models
+Module 3: Mixture Models
+Modeling the Complex Dynamics and Changing
+Modeling the Complex Dynamics and Changing
+Modeling the Complex Dynamics and Changing
+Module 4: Latent Dirichlet Allocation
+Modeling the Complex Dynamics and Changing
+Assumed background
+Courses 1, 2, & 3 in this ML Specialization
+Math background
+Programming experience
+Reliance on GraphLab Create
+Computing needs
+Let’s get started!
+
 machine learn specializa0on
 retrieve document interest
 document retrieval
@@ -4024,163 +4024,163 @@ summary retrieval used
 now…
 . .
 machine learn specializa0on
-motivate cluster approach
-goal : structure document topic
-might cluster useful ?
-learn user preference
-cluster : unsupervised learn task
-label know ?
-multiclass classification problem
-cluster
-define cluster ?
-hope unsupervised learn
-( challenge ! ) cluster discover…
-( challenge ! ) cluster discover…
-k-mean : cluster algorithm
-k-mean
-k-mean algorithm
-k-mean algorithm
-k-mean algorithm
-k-mean algorithm
-k-mean coordinate descent
-coordinate descent algorithm
-coordinate descent algorithm
-coordinate descent algorithm
-convergence k-mean
-convergence k-mean local mode
-convergence k-mean local mode
-convergence k-mean local mode
-smart initialization +
-+ overview
-+ visualize
-+ visualize
-+ visualize
-+ visualize
-+ con
-assess quality cluster
-cluster prefer ?
-k-mean objective
-cluster heterogeneity
-happen k increase ?
-lowest possible
-mapreduce
-count word single processor
-naïve parallel word count
-count word parallel &
-mapreduce abstraction
-mapreduce – execution overview
-improve performance :
-scaling k-mean
-mapreduce 1 iteration k-mean
-classification step map
-recenter step reduce
-practical consideration
-summary parallel k-mean
-example
-cluster image
-structuring web search result
-grouping patient medical condition
-channel
-cluster seizure observed time course
-product amazon
-−01
-discover similar neighborhood
-summary k-mean
-now…
-. .
+Retrieving documents of interest
+Document retrieval
+Document retrieval
+Document retrieval
+Challenges
+Retrieval as k-nearest neighbor search
+1-NN search for retrieval
+Compute distances to all docs
+Retrieve “nearest neighbor”
+Or set of nearest neighbors
+1-NN algorithm
+1 – Nearest neighbor
+1-NN algorithm
+k-NN algorithm
+k – Nearest neighbor
+k-NN algorithm
+Critical elements of NN search
+Document representation
+Word count document
+Issues with word counts –
+TF-IDF document representation
+TF-IDF document representation
+TF-IDF document representation
+TF-IDF document representation
+Distance metrics
+Distance metrics:
+Weighting diﬀerent features
+Weighting diﬀerent features
+Weighting diﬀerent features
+Scaled Euclidean distance
+Eﬀect of binary weights
+(non-scaled) Euclidean distance
+(non-scaled) Euclidean distance
+Scaled Euclidean distance
+Another natural inner product measure
+Another natural inner product measure
+Cosine similarity – normalize
+Normalize
+Cosine similarity
+To normalize or not?
+Normalize
+In the normalized case
+But not always desired…
+Other distance metrics
+Combining distance metrics
+Scaling up k-NN search by
+Complexity of search
+Complexity of brute-force search
+KD-tree representation
+KD-trees
+KD-tree construction
+KD-tree construction
+KD-tree construction
+KD-tree construction
+KD-tree construction
+KD-tree construction
+KD-tree construction choices
+Many heuristics…
+NN search with KD-trees
+Nearest neighbor with KD-trees
+Nearest neighbor with KD-trees
+Nearest neighbor with KD-trees
+Nearest neighbor with KD-trees
+Nearest neighbor with KD-trees
 machine learn specializa0on
-probabilistic approach ?
-learn user preference
-uncertainty cluster assignment
-uncertainty cluster assignment
-limitation k-mean
-failure mode k-mean
-motivate probabilistic model :
-mixture model
-motivate application : cluster image
-simple image representation
-distribution cloud image
-distribution sunset image
-distribution forest image
-distribution image
-distinguish along dim
-background :
-model give image type
-1d gaussian
-notating 1d gaussian distribution
-2d gaussian – bird ’ eye view
-2d gaussian – parameter
-2d gaussian – parameter
-covariance structure
-notating multivariate gaussian
-mixture gaussian
-model gaussian per cluster
-jumble unlabeled image
-model jumble unlabeled image
-image type equally represent ?
-combination weight gaussian
-combination weight gaussian
-mixture gaussian ( 1d )
-mixture gaussian ( general )
-accord model…
-document cluster
-discover group related document
-document representation
-mixture gaussian
-mixture gaussian
-count parameter
-count parameter
-restrict diagonal covariance
-restrictive assumption , but…
-infer soft assignment
-infer cluster label
-part 1 :
-compute responsibility
-responsibility picture
-responsibility picture
-responsibility equation
-responsibility equation
-recall : accord model…
-part 1 summary
-responsibility calculation
-application baye ’ rule
-application baye ’ rule
-application baye ’ rule
-part 2a :
-estimate cluster parameter
-datum table decouple cluster
-maximum likelihood estimation
-covariance mle
-cluster proportion mle
-part 2a summary
-part 2b :
-estimate cluster parameter
-maximum likelihood estimation
-maximum likelihood estimation
-maximum likelihood estimation
-cluster-specific shape mle
-mle cluster proportion
-default hard assignment case
-equate estimates…
-part 2b summary
-expectation maximization ( em )
-expectation maximization ( em ) :
-em mixture gaussian
-em mixture gaussian
-em mixture gaussian
-em mixture gaussian
-em mixture gaussian
-nitty gritty em
-convergence em
-initialization
-overfitting mle
-overfitting high dim
-simple regularization m-step
-relationship k-mean
-infinitesimally small variance em
-summary mixture model
-now…
-. .
+Why a probabilistic approach?
+Learn user preferences
+Uncertainty in cluster assignments
+Uncertainty in cluster assignments
+Other limitations of k-means
+Failure modes of k-means
+Motivates probabilistic model:
+Mixture models
+Motivating application: Clustering images
+Simple image representation
+Distribution over all cloud images
+Distribution over all sunset images
+Distribution over all forest images
+Distribution over all images
+Can be distinguished along other dim
+Background:
+Model for a given image type
+1D Gaussians
+Notating a 1D Gaussian distribution
+2D Gaussians – Bird’s eye view
+2D Gaussians – Parameters
+2D Gaussians – Parameters
+Covariance structures
+Notating a multivariate Gaussian
+Mixture of Gaussians
+Model as Gaussian per category/cluster
+Jumble of unlabeled images
+Model of jumble of unlabeled images
+What if image types not equally represented?
+Combination of weighted Gaussians
+Combination of weighted Gaussians
+Mixture of Gaussians (1D)
+Mixture of Gaussians (general)
+According to the model…
+Document clustering
+Discover groups of related documents
+Document representation
+Mixture of Gaussians for
+Mixture of Gaussians for
+Counting parameters
+Counting parameters
+Restricting to diagonal covariance
+Restrictive assumption, but…
+Inferring soft assignments with
+Inferring cluster labels
+Part 1:
+Compute responsibilities
+Responsibilities in pictures
+Responsibilities in pictures
+Responsibilities in equations
+Responsibilities in equations
+Recall: According to the model…
+Part 1 summary
+Responsibility calculation as
+An application of Bayes’ rule
+An application of Bayes’ rule
+An application of Bayes’ rule
+Part 2a:
+Estimating cluster parameters
+Data table decoupling over clusters
+Maximum likelihood estimation
+Mean/covariance MLE
+Cluster proportion MLE
+Part 2a summary
+Part 2b:
+Estimating cluster parameters
+Maximum likelihood estimation
+Maximum likelihood estimation
+Maximum likelihood estimation
+Cluster-specific location/shape MLE
+MLE of cluster proportions
+Defaults to hard assignment case
+Equating the estimates…
+Part 2b summary
+Expectation maximization (EM)
+Expectation maximization (EM):
+EM for mixtures of Gaussians
+EM for mixtures of Gaussians
+EM for mixtures of Gaussians
+EM for mixtures of Gaussians
+EM for mixtures of Gaussians
+The nitty gritty of EM
+Convergence of EM
+Initialization
+Overfitting of MLE
+Overfitting in high dims
+Simple regularization of M-step
+Relationship to k-means
+Infinitesimally small variance EM
+Summary for mixture models
+What you can do now…
+
 machine learn specializa0on
 mixed membership model
 far , cluster article group
@@ -4262,102 +4262,102 @@ now…
 acknowledgement
 . .
 1
-bit history
-information retrieval
-bit history
-bit history
-usenet interface
-work meaningfully well !
-amazon.com
-k‐nearest neighbor user‐user
-cf classic : store rating
-cf classic : request recommendation
-cf classic : select item ; predict rating
-understand computation
-understand computation
-understand computation
-bigger picture
-little vocabulary
-design recommender
-introduction recommender
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-dedication
-order dependency
-course feature
-interaction … class forum
-academic standard
-course # 1 : non-personalized
-introduction
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-history movielen
-. .
+8/25/2016
+
 1
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-image currently display ed
-. .
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+This image cannot currently be display ed.
+
 1
-prediction
-introduction recommender system
-recommendation
-introduction recommender system
-introduction recommender system
-introduction recommender system
-another dimension consider
-2-3 : prediction
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-analytical framework
-google : content example
-purpose recommendation
-introduction recommender system
-recommendation context
-whose opinion ?
-phoak
-land ’ end
-cdnow album advisor
-cdnow
-interface
-1-4 ( b ) : taxonomy
-abstract specific
-non-personalized summary stat
-personalize collaborative filter
-note evaluation
-move forward
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-analytical framework
-google : content example
-purpose recommendation
-introduction recommender system
-recommendation context
-whose opinion ?
-phoak
-land ’ end
-cdnow album advisor
-cdnow
-interface
-1-4 ( b ) : taxonomy
-abstract specific
-non-personalized summary stat
-personalize collaborative filter
-note evaluation
-move forward
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-analytical framework
-analytical framework
-analytical framework
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
 early day
 wave two : netflix prize
@@ -4365,12 +4365,12 @@ state field today
 promising direction
 . .
 1
-programming assignment
-software require
-grade
-lenskit ?
-introduction
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
 compute environment
 set
@@ -4384,28 +4384,28 @@ assessment
 introduce
 . .
 1
-zagat guide …
-secret reveal !
-idea , different formula
-breaking
-tripadvisor.com
-take-away lesson
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-learn objective
-overview
-introduction recommender
-overview
-goal display
-example : amazon.com
-overview
-rank score ?
-damp mean
-domain consideration : time
-reddit algorithm ( c. 2010 )
-predict sophisticated score ?
-summary statistic ii
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
 ok , ?
 find relevant demographic
@@ -4444,47 +4444,47 @@ estimate probability count : p ( ) fraction user system
 create file nonpers-submission.jar distribution contain
 . .
 1
-key idea
-learn objective ( ii )
-copyright 2016 joseph a. konstan
-wide range possibility
-use preference
-case‐based recommendation
-copyright 2016 joseph a. konstan
-copyright 2016 joseph a. konstan
-copyright 2016 joseph a. konstan
-copyright 2016 joseph a. konstan
-copyright 2016 joseph a. konstan
-knowledge‐base recommender
-copyright 2016 joseph a. konstan
-generally
-take‐away lesson
-introduction
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-search problem …
-tfidf ?
-variant alternative
-take-away move forward
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-key concept : keyword vector
-choice come play …
-little formalization
-item user profile ( 1 )
-…to user profile ( 3 )
-compute prediction …
-challenge
-take‐away
-content‐based filter :
-. .
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+8/25/2016
+
 1
-qi tag vector item i. final computation , unit-normalized
-user ’ profile
-john turturro=0.2606167586076272
-example output weight user profile
-create file cbf-submission.jar distribution contain
-. .
+qi The tag vector for an item i. In the final computation, this will be a unit-normalized
+that user’s profile. Recall that the user profile vectors will also be term vectors,
+John Turturro=0.2606167586076272
+Example Output for Weighted User Profile
+This will create file cbf-submission.jar under build/distributions that contains your
+
 1
 get start
 recommender structure
@@ -4493,27 +4493,27 @@ gotcha
 honor assignment
 . .
 1
-qi tag vector item i. final computation , unit-normalized
-user ’ profile
-john turturro=0.2606167586076272
-example output weight user profile
-create file cbf-submission.jar distribution contain
-. .
+qi The tag vector for an item i. In the final computation, this will be a unit-normalized
+that user’s profile. Recall that the user profile vectors will also be term vectors,
+John Turturro=0.2606167586076272
+Example Output for Weighted User Profile
+This will create file cbf-submission.jar under build/distributions that contains your
+
 unify mathematical model
-objective
-review recommender task
-score item
-expand score
-full score function
-full score function
-compute
-score recommendation
-basic top-n recommendation
-tweak top-n recommendation
-extend recommendation
-wrap-up
-unify mathematical model
-. .
+Objectives
+Review of Recommender Tasks
+Scoring Items
+Expanding Scoring
+Full Scoring Function
+Full Scoring Function
+Computing s
+Scoring to Recommendation
+Basic Top-N Recommendation
+Tweaking Top-N Recommendation
+Extended Recommendation
+Wrap-up
+Unified Mathematical Model
+
 http : www.mendeley.com
 article strong interest computer vision researcher
 . user-item pair ( , j ) , draw response
